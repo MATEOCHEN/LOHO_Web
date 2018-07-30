@@ -40,7 +40,7 @@
                 <div class="wrap">
                     <div class="item-img-block">
                         <div class="shopping-item-img">
-                            <img src="../LOHO-Project/Image/竹碳運動襪.jpg" alt="竹碳運動襪" class="img-fluid">
+                            <img src="{{ URL::asset('/Image/竹碳運動襪.jpg') }}" alt="竹碳運動襪" class="img-fluid">
                         </div>
                     </div>
                     <div class="item-info-block">

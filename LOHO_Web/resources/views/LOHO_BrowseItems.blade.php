@@ -51,7 +51,7 @@
                 <div class="wrap text-center">
                     <div class="shopping-item-block ">
                         <div class="shopping-item-img">
-                            <img src="../LOHO-Project/Image/竹碳運動襪.jpg" alt="竹碳運動襪" class="img-fluid">
+                            <img src="{{ URL::asset('/Image/竹碳運動襪.jpg') }}" alt="竹碳運動襪" class="img-fluid">
                         </div>
                         <div>
                             <h5>竹炭休閒襪-黑</h5>
@@ -67,7 +67,7 @@
                     </div>
                     <div class="shopping-item-block ">
                         <div class="shopping-item-img">
-                            <img src="../LOHO-Project/Image/竹碳運動襪.jpg" alt="竹碳運動襪" class="img-fluid">
+                            <img src="{{ URL::asset('/Image/竹碳運動襪.jpg') }}" alt="竹碳運動襪" class="img-fluid">
                         </div>
                         <div>
                             <h5>竹炭休閒襪-黑</h5>
@@ -83,7 +83,7 @@
                     </div>
                     <div class="shopping-item-block ">
                         <div class="shopping-item-img">
-                            <img src="../LOHO-Project/Image/竹碳運動襪.jpg" alt="竹碳運動襪" class="img-fluid">
+                            <img src="{{ URL::asset('/Image/竹碳運動襪.jpg') }}" alt="竹碳運動襪" class="img-fluid">
                         </div>
                         <div>
                             <h5>竹炭休閒襪-黑</h5>
@@ -99,7 +99,7 @@
                     </div>
                     <div class="shopping-item-block ">
                         <div class="shopping-item-img">
-                            <img src="../LOHO-Project/Image/竹碳運動襪.jpg" alt="竹碳運動襪" class="img-fluid">
+                            <img src="{{ URL::asset('/Image/竹碳運動襪.jpg') }}" alt="竹碳運動襪" class="img-fluid">
                         </div>
                         <div>
                             <h5>竹炭休閒襪-黑</h5>
@@ -115,7 +115,7 @@
                     </div>
                     <div class="shopping-item-block ">
                         <div class="shopping-item-img">
-                            <img src="../LOHO-Project/Image/竹碳運動襪.jpg" alt="竹碳運動襪" class="img-fluid">
+                            <img src="{{ URL::asset('/Image/竹碳運動襪.jpg') }}" alt="竹碳運動襪" class="img-fluid">
                         </div>
                         <div>
                             <h5>竹炭休閒襪-黑</h5>
@@ -131,7 +131,7 @@
                     </div>
                     <div class="shopping-item-block ">
                         <div class="shopping-item-img">
-                            <img src="../LOHO-Project/Image/竹碳運動襪.jpg" alt="竹碳運動襪" class="img-fluid">
+                            <img src="{{ URL::asset('/Image/竹碳運動襪.jpg') }}" alt="竹碳運動襪" class="img-fluid">
                         </div>
                         <div>
                             <h5>竹炭休閒襪-黑</h5>

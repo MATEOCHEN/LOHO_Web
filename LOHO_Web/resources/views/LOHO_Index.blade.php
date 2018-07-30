@@ -141,7 +141,7 @@
       <div class="item-block">
         <div class="d-flex flex-column align-items-center">
           <div class="item-img">
-            <img src="../LOHO-Project/Image/竹碳運動襪.jpg" alt="竹碳運動襪" class="img-fluid">
+            <img src="{{ URL::asset('/Image/竹碳運動襪.jpg') }}" class="img-fluid">
           </div>
           <div>
             <h3 class="img-font">竹碳運動襪</h3>
@@ -151,7 +151,7 @@
       <div class="item-block">
         <div class="d-flex flex-column align-items-center">
           <div class="item-img">
-            <img src="../LOHO-Project/Image/竹碳運動襪.jpg" alt="竹碳運動襪" class="img-fluid">
+            <img src="{{ URL::asset('/Image/竹碳運動襪.jpg') }}" class="img-fluid">
           </div>
           <div>
             <h3 class="img-font">竹碳運動襪</h3>
@@ -161,7 +161,7 @@
       <div class="item-block">
         <div class="d-flex flex-column align-items-center">
           <div class="item-img">
-            <img src="../LOHO-Project/Image/竹碳運動襪.jpg" alt="竹碳運動襪" class="img-fluid">
+            <img src="{{ URL::asset('/Image/竹碳運動襪.jpg') }}" class="img-fluid">
           </div>
           <div>
             <h3 class="img-font">竹碳運動襪</h3>
@@ -171,7 +171,7 @@
       <div class="item-block">
         <div class="d-flex flex-column align-items-center">
           <div class="item-img">
-            <img src="../LOHO-Project/Image/竹碳運動襪.jpg" alt="竹碳運動襪" class="img-fluid">
+            <img src="{{ URL::asset('/Image/竹碳運動襪.jpg') }}" class="img-fluid">
           </div>
           <div>
             <h3 class="img-font">竹碳運動襪</h3>
@@ -186,7 +186,7 @@
       <div class="item-block">
         <div class="d-flex flex-column align-items-center">
           <div class="item-img">
-            <img src="../LOHO-Project/Image/竹碳運動襪.jpg" alt="竹碳運動襪" class="img-fluid">
+            <img src="{{ URL::asset('/Image/竹碳運動襪.jpg') }}" alt="竹碳運動襪" class="img-fluid">
           </div>
           <div>
             <h3 class="img-font">竹碳運動襪</h3>
@@ -196,7 +196,7 @@
       <div class="item-block">
         <div class="d-flex flex-column align-items-center">
           <div class="item-img">
-            <img src="../LOHO-Project/Image/竹碳運動襪.jpg" alt="竹碳運動襪" class="img-fluid">
+            <img src="{{ URL::asset('/Image/竹碳運動襪.jpg') }}" alt="竹碳運動襪" class="img-fluid">
           </div>
           <div>
             <h3 class="img-font">竹碳運動襪</h3>
@@ -206,7 +206,7 @@
       <div class="item-block">
         <div class="d-flex flex-column align-items-center">
           <div class="item-img">
-            <img src="../LOHO-Project/Image/竹碳運動襪.jpg" alt="竹碳運動襪" class="img-fluid">
+            <img src="{{ URL::asset('/Image/竹碳運動襪.jpg') }}" alt="竹碳運動襪" class="img-fluid">
           </div>
           <div>
             <h3 class="img-font">竹碳運動襪</h3>
@@ -216,7 +216,7 @@
       <div class="item-block">
         <div class="d-flex flex-column align-items-center">
           <div class="item-img">
-            <img src="../LOHO-Project/Image/竹碳運動襪.jpg" alt="竹碳運動襪" class="img-fluid">
+            <img src="{{ URL::asset('/Image/竹碳運動襪.jpg') }}" alt="竹碳運動襪" class="img-fluid">
           </div>
           <div>
             <h3 class="img-font">竹碳運動襪</h3>
