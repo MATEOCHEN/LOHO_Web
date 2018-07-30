@@ -11,6 +11,10 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+Route::get('/','HomeController@Index');
+
+Route::get('/info','HomeController@info');
+
+Route::get('/student/{student_no}', function ($student_no) {
+    return "學號:".$student_no;
 });
