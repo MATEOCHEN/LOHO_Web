@@ -16,6 +16,6 @@ class HomeController extends BaseController
     }
 
     public function info(){
-        return view('phpinfo');
+        return view('Account_Log_In');
     }
 }

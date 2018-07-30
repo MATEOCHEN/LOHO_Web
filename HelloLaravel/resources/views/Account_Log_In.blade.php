@@ -6,13 +6,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Account_Log_In</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="../LOHO-Project/CSS/All.css">
-    <link rel="stylesheet" href="../LOHO-Project/CSS/Account_Log_In.css">
+    <!-- My CSS -->
+    <link href="{{ URL::asset('/css/All.css') }}" rel="stylesheet" type="text/css"/> 
+    <link href="{{ URL::asset('/css/Account_Log_In.css') }}" rel="stylesheet" type="text/css"/>
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB"
         crossorigin="anonymous">
-    <link type="text/css" rel="stylesheet" href="../assets/css/All.css" />
-    <link type="text/css" rel="stylesheet" href="../assets/css/Account_Log_In.css" />
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
