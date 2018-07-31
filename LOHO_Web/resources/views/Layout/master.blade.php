@@ -2,14 +2,13 @@
 <html>
 <head>
     <title>@yield('title')</title>
+    @include('Partials.head')
     @section('head')
-        @include('Partials.head')
     @show    
 </head>
 <body>
     @include('partials.nav')
-    <div class = "container">
-        @yield('content')
-    </div>
+    @section('content')
+    @show   
 </body>
 </html>

@@ -2,6 +2,6 @@
 
 @section('title','首頁')
 
-@section('content')
+@section('detail')
 
 @stop
