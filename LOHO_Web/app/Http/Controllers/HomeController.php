@@ -14,4 +14,8 @@ class HomeController extends BaseController
     public function index(){
          return view('Index\LOHO_Index');
     }
+
+    public function Layout(){
+        return view('Layout');
+   }
 }

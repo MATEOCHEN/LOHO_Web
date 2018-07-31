@@ -13,6 +13,7 @@
 
 Route::get('/', 'HomeController@Index');
 
+Route::get('/Layout', 'HomeController@Layout');
 //Route::get('/info','HomeController@info');
 
 //Route::get('Shopping/BrowseItems','Shopping\ShoppingController@BrowseItems');
