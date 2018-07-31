@@ -35,7 +35,22 @@ Route::group(['prefix' => 'Shopping'], function () {
     );
 });
 
+Route::group(['namespace' => 'Account'],function(){
+    Route::get(
+        'Account_Log_In',
+        array('use'=>'AccountController@Account_Log_In','as'=>'Account_Log_In')
+    );
+    Route::get(
+        'AccountInformation',
+        array('use'=>'AccountController@AccountInformation','as'=>'AccountInformation')
+    );
+});
 
+
+
+
+
+/*
 Route::get('/student/{student_no}', function ($student_no) {
     return "學號:" . $student_no;
-});
+});*/
