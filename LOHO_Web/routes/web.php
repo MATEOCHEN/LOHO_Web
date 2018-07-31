@@ -9,9 +9,9 @@
 | routes are loaded by the RouteServiceProvider within a group which
 | contains the "web" middleware group. Now create something great!
 |
-*/
+ */
 
-Route::get('/','HomeController@Index');
+Route::get('/', 'HomeController@Index');
 
 //Route::get('/info','HomeController@info');
 
@@ -24,8 +24,18 @@ Route::group(['prefix'=>'Shopping'],function(){
     Route::get('ShoppingItem','Shopping\ShoppingController@ShoppingItem');
 });*/
 
-Route::get('Shopping/BrowseItems', array('as' => 'BrowseItems', 'uses' => 'ShoppingController@BrowseItems'));
+Route::group(['prefix' => 'Shopping'], function () {
+    Route::get(
+        'BrowseItems',
+        array('uses' => 'Shopping\ShoppingController@BrowseItems', 'as' => 'BrowseItems')
+    );
+    Route::get(
+        'ShoppingItem',
+        array('uses' => 'Shopping\ShoppingController@ShoppingItem', 'as' => 'ShoppingItem')
+    );
+});
+
 
 Route::get('/student/{student_no}', function ($student_no) {
-    return "學號:".$student_no;
+    return "學號:" . $student_no;
 });
