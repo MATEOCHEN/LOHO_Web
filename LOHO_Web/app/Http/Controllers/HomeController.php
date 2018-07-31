@@ -12,10 +12,10 @@ class HomeController extends BaseController
     use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
 
     public function index(){
-         return view('Index\LOHO_Index');
+         return view('Index\Index');
     }
 
     public function Layout(){
-        return view('Layout');
+        return view('Partials\Layout');
    }
 }
