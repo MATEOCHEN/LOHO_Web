@@ -35,14 +35,14 @@ Route::group(['prefix' => 'Shopping'], function () {
     );
 });
 
-Route::group(['namespace' => 'Account'],function(){
+Route::group(['namespace' => 'Account','prefix' => 'Account'], function () {
     Route::get(
         'Account_Log_In',
-        array('use'=>'AccountController@Account_Log_In','as'=>'Account_Log_In')
+        array('uses' => 'AccountController@Account_Log_In', 'as' => 'Account_Log_In')
     );
     Route::get(
         'AccountInformation',
-        array('use'=>'AccountController@AccountInformation','as'=>'AccountInformation')
+        array('uses' => 'AccountController@AccountInformation', 'as' => 'AccountInformation')
     );
 });
 
