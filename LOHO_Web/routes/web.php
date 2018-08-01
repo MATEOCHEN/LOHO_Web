@@ -14,6 +14,8 @@
 Route::get('/', 'HomeController@Index');
 
 Route::get('/Layout', 'HomeController@Layout');
+
+Route::get('/getAll','BoardController@getAll');
 //Route::get('/info','HomeController@info');
 
 //Route::get('Shopping/BrowseItems','Shopping\ShoppingController@BrowseItems');
