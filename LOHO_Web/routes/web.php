@@ -16,6 +16,8 @@ Route::get('/', 'HomeController@Index');
 Route::get('/Layout', 'HomeController@Layout');
 
 Route::get('/getAll','BoardController@getAll');
+
+Route::get('/getChinese','BoardController@getChinese');
 //Route::get('/info','HomeController@info');
 
 //Route::get('Shopping/BrowseItems','Shopping\ShoppingController@BrowseItems');

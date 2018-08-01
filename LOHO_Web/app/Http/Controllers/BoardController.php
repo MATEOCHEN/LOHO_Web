@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Score as ScoreEloquent;
+use App\Student as StudentEloquent;
+use App\Student;
 use Route;
 use View;
 use DB;
@@ -18,6 +20,15 @@ class BoardController extends Controller
 
     public function getName(){
         return Route::currentRouteAction();
+    }
+
+    public function getChinese(){
+        $student = new Student;
+
+        $student->user_id = 1;
+        $student->no = 1;
+        $student->tel = 123;
+        $student->save();
     }
 
     public function getAll(){
