@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Score as ScoreEloquent;
+use App\Score;
 use App\Student as StudentEloquent;
 use App\Student;
 use Route;
@@ -23,12 +24,12 @@ class BoardController extends Controller
     }
 
     public function getChinese(){
-        $student = new Student;
+        
+        $books =StudentEloquent::all();
 
-        $student->user_id = 1;
-        $student->no = 1;
-        $student->tel = 123;
-        $student->save();
+        foreach ($books as $book) {
+            echo $book->ScoreEloquent->chinese;
+        }
     }
 
     public function getAll(){

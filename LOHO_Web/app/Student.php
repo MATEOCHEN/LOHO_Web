@@ -14,8 +14,13 @@ class Student extends Model
     public function user(){
         return $this->belongsTo(UserEloquent::class);
     }
-
+    /*
     public function score(){
         return $this->hasOne()(ScoreEloquent::class);
+    }*/
+
+    public function score()
+    {
+        return $this->hasOne(ScoreEloquent::class);
     }
 }

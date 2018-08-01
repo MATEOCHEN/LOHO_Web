@@ -9,9 +9,13 @@ class Score extends Model
     //
     protected $table = 'score';
 
-    //建立Student資料表的Eloquent關聯
+    /*建立Student資料表的Eloquent關聯
     public function student(){
         return $this->belongsTo(StudentEloquent::class);
+    }*/
+    public function student()
+    {
+        return $this->belongsTo('app/Student');
     }
 
     //自定義資料撈取內容，以總分進行排序
@@ -24,5 +28,15 @@ class Score extends Model
         return $query->orderBy('score.chinese','DESC')
         ->orderBy('score.english','DESC')
         ->orderBy('score.math','DESC');
+    }
+
+    public function sort($query){
+        return $query->orderBy('chinese','DESC');
+    }
+
+    function __construct() {
+
+        echo "我是建構子...<br/>";
+
     }
 }
