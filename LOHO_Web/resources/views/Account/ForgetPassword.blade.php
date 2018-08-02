@@ -27,7 +27,7 @@
     <div class="container-block">
         <div class="wrap text-center">
             <div class="logo-img">
-                <img src="../LOHO-Project/Image/LOHO_Logo.PNG" alt="" class="img-fluid">
+                <img src="{{ URL::asset('/Image/LOHO_Logo.png') }}" alt="" class="img-fluid">
             </div>
             <div class="page-title">忘記密碼?</div>
             <br>

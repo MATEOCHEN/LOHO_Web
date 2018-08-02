@@ -7,8 +7,8 @@
     <title>Account_Log_In</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- My CSS -->
-    <link href="{{ URL::asset('/css/All.css') }}" rel="stylesheet" type="text/css"/> 
-    <link href="{{ URL::asset('/css/Account_Log_In.css') }}" rel="stylesheet" type="text/css"/>
+    <link href="{{ URL::asset('/css/All.css') }}" rel="stylesheet" type="text/css" />
+    <link href="{{ URL::asset('/css/Account_Log_In.css') }}" rel="stylesheet" type="text/css" />
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB"
         crossorigin="anonymous">
@@ -27,20 +27,23 @@
     <div class="container-block">
         <div class="wrap text-center">
             <div class="logo-img">
-                <img src="../LOHO-Project/Image/LOHO_Logo.PNG" alt="" class="img-fluid">
+                <img src="{{ URL::asset('/Image/LOHO_Logo.png') }}" alt="" class="img-fluid">
             </div>
             <br>
             <h2>使用LOHO帳號登入</h2>
-            <input type="text">
-            <input type="text">
-            <div class="top-button">
-                <button type="button" class="btn btn-dark">忘記密碼</button>
-                <button type="button" class="btn btn-dark">註冊</button>
-            </div>
-            <div class="down-button">
-                <button type="button" class="btn btn-dark">登入</button>
-                <button type="button" class="btn btn-primary">用Facebook登入</button>
-            </div>
+            <form action="AfterAccount_Log_In" method="POST">
+                {{ csrf_field() }}
+                <input type="text" name="account" value="<?php  csrf_token(); ?>">
+                <input type="password" name="password"value="<?php  csrf_token(); ?>">
+                <div class="top-button">
+                    <button type="button" class="btn btn-dark" onclick="window.location='{{ url("Account/ForgetPassword") }}'">忘記密碼</button>
+                    <button type="button" class="btn btn-dark" onclick="window.location='{{ url("Account/RegisterAccount") }}'">註冊</button>
+                </div>
+                <div class="down-button">
+                    <button type="submit" class="btn btn-dark">登入</button>
+                    <button type="button" class="btn btn-primary">用Facebook登入</button>
+                </div>
+            </form>
         </div>
     </div>
 </body>

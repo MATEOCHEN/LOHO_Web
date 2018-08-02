@@ -36,4 +36,18 @@ class AccountController extends Controller
     {
         return view('Account\RegisterAccount');
     }
+
+    public function AfterAccount_Log_In(Request $request){
+        return response()->json([
+            'account' => $request->account,
+            'password' => $request->password
+        ]);
+    }
+
+    public function AfterRegisterAccount(Request $request){
+        return response()->json([
+            'name' => $request->name,
+            'nickname' => $request->nickname
+        ]);
+    }
 }

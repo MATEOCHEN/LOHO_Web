@@ -45,11 +45,35 @@ Route::group(['namespace' => 'Account','prefix' => 'Account'], function () {
         'Account_Log_In',
         array('uses' => 'AccountController@Account_Log_In', 'as' => 'Account_Log_In')
     );
+
+    Route::get(
+        'ForgetPassword',
+        array('uses' => 'AccountController@ForgetPassword', 'as' => 'ForgetPassword')
+    );
+
+    Route::get(
+        'RegisterAccount',
+        array('uses' => 'AccountController@RegisterAccount', 'as' => 'RegisterAccount')
+    );
+
     Route::get(
         'AccountInformation',
         array('uses' => 'AccountController@AccountInformation', 'as' => 'AccountInformation')
     );
+
+    Route::post(
+        'AfterAccount_Log_In',
+        array('uses' => 'AccountController@AfterAccount_Log_In', 'as' => 'AfterAccount_Log_In')
+    );
+
+    Route::post(
+        'AfterRegisterAccount',
+        array('uses' => 'AccountController@AfterRegisterAccount', 'as' => 'AfterRegisterAccount')
+    );
+    
 });
+
+
 
 
 
