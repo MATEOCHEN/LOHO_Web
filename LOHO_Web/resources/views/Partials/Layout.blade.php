@@ -9,6 +9,8 @@
 
     <!--My All CSS-->
     <link href=<?php echo asset('/css/All.css');?> rel="stylesheet" type="text/css" />
+     <!--My Bootstrap CSS-->
+    <link href=<?php echo asset('/css/bootstrap.css');?> rel="stylesheet" type="text/css" />
     <!-- Bootstrap CSS -->
     <link href=<?php echo asset('https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css');?> integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB') }}" rel="stylesheet" type="text/css" />
     <!-- Optional JavaScript -->
