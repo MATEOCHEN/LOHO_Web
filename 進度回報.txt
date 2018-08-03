@@ -1,0 +1,18 @@
+0721進度
+
+首頁 
+完成：跑馬燈精選推薦、新品上市版型設計
+未完成：滑動精選推薦、新品上市按鈕
+
+瀏覽頁面 
+完成：商品排列設計
+未完成：左導覽列 上麵包屑 RWD
+
+0722進度
+完成：會員登入、忘記密碼PC頁面設計
+未完成：RWD、會員登入輸入動態效果 
+
+0722~0803進度
+
+完成：laravel建置(Apache,php,MySQL,phpMyAdmin), 部分route, controller, blade template, Eloquent ORM, Model,Http responese可應用
+未完成：會員驗證、SESSION, COOKIE,中介層設置, 底層原理理解
