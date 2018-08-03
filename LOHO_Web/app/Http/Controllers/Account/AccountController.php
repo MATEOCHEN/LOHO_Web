@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Account;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Input;
 
 class AccountController extends Controller
 {
@@ -45,9 +46,16 @@ class AccountController extends Controller
     }
 
     public function AfterAccount_Log_In(Request $request){
+        $input = Input::all();
+        $account = $input['account'];
+        $password = $input['password'];
+
+        if($password != '12345'){
+            return back()->with('msg','密碼錯誤');
+        }
         return response()->json([
-            'account' => $request->account,
-            'password' => $request->password
+            'account' => $account,
+            'password' => $password
         ]);
     }
 

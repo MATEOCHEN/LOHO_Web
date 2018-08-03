@@ -22,6 +22,10 @@ Route::group(['middleware' => 'AdminLogin'], function () {
     );
 });
 
+Route::get(
+    '/TestDB',
+    array('uses' => 'HomeController@TestDB', 'as' => 'TestDB')
+);
 
 Route::get('/getAll','BoardController@getAll');
 

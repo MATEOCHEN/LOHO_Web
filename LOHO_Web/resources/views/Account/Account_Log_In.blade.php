@@ -58,6 +58,9 @@
             @foreach($scores as $subject => $score)
                 {{$subject}}={{$score}}<br>
             @endforeach
+            @if(session('msg'))
+                <p>密碼錯誤</p>
+            @endif
         </div>
     </div>
 </body>
