@@ -44,6 +44,20 @@
                     <button type="button" class="btn btn-primary">用Facebook登入</button>
                 </div>
             </form>
+            {{-- {{}}為blade執行區塊 --}}
+            {{ $title}} {{ $data['account']}}{{ $data['password']}}
+            {{-- 如果tel不存在傳預設值 --}}
+            {{isset($tel)?$tel:'無此電話'}}
+            {{-- 傳script需使用!! --}}
+            {!!$str!!}
+            @if($price > 100)
+                {{'高單價'}}<br>
+                @else
+                {{'低單價'}}<br>
+            @endif
+            @foreach($scores as $subject => $score)
+                {{$subject}}={{$score}}<br>
+            @endforeach
         </div>
     </div>
 </body>

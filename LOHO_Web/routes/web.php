@@ -11,9 +11,17 @@
 |
  */
 
-Route::get('/', 'HomeController@Index');
+Route::group(['middleware' => 'AdminLogin'], function () {
+    Route::get(
+        '/',
+        array('uses' => 'HomeController@Index', 'as' => 'Index')
+    );
+    Route::get(
+        '/Layout',
+        array('uses' => 'HomeController@Layout', 'as' => 'Layout')
+    );
+});
 
-Route::get('/Layout', 'HomeController@Layout');
 
 Route::get('/getAll','BoardController@getAll');
 
