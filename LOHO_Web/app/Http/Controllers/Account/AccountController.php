@@ -8,6 +8,8 @@ use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\Crypt;
 use App\User;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Routing\Redirector;
+use Illuminate\Http\RedirectResponse ;
 class AccountController extends Controller
 {
     public function Account_Log_In()
@@ -18,7 +20,7 @@ class AccountController extends Controller
         $str =' <script>alert("歡迎光臨");</script>';
         $price = 10;
         $scores = ['chinese' => 100,'english' => 100,'math' => 100];
-        session(["admin" => '123']);
+        
         return view('Account\Account_Log_In',compact('data','title','tel','str','price','scores'));
     }
 
@@ -60,8 +62,10 @@ class AccountController extends Controller
             return back()->with('msg','帳號或密碼錯誤');
         }
         
+        session(["admin" => $user->name]);
+        
 
-        return $user;
+        return redirect('/');
 
     }
 
