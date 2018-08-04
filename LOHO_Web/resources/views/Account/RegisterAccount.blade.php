@@ -52,20 +52,20 @@
                 </div>
                 <div class="input-area">
                     <div class="input-text">*電子信箱：</div>
-                    <input type="text">
+                    <input type="text" name="email">
                 </div>
                 <div class="subTitle">帳戶設定</div>
                 <div class="input-area">
                     <div class="input-text">*帳號：</div>
-                    <input type="text">
+                    <input type="text" name="account">
                 </div>
                 <div class="input-area">
                     <div class="input-text">*密碼：</div>
-                    <input type="text">
+                    <input type="password" , name="password">
                 </div>
                 <div class="input-area">
                     <div class="input-text">*確認密碼：</div>
-                    <input type="text">
+                    <input type="password" , name="confirm_password">
                 </div>
                 <div class="input-area">
                     <div class="e-report">

@@ -5,7 +5,9 @@ namespace App\Http\Controllers\Account;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Input;
-
+use Illuminate\Support\Facades\Crypt;
+use App\User;
+use Illuminate\Support\Facades\DB;
 class AccountController extends Controller
 {
     public function Account_Log_In()
@@ -49,21 +51,31 @@ class AccountController extends Controller
         $input = Input::all();
         $account = $input['account'];
         $password = $input['password'];
+        $user = User::where('name', $account)->first();
+        
+        $user = User::where('name', $account)->first();
+        $decryptAccount = Crypt::decrypt($user->password);
 
-        if($password != '12345'){
-            return back()->with('msg','密碼錯誤');
+        if($decryptAccount != $password ){
+            return back()->with('msg','帳號或密碼錯誤');
         }
-        return response()->json([
-            'account' => $account,
-            'password' => $password
-        ]);
+        
+
+        return $user;
+
     }
 
     public function AfterRegisterAccount(Request $request){
-        return response()->json([
-            'name' => $request->name,
-            'nickname' => $request->nickname
-        ]);
+
+        $user = new User;
+        
+        $user->name = $request->account;
+        $password = Crypt::encrypt($request->password);
+        $user->password = $password;
+        $user->email = $request->email;
+        $user->save();
+        
+        echo '成功註冊';
     }
 
     

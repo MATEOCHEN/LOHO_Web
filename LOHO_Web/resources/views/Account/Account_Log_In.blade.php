@@ -59,7 +59,7 @@
                 {{$subject}}={{$score}}<br>
             @endforeach
             @if(session('msg'))
-                <p>密碼錯誤</p>
+                <p>帳號或密碼錯誤</p>
             @endif
         </div>
     </div>
