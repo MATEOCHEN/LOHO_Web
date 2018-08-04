@@ -1,8 +1,9 @@
 @extends('Layout.master')
 
 @section('title','註冊帳號')
+@section('head')
 <link href="{{ URL::asset('/css/RegisterAccount.css') }}" rel="stylesheet" type="text/css" />
-
+@stop
 @section('content')
 
 

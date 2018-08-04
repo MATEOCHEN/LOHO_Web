@@ -1,9 +1,9 @@
 @extends('Layout.master')
 
 @section('title','首頁')
+@section('head')
 <link href="{{ URL::asset('/css/Index.css') }}" rel="stylesheet" type="text/css" />
-
-
+@stop
 @section('content')
   <div class="content">
     <div class="container-fluid py-5">
@@ -131,3 +131,5 @@
     </div>
   </div>
 @stop
+
+

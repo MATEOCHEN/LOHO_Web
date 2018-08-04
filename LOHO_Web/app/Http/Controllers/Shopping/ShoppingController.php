@@ -12,7 +12,7 @@ class ShoppingController extends BaseController
     use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
 
     public function BrowseItems(){
-         return view('Shopping\LOHO_BrowseItems');
+         return view('Shopping\BrowseItems');
     }
 
     public function ShoppingItem(){

@@ -20,26 +20,22 @@ Route::group(['middleware' => 'AdminLogin'], function () {
         '/Layout',
         array('uses' => 'HomeController@Layout', 'as' => 'Layout')
     );
+
+    Route::get(
+        '/TestDB',
+        array('uses' => 'HomeController@TestDB', 'as' => 'TestDB')
+    );
+
+    Route::get(
+        'Account/AccountInformation',
+        array('uses' => 'Account\AccountController@AccountInformation', 'as' => 'AccountInformation')
+    );
+
+    Route::get(
+        'Account/PersonalInformation',
+        array('uses' => 'Account\AccountController@PersonalInformation', 'as' => 'AccountInformation')
+    );
 });
-
-Route::get(
-    '/TestDB',
-    array('uses' => 'HomeController@TestDB', 'as' => 'TestDB')
-);
-
-Route::get('/getAll','BoardController@getAll');
-
-Route::get('/getChinese','BoardController@getChinese');
-//Route::get('/info','HomeController@info');
-
-//Route::get('Shopping/BrowseItems','Shopping\ShoppingController@BrowseItems');
-
-//Route::get('Shopping/ShoppingItem','Shopping\ShoppingController@ShoppingItem');
-/*
-Route::group(['prefix'=>'Shopping'],function(){
-    Route::get('BrowseItems','Shopping\ShoppingController@BrowseItems');
-    Route::get('ShoppingItem','Shopping\ShoppingController@ShoppingItem');
-});*/
 
 Route::group(['prefix' => 'Shopping'], function () {
     Route::get(
@@ -63,14 +59,15 @@ Route::group(['namespace' => 'Account','prefix' => 'Account'], function () {
         array('uses' => 'AccountController@ForgetPassword', 'as' => 'ForgetPassword')
     );
 
+    
     Route::get(
-        'RegisterAccount',
-        array('uses' => 'AccountController@RegisterAccount', 'as' => 'RegisterAccount')
+        'ForgetPasswordToModify',
+        array('uses' => 'AccountController@ForgetPasswordToModify', 'as' => 'ForgetPasswordToModify')
     );
 
     Route::get(
-        'AccountInformation',
-        array('uses' => 'AccountController@AccountInformation', 'as' => 'AccountInformation')
+        'RegisterAccount',
+        array('uses' => 'AccountController@RegisterAccount', 'as' => 'RegisterAccount')
     );
 
     Route::post(
@@ -84,14 +81,3 @@ Route::group(['namespace' => 'Account','prefix' => 'Account'], function () {
     );
     
 });
-
-
-
-
-
-
-
-/*
-Route::get('/student/{student_no}', function ($student_no) {
-    return "學號:" . $student_no;
-});*/

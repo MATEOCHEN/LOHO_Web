@@ -1,7 +1,9 @@
 @extends('Layout.master')
 
-@section('title','瀏覽購物')
+@section('title','瀏覽商品')
+@section('head')
 <link href="{{ URL::asset('/css/Shopping.css') }}" rel="stylesheet" type="text/css" />
+@stop
 
 @section('content')
     <nav aria-label="breadcrumb">

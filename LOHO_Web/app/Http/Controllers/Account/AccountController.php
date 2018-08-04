@@ -34,9 +34,9 @@ class AccountController extends Controller
         return view('Account\ForgetPassword');
     }
 
-    public function LOHO_ForgetPasswordToModify()
+    public function ForgetPasswordToModify()
     {
-        return view('Account\LOHO_ForgetPasswordToModify');
+        return view('Account\ForgetPasswordToModify');
     }
 
     public function PersonalInformation()
