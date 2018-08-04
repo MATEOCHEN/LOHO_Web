@@ -12,7 +12,11 @@
 完成：會員登入、忘記密碼PC頁面設計
 未完成：RWD、會員登入輸入動態效果 
 
-0722~0803進度
-
+0722~0804進度
+前端：如07/22
+後端：
 完成：laravel建置(Apache,php,MySQL,phpMyAdmin), 部分route, controller, blade template, Eloquent ORM, Model,Http responese可應用
-未完成：會員驗證、SESSION, COOKIE,中介層設置, 底層原理理解
+,中介層設置,會員驗證、SESSION
+未完成：COOKIE, AJAX應用, 底層原理理解
+
+問題：介面雛型未確立、廠商資料不明確、NAV BAR會擋到本文內容顯示、因NAV引入BS舊版版本，需引入重複BS檔案
