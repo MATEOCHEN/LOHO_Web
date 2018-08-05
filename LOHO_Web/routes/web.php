@@ -59,6 +59,11 @@ Route::group(['namespace' => 'Account','prefix' => 'Account'], function () {
         array('uses' => 'AccountController@ForgetPassword', 'as' => 'ForgetPassword')
     );
 
+    Route::post(
+        'AfterForgetPassword',
+        array('uses' => 'AccountController@AfterForgetPassword', 'as' => 'AfterForgetPassword')
+    );
+
     
     Route::get(
         'ForgetPasswordToModify',

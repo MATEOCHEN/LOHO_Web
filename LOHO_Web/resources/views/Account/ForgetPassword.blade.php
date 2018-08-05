@@ -13,14 +13,15 @@
         </div>
         <div class="page-title">忘記密碼?</div>
         <br>
-        <div class="outer">
+        <form class="outer" action="AfterForgetPassword" method="POST">
+                {{ csrf_field() }}
             <div class="input-area">
                 <div class="input-text">帳號：</div>
-                <input type="text">
+                <input type="text" name="account">
             </div>
             <div class="input-area">
                 <div class="input-text">E-MAIL：</div>
-                <input type="text">
+                <input type="text" name="email">
                 <div class="input-button">
                     <button type="button" class="btn btn-dark">寄出驗證信</button>
                 </div>
@@ -28,7 +29,7 @@
             <div class="input-area">
                 <div class="input-text">驗證碼：</div>
                 <input type="text">
-                <div class="input-button">
+                <div class="input-button" name = "valid_code">
                     <button type="button" class="btn btn-dark">驗證</button>
                 </div>
             </div>
@@ -36,9 +37,9 @@
                 <div class="remind-text">(請在10分鐘內輸入驗證碼)</div>
             </div>
             <div class="submit-area">
-                <button type="button" class="btn btn-dark">重新設定</button>
+                <button type="submit" class="btn btn-dark">重新設定</button>
             </div>
-        </div>
+        </form>
 
     </div>
 </div>
