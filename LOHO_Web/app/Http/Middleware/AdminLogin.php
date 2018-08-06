@@ -15,8 +15,6 @@ class AdminLogin
      */
     public function handle($request, Closure $next)
     {
-        echo  session('admin');
-        echo '前往首頁';
         if(!session('admin')){
             return redirect("Account/Account_Log_In");
         }
