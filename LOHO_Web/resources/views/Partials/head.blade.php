@@ -22,3 +22,22 @@
         crossorigin="anonymous"></script>
     <script src=<?php echo asset('https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T');?>
         crossorigin="anonymous"></script>
+            <script>
+                $(document).ready(function () {
+                    $(window).scroll(function () {
+                        let scrollTop = $(window).scrollTop(); 
+                        let mainTop = $('.content').offset().top;
+                        let navbarHeight = $('#nav').height();
+                        console.log(scrollTop,mainTop);
+                       
+                       if(scrollTop > mainTop){
+                           $('#nav').addClass("fixed-top");
+                           $('body').css('paddingTop',navbarHeight)
+                       }
+                       else{
+                           $('#nav').removeClass("fixed-top");
+                           $('body').css('paddingTop',0)
+                       }
+                    });
+                });
+            </script>	
