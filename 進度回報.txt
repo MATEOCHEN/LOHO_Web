@@ -20,3 +20,7 @@
 未完成：COOKIE, AJAX應用, 底層原理理解
 
 問題：介面雛型未確立、廠商資料不明確、NAV BAR會擋到本文內容顯示、因NAV引入BS舊版版本，需引入重複BS檔案
+
+0806進度：
+完成：解決NAV BAR會擋到本文內容顯示、引入重複BS檔案
+未完成：Account_Log_In NAV BAR會跑版

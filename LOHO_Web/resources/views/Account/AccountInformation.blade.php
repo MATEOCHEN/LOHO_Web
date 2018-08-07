@@ -2,13 +2,13 @@
 
 @section('title','帳號資訊')
 @section('head')
-<link href="{{ URL::asset('/css/LOHO_ForgetPasswordToModify.css') }}" rel="stylesheet" type="text/css" />
+<link href="{{ URL::asset('/css/ForgetPasswordToModify.css') }}" rel="stylesheet" type="text/css" />
 @stop
 @section('content')
     <div class="container-block">
         <div class="wrap text-center">
             <div class="logo-img">
-                <img src="../LOHO-Project/Image/LOHO_Logo.PNG" alt="" class="img-fluid">
+                <img src="{{ URL::asset('/Image/LOHO_Logo.png') }}" alt="" class="img-fluid">
             </div>
             <div class="page-title">會員資訊</div>
             <br>
