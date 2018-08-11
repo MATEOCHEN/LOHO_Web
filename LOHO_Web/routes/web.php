@@ -35,6 +35,12 @@ Route::group(['middleware' => 'AdminLogin'], function () {
         'Account/PersonalInformation',
         array('uses' => 'Account\AccountController@PersonalInformation', 'as' => 'AccountInformation')
     );
+
+
+    Route::get(
+        'Account/ModifyPassword',
+        array('uses' => 'Account\AccountController@ModifyPassword', 'as' => 'ModifyPassword')
+    );
 });
 
 Route::group(['prefix' => 'Shopping'], function () {
@@ -91,7 +97,7 @@ Route::group(['namespace' => 'Account','prefix' => 'Account'], function () {
     );
 
     Route::post(
-        'SendForgetPasswordToModify',
-        array('uses' => 'AccountController@SendForgetPasswordToModify', 'as' => 'SendForgetPasswordToModify')
+        'SendModifyPassword',
+        array('uses' => 'AccountController@SendModifyPassword', 'as' => 'SendModifyPassword')
     );
 });

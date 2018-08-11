@@ -82,6 +82,10 @@ class AccountController extends Controller
         return view('Account\RegisterAccount');
     }
 
+    public function ModifyPassword(){
+        return view('Account\ModifyPassword');
+    }
+
     public function AfterAccount_Log_In(Request $request){
         $input = Input::all();
         $account = $input['account'];
@@ -120,7 +124,7 @@ class AccountController extends Controller
         ->json(['email' => 'test@gmail']);
     }
 
-    public function SendForgetPasswordToModify(Request $request){
+    public function SendModifyPassword(Request $request){
 
         $input = Input::all();
         $rules = ['password' => 'required| between:4,20|confirmed'];
@@ -142,7 +146,7 @@ class AccountController extends Controller
                 echo '密碼修改成功';
             }
             else{
-                echo '原密碼不正確';
+                return back()->withErrors("原密碼有誤");
             }
         }
         else{
