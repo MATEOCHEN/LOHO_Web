@@ -85,4 +85,13 @@ Route::group(['namespace' => 'Account','prefix' => 'Account'], function () {
         array('uses' => 'AccountController@AfterRegisterAccount', 'as' => 'AfterRegisterAccount')
     );
     
+    Route::post(
+        'EmailVerification',
+        array('uses' => 'AccountController@EmailVerification', 'as' => 'EmailVerification')
+    );
+
+    Route::post(
+        'SendForgetPasswordToModify',
+        array('uses' => 'AccountController@SendForgetPasswordToModify', 'as' => 'SendForgetPasswordToModify')
+    );
 });

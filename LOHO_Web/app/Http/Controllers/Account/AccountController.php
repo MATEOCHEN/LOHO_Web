@@ -12,6 +12,7 @@ use Illuminate\Routing\Redirector;
 use Illuminate\Http\RedirectResponse ;
 use Hash;
 use Illuminate\Support\Facades\Mail;
+use Validator;
 class AccountController extends Controller
 {
     public function Account_Log_In()
@@ -112,6 +113,41 @@ class AccountController extends Controller
         $user->save();
         
         echo '成功註冊';
+    }
+
+    public function EmailVerification(Request $request){
+        return response()
+        ->json(['email' => 'test@gmail']);
+    }
+
+    public function SendForgetPasswordToModify(Request $request){
+
+        $input = Input::all();
+        $rules = ['password' => 'required| between:4,20|confirmed'];
+        $messages = ['password.required'=>'必填欄位',
+        'password.between'=>'必須4-20位數字',
+        'password.confirmed'=>'密碼需一致'
+        ];
+        $validator = Validator::make($input,$rules,$messages);
+        
+
+        if($validator->passes()){
+            $user = User::first();
+            $db_password = $user->password;
+            $db_password = Crypt::decrypt($db_password);
+
+            if($input['origin_password'] == $db_password){
+                $user->password = Crypt::encrypt($input['password']);
+                $user->save();
+                echo '密碼修改成功';
+            }
+            else{
+                echo '原密碼不正確';
+            }
+        }
+        else{
+            return back()->withErrors($validator);
+        }
     }
 
     

@@ -1,10 +1,5 @@
-@extends('Layout.master')
-
-@section('title','更改密碼')
-@section('head')
-<link href="{{ URL::asset('/css/ForgetPasswordToModify.css') }}" rel="stylesheet" type="text/css" />
-@stop
-@section('content')
+@extends('Layout.master') @section('title','更改密碼') @section('head')
+<link href="{{ URL::asset('/css/ForgetPasswordToModify.css') }}" rel="stylesheet" type="text/css" /> @stop @section('content')
 <div class="container-block">
     <div class="wrap text-center">
         <div class="logo-img">
@@ -12,15 +7,21 @@
         </div>
         <div class="page-title">忘記密碼?</div>
         <br>
-        <div class="outer">
+        <form class="outer" action="SendForgetPasswordToModify" method="POST">
+            {{ csrf_field() }}
             <div class="subTitle">
                 帳戶資訊
             </div>
+            @if (count($errors)>0) 
+                @foreach ($errors->all() as $error) 
+                    {{$error}} 
+                @endforeach 
+            @endif
             <div class="input-area">
                 <div class="input-text">
-                    帳號：
+                    原密碼：
                 </div>
-                <input type="text">
+                <input type="text" name = "origin_password">
             </div>
             <div class="subTitle">
                 更改帳戶
@@ -29,7 +30,7 @@
                 <div class="input-text">
                     *重設密碼：
                 </div>
-                <input type="text">
+                <input type="text" name="password">
             </div>
             <div class="remind-text">
                 (限半形英文或數字，10碼內不限大小寫)
@@ -38,18 +39,17 @@
                 <div class="input-text">
                     *確認密碼：
                 </div>
-                <input type="text">
+                <input type="text" name="password_confirmation">
             </div>
             <div class="remind-text">
                 (限半形英文或數字，10碼內不限大小寫)
             </div>
             <div class="submit-area">
-                <button type="button" class="btn btn-dark">取消</button>
-                <button type="button" class="btn btn-dark">確認更改</button>
+                <button type="submit" class="btn btn-dark">確認更改</button>
+                <button type="submit" class="btn btn-dark">取消</button>
             </div>
-        </div>
+        </form>
 
     </div>
 </div>
 @stop
-
