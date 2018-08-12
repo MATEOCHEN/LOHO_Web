@@ -12,19 +12,17 @@ use Illuminate\Routing\Redirector;
 use Illuminate\Http\RedirectResponse ;
 use Hash;
 use Illuminate\Support\Facades\Mail;
+use App\Http\Controllers\Account\AccountControllerImp\Account_Log_In_Imp;
+use App\Http\Controllers\Account\AccountControllerImp\SendModifyPassword;
 use Validator;
-class AccountController extends Controller
+
+class AccountControllerAbstraction extends Controller
 {
-    public function Account_Log_In()
+    
+    public function Account_Log_In(Request $request)
     {   
-        $data = ['account' => "Kevin","password" => "12345"];
-        $title = "登入畫面";
-        $tel = "07123";
-        $str =' <script>alert("歡迎光臨");</script>';
-        $price = 10;
-        $scores = ['chinese' => 100,'english' => 100,'math' => 100];
-        
-        return view('Account\Account_Log_In',compact('data','title','tel','str','price','scores'));
+        $Account_Log_In_Imp= new Account_Log_In_Imp();
+        return $Account_Log_In_Imp->handle($request);
     }
 
     public function AccountInformation()
@@ -125,33 +123,10 @@ class AccountController extends Controller
     }
 
     public function SendModifyPassword(Request $request){
-
-        $input = Input::all();
-        $rules = ['password' => 'required| between:4,20|confirmed'];
-        $messages = ['password.required'=>'必填欄位',
-        'password.between'=>'必須4-20位數字',
-        'password.confirmed'=>'密碼需一致'
-        ];
-        $validator = Validator::make($input,$rules,$messages);
         
+        $SendModifyPassword = new SendModifyPassword();
+        return $SendModifyPassword->handle($request);
 
-        if($validator->passes()){
-            $user = User::first();
-            $db_password = $user->password;
-            $db_password = Crypt::decrypt($db_password);
-
-            if($input['origin_password'] == $db_password){
-                $user->password = Crypt::encrypt($input['password']);
-                $user->save();
-                echo '密碼修改成功';
-            }
-            else{
-                return back()->withErrors("原密碼有誤");
-            }
-        }
-        else{
-            return back()->withErrors($validator);
-        }
     }
 
     
