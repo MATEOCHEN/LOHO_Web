@@ -1,10 +1,10 @@
 <?php
-namespace App\Http\Controllers\Account\AccountControllerImp;
+namespace App\Http\Controllers\Account\GET\AccountControllerGetImp;
 use Illuminate\Http\Request;
 
-class Account_Log_In_Imp implements AccountControllerImp{
+class Account_Log_In_Imp implements AccountControllerGetImp{
 
-    public function handle(Request $request)
+    public function handle()
     {
         $data = ['account' => "Kevin","password" => "12345"];
         $title = "登入畫面";
