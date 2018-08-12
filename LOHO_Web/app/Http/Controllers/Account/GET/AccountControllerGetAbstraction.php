@@ -4,15 +4,6 @@ namespace App\Http\Controllers\Account\GET;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use Illuminate\Support\Facades\Input;
-use Illuminate\Support\Facades\Crypt;
-use App\User;
-use Illuminate\Support\Facades\DB;
-use Illuminate\Routing\Redirector;
-use Illuminate\Http\RedirectResponse ;
-use Hash;
-use Illuminate\Support\Facades\Mail;
-use Validator;
 use App\Http\Controllers\Account\GET\AccountControllerGetImp\Account_Log_In_Imp;
 
 
@@ -59,7 +50,4 @@ class AccountControllerGetAbstraction extends Controller
         ->json(['email' => 'test@gmail']);
     }
 
-
-
-    
 }
