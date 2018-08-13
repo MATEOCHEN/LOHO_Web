@@ -24,3 +24,7 @@
 0806進度：
 完成：解決NAV BAR會擋到本文內容顯示、引入重複BS檔案
 未完成：Account_Log_In NAV BAR會跑版
+
+0813進度：研究API串接:https://g8787856.github.io/2018/06/30/laravel-passport/
+        與ServiceProvider 概念
+
