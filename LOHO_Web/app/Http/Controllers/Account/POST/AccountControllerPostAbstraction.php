@@ -37,5 +37,13 @@ class AccountControllerPostAbstraction extends Controller
         return $SendModifyPassword->handle($request);
 
     }
+
+    public function EmailVerification(Request $request)
+    {
+        return response()->json(array(
+            'status' => 1,
+            'msg' => 'ok',
+        ));
+    }
     
 }

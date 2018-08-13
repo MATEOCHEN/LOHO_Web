@@ -88,7 +88,7 @@ Route::group(['namespace' => 'Account\POST','prefix' => 'Account'], function () 
     
     Route::post(
         'EmailVerification',
-        array('uses' => 'AccountConAccountControllerAbstractiontroller@EmailVerification', 'as' => 'EmailVerification')
+        array('uses' => 'AccountControllerPostAbstraction@EmailVerification', 'as' => 'EmailVerification')
     );
 
     Route::post(

@@ -1,9 +1,12 @@
 @extends('Layout.master')
 
 @section('title','忘記密碼')
+
 @section('head')
+
 <link href="{{ URL::asset('/css/Forget_Password.css') }}" rel="stylesheet" type="text/css" />
 
+<script src="{{ URL::asset('/js/sendMail.js') }}"></script>
 @stop
 
 @section('content')
@@ -45,27 +48,6 @@
 
     </div>
 </div>
-<script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.3.1.min.js"></script>
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-<script>
-        $(document).ready(function () {
-            $('#emailButton').click(function ($) { 
-                alert('click');
-                $.ajax({
-                   type:'POST',
-                   url:'/Account/EmailVerification',
-                   data:'123',
-                   dataType:'JSON',
-                   success:function(data){
-                        alert(data);
-                   },
-                   error:function(data){
-                        alert('error');
-                   },
-                   }
-                );
-            });
-        });
-    </script>
-@stop
 
+
+@stop
