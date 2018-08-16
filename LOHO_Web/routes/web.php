@@ -25,6 +25,7 @@ Route::group([], function () {
         '/TestDB',
         array('uses' => 'HomeController@TestDB', 'as' => 'TestDB')
     );
+
 });
 
 Route::group(['middleware' => 'AdminLogin','namespace' => 'Account\GET','prefix' => 'Account'], function () {
@@ -42,6 +43,11 @@ Route::group(['middleware' => 'AdminLogin','namespace' => 'Account\GET','prefix'
     Route::get(
         'ModifyPassword',
         array('uses' => 'AccountControllerGetAbstraction@ModifyPassword', 'as' => 'ModifyPassword')
+    );
+
+    Route::get(
+        '/Logout',
+        array('uses' => 'AccountControllerGetAbstraction@Logout', 'as' => 'Logout')
     );
 });
 

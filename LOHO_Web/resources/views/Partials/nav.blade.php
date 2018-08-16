@@ -1,6 +1,6 @@
 <div id = "nav">
     <nav class="navbar navbar-expand-lg navbar-light bg-light" >
-        <a class="navbar-brand" href="#">
+        <a class="navbar-brand" href="{{ url("/") }}">
             <img alt="Brand" src="<?php echo asset('/Image/LOGO.svg');?>" width="150px" height="70spx">
         </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -141,8 +141,12 @@
                     <button class="btn btn-outline-custom" type="submit">搜尋</button>
             </form>
                 <div class="d-flex flex-row justify-content-end">
-                    <a class="nav-link text-secondary" href="#">登入</a>
-                    <a class="nav-link text-secondary" href="#">購物車</a>	
+                    @if (session('admin'))
+                    <a class="nav-link text-secondary" href="{{ url("Account/Logout") }}">登出</a>
+                        @else
+                        <a class="nav-link text-secondary" href="{{ url("Account/Account_Log_In") }}">登入</a>
+                    @endif    
+                    <a class="nav-link text-secondary" href="{{ url("Account/PersonalInformation") }}">購物車</a>	
                 </div>
             </div>
         </div>

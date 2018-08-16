@@ -5,7 +5,7 @@ namespace App\Http\Controllers\Account\GET;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Http\Controllers\Account\GET\AccountControllerGetImp\Account_Log_In_Imp;
-
+use Illuminate\Support\Facades\Session;
 
 class AccountControllerGetAbstraction extends Controller
 {
@@ -48,6 +48,14 @@ class AccountControllerGetAbstraction extends Controller
     public function EmailVerification(Request $request){
         return response()
         ->json(['email' => 'test@gmail']);
+    }
+
+    public function Logout(){
+        if (Session::has('admin'))
+        {
+            Session::forget('admin');
+        }
+        return redirect("/");
     }
 
 }
