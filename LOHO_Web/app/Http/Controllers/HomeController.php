@@ -13,8 +13,8 @@ class HomeController extends BaseController
     use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
 
     public function index(){
-
-         return view('Index\LOHO_Index');
+         $str =' <script>alert("歡迎光臨");</script>';
+         return view('Index\LOHO_Index',compact('str'));
     }
 
     public function Layout(){

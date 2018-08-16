@@ -21,7 +21,6 @@ class AfterAccount_Log_In implements AccountControllerPostImp{
         }
         
         session(["admin" => $user->name]);
-        
 
         return redirect('/');
     }

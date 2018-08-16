@@ -31,8 +31,6 @@
         {{ $title}} {{ $data['account']}}{{ $data['password']}}
         {{-- 如果tel不存在傳預設值 --}}
         {{isset($tel)?$tel:'無此電話'}}
-        {{-- 傳script需使用!! --}}
-        {!!$str!!}
         @if($price > 100)
             {{'高單價'}}<br>
             @else

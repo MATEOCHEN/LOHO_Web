@@ -130,6 +130,11 @@
       </div>
     </div>
   </div>
+  @if (!session('admin'))
+        {{-- 傳script需使用!! --}}
+        {!!$str!!}
+  @endif
+
 @stop
 
 
