@@ -1,15 +1,12 @@
 <?php
 
 namespace App;
-
-use Illuminate\Notifications\Notifiable;
-use Illuminate\Foundation\Auth\User as Authenticatable;
-
-use \App\Student as StudentEloquent;//匯入關聯Eloquent
-class User extends Authenticatable
+use Illuminate\Database\Eloquent\Model;
+use Illuminate\Foundation\Auth\AuthenticatesUsers;
+use Illuminate\Auth\Authenticatable;
+class User extends Model implements \Illuminate\Contracts\Auth\Authenticatable
 {
-    use Notifiable;
-
+    use Authenticatable;
     /**
      * The attributes that are mass assignable.
      *
@@ -28,7 +25,4 @@ class User extends Authenticatable
         'password', 'remember_token',
     ];
 
-    public function student(){
-        return $this->hasOne(StudentEloquent::class);
-    }
 }

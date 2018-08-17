@@ -4,25 +4,38 @@ namespace App\Http\Controllers\Account\POST\AccountControllerPostImp;
 use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\Crypt;
 use App\User;
+use Validator;
+use Illuminate\Support\Facades\Auth;
 
 class AfterAccount_Log_In implements AccountControllerPostImp{
     public function handle(\Illuminate\Http\Request $request)
     {
-        $input = Input::all();
-        $account = $input['account'];
-        $password = $input['password'];
-        $user = User::where('name', $account)->first();
-        
-        $user = User::where('name', $account)->first();
-        $decryptAccount = Crypt::decrypt($user->password);
+        $input = $request->all();
+        $rules = ['account' => 'required| between:4,20',
+        'password' => 'required| between:4,20' ];
 
-        if($decryptAccount != $password ){
-            return back()->with('msg','帳號或密碼錯誤');
+        $messages = ['account.required'=>'帳號必填欄位',
+        'account.between'=>'帳號必須4-20位數字',
+        'password.required'=>'密碼必填欄位',
+        'password.between'=>'密碼必須4-20位數字',
+        ];
+        $validator = Validator::make($input,$rules,$messages);
+
+        if($validator->passes()){
+            if (Auth::attempt(['name' => $input['account'], 'password' => $input['password']])) {
+                // 如果認證通過...
+                session(["admin" => $input['account']]);
+                return redirect('/');
+            }
+            else{
+                return back()->withErrors('帳號或密碼錯誤');
+            }
         }
-        
-        session(["admin" => $user->name]);
-        
-
-        return redirect('/');
+        else{
+            return back()->withErrors($validator);
+        }
+    
     }
+
+    
 }

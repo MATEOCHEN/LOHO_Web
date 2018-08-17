@@ -41,6 +41,11 @@
         @foreach($scores as $subject => $score)
             {{$subject}}={{$score}}<br>
         @endforeach
+        <ul>
+            @foreach ($errors->all() as $error)
+                <li>{{ $error }}</li>
+            @endforeach
+        </ul>
         @if(session('msg'))
             <p>帳號或密碼錯誤</p>
         @endif
