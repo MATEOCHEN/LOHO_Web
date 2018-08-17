@@ -1,0 +1,78 @@
+.content{
+    width: 375px;
+    height: 667px;
+    background-image: url('/LOHO_Web/public/Image/遊戲畫面素材/背景1.png');
+}
+
+#game{
+    width: 375px;
+    height: 340px;
+    margin: 0 auto;
+    position: absolute;
+    top: 225px;
+    display: -webkit-box;
+    -webkit-box-pack: center;
+    -webkit-box-align: center;
+}
+
+#cards{
+    width: 355px;
+    height: 320px;
+    position: relative;
+    margin: 20px auto;
+}
+
+.card{
+    width: 80px;
+    height: 120px;
+    position: absolute;
+}
+
+.face{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    -webkit-backface-visibility: hidden;
+    -webkit-transition: all .3s;
+}
+
+.front{
+    background: url("/LOHO_Web/public/Image/遊戲畫面素材/deck.png")0 -480px;
+    z-index: 10;
+}
+
+.back{
+    background: url("/LOHO_Web/public/Image/遊戲畫面素材/deck.png");
+    -webkit-transform: rotateY(-180deg);
+    z-index: 8;
+}
+
+.face:hover{
+    -webkit-box-shadow: 0 0 40px #aaa;
+}
+
+/*牌面定位樣式*/
+.cardAJ{background-position: -800px 0;}
+.cardAQ{background-position: -880px 0;}
+.cardAK{background-position: -960px 0;}
+.cardBJ{background-position: -800px -120px;}
+.cardBQ{background-position: -880px -120px;}
+.cardBK{background-position: -960px -120px;}
+
+.card-flipped .fornt{
+    /*保證牌底在牌面下，zindex切換為小值*/
+    z-index: 8;
+    -webkit-transform: rotateY(180deg);
+}
+
+.card-flipped .back{
+    /*保證牌底在牌面上，z-index切換為大值*/
+    z-index: 10;
+    /*前面牌面一經翻過去，現在翻回來*/
+    -webkit-transform: rotateY(0deg);
+}
+
+/*移除牌*/
+.card-removed{
+    opacity: 0;
+}
