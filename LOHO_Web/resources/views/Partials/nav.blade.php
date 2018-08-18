@@ -141,7 +141,7 @@
                     <button class="btn btn-outline-custom" type="submit">搜尋</button>
             </form>
                 <div class="d-flex flex-row justify-content-end">
-                    @if (session('admin'))
+                    @if (Auth::check())
                     <a class="nav-link text-secondary" href="{{ url("Account/Logout") }}">登出</a>
                         @else
                         <a class="nav-link text-secondary" href="{{ url("Account/Account_Log_In") }}">登入</a>

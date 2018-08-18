@@ -5,11 +5,7 @@
 <link href="{{ URL::asset('/css/Index.css') }}" rel="stylesheet" type="text/css" />
 @stop
 @section('content')
-@if (session('Auth'))
-<div>
-    {{ session('Auth') }}
-</div>
-@endif
+
   <div class="content">
     <div class="container-fluid py-5">
       <div class="row">
@@ -135,7 +131,7 @@
       </div>
     </div>
   </div>
-  @if (session('admin'))
+  @if (!Auth::check())
         {{-- 傳script需使用!! --}}
         {!!$str!!}
   @endif
