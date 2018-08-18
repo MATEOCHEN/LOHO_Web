@@ -10,7 +10,7 @@ class AfterRegisterAccount implements AccountControllerPostImp
         $user = new User;
         
         $user->name = $request->account;
-        $password = Crypt::encrypt($request->password);
+        $password = bcrypt($request->password);
         $user->password = $password;
         $user->email = $request->email;
         $user->save();
