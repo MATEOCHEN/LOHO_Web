@@ -1,0 +1,3 @@
+購物車專案 composer 需先install再update並update autoload.php, 
+database需重新migrate, 並在Appservice provider引入Schema::default value
+解決MySQL5.6字串長度問題
