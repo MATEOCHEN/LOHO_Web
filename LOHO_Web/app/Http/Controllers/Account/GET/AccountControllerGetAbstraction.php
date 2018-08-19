@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Http\Controllers\Account\GET\AccountControllerGetImp\Account_Log_In_Imp;
 use Illuminate\Support\Facades\Session;
+use Illuminate\Support\Facades\Auth;
 
 class AccountControllerGetAbstraction extends Controller
 {
@@ -51,9 +52,9 @@ class AccountControllerGetAbstraction extends Controller
     }
 
     public function Logout(){
-        if (Session::has('admin'))
+        if (Auth::check())
         {
-            Session::forget('admin');
+            Auth::logout();
         }
         return redirect("/");
     }
