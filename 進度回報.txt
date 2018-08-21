@@ -28,3 +28,8 @@
 0813進度：研究API串接:https://g8787856.github.io/2018/06/30/laravel-passport/
         與ServiceProvider 概念
 
+0821 meeting:
+shopping route:
+http://localhost/LOHO_Web/public/Shopping/BrowseItems
+http://localhost/LOHO_Web/public/Shopping/ShoppingItem
+
