@@ -30,8 +30,8 @@
                 </div>
             </div>
             <div class="right">
-                <div class="wrap text-center">
-                    <div class="shopping-item-block ">
+                <ul class="wrap text-center">
+                    <li class="shopping-item-block ">
                         <div class="shopping-item-img">
                             <img src="{{ URL::asset('/Image/竹碳運動襪.jpg') }}" alt="竹碳運動襪" class="img-fluid">
                         </div>
@@ -46,8 +46,8 @@
                             </select>
                             <button type="button" class="btn btn-outline-dark btn-sm">加入購物車</button>
                         </div>
-                    </div>
-                    <div class="shopping-item-block ">
+                    </li>
+                    <li class="shopping-item-block ">
                         <div class="shopping-item-img">
                             <img src="{{ URL::asset('/Image/竹碳運動襪.jpg') }}" alt="竹碳運動襪" class="img-fluid">
                         </div>
@@ -62,8 +62,8 @@
                             </select>
                             <button type="button" class="btn btn-outline-dark btn-sm">加入購物車</button>
                         </div>
-                    </div>
-                    <div class="shopping-item-block ">
+                    </li>
+                    <li class="shopping-item-block ">
                         <div class="shopping-item-img">
                             <img src="{{ URL::asset('/Image/竹碳運動襪.jpg') }}" alt="竹碳運動襪" class="img-fluid">
                         </div>
@@ -78,8 +78,8 @@
                             </select>
                             <button type="button" class="btn btn-outline-dark btn-sm">加入購物車</button>
                         </div>
-                    </div>
-                    <div class="shopping-item-block ">
+                    </li>
+                    <li class="shopping-item-block ">
                         <div class="shopping-item-img">
                             <img src="{{ URL::asset('/Image/竹碳運動襪.jpg') }}" alt="竹碳運動襪" class="img-fluid">
                         </div>
@@ -94,8 +94,8 @@
                             </select>
                             <button type="button" class="btn btn-outline-dark btn-sm">加入購物車</button>
                         </div>
-                    </div>
-                    <div class="shopping-item-block ">
+                    </li>
+                    <li class="shopping-item-block ">
                         <div class="shopping-item-img">
                             <img src="{{ URL::asset('/Image/竹碳運動襪.jpg') }}" alt="竹碳運動襪" class="img-fluid">
                         </div>
@@ -110,8 +110,8 @@
                             </select>
                             <button type="button" class="btn btn-outline-dark btn-sm">加入購物車</button>
                         </div>
-                    </div>
-                    <div class="shopping-item-block ">
+                    </li>
+                    <li class="shopping-item-block ">
                         <div class="shopping-item-img">
                             <img src="{{ URL::asset('/Image/竹碳運動襪.jpg') }}" alt="竹碳運動襪" class="img-fluid">
                         </div>
@@ -126,8 +126,8 @@
                             </select>
                             <button type="button" class="btn btn-outline-dark btn-sm">加入購物車</button>
                         </div>
-                    </div>
-                </div>
+                    </li>
+                </ul>
             </div>
         </div>
     </div>
