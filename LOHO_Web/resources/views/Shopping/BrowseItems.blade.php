@@ -3,6 +3,30 @@
 @section('title','瀏覽商品')
 @section('head')
 <link href="{{ URL::asset('/css/Shopping.css') }}" rel="stylesheet" type="text/css" />
+<script src="{{ URL::asset('/js/jquery-3.3.1.min.js') }}"></script>
+<script>
+    $(document).ready(function () {
+        $('#item').click(function (e) { 
+            alert("click");
+            $.ajaxSetup({
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            }
+            });
+
+            $.ajax({
+                type: "POST",
+                url: "addCart",
+                data: {item : '竹炭襪'},
+                dataType: "json",
+                success: function (response) {
+                    alert(response.item);
+                }
+            });
+        });
+        
+    });
+</script>
 @stop
 
 @section('content')
@@ -44,7 +68,7 @@
                                     <option value="two">2
                                         <option value="three">3
                             </select>
-                            <button type="button" class="btn btn-outline-dark btn-sm">加入購物車</button>
+                            <button type="button" id = "item" class="btn btn-outline-dark btn-sm">加入購物車</button>
                         </div>
                     </li>
                     <li class="shopping-item-block ">

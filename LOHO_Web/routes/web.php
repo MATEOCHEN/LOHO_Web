@@ -112,4 +112,9 @@ Route::group(['prefix' => 'Shopping'], function () {
         'ShoppingItem',
         array('uses' => 'Shopping\ShoppingController@ShoppingItem', 'as' => 'ShoppingItem')
     );
+
+    Route::post(
+        'addCart',
+        array('uses' => 'Shopping\ShoppingController@addCart', 'as' => 'addCart')
+    );
 });
