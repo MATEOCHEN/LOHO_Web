@@ -22,6 +22,7 @@ class ShoppingController extends BaseController
     public function addCart(Request $request){
         $item_name = $request->item_name;
         $item_price = $request->item_price;
-        return response()->json(array('item_name'=>$item_name,'item_price'=>$item_price));
+        $item_count = $request->item_count;
+        return response()->json(array('item_name'=>$item_name,'item_price'=>$item_price,'item_count'=>$item_count));
     }
 }

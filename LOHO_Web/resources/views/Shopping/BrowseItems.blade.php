@@ -15,14 +15,14 @@
             });
             let item_name = $(item_id).children("div.text").children("h5.name").text();
             let item_price = $(item_id).children("div.text").children("h5.price").text();
-
+            let item_count = $(item_id).children("div.text").children("select").val();
             $.ajax({
                 type: "POST",
                 url: "addCart",
-                data: {item_name : item_name,item_price : item_price},
+                data: {item_name : item_name,item_price : item_price,item_count : item_count},
                 dataType: "json",
                 success: function (response) {
-                    alert(response.item_name +" "+response.item_price);
+                    alert(response.item_name +" "+response.item_price+" "+response.item_count);
                 }
             });
     });
@@ -66,9 +66,9 @@
                             <h5 class="price">NT$240</h5>
                             <p class="description">耐用好穿</p>
                             <select name="選單名稱" size="1">
-                                <option value="one" selected> 1
-                                    <option value="two">2
-                                        <option value="three">3
+                                <option value="1" selected> 1
+                                    <option value="2">2
+                                        <option value="3">3
                             </select>
                             <button type="button" class="btn btn-outline-dark btn-sm" onclick="addCart('s001')">加入購物車</button>
                         </div>
@@ -82,9 +82,9 @@
                             <h5 class="price">NT$240</h5>
                             <p class="description">耐用好穿</p>
                             <select name="選單名稱" size="1">
-                                <option value="one" selected> 1
-                                    <option value="two">2
-                                        <option value="three">3
+                                <option value="1" selected> 1
+                                    <option value="2">2
+                                        <option value="3">3
                             </select>
                             <button type="button" class="btn btn-outline-dark btn-sm" onclick="addCart('s002')">加入購物車</button>
                         </div>
@@ -98,9 +98,9 @@
                             <h5 class="price">NT$240</h5>
                             <p class="description">耐用好穿</p>
                             <select name="選單名稱" size="1">
-                                <option value="one" selected> 1
-                                    <option value="two">2
-                                        <option value="three">3
+                                <option value="1" selected> 1
+                                    <option value="2">2
+                                        <option value="3">3
                             </select>
                             <button type="button" class="btn btn-outline-dark btn-sm" onclick="addCart('s003')">加入購物車</button>
                         </div>
@@ -114,9 +114,9 @@
                             <h5 class="price">NT$240</h5>
                             <p class="description">耐用好穿</p>
                             <select name="選單名稱" size="1">
-                                <option value="one" selected> 1
-                                    <option value="two">2
-                                        <option value="three">3
+                                <option value="1" selected> 1
+                                    <option value="2">2
+                                        <option value="3">3
                             </select>
                             <button type="button" class="btn btn-outline-dark btn-sm" onclick="addCart('s004')">加入購物車</button>
                         </div>
@@ -130,9 +130,9 @@
                             <h5 class="price">NT$240</h5>
                             <p class="description">耐用好穿</p>
                             <select name="選單名稱" size="1">
-                                <option value="one" selected> 1
-                                    <option value="two">2
-                                        <option value="three">3
+                                <option value="1" selected> 1
+                                    <option value="2">2
+                                        <option value="3">3
                             </select>
                             <button type="button" class="btn btn-outline-dark btn-sm" onclick="addCart('s005')">加入購物車</button>
                         </div>
@@ -146,9 +146,9 @@
                             <h5 class="price">NT$240</h5>
                             <p class="description">耐用好穿</p>
                             <select name="選單名稱" size="1">
-                                <option value="one" selected> 1
-                                    <option value="two">2
-                                        <option value="three">3
+                                <option value="1" selected> 1
+                                    <option value="2">2
+                                        <option value="3">3
                             </select>
                             <button type="button" class="btn btn-outline-dark btn-sm" onclick="addCart('s006')">加入購物車</button>
                         </div>
