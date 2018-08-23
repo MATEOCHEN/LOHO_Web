@@ -10,7 +10,7 @@
 
             $.ajax({
                 type: "GET",
-                url: "http://localhost/LOHO_Web/public/Shopping/getCart",
+                url: "/LOHO_Web/public/Shopping/getCart",
                 data: "",
                 dataType: "json",
                 success: function (response) {
