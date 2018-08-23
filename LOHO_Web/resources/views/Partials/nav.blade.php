@@ -1,3 +1,27 @@
+<script>
+        function getCart() {
+            $(document).ready(function () {
+                alert("您的商品");
+            $.ajaxSetup({
+                headers: {
+                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                }
+                });
+
+            $.ajax({
+                type: "GET",
+                url: "getCart",
+                data: "",
+                dataType: "json",
+                success: function (response) {
+                    
+                    alert(response.item_name+" "+response.item_price+" "+response.item_count);
+                }
+            });
+            });
+        }
+
+</script>
 <div id = "nav">
     <nav class="navbar navbar-expand-lg navbar-light bg-light" >
         <a class="navbar-brand" href="{{ url("/") }}">
@@ -146,7 +170,7 @@
                         @else
                         <a class="nav-link text-secondary" href="{{ url("Account/Account_Log_In") }}">登入</a>
                     @endif    
-                    <a class="nav-link text-secondary" href="{{ url("Account/PersonalInformation") }}">購物車</a>	
+                    <div class="nav-link text-secondary" onclick="getCart()">購物車</div>	
                 </div>
             </div>
         </div>

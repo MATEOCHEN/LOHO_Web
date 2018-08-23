@@ -3,8 +3,8 @@
 @section('title','瀏覽商品')
 @section('head')
 <link href="{{ URL::asset('/css/Shopping.css') }}" rel="stylesheet" type="text/css" />
-<script src="{{ URL::asset('/js/jquery-3.3.1.min.js') }}"></script>
-<script>
+
+<script> 
     function addCart(item_id) {
         var item_id = '#' + item_id;
         $(document).ready(function () {

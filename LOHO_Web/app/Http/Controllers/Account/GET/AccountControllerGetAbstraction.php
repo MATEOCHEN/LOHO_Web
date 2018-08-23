@@ -55,6 +55,9 @@ class AccountControllerGetAbstraction extends Controller
         if (Auth::check())
         {
             Auth::logout();
+            Session::forget('item_name');
+            Session::forget('item_price');
+            Session::forget('item_count');
         }
         return redirect("/");
     }
