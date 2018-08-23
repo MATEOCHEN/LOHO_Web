@@ -10,7 +10,7 @@
 
             $.ajax({
                 type: "GET",
-                url: "getCart",
+                url: "http://localhost/LOHO_Web/public/Shopping/getCart",
                 data: "",
                 dataType: "json",
                 success: function (response) {
@@ -62,7 +62,7 @@
             </li>
     
     
-                <a class="nav-item nav-link h5" href="#">精選主題</a>
+                <a class="nav-item nav-link h5" href="{{ url("Shopping/BrowseItems") }}">精選主題</a>
     
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown h5" href="#" id="DropdownMenuMen" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -170,7 +170,7 @@
                         @else
                         <a class="nav-link text-secondary" href="{{ url("Account/Account_Log_In") }}">登入</a>
                     @endif    
-                    <div class="nav-link text-secondary" onclick="getCart()">購物車</div>	
+                    <div class="nav-link text-secondary" onclick="getCart()" style="cursor: pointer;">購物車</div>	
                 </div>
             </div>
         </div>
