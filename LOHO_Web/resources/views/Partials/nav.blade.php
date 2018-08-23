@@ -15,7 +15,12 @@
                 dataType: "json",
                 success: function (response) {
                     
-                    alert(response.item_name+" "+response.item_price+" "+response.item_count);
+                    for (let index = 0; index < response.item_name.length; index++) {
+                        const item_name = response.item_name[index];
+                        const item_price = response.item_price[index];
+                        const item_count = response.item_count[index];
+                        alert(item_name +" "+item_price + " "+item_count);
+                    }
                 }
             });
             });
