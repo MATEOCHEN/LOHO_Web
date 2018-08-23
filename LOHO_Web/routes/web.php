@@ -26,6 +26,8 @@ Route::group([], function () {
         array('uses' => 'HomeController@TestDB', 'as' => 'TestDB')
     );
 
+
+
 });
 
 Route::group(['middleware' => 'AdminLogin','namespace' => 'Account\GET','prefix' => 'Account'], function () {
@@ -111,5 +113,15 @@ Route::group(['prefix' => 'Shopping'], function () {
     Route::get(
         'ShoppingItem',
         array('uses' => 'Shopping\ShoppingController@ShoppingItem', 'as' => 'ShoppingItem')
+    );
+
+    Route::post(
+        'addCart',
+        array('uses' => 'Shopping\ShoppingController@addCart', 'as' => 'addCart')
+    );
+
+    Route::get(
+        '/getCart',
+        array('uses' => 'Shopping\ShoppingController@getCart', 'as' => 'getCart')
     );
 });

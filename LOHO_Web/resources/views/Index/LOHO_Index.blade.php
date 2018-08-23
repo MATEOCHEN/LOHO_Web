@@ -5,7 +5,6 @@
 <link href="{{ URL::asset('/css/Index.css') }}" rel="stylesheet" type="text/css" />
 @stop
 @section('content')
-
   <div class="content">
     <div class="container-fluid py-5">
       <div class="row">
@@ -131,7 +130,7 @@
       </div>
     </div>
   </div>
-  @if (!Auth::check())
+  @if (!Auth::check()))
         {{-- 傳script需使用!! --}}
         {!!$str!!}
   @endif
