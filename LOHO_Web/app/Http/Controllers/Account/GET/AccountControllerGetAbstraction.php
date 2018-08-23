@@ -7,10 +7,6 @@ use App\Http\Controllers\Controller;
 use App\Http\Controllers\Account\GET\AccountControllerGetImp\Account_Log_In_Imp;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Auth;
-<<<<<<< HEAD
-=======
-
->>>>>>> d724b4f726a98a908a912e43ccb2a1caf649f1c2
 class AccountControllerGetAbstraction extends Controller
 {
     
@@ -63,12 +59,9 @@ class AccountControllerGetAbstraction extends Controller
         if (Auth::check())
         {
             Auth::logout();
-<<<<<<< HEAD
-=======
             Session::forget('item_name');
             Session::forget('item_price');
             Session::forget('item_count');
->>>>>>> d724b4f726a98a908a912e43ccb2a1caf649f1c2
         }
         return redirect("/");
     }
