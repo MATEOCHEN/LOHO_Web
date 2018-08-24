@@ -25,6 +25,9 @@ Route::group([], function () {
         '/TestDB',
         array('uses' => 'HomeController@TestDB', 'as' => 'TestDB')
     );
+
+
+
 });
 
 Route::group(['middleware' => 'AdminLogin','namespace' => 'Account\GET','prefix' => 'Account'], function () {
@@ -42,6 +45,11 @@ Route::group(['middleware' => 'AdminLogin','namespace' => 'Account\GET','prefix'
     Route::get(
         'ModifyPassword',
         array('uses' => 'AccountControllerGetAbstraction@ModifyPassword', 'as' => 'ModifyPassword')
+    );
+
+    Route::get(
+        '/Logout',
+        array('uses' => 'AccountControllerGetAbstraction@Logout', 'as' => 'Logout')
     );
 });
 
@@ -88,7 +96,7 @@ Route::group(['namespace' => 'Account\POST','prefix' => 'Account'], function () 
     
     Route::post(
         'EmailVerification',
-        array('uses' => 'AccountConAccountControllerAbstractiontroller@EmailVerification', 'as' => 'EmailVerification')
+        array('uses' => 'AccountControllerPostAbstraction@EmailVerification', 'as' => 'EmailVerification')
     );
 
     Route::post(
@@ -105,5 +113,15 @@ Route::group(['prefix' => 'Shopping'], function () {
     Route::get(
         'ShoppingItem',
         array('uses' => 'Shopping\ShoppingController@ShoppingItem', 'as' => 'ShoppingItem')
+    );
+
+    Route::post(
+        'addCart',
+        array('uses' => 'Shopping\ShoppingController@addCart', 'as' => 'addCart')
+    );
+
+    Route::get(
+        '/getCart',
+        array('uses' => 'Shopping\ShoppingController@getCart', 'as' => 'getCart')
     );
 });

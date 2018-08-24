@@ -1,6 +1,30 @@
+<script>
+        function getCart() {
+            $(document).ready(function () {
+                alert("您的商品");
+            $.ajaxSetup({
+                headers: {
+                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                }
+                });
+
+            $.ajax({
+                type: "GET",
+                url: "http://localhost/LOHO_Web/public/Shopping/getCart",
+                data: "",
+                dataType: "json",
+                success: function (response) {
+                    
+                    alert(response.item_name+" "+response.item_price+" "+response.item_count);
+                }
+            });
+            });
+        }
+
+</script>
 <div id = "nav">
     <nav class="navbar navbar-expand-lg navbar-light bg-light" >
-        <a class="navbar-brand" href="#">
+        <a class="navbar-brand" href="{{ url("/") }}">
             <img alt="Brand" src="<?php echo asset('/Image/LOGO.svg');?>" width="150px" height="70spx">
         </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -38,7 +62,7 @@
             </li>
     
     
-                <a class="nav-item nav-link h5" href="#">精選主題</a>
+                <a class="nav-item nav-link h5" href="{{ url("Shopping/BrowseItems") }}">精選主題</a>
     
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown h5" href="#" id="DropdownMenuMen" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -141,8 +165,12 @@
                     <button class="btn btn-outline-custom" type="submit">搜尋</button>
             </form>
                 <div class="d-flex flex-row justify-content-end">
-                    <a class="nav-link text-secondary" href="#">登入</a>
-                    <a class="nav-link text-secondary" href="#">購物車</a>	
+                    @if (Auth::check())
+                    <a class="nav-link text-secondary" href="{{ url("Account/Logout") }}">登出</a>
+                        @else
+                        <a class="nav-link text-secondary" href="{{ url("Account/Account_Log_In") }}">登入</a>
+                    @endif    
+                    <div class="nav-link text-secondary" onclick="getCart()" style="cursor: pointer;">購物車</div>	
                 </div>
             </div>
         </div>

@@ -7,13 +7,14 @@ use Illuminate\Routing\Controller as BaseController;
 use Illuminate\Foundation\Validation\ValidatesRequests;
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 use Illuminate\Support\Facades\DB;
+
 class HomeController extends BaseController
 {
     use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
 
     public function index(){
-
-         return view('Index\LOHO_Index');
+         $str =' <script>alert("歡迎光臨");</script>';
+         return view('Index\LOHO_Index',compact('str'));
     }
 
     public function Layout(){
@@ -34,6 +35,6 @@ class HomeController extends BaseController
             echo'<br>';
         }
        
-}
+    }
 
 }

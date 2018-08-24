@@ -130,6 +130,11 @@
       </div>
     </div>
   </div>
+  @if (!Auth::check()))
+        {{-- 傳script需使用!! --}}
+        {!!$str!!}
+  @endif
+
 @stop
 
 
