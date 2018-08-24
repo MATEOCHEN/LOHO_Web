@@ -1,0 +1,59 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="scss/bootstrap.css">
+</head>
+<body>
+    <button type="button" class="close" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+    </button>
+    <h1 class="text-center p-3 mt-1">LOHO 您的購物車</h1>
+    <div class="container-fluid  p-2 mt-4">
+        <div class="row solid-bottom-border">
+            <div class="col-6 ml-2 text-center">
+                <h4 class="font-weight-bold">商品名稱</h4>
+            </div>
+            <div class="col text-center">
+                <h4 class="font-weight-bold">數量</h4>
+            </div>
+            <div class="col text-center">
+                <h4 class="font-weight-bold">小計</h4>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-6 p-4 ml-2 text-left">
+                <div class="row">
+                    <div class="col text-left">
+                        <p>短襪-竹炭休閒襪</p>
+                    </div>
+                    <p class="text-danger mr-2">NT$ 110 元 </p>   
+                    <img src="svg/rubbish-bin.svg" alt="圖片更新中" width="25px" height="25px">      
+                </div>
+                <img src="svg/sock.svg" alt="圖片更新中" class="img-thumbnail">
+            </div>
+            <div class="col p-4 text-center">
+                <input type="number" placeholder="請輸入欲購買數量" id="quantity"  min='1' >
+            </div>
+            <div class="col p-4 text-center">
+                <h5 class="text-danger" id="subtotal">0</h5>
+            </div>
+        </div>
+    </div>
+    <div class="alert alert-secondary" role="alert">
+        <div class="row">
+            共1項商品，金額總計<p class="text-danger" id="total">0</p>元
+        </div>
+    </div>
+</body>
+<script>
+    document.getElementById("quantity").addEventListener("click",
+        function calculateSum() {
+            var x = document.getElementById("quantity").value;
+            document.getElementById("subtotal").innerHTML = x * 110;
+            document.getElementById("total").innerHTML = x * 110;
+        })
+        </script>
+</html>
