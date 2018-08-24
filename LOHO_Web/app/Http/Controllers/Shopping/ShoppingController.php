@@ -42,4 +42,9 @@ class ShoppingController extends BaseController
         return response()->json(['item_name' => $item_name,'item_price' => $item_price,'item_count' => $item_count]);
     }
 
+    public function ShoppingCart()
+    {
+        return view('ShoppingCart\ShoppingCart');
+    }
+
 }

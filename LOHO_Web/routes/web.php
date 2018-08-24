@@ -124,4 +124,9 @@ Route::group(['prefix' => 'Shopping'], function () {
         '/getCart',
         array('uses' => 'Shopping\ShoppingController@getCart', 'as' => 'getCart')
     );
+
+    Route::get(
+        '/ShoppingCart',
+        array('uses' => 'Shopping\ShoppingController@ShoppingCart', 'as' => 'ShoppingCart')
+    );
 });

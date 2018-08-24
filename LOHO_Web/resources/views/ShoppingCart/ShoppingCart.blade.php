@@ -4,7 +4,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
-    <link rel="stylesheet" href="scss/bootstrap.css">
+    <link rel="stylesheet" href="{{ URL::asset('scss/bootstrap.css') }}">
 </head>
 <body>
     <button type="button" class="close" aria-label="Close">
@@ -30,9 +30,9 @@
                         <p>短襪-竹炭休閒襪</p>
                     </div>
                     <p class="text-danger mr-2">NT$ 110 元 </p>   
-                    <img src="svg/rubbish-bin.svg" alt="圖片更新中" width="25px" height="25px">      
+                    <img src="{{ URL::asset('svg/rubbish-bin.svg') }}" alt="圖片更新中" width="25px" height="25px">      
                 </div>
-                <img src="svg/sock.svg" alt="圖片更新中" class="img-thumbnail">
+                <img src="{{ URL::asset('svg/sock.svg') }}" alt="圖片更新中" class="img-thumbnail">
             </div>
             <div class="col p-4 text-center">
                 <input type="number" placeholder="請輸入欲購買數量" id="quantity"  min='1' >
