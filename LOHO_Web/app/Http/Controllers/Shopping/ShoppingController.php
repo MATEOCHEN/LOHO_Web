@@ -44,7 +44,12 @@ class ShoppingController extends BaseController
 
     public function ShoppingCart()
     {
-        return view('ShoppingCart\ShoppingCart');
+        $item_name = Session::get('item_name', '沒有商品');
+        $item_price = Session::get('item_price', '0');
+        $item_count = Session::get('item_count', '0');
+        $item_total = (double)$item_price*(double)$item_count;
+        $item_data = ['item_name' => $item_name,"item_price" => $item_price,"item_count"  => $item_count,"item_total" => $item_total];
+        return view('ShoppingCart\ShoppingCart',compact('item_data'));
     }
 
 }

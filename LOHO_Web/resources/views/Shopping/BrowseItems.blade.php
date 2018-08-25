@@ -16,6 +16,7 @@
             let item_name = $(item_id).children("div.text").children("h5.name").text();
             let item_price = $(item_id).children("div.text").children("h5.price").text();
             let item_count = $(item_id).children("div.text").children("select").val();
+            item_price = item_price.slice(3);
             $.ajax({
                 type: "POST",
                 url: "addCart",

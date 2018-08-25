@@ -170,7 +170,7 @@
                         @else
                         <a class="nav-link text-secondary" href="{{ url("Account/Account_Log_In") }}">登入</a>
                     @endif    
-                    <div class="nav-link text-secondary" onclick="getCart()" style="cursor: pointer;">購物車</div>	
+                    <a class="nav-link text-secondary"  href = "{{ url("Shopping/ShoppingCart") }}" style="cursor: pointer;">購物車</a>	
                 </div>
             </div>
         </div>
