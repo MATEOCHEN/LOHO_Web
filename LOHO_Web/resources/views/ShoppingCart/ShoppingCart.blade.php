@@ -27,7 +27,7 @@
                 <div class="col-6 p-4 ml-2 text-left">
                     <div class="row">
                         <div class="col text-left">
-                            <p>{{$item_data['item_name']}}</p>
+                            <p id="name">{{$item_data['item_name']}}</p>
                         </div>
                         <p class="text-danger mr-2" id = "price">{{$item_data['item_price']}} </p>
                         <img src="{{ URL::asset('svg/rubbish-bin.svg') }}" alt="圖片更新中" width="25px" height="25px">
@@ -35,64 +35,69 @@
                     <img src="" alt="圖片更新中" class="img-thumbnail">
                 </div>
                 <div class="col p-4 text-center">
-                    <input type="number" placeholder={{$item_data[ 'item_count']}} id="quantity" min={{$item_data[ 'item_count']}}>
+                    <input type="number" value={{$item_data[ 'item_count']}} min = 1 id="quantity">
                 </div>
                 <div class="col p-4 text-center">
-                    <h5 class="text-danger" id="subtotal">{{$item_data['item_total']}}</h5>
+                    <h5 class="text-danger" id="subtotal"></h5>
                 </div>
             </div>
         </div>
         <div class="alert alert-secondary" role="alert">
             <div class="row">
-                共{{$item_data['item_count']}}項商品，金額總計
-                <p class="text-danger" id="total">{{$item_data['item_total']}}</p>元
+                共<span id = count>{{$item_data['item_count']}}</span>項商品，金額總計
+                <p class="text-danger" id="total"></p>元
             </div>
         </div>
     </body>
 </div>
 <script>
     $(document).ready(function () {
-        let price = $('#price').text();
-        let quantity = document.getElementById("quantity").value;
-        alert(quantity);
-    });
-</script>
-<script>
-    /*
-    $(document).ready(function () {
-        $.ajaxSetup({
-            headers: {
-                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+
+        let initial_name = $('#name').text();
+        let initial_price = $('#price').text();
+        let initial_quantity = parseInt(document.getElementById("quantity").value);
+        let initial_total = initial_price * initial_quantity;
+
+        setTotalandCount(initial_quantity,initial_total);
+
+        $("#quantity").on("change",function(event){
+            let click_count = parseInt(document.getElementById("quantity").value);
+
+            if(click_count < 1){
+                document.getElementById("quantity").value = 1;
+                click_count = parseInt(document.getElementById("quantity").value);
             }
+            let click_price = $('#price').text();
+            let click_total = click_price * click_count;
+            setTotalandCount(initial_quantity,click_total);
+
+            $.ajaxSetup({
+                headers: {
+                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                }
+            });
+
+            $.ajax({
+                type: "POST",
+                url: "addCart",
+                data: {item_name : initial_name,item_price : initial_price,item_count : click_count},
+                dataType: "json",
+                success: function (response) {
+                    alert("更改數量" + response.item_name +" "+response.item_price+" "+response.item_count);
+                }
+            });
         });
-        let item_name = '沒有商品'；
-        let item_price = '沒有價錢';
-        let item_count = '沒有數量';
-        $.ajax({
-            type: "GET",
-            url: "/LOHO_Web/public/Shopping/getCart",
-            data: "",
-            dataType: "json",
-            success: function (response) {
-                item_name = response.item_name;
-                item_price = response.item_price;
-                item_count = response.item_count;;
-            }
         });
-            var x = document.getElementById("quantity").value;
-            document.getElementById("subtotal").innerHTML = x * item_price;
-            document.getElementById("total").innerHTML = x * item_price;
 
-    });*/
 
-    /*
-    document.getElementById("quantity").addEventListener("click",
-        function calculateSum() {
-            var x = document.getElementById("quantity").value;
-            document.getElementById("subtotal").innerHTML = x * item_price;
-            document.getElementById("total").innerHTML = x * item_price;
-        })*/
+    function changeData() {
 
+    }
+    function setTotalandCount(total_count,total_sum) {
+        $('#subtotal').text(total_sum);
+        $('#total').text(total_sum);
+        $('#count').text(total_count);
+    }
 </script>
 @stop
 
