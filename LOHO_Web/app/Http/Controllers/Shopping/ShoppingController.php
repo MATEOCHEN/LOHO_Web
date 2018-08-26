@@ -21,32 +21,31 @@ class ShoppingController extends BaseController
     }
 
     public function addCart(Request $request){
+        $item = [
+            'name' => $request->item_name,
+            'price' => $request->item_price,
+            'count' => $request->item_count
+          ];
+          $request->session()->push('cart.item', $item);
         
-        $item_name = Session::put('item_name', $request->item_name);
-        $item_price = Session::put('item_price', $request->item_price);
-        $item_count = Session::put('item_count', $request->item_count);
-        $item_name = Session::get('item_name', '沒有商品');
-        $item_price = Session::get('item_price', '沒有價錢');
-        $item_count = Session::get('item_count', '沒有數量');
-        
-        return response()->json(array('item_name'=>$item_name,'item_price'=>$item_price,'item_count'=>$item_count));
+        return response()->json(array('item_name'=>$item['name'],'item_price'=>$item['price'],'item_count'=>$item['count']));
     }
 
     public function getCart(){
-
-        $item_name = Session::get('item_name', '沒有商品');
-        $item_price = Session::get('item_price', '沒有價錢');
-        $item_count = Session::get('item_count', '沒有數量');
+        
+        $cart = Session::get('cart');
+        $items = $cart['item'];
+        
 
         
-        return response()->json(['item_name' => $item_name,'item_price' => $item_price,'item_count' => $item_count]);
+        return response()->json(['items' => $items]);
     }
 
     public function ShoppingCart()
     {
-        $item_name = Session::get('item_name', '沒有商品');
-        $item_price = Session::get('item_price', '0');
-        $item_count = Session::get('item_count', '0');
+        $item_name = Session::get('item.name', '沒有商品');
+        $item_price = Session::get('item.price', '0');
+        $item_count = Session::get('item.count', '0');
         $item_total = (double)$item_price*(double)$item_count;
         $item_data = ['item_name' => $item_name,"item_price" => $item_price,"item_count"  => $item_count,"item_total" => $item_total];
         return view('ShoppingCart\ShoppingCart',compact('item_data'));

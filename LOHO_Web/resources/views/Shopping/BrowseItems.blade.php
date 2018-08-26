@@ -23,7 +23,7 @@
                 data: {item_name : item_name,item_price : item_price,item_count : item_count},
                 dataType: "json",
                 success: function (response) {
-                    alert(response.item_name +" "+response.item_price+" "+response.item_count);
+                    alert("加入 " + response.item_name +" NT$"+response.item_price+" "+response.item_count+"雙");
                 }
             });
     });
