@@ -120,6 +120,11 @@ Route::group(['prefix' => 'Shopping'], function () {
         array('uses' => 'Shopping\ShoppingController@addCart', 'as' => 'addCart')
     );
 
+    Route::post(
+        '/updateCart',
+        array('uses' => 'Shopping\ShoppingController@updateCart', 'as' => 'updateCart')
+    );
+
     Route::get(
         '/getCart',
         array('uses' => 'Shopping\ShoppingController@getCart', 'as' => 'getCart')

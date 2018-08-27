@@ -6,6 +6,7 @@
 
 <script> 
     function addCart(item_id) {
+        let item_id_cart = item_id;
         var item_id = '#' + item_id;
         $(document).ready(function () {
             $.ajaxSetup({
@@ -13,6 +14,7 @@
                 'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
             }
             });
+            
             let item_name = $(item_id).children("div.text").children("h5.name").text();
             let item_price = $(item_id).children("div.text").children("h5.price").text();
             let item_count = $(item_id).children("div.text").children("select").val();
@@ -20,10 +22,11 @@
             $.ajax({
                 type: "POST",
                 url: "addCart",
-                data: {item_name : item_name,item_price : item_price,item_count : item_count},
+                data: {item_id : item_id_cart,item_name : item_name,item_price : item_price,item_count : item_count},
                 dataType: "json",
                 success: function (response) {
-                    alert("加入 " + response.item_name +" NT$"+response.item_price+" "+response.item_count+"雙");
+                    let item = response.item;
+                    alert("加入 " + item.id + " "+item.name +" NT$"+item.price+" "+item.count+"雙");
                 }
             });
     });

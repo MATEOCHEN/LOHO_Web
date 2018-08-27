@@ -35,7 +35,7 @@
                     <img src="" alt="圖片更新中" class="img-thumbnail">
                 </div>
                 <div class="col p-4 text-center">
-                    <input type="number" value={{$item_data[ 'item_count']}} min = 1 id="quantity">
+                    <input type="number" value={{$item_data[ 'item_count']}} placeholder={{$item_data[ 'item_count']}} min = 1 id="quantity">
                 </div>
                 <div class="col p-4 text-center">
                     <h5 class="text-danger" id="subtotal"></h5>
@@ -51,8 +51,29 @@
     </body>
 </div>
 <script>
-    $(document).ready(function () {
+            $(document).ready(function () {
+                alert("您的商品");
+            $.ajaxSetup({
+                headers: {
+                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                }
+                });
 
+            $.ajax({
+                type: "GET",
+                url: "/LOHO_Web/public/Shopping/getCart",
+                data: "",
+                dataType: "json",
+                success: function (response) {
+                    response.items.forEach(item => {
+                        alert(item.name +" NT$"+ item.price+"元"+ item.count+ "雙");
+                    });
+                }
+            });
+            });
+        
+    $(document).ready(function () {
+        
         let initial_name = $('#name').text();
         let initial_price = $('#price').text();
         let initial_quantity = parseInt(document.getElementById("quantity").value);
@@ -79,11 +100,12 @@
 
             $.ajax({
                 type: "POST",
-                url: "addCart",
-                data: {item_name : initial_name,item_price : initial_price,item_count : click_count},
+                url: "updateCart",
+                data: {item_name : initial_name,item_count : click_count},
                 dataType: "json",
                 success: function (response) {
-                    alert("更改數量" + response.item_name +" "+response.item_price+" "+response.item_count);
+                    let item = response.item;
+                    alert("更改數量" + item.name +" "+item.count+"雙");
                 }
             });
         });
