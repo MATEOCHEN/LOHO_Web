@@ -30,7 +30,7 @@
                             <p id="name">{{$item_data['item_name']}}</p>
                         </div>
                         <p class="text-danger mr-2" id = "price">{{$item_data['item_price']}} </p>
-                        <img src="{{ URL::asset('svg/rubbish-bin.svg') }}" alt="圖片更新中" width="25px" height="25px">
+                        <img src="{{ URL::asset('svg/rubbish-bin.svg') }}" alt="圖片更新中" width="25px" height="25px" style="cursor: pointer;" id = "deleteItem">
                     </div>
                     <img src="" alt="圖片更新中" class="img-thumbnail">
                 </div>
@@ -109,8 +109,26 @@
                 }
             });
         });
-        });
 
+        $('#deleteItem').click(function (e) { 
+            $.ajaxSetup({
+                headers: {
+                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                }
+            });
+            
+            $.ajax({
+                type: "POST",
+                url: "deleteCart",
+                data: {item_name : initial_name},
+                dataType: "json",
+                success: function (response) {
+                    let item = response.item;
+                    alert("刪除" + item.name);
+                }
+            });
+        });
+        });
 
     function changeData() {
 

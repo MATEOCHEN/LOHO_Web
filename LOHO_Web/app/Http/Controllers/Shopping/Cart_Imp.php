@@ -71,4 +71,19 @@ class Cart_Imp
         $request->session()->put('cart.item', $cartItems);
         return response()->json(['item' => $current_cartItem]);
     }
+
+    public function deleteCart(Request $request)
+    {   //刪除會刪掉全部資料
+        $cartItems = Session::get('cart.item', []);
+        $current_cartItem;
+        foreach ($cartItems as &$cartItem) {
+            if ($cartItem['name'] == $request->item_name) {
+                    $current_cartItem = $cartItem;
+                    $request->session()->forget('cart.item');
+                    break;
+            }
+        }
+        
+        return response()->json(['item' => $current_cartItem]);
+    }
 }

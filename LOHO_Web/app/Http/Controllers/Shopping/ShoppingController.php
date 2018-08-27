@@ -25,15 +25,19 @@ class ShoppingController extends BaseController
     public function ShoppingCart()
     {
         //需研究如何動態新增刪除資料
-        $cart = Session::get('cart');
-        $items = $cart['item'];
-
-        
+        $items = Session::get('cart.item', []);
+        if($items == []){
+            $item_id = "";
+            $item_name = "";
+            $item_price = "";
+            $item_count = "";
+        }
+        else{
             $item_id = $items[0]['id'];
             $item_name = $items[0]['name'];
             $item_price = $items[0]['price'];
             $item_count = $items[0]['count'];
-        
+        }
 
         $item_total = (double)$item_price*(double)$item_count;
 
@@ -57,5 +61,11 @@ class ShoppingController extends BaseController
     {   //須研究foreach及session::put
         $cart_imp = new Cart_Imp();
         return $cart_imp->updateCart($request);
+    }
+
+    public function deleteCart(Request $request)
+    {
+        $cart_imp = new Cart_Imp();
+        return $cart_imp->deleteCart($request);
     }
 }

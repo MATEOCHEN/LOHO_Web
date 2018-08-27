@@ -130,6 +130,11 @@ Route::group(['prefix' => 'Shopping'], function () {
         array('uses' => 'Shopping\ShoppingController@getCart', 'as' => 'getCart')
     );
 
+    Route::post(
+        '/deleteCart',
+        array('uses' => 'Shopping\ShoppingController@deleteCart', 'as' => 'deleteCart')
+    );
+
     Route::get(
         '/ShoppingCart',
         array('uses' => 'Shopping\ShoppingController@ShoppingCart', 'as' => 'ShoppingCart')
