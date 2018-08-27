@@ -53,14 +53,14 @@
                 <div class="list-group-block">
                     <h1 class="my-4">新品上市</h1>
                     <div class="list-group">
-                        <a href="#" class="list-group-item">Category 1</a>
+                        <div  class="list-group-item" style="cursor: pointer;" id = "testAppend">Category 1</div>
                         <a href="#" class="list-group-item">Category 2</a>
                         <a href="#" class="list-group-item">Category 3</a>
                     </div>
                 </div>
             </div>
             <div class="right">
-                <ul class="wrap text-center">
+                <ul class="wrap text-center" id="item_list">
                     <li class="shopping-item-block " id="s001">
                         <div class="shopping-item-img">
                             <img src="{{ URL::asset('/Image/竹碳運動襪.jpg') }}" alt="竹碳運動襪" class="img-fluid">
@@ -166,4 +166,20 @@
     </div>
     </div>
     </div>
+    <script>
+        $(document).ready(function () {
+             
+            let item_area ='<li class="shopping-item-block " id="s0010">'+
+                        '<div class="shopping-item-img">'+
+                        '</div>'+
+                        '<div class="text">'+
+                            '<h5 class="name" id = "name">竹炭休閒襪-藍</h5>'+
+                        '</div>'+
+                    '</li>';
+            console.log('item_area');
+            $('#testAppend').click(function (e) { 
+               $('#item_list').append(item_area);
+            });
+        });
+    </script>
 @stop
