@@ -21,7 +21,7 @@ class ShoppingController extends BaseController
     }
 
     public function addCart(Request $request)
-    {
+    {   //需增加相同商品判別
         $item = [
              'id' => $request->item_id,
             'name' => $request->item_name,
@@ -35,7 +35,6 @@ class ShoppingController extends BaseController
 
     public function getCart()
     {
-        
         $cart = Session::get('cart');
         $items = $cart['item'];
 
@@ -44,6 +43,7 @@ class ShoppingController extends BaseController
 
     public function ShoppingCart()
     {
+        //需研究如何動態新增刪除資料
         $cart = Session::get('cart');
         $items = $cart['item'];
 
@@ -61,7 +61,7 @@ class ShoppingController extends BaseController
     }
 
     public function updateCart(Request $request)
-    {
+    {   //須研究foreach及session::put
         $cartItems = Session::get('cart.item', []);
         $current_cartItem;
         foreach ($cartItems as &$cartItem) {
