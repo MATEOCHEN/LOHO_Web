@@ -17,9 +17,30 @@ class ShoppingController extends BaseController
 
     public function BrowseItems()
     {
-        $items_name = ['竹炭休閒襪-黑','竹炭休閒襪-紅','竹炭休閒襪-白'];
+        $item_first = [
+            'id' => 'a001',
+            'name' => '機能休閒襪-黑',
+            'img_url' => '/Image/抗臭襪.jpg',
+            'price' => '200',
+        ];
 
-        return view('Shopping\BrowseItems',compact('items_name'));
+        $item_second = [
+            'id' => 'a002',
+            'name' => '機能休閒襪-紅',
+            'img_url' => '/Image/抗臭襪.jpg',
+            'price' => '250',
+        ];
+
+        $item_third = [
+            'id' => 'a003',
+            'name' => '機能休閒襪-白',
+            'img_url' => '/Image/抗臭襪.jpg',
+            'price' => '300',
+        ];
+
+        $items_list = [$item_first,$item_second,$item_third];
+
+        return view('Shopping\BrowseItems',compact('items_list'));
     }
 
     public function ShoppingItem()
@@ -75,36 +96,5 @@ class ShoppingController extends BaseController
     {
         $cart_imp = new Cart_Imp();
         return $cart_imp->deleteCart($request);
-    }
-
-    //儲存html
-    public function getItems()
-    {
-        $id = "s010";
-        $name = "竹炭休閒襪-粉紅";
-        $img_url = "/Image/竹碳運動襪.jpg";
-
-        $capatial = '<li class="shopping-item-block " id="s010">';
-        $img = '<div class="shopping-item-img">'+
-                        '<img src={{ URL::asset("/Image/竹碳運動襪.jpg") }} alt="竹碳運動襪" class="img-fluid">'+
-                    '</div>';
-        $info ='<div class="text">'+
-                        '<h5 class="name" id = "name">'+name+'</h5>'+
-                        '<h5 class="price">NT$240</h5>'+
-                        '<p class="description">耐用好穿</p>';
-        $selection = '<select name="選單名稱" size="1">'+
-                            '<option value="1" selected> 1'+
-                                '<option value="2">2'+
-                                    '<option value="3">3'+
-                        '</select>'+
-                        '<button type="button" class="btn btn-outline-dark btn-sm" onclick=addCart("s010")>加入購物車</button>'+
-                    '</div></li>';   
-        $html = $capatial+$img+$info+$selection;
-        return response()->json(array('html' => $id));
-    }
-
-    public function RecommendationItems()
-    {
-        return view('Shopping\RecommendationItems');
     }
 }

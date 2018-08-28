@@ -146,9 +146,4 @@ Route::group(['prefix' => 'Shopping'], function () {
         array('uses' => 'Shopping\ShoppingController@ShoppingCart', 'as' => 'ShoppingCart')
     );
 
-    //儲存html
-    Route::get(
-        '/getItems',
-        array('uses' => 'Shopping\ShoppingController@getItems', 'as' => 'getItems')
-    );
 });
