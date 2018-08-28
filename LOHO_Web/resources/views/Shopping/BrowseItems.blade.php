@@ -29,6 +29,7 @@
                     alert("加入 " + item.id + " "+item.name +" NT$"+item.price+" "+item.count+"雙");
                 }
             });
+            
     });
     }
 
@@ -157,6 +158,9 @@
                             <button type="button" class="btn btn-outline-dark btn-sm" onclick="addCart('s006')">加入購物車</button>
                         </div>
                     </li>
+                    @foreach ($items_name as $item)
+                        @include('Shopping.RecommendationItems')
+                    @endforeach
                 </ul>
             </div>
         </div>

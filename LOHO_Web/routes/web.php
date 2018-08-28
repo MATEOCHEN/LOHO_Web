@@ -110,6 +110,12 @@ Route::group(['prefix' => 'Shopping'], function () {
         'BrowseItems',
         array('uses' => 'Shopping\ShoppingController@BrowseItems', 'as' => 'BrowseItems')
     );
+
+    Route::get(
+        'RecommendationItems',
+        array('uses' => 'Shopping\ShoppingController@RecommendationItems', 'as' => 'RecommendationItems')
+    );
+
     Route::get(
         'ShoppingItem',
         array('uses' => 'Shopping\ShoppingController@ShoppingItem', 'as' => 'ShoppingItem')

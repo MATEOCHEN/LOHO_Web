@@ -17,7 +17,9 @@ class ShoppingController extends BaseController
 
     public function BrowseItems()
     {
-        return view('Shopping\BrowseItems');
+        $items_name = ['竹炭休閒襪-黑','竹炭休閒襪-紅','竹炭休閒襪-白'];
+
+        return view('Shopping\BrowseItems',compact('items_name'));
     }
 
     public function ShoppingItem()
@@ -99,5 +101,10 @@ class ShoppingController extends BaseController
                     '</div></li>';   
         $html = $capatial+$img+$info+$selection;
         return response()->json(array('html' => $id));
+    }
+
+    public function RecommendationItems()
+    {
+        return view('Shopping\RecommendationItems');
     }
 }
