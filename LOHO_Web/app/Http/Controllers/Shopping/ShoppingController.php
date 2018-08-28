@@ -9,16 +9,19 @@ use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
 
-use  App\Http\Controllers\Shopping\Cart_Imp;
+use App\Http\Controllers\Shopping\Cart_Imp;
+
 class ShoppingController extends BaseController
 {
     use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
 
-    public function BrowseItems(){
-         return view('Shopping\BrowseItems');
+    public function BrowseItems()
+    {
+        return view('Shopping\BrowseItems');
     }
 
-    public function ShoppingItem(){
+    public function ShoppingItem()
+    {
         return view('Shopping\ShoppingItem');
     }
 
@@ -26,27 +29,30 @@ class ShoppingController extends BaseController
     {
         //需研究如何動態新增刪除資料
         $items = Session::get('cart.item', []);
-        if($items == []){
-            $item_id = "";
-            $item_name = "";
-            $item_price = "";
-            $item_count = "";
-        }
-        else{
-            $item_id = $items[0]['id'];
-            $item_name = $items[0]['name'];
-            $item_price = $items[0]['price'];
-            $item_count = $items[0]['count'];
+        $item_id = "";
+        $item_name = "無商品";
+        $item_price = "0";
+        $item_count = "0";
+        $item_total = "0";
+        if (!($items == [])) {
+            foreach ($items as $item) {
+                if (!($item['name'] == null)) {
+                    $item_id = $item['id'];
+                    $item_name = $item['name'];
+                    $item_price = $item['price'];
+                    $item_count = $item['count'];
+                    $item_total = (double)$item_price * (double)$item_count;
+                    break;
+                }
+            }
         }
 
-        $item_total = (double)$item_price*(double)$item_count;
-
-        $item_data = ['item_id' => $item_id,'item_name' => $item_name,"item_price" => $item_price,"item_count"  => $item_count,"item_total" => $item_total];
-        return view('ShoppingCart\ShoppingCart',compact('item_data'));
+        $item_data = ['item_id' => $item_id, 'item_name' => $item_name, "item_price" => $item_price, "item_count" => $item_count, "item_total" => $item_total];
+        return view('ShoppingCart\ShoppingCart', compact('item_data'));
     }
 
     public function addCart(Request $request)
-    {   
+    {
         $cart_imp = new Cart_Imp();
         return $cart_imp->addCart($request);
     }

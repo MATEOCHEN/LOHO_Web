@@ -15,7 +15,12 @@
                 dataType: "json",
                 success: function (response) {
                     response.items.forEach(item => {
-                        alert(item.name +" NT$"+ item.price+"元"+ item.count+ "雙");
+                        if(item.name ==="null"){
+                            alert("商品已被刪除");
+                        }
+                        else{
+                            alert(item.name +" NT$"+ item.price+"元"+ item.count+ "雙");
+                        }
                     });
                 }
             });

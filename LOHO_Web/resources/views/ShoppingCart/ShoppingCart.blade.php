@@ -65,9 +65,15 @@
                 data: "",
                 dataType: "json",
                 success: function (response) {
-                    response.items.forEach(item => {
-                        alert(item.name +" NT$"+ item.price+"元"+ item.count+ "雙");
-                    });
+                    for (let index = 0; index < response.items.length; index++) {
+                        const item =  response.items[index];
+                        if(item.name === null){
+                            continue;
+                        }
+                        else{
+                            alert(item.name +" NT$"+ item.price+"元"+ item.count+ "雙");
+                        }
+                    }
                 }
             });
             });
