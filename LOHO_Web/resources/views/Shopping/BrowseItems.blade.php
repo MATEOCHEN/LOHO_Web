@@ -168,34 +168,44 @@
     </div>
     <script>
         $(document).ready(function () {
-             
-            let item_area ='<li class="shopping-item-block " id="s0010">'+
-                        '<div class="shopping-item-img">'+
-                        '</div>'+
-                        '<div class="text">'+
-                            '<h5 class="name" id = "name">竹炭休閒襪-藍</h5>'+
-                        '</div>'+
-                    '</li>';
-            
-            let first = '<li class="shopping-item-block " id="s010">';
-            let second = '<div class="shopping-item-img">'+
+
+
+            let id = "s010";
+            let name = "竹炭休閒襪-粉紅";
+            let img_url = "/Image/竹碳運動襪.jpg";
+
+            let capatial = '<li class="shopping-item-block " id="s010">';
+            let img = '<div class="shopping-item-img">'+
                             '<img src={{ URL::asset("/Image/竹碳運動襪.jpg") }} alt="竹碳運動襪" class="img-fluid">'+
                         '</div>';
-            let third ='<div class="text">'+
-                            '<h5 class="name" id = "name">竹炭休閒襪-粉紅</h5>'+
+            let info ='<div class="text">'+
+                            '<h5 class="name" id = "name">'+name+'</h5>'+
                             '<h5 class="price">NT$240</h5>'+
                             '<p class="description">耐用好穿</p>';
-            let fourth = '<select name="選單名稱" size="1">'+
+            let selection = '<select name="選單名稱" size="1">'+
                                 '<option value="1" selected> 1'+
                                     '<option value="2">2'+
                                         '<option value="3">3'+
                             '</select>'+
-                            '<button type="button" class="btn btn-outline-dark btn-sm" onclick="addCart("s010")">加入購物車</button>'+
+                            '<button type="button" class="btn btn-outline-dark btn-sm" onclick=addCart("s010")>加入購物車</button>'+
                         '</div></li>';    
-
+            
             $('#testAppend').click(function (e) { 
-               $('#item_list').append(first+second+third+fourth);
+                $('#item_list').append(capatial+img+info+selection);
             });
+            
+
+            /*儲存html
+            $('#testAppend').click(function (e) { 
+                $.ajaxSetup({
+                    headers: {
+                        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                    }
+                    });
+            $('#item_list').load("getItems", "", function (response, status, request) {
+                    alert(status);
+            });
+            });*/
         });
     </script>
 @stop
