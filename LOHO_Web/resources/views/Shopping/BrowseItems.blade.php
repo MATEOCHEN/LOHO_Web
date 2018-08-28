@@ -176,9 +176,25 @@
                             '<h5 class="name" id = "name">竹炭休閒襪-藍</h5>'+
                         '</div>'+
                     '</li>';
-            console.log('item_area');
+            
+            let first = '<li class="shopping-item-block " id="s010">';
+            let second = '<div class="shopping-item-img">'+
+                            '<img src={{ URL::asset("/Image/竹碳運動襪.jpg") }} alt="竹碳運動襪" class="img-fluid">'+
+                        '</div>';
+            let third ='<div class="text">'+
+                            '<h5 class="name" id = "name">竹炭休閒襪-粉紅</h5>'+
+                            '<h5 class="price">NT$240</h5>'+
+                            '<p class="description">耐用好穿</p>';
+            let fourth = '<select name="選單名稱" size="1">'+
+                                '<option value="1" selected> 1'+
+                                    '<option value="2">2'+
+                                        '<option value="3">3'+
+                            '</select>'+
+                            '<button type="button" class="btn btn-outline-dark btn-sm" onclick="addCart("s010")">加入購物車</button>'+
+                        '</div></li>';    
+
             $('#testAppend').click(function (e) { 
-               $('#item_list').append(item_area);
+               $('#item_list').append(first+second+third+fourth);
             });
         });
     </script>
