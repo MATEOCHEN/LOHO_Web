@@ -3,6 +3,10 @@
 @section('title','首頁')
 @section('head')
 <link href="{{ URL::asset('/css/Index.css') }}" rel="stylesheet" type="text/css" />
+@if (!Auth::check())
+{{-- 傳script需使用!! --}}
+{!!$str!!}
+@endif
 @stop
 @section('content')
   <div class="content">
@@ -129,11 +133,10 @@
         </div>
       </div>
     </div>
+    <div class="d-flex justify-content-center align-items-center">
+      <iframe src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Floho.socks.tourism.factory%2F%3Ffb_dtsg_ag%3DAdxuTU4m6K45LgcYj9BAFkdjIIOcZ97wHCW9Ta7Zm9KzSA%253AAdzmhSdXXD7oVtAOSjQT0vEdhJS6UAvOQL1ljJMTNXR3bQ&tabs=timeline&width=500&height=500&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId" width="600" height="600" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>
+    </div>
   </div>
-  @if (!Auth::check()))
-        {{-- 傳script需使用!! --}}
-        {!!$str!!}
-  @endif
 
 @stop
 

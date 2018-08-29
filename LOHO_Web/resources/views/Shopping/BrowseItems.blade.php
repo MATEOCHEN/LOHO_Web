@@ -40,10 +40,10 @@
     <nav aria-label="breadcrumb">
         <ol class="breadcrumb">
             <li class="breadcrumb-item">
-                <a href="#">Home</a>
+                <a href="/LOHO_Web/public/">首頁</a>
             </li>
             <li class="breadcrumb-item">
-                <a href="#">Library</a>
+                <a href="#">精選主題</a>
             </li>
             <li class="breadcrumb-item active" aria-current="page">Data</li>
         </ol>
@@ -54,7 +54,7 @@
                 <div class="list-group-block">
                     <h1 class="my-4">新品上市</h1>
                     <div class="list-group">
-                        <div  class="list-group-item" style="cursor: pointer;" id = "testAppend">Category 1</div>
+                        <a href="#" class="list-group-item">Category 1</a>
                         <a href="#" class="list-group-item">Category 2</a>
                         <a href="#" class="list-group-item">Category 3</a>
                     </div>
