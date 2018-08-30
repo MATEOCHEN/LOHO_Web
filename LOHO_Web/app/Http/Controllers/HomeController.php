@@ -7,6 +7,7 @@ use Illuminate\Routing\Controller as BaseController;
 use Illuminate\Foundation\Validation\ValidatesRequests;
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 use Illuminate\Support\Facades\DB;
+use App\Item;
 
 class HomeController extends BaseController
 {
@@ -17,8 +18,15 @@ class HomeController extends BaseController
          return view('Index\LOHO_Index',compact('str'));
     }
 
-    public function Layout(){
-        return view('Partials\Layout');
+    public function addItemsToDatabase(){
+        $item = new Item;
+
+        $item->name = "socks";
+        $item->price = 200;
+        $item->size = 'general';
+        $item->description = 'nice';
+        $item->remain_count = 100;
+        $item->save();
    }
 
    public function TestDB(){

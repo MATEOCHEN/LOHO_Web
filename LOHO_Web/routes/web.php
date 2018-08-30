@@ -17,8 +17,8 @@ Route::group([], function () {
         array('uses' => 'HomeController@Index', 'as' => 'Index')
     );
     Route::get(
-        '/Layout',
-        array('uses' => 'HomeController@Layout', 'as' => 'Layout')
+        '/addItemsToDatabase',
+        array('uses' => 'HomeController@addItemsToDatabase', 'as' => 'addItemsToDatabase')
     );
 
     Route::get(
