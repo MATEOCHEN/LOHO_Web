@@ -28,10 +28,5 @@ class AfterForgetPassword implements AccountControllerPostImp
             $hashed = Hash::make('plain-text');
         }
         
-        Mail::raw('測試使用 Laravel 5 的 Gmail 寄信服務', function($message)
-        {
-            $message->to('row123321@gmail.com');
-        });
-        
     }
 }

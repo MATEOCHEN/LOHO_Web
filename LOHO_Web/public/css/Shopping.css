@@ -44,7 +44,7 @@
 
 .shopping-item-block>h3{
     font-family: fantasy;
-    border: solid red 1px;
+    
 }
 
 .text{
@@ -74,7 +74,6 @@
         display: flex;
         flex-direction: row;
         flex-wrap: wrap;
-        border: solid green 2px;
         margin: 1% 1% 1% 1%;
         max-width: 90%;
         height: auto;
@@ -85,23 +84,26 @@
     }
     
     .wrap{
+        width: 100%;
         display: flex;
         flex-direction: row;
-        justify-content: start;
+        justify-content: center;
         flex-wrap: wrap;
     }
 
     .shopping-item-block{
-        width: 40%;
+        width: 42%;
         margin: 10px;
         padding: 0;
     }
 
     .left{
+        width: 100%;
         flex:none;
     }
     
     .right{
+        width: 100%;
         flex:none;
     }
 }

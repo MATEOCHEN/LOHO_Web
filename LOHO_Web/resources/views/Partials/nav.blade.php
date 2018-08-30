@@ -10,12 +10,18 @@
 
             $.ajax({
                 type: "GET",
-                url: "http://localhost/LOHO_Web/public/Shopping/getCart",
+                url: "/LOHO_Web/public/Shopping/getCart",
                 data: "",
                 dataType: "json",
                 success: function (response) {
-                    
-                    alert(response.item_name+" "+response.item_price+" "+response.item_count);
+                    response.items.forEach(item => {
+                        if(item.name ==="null"){
+                            alert("商品已被刪除");
+                        }
+                        else{
+                            alert(item.name +" NT$"+ item.price+"元"+ item.count+ "雙");
+                        }
+                    });
                 }
             });
             });
@@ -170,7 +176,7 @@
                         @else
                         <a class="nav-link text-secondary" href="{{ url("Account/Account_Log_In") }}">登入</a>
                     @endif    
-                    <div class="nav-link text-secondary" onclick="getCart()" style="cursor: pointer;">購物車</div>	
+                    <a class="nav-link text-secondary"  href="{{ url("Shopping/ShoppingCart") }}" style="cursor: pointer;">購物車</a>	
                 </div>
             </div>
         </div>
