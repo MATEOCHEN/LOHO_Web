@@ -23,9 +23,13 @@ Route::group([], function () {
 
     Route::get(
         '/TestDB',
-        array('uses' => 'HomeController@TestDB', 'as' => 'TestDB')
+        array('uses' => 'HomeController@TestDB', 'as' => 'upLoadFile')
     );
 
+    Route::post(
+        '/upload',
+        array('uses' => 'HomeController@upLoadFile', 'as' => 'upLoadFile')
+    );
 
 
 });
