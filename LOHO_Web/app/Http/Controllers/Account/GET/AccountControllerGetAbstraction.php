@@ -7,7 +7,6 @@ use App\Http\Controllers\Controller;
 use App\Http\Controllers\Account\GET\AccountControllerGetImp\Account_Log_In_Imp;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Auth;
-
 class AccountControllerGetAbstraction extends Controller
 {
     
@@ -18,8 +17,13 @@ class AccountControllerGetAbstraction extends Controller
     }
 
     public function AccountInformation()
-    {
-        return view('Account\AccountInformation');
+    {   
+        if(Auth::check()){
+            return view('Account\AccountInformation');
+        }
+        else{
+            return redirect("Account\Account_Log_In");
+        }
     }
 
     public function ForgetPassword()

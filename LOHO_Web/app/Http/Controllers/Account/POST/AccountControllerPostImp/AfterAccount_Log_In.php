@@ -24,8 +24,8 @@ class AfterAccount_Log_In implements AccountControllerPostImp{
         if($validator->passes()){
             if (Auth::attempt(['name' => $input['account'], 'password' => $input['password']])) {
                 // 如果認證通過...
-                $id = Auth::id();
-                session(["admin" => $input['account']]);
+                
+                
                 return redirect('/');
             }
             else{

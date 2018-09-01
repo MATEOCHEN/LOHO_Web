@@ -8,6 +8,8 @@ use Illuminate\Foundation\Validation\ValidatesRequests;
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 use Illuminate\Support\Facades\DB;
 use App\Item;
+use App\User;
+use Illuminate\Support\Facades\Input;
 
 class HomeController extends BaseController
 {
@@ -33,7 +35,8 @@ class HomeController extends BaseController
        /*
        $pdo = DB::connection()->getPdo();
        dd($pdo);*/
-    
+
+       /*
        $scores = DB::table('score') ->get();
        
         foreach($scores as $key => $score){
@@ -41,8 +44,28 @@ class HomeController extends BaseController
             echo'<br>';
             echo $key.':'.$score->english;
             echo'<br>';
-        }
-       
+        }*/
+        $user = User::find(3);
+        $img = $user->img;
+        
+        $data = ['img' => $img];
+        return view('TestDB\TestDB',compact('data'));
+    }
+
+    public function upLoadFile()
+    {
+        $img = file_get_contents(Input::file('file')->getRealPath());
+        
+        $user = User::find(3);
+
+        $user->img = $img;
+        
+        $user->save();
+        
+        $img = $user->img;
+        
+        $data = ['img' => $img];
+        return view('TestDB\AfterUpload',compact('data'));
     }
 
 }
