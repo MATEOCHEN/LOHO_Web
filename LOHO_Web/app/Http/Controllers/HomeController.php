@@ -10,7 +10,9 @@ use Illuminate\Support\Facades\DB;
 use App\Item;
 use App\User;
 use Illuminate\Support\Facades\Input;
+use Illuminate\Http\Request;
 
+use Validator;
 class HomeController extends BaseController
 {
     use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
@@ -45,27 +47,44 @@ class HomeController extends BaseController
             echo $key.':'.$score->english;
             echo'<br>';
         }*/
-        $user = User::find(3);
-        $img = $user->img;
+        $item = Item::find(1);
+        $name = $item->name;
+        $img = $item->img;
         
-        $data = ['img' => $img];
+        $data = ['img' => $img,'name' => $name];
         return view('TestDB\TestDB',compact('data'));
     }
 
-    public function upLoadFile()
-    {
-        $img = file_get_contents(Input::file('file')->getRealPath());
-        
-        $user = User::find(3);
+    public function upLoadFile(Request $request)
+    {   
+        $input = $request->all();
+        $rules = ['file' => 'required|image|between:0,64'];
 
-        $user->img = $img;
+        $messages = ['file.required'=>'請上傳檔案',
+        'file.image'=>'請上傳圖片格式檔案( jpeg、png、bmp、gif、 或 svg)',
+        'file.between'=>'圖片檔案過大，請重新上傳符合大小限制圖片'
+        ];
+
+        $validator = Validator::make($input,$rules,$messages);
+
+        if($validator->passes())
+        {
+                $img = file_get_contents(Input::file('file')->getRealPath());
+            
+                $item = Item::find(1);
         
-        $user->save();
-        
-        $img = $user->img;
-        
-        $data = ['img' => $img];
-        return view('TestDB\AfterUpload',compact('data'));
+                $item->img = $img;
+                
+                $item->save();
+                
+                $img = $item->img;
+                
+                $data = ['img' => $img];
+                return view('TestDB\TestDB',compact('data'));
+        }
+        else{
+            return redirect("TestDB")->withErrors($validator);
+        }
     }
 
 }
