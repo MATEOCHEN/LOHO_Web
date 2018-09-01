@@ -22,8 +22,8 @@ Route::group([], function () {
     );
 
     Route::get(
-        '/TestDB',
-        array('uses' => 'HomeController@TestDB', 'as' => 'upLoadFile')
+        '/admin',
+        array('uses' => 'HomeController@ManageProduct', 'as' => 'ManageProduct')
     );
 
     Route::post(

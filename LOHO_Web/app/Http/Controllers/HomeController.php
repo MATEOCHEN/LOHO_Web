@@ -33,7 +33,7 @@ class HomeController extends BaseController
         $item->save();
    }
 
-   public function TestDB(){
+   public function ManageProduct(){
        /*
        $pdo = DB::connection()->getPdo();
        dd($pdo);*/
@@ -48,11 +48,15 @@ class HomeController extends BaseController
             echo'<br>';
         }*/
         $item = Item::find(1);
+        $id = $item->id;
         $name = $item->name;
+        $price = $item->price;
+        $description = $item->description;
+        $remain_count = $item->remain_count;
         $img = $item->img;
         
-        $data = ['img' => $img,'name' => $name];
-        return view('TestDB\TestDB',compact('data'));
+        $data = ['img' => $img,'id' => $id,'name' => $name,'price' => $price,'description' => $description,'remain_count' => $remain_count];
+        return view('Admin\ManageProduct',compact('data'));
     }
 
     public function upLoadFile(Request $request)
@@ -72,18 +76,22 @@ class HomeController extends BaseController
                 $img = file_get_contents(Input::file('file')->getRealPath());
             
                 $item = Item::find(1);
-        
+                
                 $item->img = $img;
                 
                 $item->save();
-                
+                $id = $item->id;
+                $name = $item->name;
+                $price = $item->price;
+                $description = $item->description;
+                $remain_count = $item->remain_count;
                 $img = $item->img;
                 
-                $data = ['img' => $img];
-                return view('TestDB\TestDB',compact('data'));
+                $data = ['img' => $img,'id' => $id,'name' => $name,'price' => $price,'description' => $description,'remain_count' => $remain_count];
+                return view('Admin\ManageProduct',compact('data'));
         }
         else{
-            return redirect("TestDB")->withErrors($validator);
+            return redirect("admin")->withErrors($validator);
         }
     }
 
