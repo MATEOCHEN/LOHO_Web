@@ -2,7 +2,7 @@
 
 @section('title','上傳商品')
 @section('head')
-<link href="{{ URL::asset('/css/Account_Log_In.css') }}" rel="stylesheet" type="text/css" />
+<link href="" rel="stylesheet" type="text/css" />
 @stop
 
 
@@ -17,7 +17,7 @@
                 <div>商品編號:{{$data['price']}}</div>
                 <div>商品描述:{{$data['description']}}</div>
                 <div>剩餘數量:{{$data['remain_count']}}</div>
-                <img src="data:image/png;base64,{{ chunk_split(base64_encode($data['img'])) }}" height="300" width="300"> 
+                <img src="{{ asset('item_img/'.$data['img']) }}" height="300" width="300"> 
                     <form method="post" enctype="multipart/form-data" action="/LOHO_Web/public/upload">
                         {{ csrf_field() }}
                         <input type="file" name="file" />

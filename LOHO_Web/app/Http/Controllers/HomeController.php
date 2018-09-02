@@ -33,20 +33,8 @@ class HomeController extends BaseController
         $item->save();
    }
 
-   public function ManageProduct(){
-       /*
-       $pdo = DB::connection()->getPdo();
-       dd($pdo);*/
-
-       /*
-       $scores = DB::table('score') ->get();
-       
-        foreach($scores as $key => $score){
-            echo $key.':'.$score->chinese;
-            echo'<br>';
-            echo $key.':'.$score->english;
-            echo'<br>';
-        }*/
+   public function ManageProduct()
+   {
         $item = Item::find(1);
         $id = $item->id;
         $name = $item->name;
@@ -59,6 +47,37 @@ class HomeController extends BaseController
         return view('Admin\ManageProduct',compact('data'));
     }
 
+    public function upLoadFile(Request $request)
+    {   
+
+        $file = $request->file('file');
+        $destinationPath = 'item_img/';
+        $originalFile = $file->getClientOriginalName();
+        $file->move($destinationPath, $originalFile); 
+
+        $item = Item::find(1);
+                
+        $item->img = $originalFile;
+        
+        $item->save();
+    }
+
+   /*Blob get method
+   public function ManageProduct()
+   {
+        $item = Item::find(1);
+        $id = $item->id;
+        $name = $item->name;
+        $price = $item->price;
+        $description = $item->description;
+        $remain_count = $item->remain_count;
+        $img = $item->img;
+        
+        $data = ['img' => $img,'id' => $id,'name' => $name,'price' => $price,'description' => $description,'remain_count' => $remain_count];
+        return view('Admin\ManageProduct',compact('data'));
+    }*/
+
+    /*Blob upload method
     public function upLoadFile(Request $request)
     {   
         $input = $request->all();
@@ -93,6 +112,6 @@ class HomeController extends BaseController
         else{
             return redirect("admin")->withErrors($validator);
         }
-    }
+    }*/
 
 }
