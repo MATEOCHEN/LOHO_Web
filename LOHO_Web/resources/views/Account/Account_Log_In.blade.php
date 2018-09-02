@@ -14,11 +14,17 @@
                 <img src="{{ URL::asset('/Image/LOHO_Logo.png') }}" alt="" class="img-fluid">
             </div>
             <br>
-            <h2>使用LOHO帳號登入</h2>
+            <h2>LOHO帳號登入</h2>
             <form action="AfterAccount_Log_In" method="POST">
                 {{ csrf_field() }}
-                <input type="text" name="account" value="<?php  csrf_token(); ?>">
-                <input type="password" name="password"value="<?php  csrf_token(); ?>">
+                <div class="form-group d-flex flex-column justify-content-start align-items-start" >
+                    <label for="formGroupExampleInput">帳號</label>
+                    <input type="text" class="form-control" name="account" id="formGroupExampleInput" placeholder="輸入帳號" value="<?php  csrf_token(); ?>">
+                  </div>
+                  <div class="form-group d-flex flex-column justify-content-start align-items-start">
+                    <label for="formGroupExampleInput2">密碼</label>
+                    <input type="password" class="form-control" name="password" id="formGroupExampleInput2" placeholder="輸入密碼" value="<?php  csrf_token(); ?>">
+                  </div>
                 <div class="down-button">
                     <button type="submit" class="btn btn-dark">登入</button>
                 </div>

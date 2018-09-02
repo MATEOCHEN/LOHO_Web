@@ -9,6 +9,9 @@ use  App\Http\Controllers\Account\POST\AccountControllerPostImp\SendModifyPasswo
 use  App\Http\Controllers\Account\POST\AccountControllerPostImp\AfterAccount_Log_In;
 use  App\Http\Controllers\Account\POST\AccountControllerPostImp\AfterForgetPassword;
 use  App\Http\Controllers\Account\POST\AccountControllerPostImp\AfterRegisterAccount;
+use Illuminate\Support\Facades\Mail;
+
+use Hash;
 
 class AccountControllerPostAbstraction extends Controller
 {   
@@ -39,10 +42,17 @@ class AccountControllerPostAbstraction extends Controller
     }
 
     public function EmailVerification(Request $request)
-    {
+    {   
+        $data = ['email' => $request->email_text, 'first_name' => 'Kevin', 'from' => 'kevinrow123321@gmail.com', 'from_name' => 'kevinrow123321'];
+        
+        Mail::raw('測試使用 Laravel 5 的 Gmail 寄信服務', function($message) use ($data)
+        {
+            $message->to( $data['email'] )->from( $data['from'], $data['first_name'] )->subject( 'Welcome!' );
+        });
+
         return response()->json(array(
-            'status' => 1,
-            'msg' => 'ok',
+            
+            'msg' => '信件成功寄出',
         ));
     }
     

@@ -110,6 +110,12 @@ Route::group(['prefix' => 'Shopping'], function () {
         'BrowseItems',
         array('uses' => 'Shopping\ShoppingController@BrowseItems', 'as' => 'BrowseItems')
     );
+
+    Route::get(
+        'RecommendationItems',
+        array('uses' => 'Shopping\ShoppingController@RecommendationItems', 'as' => 'RecommendationItems')
+    );
+
     Route::get(
         'ShoppingItem',
         array('uses' => 'Shopping\ShoppingController@ShoppingItem', 'as' => 'ShoppingItem')
@@ -120,8 +126,24 @@ Route::group(['prefix' => 'Shopping'], function () {
         array('uses' => 'Shopping\ShoppingController@addCart', 'as' => 'addCart')
     );
 
+    Route::post(
+        '/updateCart',
+        array('uses' => 'Shopping\ShoppingController@updateCart', 'as' => 'updateCart')
+    );
+
     Route::get(
         '/getCart',
         array('uses' => 'Shopping\ShoppingController@getCart', 'as' => 'getCart')
     );
+
+    Route::post(
+        '/deleteCart',
+        array('uses' => 'Shopping\ShoppingController@deleteCart', 'as' => 'deleteCart')
+    );
+
+    Route::get(
+        '/ShoppingCart',
+        array('uses' => 'Shopping\ShoppingController@ShoppingCart', 'as' => 'ShoppingCart')
+    );
+
 });
