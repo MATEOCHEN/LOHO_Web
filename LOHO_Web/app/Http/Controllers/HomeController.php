@@ -41,9 +41,9 @@ class HomeController extends BaseController
         $price = $item->price;
         $description = $item->description;
         $remain_count = $item->remain_count;
-        $img = $item->img;
+        $img_url = $item->img_url;
         
-        $data = ['img' => $img,'id' => $id,'name' => $name,'price' => $price,'description' => $description,'remain_count' => $remain_count];
+        $data = ['img_url' => $img_url,'id' => $id,'name' => $name,'price' => $price,'description' => $description,'remain_count' => $remain_count];
         return view('Admin\ManageProduct',compact('data'));
     }
 
@@ -68,7 +68,7 @@ class HomeController extends BaseController
         
                 $item = Item::find(1);
                         
-                $item->img = $originalFile;
+                $item->img_url = $destinationPath.$originalFile;
                 
                 $item->save();
 
@@ -77,9 +77,9 @@ class HomeController extends BaseController
                 $price = $item->price;
                 $description = $item->description;
                 $remain_count = $item->remain_count;
-                $img = $item->img;
+                $img_url = $item->img_url;
                 
-                $data = ['img' => $img,'id' => $id,'name' => $name,'price' => $price,'description' => $description,'remain_count' => $remain_count];
+                $data = ['img_url' => $img_url,'id' => $id,'name' => $name,'price' => $price,'description' => $description,'remain_count' => $remain_count];
                 return view('Admin\ManageProduct',compact('data'));
         }
         else{

@@ -17,7 +17,7 @@
                 <div>商品編號:{{$data['price']}}</div>
                 <div>商品描述:{{$data['description']}}</div>
                 <div>剩餘數量:{{$data['remain_count']}}</div>
-                <img src="{{ asset('item_img/'.$data['img']) }}" height="300" width="300"> 
+                <img src="{{ asset($data['img_url']) }}" height="300" width="300"> 
                     <form method="post" enctype="multipart/form-data" action="/LOHO_Web/public/upload">
                         {{ csrf_field() }}
                         <input type="file" name="file" />
