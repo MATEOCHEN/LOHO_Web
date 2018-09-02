@@ -9,7 +9,7 @@
 @section('content')
 <div class = "content">
 
-    <div class="d-flex flex-row">
+    <div class="d-flex flex-row justify-content-center">
             <div>
                 <h5>目前商品(圖片大小限制為64KB, 格式限制為jpeg、png、bmp、gif、 或 svg)</h5>
                 <div>商品編號:{{$data['id']}}</div>

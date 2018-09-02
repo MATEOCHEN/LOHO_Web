@@ -49,37 +49,6 @@ class HomeController extends BaseController
 
     public function upLoadFile(Request $request)
     {   
-
-        $file = $request->file('file');
-        $destinationPath = 'item_img/';
-        $originalFile = $file->getClientOriginalName();
-        $file->move($destinationPath, $originalFile); 
-
-        $item = Item::find(1);
-                
-        $item->img = $originalFile;
-        
-        $item->save();
-    }
-
-   /*Blob get method
-   public function ManageProduct()
-   {
-        $item = Item::find(1);
-        $id = $item->id;
-        $name = $item->name;
-        $price = $item->price;
-        $description = $item->description;
-        $remain_count = $item->remain_count;
-        $img = $item->img;
-        
-        $data = ['img' => $img,'id' => $id,'name' => $name,'price' => $price,'description' => $description,'remain_count' => $remain_count];
-        return view('Admin\ManageProduct',compact('data'));
-    }*/
-
-    /*Blob upload method
-    public function upLoadFile(Request $request)
-    {   
         $input = $request->all();
         $rules = ['file' => 'required|image|between:0,64'];
 
@@ -92,13 +61,17 @@ class HomeController extends BaseController
 
         if($validator->passes())
         {
-                $img = file_get_contents(Input::file('file')->getRealPath());
-            
+                $file = $request->file('file');
+                $destinationPath = 'item_img/';
+                $originalFile = $file->getClientOriginalName();
+                $file->move($destinationPath, $originalFile); 
+        
                 $item = Item::find(1);
-                
-                $item->img = $img;
+                        
+                $item->img = $originalFile;
                 
                 $item->save();
+
                 $id = $item->id;
                 $name = $item->name;
                 $price = $item->price;
@@ -112,6 +85,6 @@ class HomeController extends BaseController
         else{
             return redirect("admin")->withErrors($validator);
         }
-    }*/
+    }
 
 }
