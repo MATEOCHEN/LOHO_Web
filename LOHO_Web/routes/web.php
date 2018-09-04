@@ -31,7 +31,10 @@ Route::group([], function () {
         array('uses' => 'HomeController@upLoadFile', 'as' => 'upLoadFile')
     );
 
-
+    Route::post(
+        '/modifyDB',
+        array('uses' => 'HomeController@modifyDB', 'as' => 'modifyDB')
+    );
 });
 
 Route::group(['middleware' => 'AdminLogin','namespace' => 'Account\GET','prefix' => 'Account'], function () {

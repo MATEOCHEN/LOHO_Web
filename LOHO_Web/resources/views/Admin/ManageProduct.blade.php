@@ -3,36 +3,7 @@
 @section('title','上傳商品')
 @section('head')
 <link href="{{ URL::asset('/css/ManageProduct.css') }}" rel="stylesheet" type="text/css" />
-<script>
-    $(document).ready(function () {
-        $(':input[type="submit"]').prop('disabled', true);
-        $(':input[type="text"]').keyup(function() {
-            if($(this).val() != '') {
-                let parent_dom = $(this).parent("li");
-                let text_dom = parent_dom.children(':input[type="submit"]');
-                text_dom.prop('disabled', false);
-            }
-        });
-
-        $.ajaxSetup({
-                headers: {
-                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-                }
-        });
-        
-    $(':input[type="submit"]').click(function (e) { 
-        alert("click");
-        let parent_dom = $(this).parent("li");
-        let text_dom = parent_dom.children(':input[type="text"]');
-        // First way to get a value
-        value = text_dom.val(); 
-        alert(value);
-        
-    });
-
-    });
-
-</script>
+<script src="{{ URL::asset('/js/ManageProduct.js') }}"></script>
 @stop
 
 @section('content')

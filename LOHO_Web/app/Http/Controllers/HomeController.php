@@ -87,4 +87,13 @@ class HomeController extends BaseController
         }
     }
 
+    public function modifyDB(Request $request)
+    {
+        $item = Item::find(1);
+        $field = $request->name;
+        $item->$field = $request->value;
+        $item->save();
+        return response()->json(['name' => $field,'value' => $request->value]);
+    }
+
 }
