@@ -38,6 +38,8 @@ $(document).ready(function () {
                 alert('更改'+response.name +"為"+response.value);
             }
         });
+        let submit_dom = parent_dom.children(':input[type="submit"]');
+        submit_dom.prop('disabled', true);
     });
 
 });
