@@ -11,6 +11,7 @@ use App\Item;
 use App\User;
 use Illuminate\Support\Facades\Input;
 use Illuminate\Http\Request;
+use Illuminate\Http\Response;
 
 use Validator;
 class HomeController extends BaseController
@@ -80,10 +81,12 @@ class HomeController extends BaseController
                 $img_url = $item->img_url;
                 
                 $data = ['img_url' => $img_url,'id' => $id,'name' => $name,'price' => $price,'description' => $description,'remain_count' => $remain_count];
-                return view('Admin\ManageProduct',compact('data'));
+                return response()->json(['url'=>$img_url]);
         }
         else{
-            return redirect("admin")->withErrors($validator);
+            return response()->json(['errors'=>$validator->errors()]);
+            //return response()->json($validator->messages(), Response::HTTP_BAD_REQUEST);
+            //return response()->json(['error' => 'Error msg'],404); 
         }
     }
 

@@ -21,7 +21,7 @@ $(document).ready(function () {
     }
     )
     
-    $(':input[type="submit"]').click(function (e) { 
+    $('li>:input[type="submit"]').click(function (e) { 
         alert("click");
         let parent_dom = $(this).parent("li");
         let text_dom = parent_dom.children(':input[type="text"]');
@@ -42,4 +42,31 @@ $(document).ready(function () {
         submit_dom.prop('disabled', true);
     });
 
+    $('form>:input[type="submit"]').click(function (e) { 
+        let parent_dom = $(this).parent('form');
+        //let file_dom = parent_dom.children('input[type="file"]');
+        let msg;
+        $.ajax({
+            url:'upload',
+            data:new FormData(parent_dom[0]),
+            dataType:'json',
+            async:false,
+            type:'post',
+            enctype:"multipart/form-data",
+            processData: false,
+            contentType: false,
+            success:function(response){
+                if(response.errors){
+
+                    console.log(response.errors);
+                    msg = response.errors;
+                
+                }else{
+                    alert(response.url);
+                }
+            },
+          });
+          $('form>:input[type="submit"]').append(msg);
+        
+    });
 });
