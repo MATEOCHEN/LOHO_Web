@@ -17,13 +17,13 @@
                 <li>商品描述:<input type="text" name="description" id="" value="{{$data['description']}}"><input type="submit" value="更改" class="btn btn-primary btn-sm modify"></li>
                 <li>剩餘數量:<input type="text" name="remain_count" id="" value="{{$data['remain_count']}}"><input type="submit" value="更改" class="btn btn-primary btn-sm modify"></li>
                 <li><img src="{{ asset($data['img_url']) }}" height="300" width="300"> 
-                    <form enctype="multipart/form-data" >
+                    <form enctype="multipart/form-data">
                         {{ csrf_field() }}
                         <input type="file" name="file" />
                         <input type="submit" name="submit" value="上傳" />
-                        @foreach ($errors->all() as $error)
-                            <ul><li>{{ $error }}</li></ul>  
-                        @endforeach
+                        <ul id="error">
+
+                        </ul>
                     </form></li>
             </ul>
 </div>

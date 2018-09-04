@@ -73,18 +73,10 @@ class HomeController extends BaseController
                 
                 $item->save();
 
-                $id = $item->id;
-                $name = $item->name;
-                $price = $item->price;
-                $description = $item->description;
-                $remain_count = $item->remain_count;
-                $img_url = $item->img_url;
-                
-                $data = ['img_url' => $img_url,'id' => $id,'name' => $name,'price' => $price,'description' => $description,'remain_count' => $remain_count];
                 return response()->json(['url'=>$img_url]);
         }
         else{
-            return response()->json(['errors'=>$validator->errors()]);
+            return response()->json(['errors'=>$validator->errors()->all()]);
             //return response()->json($validator->messages(), Response::HTTP_BAD_REQUEST);
             //return response()->json(['error' => 'Error msg'],404); 
         }

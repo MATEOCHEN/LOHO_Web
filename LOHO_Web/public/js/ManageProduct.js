@@ -1,4 +1,5 @@
 $(document).ready(function () {
+    alert('loading');
     $.ajaxSetup({
             headers: {
                 'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
@@ -49,6 +50,7 @@ $(document).ready(function () {
         $.ajax({
             url:'upload',
             data:new FormData(parent_dom[0]),
+            contentType: "charset=utf-8",
             dataType:'json',
             async:false,
             type:'post',
@@ -57,16 +59,15 @@ $(document).ready(function () {
             contentType: false,
             success:function(response){
                 if(response.errors){
-
-                    console.log(response.errors);
-                    msg = response.errors;
-                
+                    response.errors.forEach(error => {
+                        $('#error').append('<li>'+error+'</li>');
+                    });
                 }else{
-                    alert(response.url);
+                    alert("上傳成功 url:"+response.url);
                 }
             },
           });
-          $('form>:input[type="submit"]').append(msg);
+          
         
     });
 });
