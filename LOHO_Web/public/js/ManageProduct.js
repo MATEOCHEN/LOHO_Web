@@ -43,31 +43,39 @@ $(document).ready(function () {
         submit_dom.prop('disabled', true);
     });
 
-    $('form>:input[type="submit"]').click(function (e) { 
-        let parent_dom = $(this).parent('form');
+    $('form').submit(function (e) { 
+        
+        let parent_dom = $(this).parent('li');
+        let img_dom = parent_dom.children('img');
         //let file_dom = parent_dom.children('input[type="file"]');
-        let msg;
         $.ajax({
             url:'upload',
-            data:new FormData(parent_dom[0]),
+            data:new FormData($(this)[0]),
             contentType: "charset=utf-8",
             dataType:'json',
-            async:false,
-            type:'post',
+            async:true,
+            type:'POST',
             enctype:"multipart/form-data",
             processData: false,
             contentType: false,
-            success:function(response){
-                if(response.errors){
+            success:function(response) {
+
+                if(response.errors != null || undefined)
+                {
                     response.errors.forEach(error => {
                         $('#error').append('<li>'+error+'</li>');
                     });
-                }else{
-                    alert("上傳成功 url:"+response.url);
+                }
+                else
+                {
+                    let src = "http://localhost/LOHO_Web/public/"+response.url;
+                    img_dom.attr('src', src).load(function(){
+                        
+                    });
                 }
             },
           });
           
-        
+          e.preventDefault();
     });
 });

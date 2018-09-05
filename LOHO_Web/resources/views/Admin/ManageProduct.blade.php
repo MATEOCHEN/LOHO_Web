@@ -22,7 +22,6 @@
                         <input type="file" name="file" />
                         <input type="submit" name="submit" value="上傳" />
                         <ul id="error">
-
                         </ul>
                     </form></li>
             </ul>

@@ -73,7 +73,7 @@ class HomeController extends BaseController
                 
                 $item->save();
 
-                return response()->json(['url'=>$img_url]);
+                return response()->json(['url'=> $item->img_url]);
         }
         else{
             return response()->json(['errors'=>$validator->errors()->all()]);
