@@ -1,12 +1,17 @@
 $(document).ready(function () {
-    alert('loading');
+    alert('Loading admin page');
+
+    //ajax 初始化
     $.ajaxSetup({
             headers: {
                 'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
             }
     });
 
+    //預設所有submit button都disabled
     $(':input[type="submit"]').prop('disabled', true);
+
+    //當更改欄位值, 更改submit button active
     $(':input[type="text"]').keyup(function() {
         if($(this).val() != '') {
             let parent_dom = $(this).parent("li");
@@ -15,13 +20,15 @@ $(document).ready(function () {
         }
     });
 
+    //當選擇檔案按下, 上傳submit button active
     $(":input[type='file']").on("change",function(event){
         let parent_dom = $(this).parent("form");
         let submit_dom = parent_dom.children(':input[type="submit"]');
         submit_dom.prop('disabled', false);
     }
     )
-    
+
+    //ajax更改欄位值
     $('li>:input[type="submit"]').click(function (e) { 
         alert("click");
         let parent_dom = $(this).parent("li");
@@ -43,6 +50,7 @@ $(document).ready(function () {
         submit_dom.prop('disabled', true);
     });
 
+    //ajax上傳圖片(記得要preventDefault)
     $('form').submit(function (e) { 
         
         let parent_dom = $(this).parent('li');
@@ -62,16 +70,18 @@ $(document).ready(function () {
 
                 if(response.errors != null || undefined)
                 {
+                    $('#status').empty();
                     response.errors.forEach(error => {
-                        $('#error').append('<li>'+error+'</li>');
+                        $('#status').append('<li>'+error+'</li>');
                     });
                 }
                 else
-                {
+                {   
+                    $('#status').empty();
+                    $('#status').append('<li>'+'圖片更新成功'+'</li>');
+
                     let src = "http://localhost/LOHO_Web/public/"+response.url;
-                    img_dom.attr('src', src).load(function(){
-                        
-                    });
+                    img_dom.attr('src', src);
                 }
             },
           });
