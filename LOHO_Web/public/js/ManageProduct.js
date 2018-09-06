@@ -31,8 +31,10 @@ $(document).ready(function () {
     //ajax更改欄位值
     $('li>:input[type="submit"]').click(function (e) { 
         alert("click");
-        let parent_dom = $(this).parent("li");
-        let text_dom = parent_dom.children(':input[type="text"]');
+        let li_dom = $(this).parent("li");
+        let text_dom = li_dom.children(':input[type="text"]')
+        let ul_dom = li_dom.parent('ul');
+        let id_dom = ul_dom.children("li").children('input[type="text"],id');
         // First way to get a value
         let dom_value = text_dom.val();
         let dom_name = text_dom.attr('name');
@@ -40,25 +42,29 @@ $(document).ready(function () {
         $.ajax({
             type: "POST",
             url: "modifyDB",
-            data: {name:dom_name, value:dom_value},
+            data: {name:dom_name, value:dom_value,id:id_dom.val()},
             dataType: "json",
             success: function (response) {
                 alert('更改'+response.name +"為"+response.value);
             }
         });
-        let submit_dom = parent_dom.children(':input[type="submit"]');
+        let submit_dom = li_dom.children(':input[type="submit"]');
         submit_dom.prop('disabled', true);
     });
 
     //ajax上傳圖片(記得要preventDefault)
     $('form').submit(function (e) { 
         
-        let parent_dom = $(this).parent('li');
-        let img_dom = parent_dom.children('img');
-        //let file_dom = parent_dom.children('input[type="file"]');
+        let li_dom = $(this).parent('li');
+        let img_dom = li_dom.children('img');
+        let ul_dom = li_dom.parent('ul');
+        let id_dom = ul_dom.children("li").children('input[type="text"],id');
+        
+        var formData = new FormData($(this)[0]);
+        formData.append('id',id_dom.val());
         $.ajax({
             url:'upload',
-            data:new FormData($(this)[0]),
+            data:formData,
             contentType: "charset=utf-8",
             dataType:'json',
             async:true,
@@ -87,5 +93,21 @@ $(document).ready(function () {
           });
           
           e.preventDefault();
+    });
+
+    //前端增加商品欄
+    $('#addItem').click(function (e) { 
+        e.preventDefault();
+        
+        let count = 1;
+        $.ajax({
+            type: "POST",
+            url: "addItemsToDatabase",
+            data: {count:count},
+            dataType: "json",
+            success: function (response) {
+                alert('成功新增'+response.count+'項商品');
+            }
+        });
     });
 });

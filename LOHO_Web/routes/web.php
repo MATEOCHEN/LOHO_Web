@@ -16,10 +16,6 @@ Route::group([], function () {
         '/',
         array('uses' => 'HomeController@Index', 'as' => 'Index')
     );
-    Route::get(
-        '/addItemsToDatabase',
-        array('uses' => 'HomeController@addItemsToDatabase', 'as' => 'addItemsToDatabase')
-    );
 
     Route::get(
         '/admin',
@@ -34,6 +30,11 @@ Route::group([], function () {
     Route::post(
         '/modifyDB',
         array('uses' => 'HomeController@modifyDB', 'as' => 'modifyDB')
+    );
+
+    Route::post(
+        '/addItemsToDatabase',
+        array('uses' => 'HomeController@addItemsToDatabase', 'as' => 'addItemsToDatabase')
     );
 });
 

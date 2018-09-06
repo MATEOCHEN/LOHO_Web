@@ -23,31 +23,41 @@ class HomeController extends BaseController
          return view('Index\LOHO_Index',compact('str'));
     }
 
-    public function addItemsToDatabase(){
-        $item = new Item;
-
-        $item->name = "socks";
-        $item->price = 200;
-        $item->size = 'general';
-        $item->description = 'nice';
-        $item->remain_count = 100;
-        $item->save();
-   }
-
-   public function ManageProduct()
-   {
-        $item = Item::find(1);
-        $id = $item->id;
-        $name = $item->name;
-        $price = $item->price;
-        $description = $item->description;
-        $remain_count = $item->remain_count;
-        $img_url = $item->img_url;
+    public function addItemsToDatabase(Request $request){
         
-        $data = ['img_url' => $img_url,'id' => $id,'name' => $name,'price' => $price,'description' => $description,'remain_count' => $remain_count];
+        for ($i=0; $i < $request->count; $i++) { 
+            $item = new Item;
+            $item->name = "socks";
+            $item->price = 200;
+            $item->size = 'general';
+            $item->description = 'nice';
+            $item->remain_count = 100;
+            $item->save();
+        }
+        return response()->json(['count' => $request->count]);
+   }
+   //載入後臺商品管理頁面, 抓DB商品資料傳入前端
+   public function ManageProduct()
+   {    
+        $items_all = Item::all();
+        $items_list = array();
+
+        foreach ($items_all as $item) {
+            $item_tmp = [
+                'id' => $item->id,
+                'name' => $item->name,
+                'price' => $item->price,
+                'description' => $item->description,
+                'remain_count' => $item->remain_count,
+                'img_url' => $item->img_url,
+            ];
+            array_push($items_list,$item_tmp);
+        }
+        $data = ['items' => $items_list];
         return view('Admin\ManageProduct',compact('data'));
     }
 
+    //更改該id下圖片
     public function upLoadFile(Request $request)
     {   
         $input = $request->all();
@@ -67,7 +77,7 @@ class HomeController extends BaseController
                 $originalFile = $file->getClientOriginalName();
                 $file->move($destinationPath, $originalFile); 
         
-                $item = Item::find(1);
+                $item = Item::find($request->id);
                         
                 $item->img_url = $destinationPath.$originalFile;
                 
@@ -82,9 +92,10 @@ class HomeController extends BaseController
         }
     }
 
+    //更改該id下欄位值
     public function modifyDB(Request $request)
     {
-        $item = Item::find(1);
+        $item = Item::find($request->id);
         $field = $request->name;
         $item->$field = $request->value;
         $item->save();
