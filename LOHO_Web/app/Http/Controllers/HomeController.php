@@ -24,12 +24,13 @@ class HomeController extends BaseController
     }
     //新增空商品到DB
     public function addItemsToDatabase(Request $request){
-        
+        $id;
         for ($i=0; $i < $request->count; $i++) { 
             $item = new Item;
             $item->save();
+            $id = $item->id;
         }
-        return response()->json(['count' => $request->count]);
+        return response()->json(['count' => $request->count,'id' => $id]);
    }
    //載入後臺商品管理頁面, 抓DB商品資料傳入前端
    public function ManageProduct()
