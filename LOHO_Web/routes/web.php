@@ -36,6 +36,11 @@ Route::group([], function () {
         '/addItemsToDatabase',
         array('uses' => 'HomeController@addItemsToDatabase', 'as' => 'addItemsToDatabase')
     );
+
+    Route::post(
+        '/deleteItemsFromDatabase',
+        array('uses' => 'HomeController@deleteItemsFromDatabase', 'as' => 'deleteItemsFromDatabase')
+    );
 });
 
 Route::group(['middleware' => 'AdminLogin','namespace' => 'Account\GET','prefix' => 'Account'], function () {

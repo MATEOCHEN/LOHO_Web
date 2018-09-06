@@ -34,7 +34,7 @@ $(document).ready(function () {
         let li_dom = $(this).parent("li");
         let text_dom = li_dom.children(':input[type="text"]')
         let ul_dom = li_dom.parent('ul');
-        let id_dom = ul_dom.children("li").children('input[type="text"],id');
+        let id_dom = ul_dom.children("li").children('span,id');
         // First way to get a value
         let dom_value = text_dom.val();
         let dom_name = text_dom.attr('name');
@@ -42,7 +42,7 @@ $(document).ready(function () {
         $.ajax({
             type: "POST",
             url: "modifyDB",
-            data: {name:dom_name, value:dom_value,id:id_dom.val()},
+            data: {name:dom_name, value:dom_value,id:id_dom.text()},
             dataType: "json",
             success: function (response) {
                 alert('更改'+response.name +"為"+response.value);
@@ -58,10 +58,10 @@ $(document).ready(function () {
         let li_dom = $(this).parent('li');
         let img_dom = li_dom.children('img');
         let ul_dom = li_dom.parent('ul');
-        let id_dom = ul_dom.children("li").children('input[type="text"],id');
+        let id_dom = ul_dom.children("li").children('span,id');
         
         var formData = new FormData($(this)[0]);
-        formData.append('id',id_dom.val());
+        formData.append('id',id_dom.text());
         $.ajax({
             url:'upload',
             data:formData,
@@ -109,5 +109,20 @@ $(document).ready(function () {
                 alert('成功新增'+response.count+'項商品');
             }
         });
+    });
+
+    $('#deleteItem').click(function (e) { 
+        e.preventDefault();
+       
+        $.ajax({
+            type: "POST",
+            url: "deleteItemsFromDatabase",
+            data: {id:4,count:1},
+            dataType: "json",
+            success: function (response) {
+                alert('成功刪除'+response.count+'項商品');
+            }
+        });
+
     });
 });

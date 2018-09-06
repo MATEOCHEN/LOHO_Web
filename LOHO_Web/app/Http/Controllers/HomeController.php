@@ -22,16 +22,11 @@ class HomeController extends BaseController
          $str =' <script>alert("歡迎光臨");</script>';
          return view('Index\LOHO_Index',compact('str'));
     }
-
+    //新增空商品到DB
     public function addItemsToDatabase(Request $request){
         
         for ($i=0; $i < $request->count; $i++) { 
             $item = new Item;
-            $item->name = "socks";
-            $item->price = 200;
-            $item->size = 'general';
-            $item->description = 'nice';
-            $item->remain_count = 100;
             $item->save();
         }
         return response()->json(['count' => $request->count]);
@@ -45,6 +40,7 @@ class HomeController extends BaseController
         foreach ($items_all as $item) {
             $item_tmp = [
                 'id' => $item->id,
+                'item_id' => $item->item_id,
                 'name' => $item->name,
                 'price' => $item->price,
                 'description' => $item->description,
@@ -57,7 +53,7 @@ class HomeController extends BaseController
         return view('Admin\ManageProduct',compact('data'));
     }
 
-    //更改該id下圖片
+    //更改該欄位id下圖片
     public function upLoadFile(Request $request)
     {   
         $input = $request->all();
@@ -92,7 +88,7 @@ class HomeController extends BaseController
         }
     }
 
-    //更改該id下欄位值
+    //更改該欄位id下欄位值
     public function modifyDB(Request $request)
     {
         $item = Item::find($request->id);
@@ -102,4 +98,11 @@ class HomeController extends BaseController
         return response()->json(['name' => $field,'value' => $request->value]);
     }
 
+    //刪除指定欄位id商品
+    public function deleteItemsFromDatabase(Request $request){
+        
+        $item =Item::find($request->id);
+        $item->delete();
+        return response()->json(['count' => $request->count]);
+   }
 }
