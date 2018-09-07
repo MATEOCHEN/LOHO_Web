@@ -136,27 +136,27 @@ Route::group(['prefix' => 'Shopping'], function () {
 
     Route::post(
         'addCart',
-        array('uses' => 'Shopping\ShoppingController@addCart', 'as' => 'addCart')
+        array('uses' => 'Shopping\CartController@addCart', 'as' => 'addCart')
     );
 
     Route::post(
         '/updateCart',
-        array('uses' => 'Shopping\ShoppingController@updateCart', 'as' => 'updateCart')
+        array('uses' => 'Shopping\CartController@updateCart', 'as' => 'updateCart')
     );
 
     Route::get(
         'getCart',
-        array('uses' => 'Shopping\ShoppingController@getCart', 'as' => 'getCart')
+        array('uses' => 'Shopping\CartController@getCart', 'as' => 'getCart')
     );
 
     Route::post(
         '/deleteCart',
-        array('uses' => 'Shopping\ShoppingController@deleteCart', 'as' => 'deleteCart')
+        array('uses' => 'Shopping\CartController@deleteCart', 'as' => 'deleteCart')
     );
 
     Route::get(
         '/ShoppingCart',
-        array('uses' => 'Shopping\ShoppingController@ShoppingCart', 'as' => 'ShoppingCart')
+        array('uses' => 'Shopping\CartController@ShoppingCart', 'as' => 'ShoppingCart')
     );
 
 });
