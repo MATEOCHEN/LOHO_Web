@@ -1,6 +1,6 @@
 <li class="shopping-item-block " id={{$item['id']}}>
     <div class="shopping-item-img">
-        <img src="{{ URL::asset('/Image/抗臭襪.jpg') }}" alt="竹碳運動襪" class="img-fluid">
+        <img src="{{ asset($item['img_url']) }}" alt="LOHO商品" class="img-fluid">
     </div>
     <div class="text">
         <h5 class="name" id = {{$item['id']}}>{{$item['name']}}</h5>

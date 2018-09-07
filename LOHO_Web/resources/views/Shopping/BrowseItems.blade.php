@@ -110,7 +110,7 @@
                             <button type="button" class="btn btn-outline-dark btn-sm" onclick="addCart('s003')">加入購物車</button>
                         </div>
                     </li>
-                    @foreach ($items_list as $item)
+                    @foreach ($data['items'] as $item)
                         @include('Shopping.RecommendationItems')
                     @endforeach
                 </ul>

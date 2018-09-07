@@ -16,14 +16,10 @@ Route::group([], function () {
         '/',
         array('uses' => 'HomeController@Index', 'as' => 'Index')
     );
-    Route::get(
-        '/Layout',
-        array('uses' => 'HomeController@Layout', 'as' => 'Layout')
-    );
 
     Route::get(
-        '/TestDB',
-        array('uses' => 'HomeController@TestDB', 'as' => 'upLoadFile')
+        '/admin',
+        array('uses' => 'HomeController@ManageProduct', 'as' => 'ManageProduct')
     );
 
     Route::post(
@@ -31,7 +27,20 @@ Route::group([], function () {
         array('uses' => 'HomeController@upLoadFile', 'as' => 'upLoadFile')
     );
 
+    Route::post(
+        '/modifyDB',
+        array('uses' => 'HomeController@modifyDB', 'as' => 'modifyDB')
+    );
 
+    Route::post(
+        '/addItemsToDatabase',
+        array('uses' => 'HomeController@addItemsToDatabase', 'as' => 'addItemsToDatabase')
+    );
+
+    Route::post(
+        '/deleteItemsFromDatabase',
+        array('uses' => 'HomeController@deleteItemsFromDatabase', 'as' => 'deleteItemsFromDatabase')
+    );
 });
 
 Route::group(['middleware' => 'AdminLogin','namespace' => 'Account\GET','prefix' => 'Account'], function () {
@@ -127,27 +136,27 @@ Route::group(['prefix' => 'Shopping'], function () {
 
     Route::post(
         'addCart',
-        array('uses' => 'Shopping\ShoppingController@addCart', 'as' => 'addCart')
+        array('uses' => 'Shopping\CartController@addCart', 'as' => 'addCart')
     );
 
     Route::post(
         '/updateCart',
-        array('uses' => 'Shopping\ShoppingController@updateCart', 'as' => 'updateCart')
+        array('uses' => 'Shopping\CartController@updateCart', 'as' => 'updateCart')
     );
 
     Route::get(
         'getCart',
-        array('uses' => 'Shopping\ShoppingController@getCart', 'as' => 'getCart')
+        array('uses' => 'Shopping\CartController@getCart', 'as' => 'getCart')
     );
 
     Route::post(
         '/deleteCart',
-        array('uses' => 'Shopping\ShoppingController@deleteCart', 'as' => 'deleteCart')
+        array('uses' => 'Shopping\CartController@deleteCart', 'as' => 'deleteCart')
     );
 
     Route::get(
         '/ShoppingCart',
-        array('uses' => 'Shopping\ShoppingController@ShoppingCart', 'as' => 'ShoppingCart')
+        array('uses' => 'Shopping\CartController@ShoppingCart', 'as' => 'ShoppingCart')
     );
 
 });
