@@ -1,6 +1,6 @@
 <ul>
-        <li><h5>目前商品(圖片大小限制為64KB, 格式限制為jpeg、png、bmp、gif、 或 svg)</h5></li>
-        <li>欄位編號:<span class="id">{{$item['id']}}</span><input type="button" class="btn btn-danger btn-sm modify" value="刪除"></li>
+        <li><h5>目前商品(圖片大小限制為64KB, 格式限制為jpeg、png、bmp、gif等)</h5></li>
+        <li>欄位編號:<span class="id">{{$item['id']}}</span><input type="button" class="btn btn-danger btn-sm modify delete" value="刪除"></li>
         <li>商品編號:<input type="text" name="item_id" id="" value="{{$item['item_id']}}"><input type="submit" value="更改" class="btn btn-primary btn-sm modify"></li>
         <li>商品名稱:<input type="text" name="name" id="" value="{{$item['name']}}"><input type="submit" value="更改" class="btn btn-primary btn-sm modify"></li>
         <li>商品價錢:<input type="text" name="price" id="" value="{{$item['price']}}"><input type="submit" value="更改" class="btn btn-primary btn-sm modify"></li>
@@ -13,5 +13,6 @@
                 <input type="submit" name="submit" value="上傳" />
                 <ul id="status">
                 </ul>
-            </form></li>
+            </form></li>  
 </ul>
+
