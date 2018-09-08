@@ -43,8 +43,8 @@ Route::group([], function () {
     );
 
     Route::get(
-        '/AdminIndex',
-        array('uses' => 'HomeController@AdminIndex', 'as' => 'AdminIndex')
+        '/admin',
+        array('uses' => 'HomeController@AdminIndex', 'as' => 'admin')
     );
 });
 

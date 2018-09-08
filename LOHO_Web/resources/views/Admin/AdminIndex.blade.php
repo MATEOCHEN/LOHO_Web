@@ -1,26 +1,15 @@
 @extends('Layout.master')
 
-@section('title','上傳商品')
+@section('title','AdminIndex')
 @section('head')
 <link href="{{ URL::asset('/css/ManageProduct.css') }}" rel="stylesheet" type="text/css" />
+<script src="{{ URL::asset('/js/admin.js') }}"></script>
 @stop
 
 @section('content')
-<div class = "content" style="text-align:center">
-    <form action="ManageProduct" method="get">
-            <input type="text" name = "category_id" class="" value="c001" id="">
-            <input type="submit" value="送出">
-    </form>
-
+<div class="content" style="text-align:center">
+    <input type="button" class="btn btn-success btn-sm change" value="c001">
+    <input type="button" class="btn btn-success btn-sm change" value="c002">
 </div>
-<script>
-        //ajax 初始化
-        $.ajaxSetup({
-            headers: {
-                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-            }
-        });
 
-</script>
 @stop
-
