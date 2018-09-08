@@ -159,4 +159,18 @@ Route::group(['prefix' => 'Shopping'], function () {
         array('uses' => 'Shopping\CartController@ShoppingCart', 'as' => 'ShoppingCart')
     );
 
+    Route::get(
+        '/CheckoutList',
+        array('uses' => 'Shopping\ShoppingController@CheckoutList', 'as' => 'CheckoutList')
+    );
+
+    Route::get(
+        '/ConfirmShoppingList',
+        array('uses' => 'Shopping\ShoppingController@ConfirmShoppingList', 'as' => 'ConfirmShoppingList')
+    );
+
+    Route::get(
+        '/FillOrderList',
+        array('uses' => 'Shopping\ShoppingController@FillOrderList', 'as' => 'FillOrderList')
+    );
 });
