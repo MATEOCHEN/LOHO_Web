@@ -113,4 +113,25 @@ class HomeController extends BaseController
         $item->delete();
         return response()->json(['count' => $request->count]);
    }
+
+   public function AlterProduct(Request $request)
+   {    
+        $items_all = Item::all()->where('category_id',$request->category_id);
+        $items_list = array();
+
+        foreach ($items_all as $item) {
+            $item_tmp = [
+                'id' => $item->id,
+                'item_id' => $item->item_id,
+                'name' => $item->name,
+                'price' => $item->price,
+                'description' => $item->description,
+                'remain_count' => $item->remain_count,
+                'img_url' => $item->img_url,
+            ];
+            array_push($items_list,$item_tmp);
+        }
+        $data = ['items' => $items_list,'category_id' => $request->category_id];
+        return response()->json(['items' => $items_list,'category_id' => $request->category_id]);
+    }
 }

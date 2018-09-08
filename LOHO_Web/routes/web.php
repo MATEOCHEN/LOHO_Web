@@ -46,6 +46,11 @@ Route::group([], function () {
         '/admin',
         array('uses' => 'HomeController@AdminIndex', 'as' => 'admin')
     );
+    
+    Route::get(
+        '/AlterProduct',
+        array('uses' => 'HomeController@AlterProduct', 'as' => 'AlterProduct')
+    );
 });
 
 Route::group(['middleware' => 'AdminLogin','namespace' => 'Account\GET','prefix' => 'Account'], function () {
