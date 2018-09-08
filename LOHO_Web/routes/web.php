@@ -18,7 +18,7 @@ Route::group([], function () {
     );
 
     Route::get(
-        '/admin',
+        '/ManageProduct',
         array('uses' => 'HomeController@ManageProduct', 'as' => 'ManageProduct')
     );
 
@@ -40,6 +40,11 @@ Route::group([], function () {
     Route::post(
         '/deleteItemsFromDatabase',
         array('uses' => 'HomeController@deleteItemsFromDatabase', 'as' => 'deleteItemsFromDatabase')
+    );
+
+    Route::get(
+        '/AdminIndex',
+        array('uses' => 'HomeController@AdminIndex', 'as' => 'AdminIndex')
     );
 });
 

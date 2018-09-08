@@ -14,6 +14,7 @@ use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 
 use Validator;
+
 class HomeController extends BaseController
 {
     use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
@@ -32,10 +33,16 @@ class HomeController extends BaseController
         }
         return response()->json(['count' => $request->count,'id' => $id]);
    }
+
+   public function AdminIndex()
+   {
+        return view('Admin\AdminIndex');
+   }
+
    //載入後臺商品管理頁面, 抓DB商品資料傳入前端
-   public function ManageProduct()
+   public function ManageProduct(Request $request)
    {    
-        $items_all = Item::all();
+        $items_all = Item::all()->where('category_id',$request->category_id);
         $items_list = array();
 
         foreach ($items_all as $item) {
@@ -50,7 +57,7 @@ class HomeController extends BaseController
             ];
             array_push($items_list,$item_tmp);
         }
-        $data = ['items' => $items_list];
+        $data = ['items' => $items_list,'category_id' => $request->category_id];
         return view('Admin\ManageProduct',compact('data'));
     }
 
