@@ -2,6 +2,7 @@ $(document).ready(function () {
     $('.change').click(function (e) { 
         e.preventDefault();
         var category_id = $(this).val();
+        $('.category').text(category_id);
         //ajax 初始化
         $.ajaxSetup({
             headers: {

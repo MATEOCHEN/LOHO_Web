@@ -106,11 +106,10 @@ function initialize() {
             url: "deleteItemsFromDatabase",
             data: {
                 id: id_dom.text(),
-                count: 1
             },
             dataType: "json",
             success: function (response) {
-                ul_dom.empty();
+                $(ul_dom).remove();
             }
         });
     });    
@@ -127,12 +126,13 @@ $(document).ready(function () {
     $('#addItem').click(function (e) {
         e.preventDefault();
         let item_text;
-        let count = 1;
+        let category_id = $('.category').text();
+        
         $.ajax({
             type: "POST",
             url: "addItemsToDatabase",
             data: {
-                count: count
+                category_id: category_id
             },
             dataType: "json",
             success: function (response) {

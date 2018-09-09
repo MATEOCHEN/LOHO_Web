@@ -25,13 +25,12 @@ class HomeController extends BaseController
     }
     //新增空商品到DB
     public function addItemsToDatabase(Request $request){
-        $id;
-        for ($i=0; $i < $request->count; $i++) { 
-            $item = new Item;
-            $item->save();
-            $id = $item->id;
-        }
-        return response()->json(['count' => $request->count,'id' => $id]);
+        
+        $item = new Item;
+        $item->category_id = $request->category_id;
+        $item->save();
+        $id = $item->id;
+        return response()->json(['id' => $id]);
    }
 
    public function AdminIndex()
@@ -111,7 +110,7 @@ class HomeController extends BaseController
         
         $item =Item::find($request->id);
         $item->delete();
-        return response()->json(['count' => $request->count]);
+        return response()->json();
    }
 
    public function AlterProduct(Request $request)
