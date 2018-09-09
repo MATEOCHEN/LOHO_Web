@@ -22,37 +22,37 @@ Route::group([], function () {
 Route::group(['namespace' => 'Admin','prefix' => 'admin'], function () {
     Route::get(
         '/admin',
-        array('uses' => 'ManageProductGetController@AdminIndex', 'as' => 'admin')
-    );
-    
-    Route::get(
-        '/AlterProduct',
-        array('uses' => 'ManageProductGetController@AlterProduct', 'as' => 'AlterProduct')
+        array('uses' => 'AdminIndexController@AdminIndex', 'as' => 'admin')
     );
 
     Route::get(
-        '/ManageProduct',
-        array('uses' => 'ManageProductGetController@ManageProduct', 'as' => 'ManageProduct')
+        '/ManageItems',
+        array('uses' => 'ManageItemsController@ManageItems', 'as' => 'ManageItems')
+    );
+    
+    Route::get(
+        '/getItems',
+        array('uses' => 'QueryItemsController@getItems', 'as' => 'getItems')
     );
 
     Route::post(
         '/upload',
-        array('uses' => 'ManageProductPostController@upLoadFile', 'as' => 'upLoadFile')
+        array('uses' => 'UpdateItemsController@upLoadFile', 'as' => 'upLoadFile')
     );
 
     Route::post(
         '/modifyDB',
-        array('uses' => 'ManageProductPostController@modifyDB', 'as' => 'modifyDB')
+        array('uses' => 'UpdateItemsController@modifyDB', 'as' => 'modifyDB')
     );
 
     Route::post(
         '/addItemsToDatabase',
-        array('uses' => 'ManageProductPostController@addItemsToDatabase', 'as' => 'addItemsToDatabase')
+        array('uses' => 'AddItemsController@addItemsToDatabase', 'as' => 'addItemsToDatabase')
     );
 
     Route::post(
         '/deleteItemsFromDatabase',
-        array('uses' => 'ManageProductPostController@deleteItemsFromDatabase', 'as' => 'deleteItemsFromDatabase')
+        array('uses' => 'DeleteItemsController@deleteItemsFromDatabase', 'as' => 'deleteItemsFromDatabase')
     );
 
 });
