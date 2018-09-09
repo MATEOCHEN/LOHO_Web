@@ -17,40 +17,44 @@ Route::group([], function () {
         array('uses' => 'HomeController@Index', 'as' => 'Index')
     );
 
-    Route::get(
-        '/ManageProduct',
-        array('uses' => 'HomeController@ManageProduct', 'as' => 'ManageProduct')
-    );
+});
 
-    Route::post(
-        '/upload',
-        array('uses' => 'HomeController@upLoadFile', 'as' => 'upLoadFile')
-    );
-
-    Route::post(
-        '/modifyDB',
-        array('uses' => 'HomeController@modifyDB', 'as' => 'modifyDB')
-    );
-
-    Route::post(
-        '/addItemsToDatabase',
-        array('uses' => 'HomeController@addItemsToDatabase', 'as' => 'addItemsToDatabase')
-    );
-
-    Route::post(
-        '/deleteItemsFromDatabase',
-        array('uses' => 'HomeController@deleteItemsFromDatabase', 'as' => 'deleteItemsFromDatabase')
-    );
-
+Route::group(['namespace' => 'Admin','prefix' => 'admin'], function () {
     Route::get(
         '/admin',
-        array('uses' => 'HomeController@AdminIndex', 'as' => 'admin')
+        array('uses' => 'ManageProductGetController@AdminIndex', 'as' => 'admin')
     );
     
     Route::get(
         '/AlterProduct',
-        array('uses' => 'HomeController@AlterProduct', 'as' => 'AlterProduct')
+        array('uses' => 'ManageProductGetController@AlterProduct', 'as' => 'AlterProduct')
     );
+
+    Route::get(
+        '/ManageProduct',
+        array('uses' => 'ManageProductGetController@ManageProduct', 'as' => 'ManageProduct')
+    );
+
+    Route::post(
+        '/upload',
+        array('uses' => 'ManageProductPostController@upLoadFile', 'as' => 'upLoadFile')
+    );
+
+    Route::post(
+        '/modifyDB',
+        array('uses' => 'ManageProductPostController@modifyDB', 'as' => 'modifyDB')
+    );
+
+    Route::post(
+        '/addItemsToDatabase',
+        array('uses' => 'ManageProductPostController@addItemsToDatabase', 'as' => 'addItemsToDatabase')
+    );
+
+    Route::post(
+        '/deleteItemsFromDatabase',
+        array('uses' => 'ManageProductPostController@deleteItemsFromDatabase', 'as' => 'deleteItemsFromDatabase')
+    );
+
 });
 
 Route::group(['middleware' => 'AdminLogin','namespace' => 'Account\GET','prefix' => 'Account'], function () {

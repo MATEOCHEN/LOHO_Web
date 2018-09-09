@@ -3,14 +3,15 @@
 @section('title','上傳商品')
 @section('head')
 <link href="{{ URL::asset('/css/ManageProduct.css') }}" rel="stylesheet" type="text/css" />
-<script src="{{ URL::asset('/js/admin.js') }}"></script>
-<script src="{{ URL::asset('/js/ManageProduct.js') }}"></script>
+<script src="{{ URL::asset('/js/Admin/admin.js') }}"></script>
+<script src="{{ URL::asset('/js/Admin/ManageProduct.js') }}"></script>
 @stop
 
 @section('content')
 <div class = "content">
     <div style="text-align:center">
-        <span>分類:{{$data['category_id']}}</span>
+        <span>分類:</span>
+        <span class="category">{{$data['category_id']}}</span>
         <input type="button" class="btn btn-success btn-sm change" value="c001">
         <input type="button" class="btn btn-success btn-sm change" value="c002">
     </div>
