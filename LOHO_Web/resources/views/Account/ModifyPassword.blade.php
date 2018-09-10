@@ -21,18 +21,18 @@
             @endif
             <div class="input-area">
                 <div class="input-text">
-                    原密碼：
+                    請輸入原密碼：
                 </div>
-                <input type="text" name = "origin_password">
+                <input type="password" name = "origin_password">
             </div>
             <div class="subTitle">
                 更改帳戶
             </div>
             <div class="input-area">
                 <div class="input-text">
-                    *重設密碼：
+                    *欲重設密碼：
                 </div>
-                <input type="text" name="password">
+                <input type="password" name="password">
             </div>
             <div class="remind-text">
                 (限半形英文或數字，10碼內不限大小寫)
@@ -41,7 +41,7 @@
                 <div class="input-text">
                     *確認密碼：
                 </div>
-                <input type="text" name="password_confirmation">
+                <input type="password" name="password_confirmation">
             </div>
             <div class="remind-text">
                 (限半形英文或數字，10碼內不限大小寫)
