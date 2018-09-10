@@ -57,7 +57,7 @@ Route::group(['namespace' => 'Admin','prefix' => 'admin'], function () {
 
 });
 
-Route::group(['middleware' => 'AdminLogin','namespace' => 'Account\GET','prefix' => 'Account'], function () {
+Route::group(['middleware' => 'AdminLogin','namespace' => 'Account','prefix' => 'Account'], function () {
     Route::get(
         'AccountInformation',
         array('uses' => 'AccountInfoController@AccountInformation', 'as' => 'AccountInformation')
@@ -85,7 +85,7 @@ Route::group(['middleware' => 'AdminLogin','namespace' => 'Account\GET','prefix'
     );
 });
 
-Route::group(['namespace' => 'Account\GET','prefix' => 'Account'], function () {
+Route::group(['namespace' => 'Account','prefix' => 'Account'], function () {
     Route::get(
         'Account_Log_In',
         array('uses' => 'LoginAccountController@Account_Log_In', 'as' => 'Account_Log_In')

@@ -1,12 +1,12 @@
 <?php
 
-namespace App\Http\Controllers\Account\GET;
+namespace App\Http\Controllers\Account;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use  App\Http\Controllers\Account\POST\AccountControllerPostImp\AfterForgetPassword;
-use  App\Http\Controllers\Account\POST\AccountControllerPostImp\SendModifyPassword;
-use  App\Http\Controllers\Account\POST\AccountControllerPostImp\EmailVerification;
+use  App\Http\Controllers\Account\AccountControllerImp\AfterForgetPassword;
+use  App\Http\Controllers\Account\AccountControllerImp\SendModifyPassword;
+use  App\Http\Controllers\Account\AccountControllerImp\EmailVerification;
 class ForgetPasswordController extends Controller
 {
     

@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Account\POST\AccountControllerPostImp;
+namespace App\Http\Controllers\Account\AccountControllerImp;
 use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\Crypt;
 use App\User;

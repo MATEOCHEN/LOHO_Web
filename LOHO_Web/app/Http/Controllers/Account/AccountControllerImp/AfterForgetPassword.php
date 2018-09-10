@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Account\POST\AccountControllerPostImp;
+namespace App\Http\Controllers\Account\AccountControllerImp;
 use Hash;
 use Illuminate\Support\Facades\Mail;
 class AfterForgetPassword implements AccountControllerPostImp
