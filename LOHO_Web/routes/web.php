@@ -17,114 +17,113 @@ Route::group([], function () {
         array('uses' => 'HomeController@Index', 'as' => 'Index')
     );
 
+});
+
+Route::group(['namespace' => 'Admin','prefix' => 'admin'], function () {
     Route::get(
-        '/ManageProduct',
-        array('uses' => 'HomeController@ManageProduct', 'as' => 'ManageProduct')
+        '/index',
+        array('uses' => 'AdminIndexController@AdminIndex', 'as' => 'admin')
+    );
+
+    Route::get(
+        '/ManageItems',
+        array('uses' => 'ManageItemsController@ManageItems', 'as' => 'ManageItems')
+    );
+    
+    Route::get(
+        '/getItems',
+        array('uses' => 'QueryItemsController@getItems', 'as' => 'getItems')
     );
 
     Route::post(
         '/upload',
-        array('uses' => 'HomeController@upLoadFile', 'as' => 'upLoadFile')
+        array('uses' => 'UpdateItemsController@upLoadFile', 'as' => 'upLoadFile')
     );
 
     Route::post(
         '/modifyDB',
-        array('uses' => 'HomeController@modifyDB', 'as' => 'modifyDB')
+        array('uses' => 'UpdateItemsController@modifyDB', 'as' => 'modifyDB')
     );
 
     Route::post(
         '/addItemsToDatabase',
-        array('uses' => 'HomeController@addItemsToDatabase', 'as' => 'addItemsToDatabase')
+        array('uses' => 'AddItemsController@addItemsToDatabase', 'as' => 'addItemsToDatabase')
     );
 
     Route::post(
         '/deleteItemsFromDatabase',
-        array('uses' => 'HomeController@deleteItemsFromDatabase', 'as' => 'deleteItemsFromDatabase')
+        array('uses' => 'DeleteItemsController@deleteItemsFromDatabase', 'as' => 'deleteItemsFromDatabase')
     );
 
-    Route::get(
-        '/admin',
-        array('uses' => 'HomeController@AdminIndex', 'as' => 'admin')
-    );
-    
-    Route::get(
-        '/AlterProduct',
-        array('uses' => 'HomeController@AlterProduct', 'as' => 'AlterProduct')
-    );
 });
 
-Route::group(['middleware' => 'AdminLogin','namespace' => 'Account\GET','prefix' => 'Account'], function () {
+Route::group(['middleware' => 'AdminLogin','namespace' => 'Account','prefix' => 'Account'], function () {
     Route::get(
         'AccountInformation',
-        array('uses' => 'AccountControllerGetAbstraction@AccountInformation', 'as' => 'AccountInformation')
+        array('uses' => 'AccountInfoController@AccountInformation', 'as' => 'AccountInformation')
     );
 
     Route::get(
         'PersonalInformation',
-        array('uses' => 'AccountControllerGetAbstraction@PersonalInformation', 'as' => 'PersonalInformation')
+        array('uses' => 'AccountInfoController@PersonalInformation', 'as' => 'PersonalInformation')
     );
 
 
     Route::get(
         'ModifyPassword',
-        array('uses' => 'AccountControllerGetAbstraction@ModifyPassword', 'as' => 'ModifyPassword')
-    );
-
-    Route::get(
-        '/Logout',
-        array('uses' => 'AccountControllerGetAbstraction@Logout', 'as' => 'Logout')
-    );
-});
-
-Route::group(['namespace' => 'Account\GET','prefix' => 'Account'], function () {
-    Route::get(
-        'Account_Log_In',
-        array('uses' => 'AccountControllerGetAbstraction@Account_Log_In', 'as' => 'Account_Log_In')
-    );
-
-    Route::get(
-        'ForgetPassword',
-        array('uses' => 'AccountControllerGetAbstraction@ForgetPassword', 'as' => 'ForgetPassword')
-    );
-    Route::get(
-        'ForgetPasswordToModify',
-        array('uses' => 'AccountControllerGetAbstraction@ForgetPasswordToModify', 'as' => 'ForgetPasswordToModify')
-    );
-
-    Route::get(
-        'RegisterAccount',
-        array('uses' => 'AccountControllerGetAbstraction@RegisterAccount', 'as' => 'RegisterAccount')
-    );
-
-});
-
-Route::group(['namespace' => 'Account\POST','prefix' => 'Account'], function () {
-
-
-    Route::post(
-        'AfterForgetPassword',
-        array('uses' => 'AccountControllerPostAbstraction@AfterForgetPassword', 'as' => 'AfterForgetPassword')
-    );
-
-
-    Route::post(
-        'AfterAccount_Log_In',
-        array('uses' => 'AccountControllerPostAbstraction@AfterAccount_Log_In', 'as' => 'AfterAccount_Log_In')
-    );
-
-    Route::post(
-        'AfterRegisterAccount',
-        array('uses' => 'AccountControllerPostAbstraction@AfterRegisterAccount', 'as' => 'AfterRegisterAccount')
-    );
-    
-    Route::post(
-        'EmailVerification',
-        array('uses' => 'AccountControllerPostAbstraction@EmailVerification', 'as' => 'EmailVerification')
+        array('uses' => 'ForgetPasswordController@ModifyPassword', 'as' => 'ModifyPassword')
     );
 
     Route::post(
         'SendModifyPassword',
-        array('uses' => 'AccountControllerPostAbstraction@SendModifyPassword', 'as' => 'SendModifyPassword')
+        array('uses' => 'ForgetPasswordController@SendModifyPassword', 'as' => 'SendModifyPassword')
+    );
+
+    Route::get(
+        '/Logout',
+        array('uses' => 'LogoutAccountController@Logout', 'as' => 'Logout')
+    );
+});
+
+Route::group(['namespace' => 'Account','prefix' => 'Account'], function () {
+    Route::get(
+        'Account_Log_In',
+        array('uses' => 'LoginAccountController@Account_Log_In', 'as' => 'Account_Log_In')
+    );
+
+    Route::post(
+        'AfterAccount_Log_In',
+        array('uses' => 'LoginAccountController@AfterAccount_Log_In', 'as' => 'AfterAccount_Log_In')
+    );
+
+    Route::get(
+        'ForgetPassword',
+        array('uses' => 'ForgetPasswordController@ForgetPassword', 'as' => 'ForgetPassword')
+    );
+
+    Route::post(
+        'AfterForgetPassword',
+        array('uses' => 'ForgetPasswordController@AfterForgetPassword', 'as' => 'AfterForgetPassword')
+    );
+
+    Route::get(
+        'ForgetPasswordToModify',
+        array('uses' => 'ForgetPasswordController@ForgetPasswordToModify', 'as' => 'ForgetPasswordToModify')
+    );
+
+    Route::get(
+        'RegisterAccount',
+        array('uses' => 'RegisterAccountController@RegisterAccount', 'as' => 'RegisterAccount')
+    );
+
+    Route::post(
+        'AfterRegisterAccount',
+        array('uses' => 'RegisterAccountController@AfterRegisterAccount', 'as' => 'AfterRegisterAccount')
+    );
+
+    Route::post(
+        'EmailVerification',
+        array('uses' => 'ForgetPasswordController@EmailVerification', 'as' => 'EmailVerification')
     );
 });
 
