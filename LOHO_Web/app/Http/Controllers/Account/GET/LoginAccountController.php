@@ -1,11 +1,14 @@
 <?php
-namespace App\Http\Controllers\Account\GET\AccountControllerGetImp;
+
+namespace App\Http\Controllers\Account\GET;
+
 use Illuminate\Http\Request;
-
-class Account_Log_In_Imp implements AccountControllerGetImp{
-
-    public function handle()
-    {
+use App\Http\Controllers\Controller;
+class LoginAccountController extends Controller
+{
+    
+    public function Account_Log_In()
+    {   
         $data = ['account' => "Kevin","password" => "12345"];
         $title = "登入畫面";
         $tel = "07123";
@@ -15,4 +18,5 @@ class Account_Log_In_Imp implements AccountControllerGetImp{
         
         return view('Account\Account_Log_In',compact('data','title','tel','price','scores'));
     }
+
 }

@@ -21,7 +21,7 @@ Route::group([], function () {
 
 Route::group(['namespace' => 'Admin','prefix' => 'admin'], function () {
     Route::get(
-        '/admin',
+        '/index',
         array('uses' => 'AdminIndexController@AdminIndex', 'as' => 'admin')
     );
 
@@ -60,44 +60,44 @@ Route::group(['namespace' => 'Admin','prefix' => 'admin'], function () {
 Route::group(['middleware' => 'AdminLogin','namespace' => 'Account\GET','prefix' => 'Account'], function () {
     Route::get(
         'AccountInformation',
-        array('uses' => 'AccountControllerGetAbstraction@AccountInformation', 'as' => 'AccountInformation')
+        array('uses' => 'AccountInfoController@AccountInformation', 'as' => 'AccountInformation')
     );
 
     Route::get(
         'PersonalInformation',
-        array('uses' => 'AccountControllerGetAbstraction@PersonalInformation', 'as' => 'PersonalInformation')
+        array('uses' => 'AccountInfoController@PersonalInformation', 'as' => 'PersonalInformation')
     );
 
 
     Route::get(
         'ModifyPassword',
-        array('uses' => 'AccountControllerGetAbstraction@ModifyPassword', 'as' => 'ModifyPassword')
+        array('uses' => 'ForgetPasswordController@ModifyPassword', 'as' => 'ModifyPassword')
     );
 
     Route::get(
         '/Logout',
-        array('uses' => 'AccountControllerGetAbstraction@Logout', 'as' => 'Logout')
+        array('uses' => 'LogoutAccountController@Logout', 'as' => 'Logout')
     );
 });
 
 Route::group(['namespace' => 'Account\GET','prefix' => 'Account'], function () {
     Route::get(
         'Account_Log_In',
-        array('uses' => 'AccountControllerGetAbstraction@Account_Log_In', 'as' => 'Account_Log_In')
+        array('uses' => 'LoginAccountController@Account_Log_In', 'as' => 'Account_Log_In')
     );
 
     Route::get(
         'ForgetPassword',
-        array('uses' => 'AccountControllerGetAbstraction@ForgetPassword', 'as' => 'ForgetPassword')
+        array('uses' => 'ForgetPasswordController@ForgetPassword', 'as' => 'ForgetPassword')
     );
     Route::get(
         'ForgetPasswordToModify',
-        array('uses' => 'AccountControllerGetAbstraction@ForgetPasswordToModify', 'as' => 'ForgetPasswordToModify')
+        array('uses' => 'ForgetPasswordController@ForgetPasswordToModify', 'as' => 'ForgetPasswordToModify')
     );
 
     Route::get(
         'RegisterAccount',
-        array('uses' => 'AccountControllerGetAbstraction@RegisterAccount', 'as' => 'RegisterAccount')
+        array('uses' => 'RegisterAccountController@RegisterAccount', 'as' => 'RegisterAccount')
     );
 
 });
