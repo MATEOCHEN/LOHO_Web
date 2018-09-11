@@ -8,30 +8,27 @@ use Illuminate\Foundation\Validation\ValidatesRequests;
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 use Illuminate\Support\Facades\DB;
 use App\Item;
-use App\User;
 use Illuminate\Support\Facades\Input;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 
 use Validator;
 
-class ManageProductPostController extends BaseController
+class UpdateItemsController extends BaseController
 {
     use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
 
-    //新增空商品到DB
-    public function addItemsToDatabase(Request $request){
-        
-        $item = new Item;
-        $item->category_id = $request->category_id;
+    //更改該欄位id下欄位值
+    public function modifyDB(Request $request)
+    {
+        $item = Item::find($request->id);
+        $field = $request->name;
+        $item->$field = $request->value;
         $item->save();
-        $id = $item->id;
-        return response()->json(['id' => $id]);
-   }
+        return response()->json(['name' => $field,'value' => $request->value]);
+    }
 
-
-
-    //更改該欄位id下圖片
+        //更改該欄位id下圖片
     public function upLoadFile(Request $request)
     {   
         $input = $request->all();
@@ -65,24 +62,5 @@ class ManageProductPostController extends BaseController
             //return response()->json(['error' => 'Error msg'],404); 
         }
     }
-
-    //更改該欄位id下欄位值
-    public function modifyDB(Request $request)
-    {
-        $item = Item::find($request->id);
-        $field = $request->name;
-        $item->$field = $request->value;
-        $item->save();
-        return response()->json(['name' => $field,'value' => $request->value]);
-    }
-
-    //刪除指定欄位id商品
-    public function deleteItemsFromDatabase(Request $request){
-        
-        $item =Item::find($request->id);
-        $item->delete();
-        return response()->json();
-   }
-
 
 }

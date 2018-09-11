@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Account\POST\AccountControllerPostImp;
+namespace App\Http\Controllers\Account\AccountControllerImp;
 use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\Crypt;
 use App\User;
@@ -21,18 +21,19 @@ class AfterAccount_Log_In implements AccountControllerPostImp{
         ];
         $validator = Validator::make($input,$rules,$messages);
 
-        if($validator->passes()){
-            if (Auth::attempt(['name' => $input['account'], 'password' => $input['password']])) {
-                // 如果認證通過...
-                
-                
+        if($validator->passes())
+        {
+            if (Auth::attempt(['name' => $input['account'], 'password' => $input['password']])) 
+            {   
                 return redirect('/');
             }
-            else{
+            else
+            {
                 return back()->withErrors('帳號或密碼錯誤');
             }
         }
-        else{
+        else
+        {
             return back()->withErrors($validator);
         }
     
