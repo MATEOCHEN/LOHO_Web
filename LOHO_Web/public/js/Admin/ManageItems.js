@@ -1,3 +1,5 @@
+let field_deletion_list = [];
+
 $(document).ready(function () {
     //載入頁面,並initialize()
     initialize();
@@ -45,7 +47,7 @@ $(document).ready(function () {
             success: function (response) {
                 item_text = '<ul>'+
                 '<li><h5>目前商品(圖片大小限制為64KB, 格式限制為jpeg、png、bmp、gif、 或 svg)</h5></li>'+
-                '<li>欄位編號:<span class="id">'+response.id+'</span><input type="button" class="btn btn-danger btn-sm modify delete" value="刪除"></li>'+
+                '<li>欄位編號:<span class="id">'+response.id+'</span><input type="button" class="btn btn-danger btn-sm modify delete" value="刪除" data-toggle="modal" data-target="#exampleModal"></li>'+
                 '<li>商品編號:<input type="text" name="item_id" id="" value=""><input type="submit" value="更改" class="btn btn-primary btn-sm modify"></li>'+
                 '<li>商品名稱:<input type="text" name="name" id="" value=""><input type="submit" value="更改" class="btn btn-primary btn-sm modify"></li>'+
                 '<li>商品價錢:<input type="text" name="price" id="" value=""><input type="submit" value="更改" class="btn btn-primary btn-sm modify"></li>'+
@@ -164,13 +166,25 @@ function initialize() {
         e.preventDefault();
     });
     
-    //前端動態刪除商品欄
+    //dom推入推疊
     $('.delete').click(function (e) {
         e.preventDefault();
+        field_deletion_list.push($(this));
+    });  
 
-        let ul_dom = $(this).parent('li').parent('ul');
+    //dom取出推疊
+    $('.delete_cancel').click(function (e) {
+        e.preventDefault();
+        let current = field_deletion_list.pop();
+    }); 
+
+    ///dom取出推疊並刪除
+    $('.delete_confirm').click(function (e) {
+        e.preventDefault();
+        let current = field_deletion_list.pop();
+        let ul_dom = current.parent('li').parent('ul');
         let id_dom = ul_dom.children("li").children('span,id');
-
+        
         $.ajax({
             type: "POST",
             url: "deleteItemsFromDatabase",
@@ -182,7 +196,7 @@ function initialize() {
                 $(ul_dom).remove();
             }
         });
-    });    
+    });
 }
 
 function getProduct(category_id) {
@@ -206,7 +220,7 @@ function getProduct(category_id) {
                     let src = "http://localhost/LOHO_Web/public/" + response.items[index].img_url;
                     item_text = '<ul>'+
                     '<li><h5>目前商品(圖片大小限制為64KB, 格式限制為jpeg、png、bmp、gif、 或 svg)</h5></li>'+
-                    '<li>欄位編號:<span class="id">'+response.items[index].id+'</span><input type="button" class="btn btn-danger btn-sm modify delete" value="刪除"></li>'+
+                    '<li>欄位編號:<span class="id">'+response.items[index].id+'</span><input type="button" class="btn btn-danger btn-sm modify delete" value="刪除" data-toggle="modal" data-target="#exampleModal"></li>'+
                     '<li>商品編號:<input type="text" name="item_id" id="" value="'+response.items[index].item_id+'"><input type="submit" value="更改" class="btn btn-primary btn-sm modify"></li>'+
                     '<li>商品名稱:<input type="text" name="name" id="" value="'+response.items[index].name+'"><input type="submit" value="更改" class="btn btn-primary btn-sm modify"></li>'+
                     '<li>商品價錢:<input type="text" name="price" id="" value="'+response.items[index].price+'"><input type="submit" value="更改" class="btn btn-primary btn-sm modify"></li>'+
