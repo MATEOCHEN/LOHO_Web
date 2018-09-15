@@ -1,4 +1,5 @@
 let field_deletion_list = [];
+let field_add_list = [];
 
 $(document).ready(function () {
     //載入頁面,並initialize()
@@ -32,7 +33,7 @@ $(document).ready(function () {
     });
 
     //前端增加商品欄, 必須再initialize()
-    $('#addItem').click(function (e) {
+    $('#addItem_confirm').click(function (e) {
         e.preventDefault();
         let item_text;
         let category_id = $('.category').text();
@@ -41,18 +42,22 @@ $(document).ready(function () {
             type: "POST",
             url: "addItemsToDatabase",
             data: {
-                category_id: category_id
+                category_id: category_id,
+                item_id:$('.item_id').val(),
+                name:$('.name').val(),
+                price:$('.price').val(),
+                description:$('.description').val(),
+                remain_count:$('.remain_count').val(),
             },
             dataType: "json",
             success: function (response) {
                 item_text = '<ul>'+
-                '<li><h5>目前商品(圖片大小限制為64KB, 格式限制為jpeg、png、bmp、gif、 或 svg)</h5></li>'+
                 '<li>欄位編號:<span class="id">'+response.id+'</span><input type="button" class="btn btn-danger btn-sm modify delete" value="刪除" data-toggle="modal" data-target="#exampleModal"></li>'+
-                '<li>商品編號:<input type="text" name="item_id" id="" value=""><input type="submit" value="更改" class="btn btn-primary btn-sm modify"></li>'+
-                '<li>商品名稱:<input type="text" name="name" id="" value=""><input type="submit" value="更改" class="btn btn-primary btn-sm modify"></li>'+
-                '<li>商品價錢:<input type="text" name="price" id="" value=""><input type="submit" value="更改" class="btn btn-primary btn-sm modify"></li>'+
-                '<li>商品描述:<input type="text" name="description" id="" value=""><input type="submit" value="更改" class="btn btn-primary btn-sm modify"></li>'+
-                '<li>剩餘數量:<input type="text" name="remain_count" id="" value=""><input type="submit" value="更改" class="btn btn-primary btn-sm modify"></li>'+
+                '<li>商品編號:<input type="text" name="item_id" id="" value='+$('.item_id').val()+'><input type="submit" value="更改" class="btn btn-primary btn-sm modify"></li>'+
+                '<li>商品名稱:<input type="text" name="name" id="" value='+$('.name').val()+'><input type="submit" value="更改" class="btn btn-primary btn-sm modify"></li>'+
+                '<li>商品價錢:<input type="text" name="price" id="" value='+$('.price').val()+'><input type="submit" value="更改" class="btn btn-primary btn-sm modify"></li>'+
+                '<li>商品描述:<input type="text" name="description" id="" value='+$('.description').val()+'><input type="submit" value="更改" class="btn btn-primary btn-sm modify"></li>'+
+                '<li>剩餘數量:<input type="text" name="remain_count" id="" value='+$('.remain_count').val()+'><input type="submit" value="更改" class="btn btn-primary btn-sm modify"></li>'+
                 '<li><img src="" height="300" width="300">' +
                     '<form enctype="multipart/form-data">'+
                         '<input type="file" name="file" />'+
@@ -66,6 +71,10 @@ $(document).ready(function () {
                  
             }
         });
+    });
+
+    $('#addItem').click(function (e) {
+        e.preventDefault();
     });
 
 });
@@ -219,7 +228,6 @@ function getProduct(category_id) {
                     const item = response.items[index];
                     let src = "http://localhost/LOHO_Web/public/" + response.items[index].img_url;
                     item_text = '<ul>'+
-                    '<li><h5>目前商品(圖片大小限制為64KB, 格式限制為jpeg、png、bmp、gif、 或 svg)</h5></li>'+
                     '<li>欄位編號:<span class="id">'+response.items[index].id+'</span><input type="button" class="btn btn-danger btn-sm modify delete" value="刪除" data-toggle="modal" data-target="#exampleModal"></li>'+
                     '<li>商品編號:<input type="text" name="item_id" id="" value="'+response.items[index].item_id+'"><input type="submit" value="更改" class="btn btn-primary btn-sm modify"></li>'+
                     '<li>商品名稱:<input type="text" name="name" id="" value="'+response.items[index].name+'"><input type="submit" value="更改" class="btn btn-primary btn-sm modify"></li>'+
@@ -243,3 +251,4 @@ function getProduct(category_id) {
     });
        
 }
+
