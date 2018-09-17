@@ -147,3 +147,4 @@ Route::group(['prefix' => 'Shopping'], function () {
     );
 
 });
+
