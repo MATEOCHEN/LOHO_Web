@@ -13,16 +13,16 @@
         <span class="category"></span>
         <input type="button" class="btn btn-success btn-sm change" value="c001">
         <input type="button" class="btn btn-success btn-sm change" value="c002">
+    </div>
+        <div class="d-flex flex-column align-items-center" id = "wrap">
+          
+        </div>
+        <div style="text-align:center">
           <!-- Button trigger modal -->
           <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#addModal">
-            新增商品
+              新增商品
           </button>
-    </div>
-        <div class="d-flex flex-row align-items-center flex-wrap" id = "wrap">
-
         </div>
-
-  
   <!-- Delete Modal -->
   <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
@@ -57,7 +57,6 @@
       </div>
       <div class="modal-body">
         <ul>
-          <li>欄位編號:<span class="id">xxx</span></li>
           <li>商品編號:<input type="text" name="item_id" id="" value="" class="item_id"></li>
           <li>商品名稱:<input type="text" name="name" id="" value="" class="name"></li>
           <li>商品價錢:<input type="text" name="price" id="" value="" class="price"></li>

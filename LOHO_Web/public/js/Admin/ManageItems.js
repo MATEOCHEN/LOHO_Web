@@ -93,7 +93,6 @@ $(document).ready(function () {
             dataType: "json",
             success: function (response) {
                 let src = "http://localhost/LOHO_Web/public/" + response.img_url;
-                alert(src);
                 item_text = '<ul>'+
                 '<li>欄位編號:<span class="id">'+response.id+'</span><input type="button" class="btn btn-danger btn-sm modify delete" value="刪除" data-toggle="modal" data-target="#exampleModal"></li>'+
                 '<li>商品編號:<input type="text" name="item_id" id="" value='+$('.item_id').val()+'><input type="submit" value="更改" class="btn btn-primary btn-sm modify"></li>'+
