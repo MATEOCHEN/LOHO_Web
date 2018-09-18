@@ -32,12 +32,52 @@ $(document).ready(function () {
         getProduct(category_id);
     });
 
+    $('#submit_image').submit(function (e) { 
+        e.preventDefault();
+
+        
+        let li_dom = $(this).parent('li');
+        let img_dom = li_dom.children('img');
+
+        var formData = new FormData($(this)[0]);
+        
+        $.ajax({
+            url: 'uploadImg',
+            data: formData,
+            contentType: "charset=utf-8",
+            dataType: 'json',
+            async: true,
+            type: 'POST',
+            enctype: "multipart/form-data",
+            processData: false,
+            contentType: false,
+            success: function (response) {
+
+                if (response.errors != null || undefined) {
+                    $('#addingstatus').empty();
+                    response.errors.forEach(error => {
+                        $('#addingstatus').append('<li>' + error + '</li>');
+                    });
+                } else {
+                    $('#addingstatus').empty();
+                    $('#addingstatus').append('<li>' + '圖片上傳成功' + '</li>');
+
+                    let src = "http://localhost/LOHO_Web/public/" + response.url;
+                    img_dom.attr('src', src);
+                }
+            },
+        });
+        e.preventDefault();
+        
+    });
+
     //前端增加商品欄, 必須再initialize()
     $('#addItem_confirm').click(function (e) {
         e.preventDefault();
         let item_text;
         let category_id = $('.category').text();
-        
+        let img_url = $('#image_adding').attr('src');
+        img_url = img_url.replace("http://localhost/LOHO_Web/public/","")
         $.ajax({
             type: "POST",
             url: "addItemsToDatabase",
@@ -48,9 +88,12 @@ $(document).ready(function () {
                 price:$('.price').val(),
                 description:$('.description').val(),
                 remain_count:$('.remain_count').val(),
+                img_url:img_url,
             },
             dataType: "json",
             success: function (response) {
+                let src = "http://localhost/LOHO_Web/public/" + response.img_url;
+                alert(src);
                 item_text = '<ul>'+
                 '<li>欄位編號:<span class="id">'+response.id+'</span><input type="button" class="btn btn-danger btn-sm modify delete" value="刪除" data-toggle="modal" data-target="#exampleModal"></li>'+
                 '<li>商品編號:<input type="text" name="item_id" id="" value='+$('.item_id').val()+'><input type="submit" value="更改" class="btn btn-primary btn-sm modify"></li>'+
@@ -58,8 +101,8 @@ $(document).ready(function () {
                 '<li>商品價錢:<input type="text" name="price" id="" value='+$('.price').val()+'><input type="submit" value="更改" class="btn btn-primary btn-sm modify"></li>'+
                 '<li>商品描述:<input type="text" name="description" id="" value='+$('.description').val()+'><input type="submit" value="更改" class="btn btn-primary btn-sm modify"></li>'+
                 '<li>剩餘數量:<input type="text" name="remain_count" id="" value='+$('.remain_count').val()+'><input type="submit" value="更改" class="btn btn-primary btn-sm modify"></li>'+
-                '<li><img src="" height="300" width="300">' +
-                    '<form enctype="multipart/form-data">'+
+                '<li><img src="'+src+'" height="300" width="300">' +
+                    '<form enctype="multipart/form-data" class="normal">'+
                         '<input type="file" name="file" />'+
                         '<input type="submit" name="submit" value="上傳" />'+
                         '<ul id="status">'+
@@ -71,10 +114,6 @@ $(document).ready(function () {
                  
             }
         });
-    });
-
-    $('#addItem').click(function (e) {
-        e.preventDefault();
     });
 
 });
@@ -109,7 +148,6 @@ function initialize() {
 
     //ajax更改欄位值
     $('li>:input[type="submit"]').click(function (e) {
-        alert("click");
         let li_dom = $(this).parent("li");
         let text_dom = li_dom.children(':input[type="text"]')
         let ul_dom = li_dom.parent('ul');
@@ -136,7 +174,7 @@ function initialize() {
     });
 
     //ajax上傳圖片(記得要preventDefault)
-    $('form').submit(function (e) {
+    $('.normal').submit(function (e) {
 
         let li_dom = $(this).parent('li');
         let img_dom = li_dom.children('img');
@@ -235,7 +273,7 @@ function getProduct(category_id) {
                     '<li>商品描述:<input type="text" name="description" id="" value="'+response.items[index].description+'"><input type="submit" value="更改" class="btn btn-primary btn-sm modify"></li>'+
                     '<li>剩餘數量:<input type="text" name="remain_count" id="" value="'+response.items[index].remain_count+'"><input type="submit" value="更改" class="btn btn-primary btn-sm modify"></li>'+
                     '<li><img src="'+src+'" height="300" width="300">' +
-                        '<form enctype="multipart/form-data">'+
+                        '<form enctype="multipart/form-data" class="normal">'+
                             '<input type="file" name="file" />'+
                             '<input type="submit" name="submit" value="上傳" />'+
                             '<ul id="status">'+

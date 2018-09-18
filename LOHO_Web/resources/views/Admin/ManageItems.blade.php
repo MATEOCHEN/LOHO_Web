@@ -1,5 +1,4 @@
 @extends('Layout.master')
-
 @section('title','上傳商品')
 @section('head')
 <link href="{{ URL::asset('/css/ManageItems.css') }}" rel="stylesheet" type="text/css" />
@@ -58,17 +57,18 @@
       </div>
       <div class="modal-body">
         <ul>
+          <li>欄位編號:<span class="id">xxx</span></li>
           <li>商品編號:<input type="text" name="item_id" id="" value="" class="item_id"></li>
           <li>商品名稱:<input type="text" name="name" id="" value="" class="name"></li>
           <li>商品價錢:<input type="text" name="price" id="" value="" class="price"></li>
           <li>商品描述:<input type="text" name="description" id="" value="" class="description"></li>
           <li>剩餘數量:<input type="text" name="remain_count" id="" value="" class="remain_count"></li>
-          <li><img src="" height="300" width="300"> 
-              <form enctype="multipart/form-data">
+          <li><img src="" height="300" width="300" id="image_adding"> 
+              <form enctype="multipart/form-data" id="submit_image">
                   {{ csrf_field() }}
                   <input type="file" name="file" />
-                  <input type="submit" name="submit" value="上傳" id="submit_image"/>
-                  <ul id="status">
+                  <input type="submit" name="submit" value="上傳" />
+                  <ul id="addingstatus">
                   </ul>
               </form></li>  
   </ul>

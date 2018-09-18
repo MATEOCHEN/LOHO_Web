@@ -51,6 +51,11 @@ Route::group(['namespace' => 'Admin','prefix' => 'admin'], function () {
     );
 
     Route::post(
+        '/uploadImg',
+        array('uses' => 'AddItemsController@uploadImg', 'as' => 'uploadImg')
+    );
+
+    Route::post(
         '/deleteItemsFromDatabase',
         array('uses' => 'DeleteItemsController@deleteItemsFromDatabase', 'as' => 'deleteItemsFromDatabase')
     );
