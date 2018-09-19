@@ -23,7 +23,7 @@ $(document).ready(function () {
           getProduct(aryPara['category_id']);
         }        
     }
-    
+   
     $('.change').click(function (e) { 
         e.preventDefault();
         var category_id = $(this).val();
@@ -95,11 +95,11 @@ $(document).ready(function () {
                 let src = "http://localhost/LOHO_Web/public/" + response.img_url;
                 item_text = '<ul>'+
                 '<li>欄位編號:<span class="id">'+response.id+'</span><input type="button" class="btn btn-danger btn-sm modify delete" value="刪除" data-toggle="modal" data-target="#exampleModal"></li>'+
-                '<li>商品編號:<input type="text" name="item_id" id="" value='+$('.item_id').val()+'><input type="submit" value="更改" class="btn btn-primary btn-sm modify"></li>'+
-                '<li>商品名稱:<input type="text" name="name" id="" value='+$('.name').val()+'><input type="submit" value="更改" class="btn btn-primary btn-sm modify"></li>'+
-                '<li>商品價錢:<input type="text" name="price" id="" value='+$('.price').val()+'><input type="submit" value="更改" class="btn btn-primary btn-sm modify"></li>'+
-                '<li>商品描述:<input type="text" name="description" id="" value='+$('.description').val()+'><input type="submit" value="更改" class="btn btn-primary btn-sm modify"></li>'+
-                '<li>剩餘數量:<input type="text" name="remain_count" id="" value='+$('.remain_count').val()+'><input type="submit" value="更改" class="btn btn-primary btn-sm modify"></li>'+
+                '<li>商品編號:<input type="text" name="item_id" id="" value='+$('.item_id').val()+'></li>'+
+                '<li>商品名稱:<input type="text" name="name" id="" value='+$('.name').val()+'></li>'+
+                '<li>商品價錢:<input type="text" name="price" id="" value='+$('.price').val()+'></li>'+
+                '<li>商品描述:<input type="text" name="description" id="" value='+$('.description').val()+'></li>'+
+                '<li>剩餘數量:<input type="text" name="remain_count" id="" value='+$('.remain_count').val()+'></li>'+
                 '<li><img src="'+src+'" height="300" width="300">' +
                     '<form enctype="multipart/form-data" class="normal">'+
                         '<input type="file" name="file" />'+
@@ -115,6 +115,11 @@ $(document).ready(function () {
         });
     });
 
+    //update按鈕按下 更新按鈕active
+    $('.update').click(function (e) { 
+        e.preventDefault();
+        
+    });
 });
 
 function initialize() {
@@ -128,25 +133,15 @@ function initialize() {
 
     //預設所有submit button都disabled
     $(':input[type="submit"]').prop('disabled', true);
-
-    //當更改欄位值, 更改submit button active
-    $(':input[type="text"]').keyup(function () {
+    
+    //當input value change update該欄位值
+    $(':input[type="text"]').on("change", function (event) {
         if ($(this).val() != '') {
             let parent_dom = $(this).parent("li");
             let submit_dom = parent_dom.children(':input[type="submit"]');
             submit_dom.prop('disabled', false);
         }
-    });
-    });
-     //當選擇檔案按下, 上傳submit button active
-     $(":input[type='file']").on("change", function (event) {
-        let parent_dom = $(this).parent("form");
-        let submit_dom = parent_dom.children(':input[type="submit"]');
-        submit_dom.prop('disabled', false);
-    })
 
-    //ajax更改欄位值
-    $('li>:input[type="submit"]').click(function (e) {
         let li_dom = $(this).parent("li");
         let text_dom = li_dom.children(':input[type="text"]')
         let ul_dom = li_dom.parent('ul');
@@ -169,8 +164,17 @@ function initialize() {
             }
         });
         let submit_dom = li_dom.children(':input[type="submit"]');
-        submit_dom.prop('disabled', true);
+        submit_dom.prop('disabled', true);        
+    })
     });
+
+     //當選擇檔案按下, 上傳submit button active
+     $(":input[type='file']").on("change", function (event) {
+        let parent_dom = $(this).parent("form");
+        let submit_dom = parent_dom.children(':input[type="submit"]');
+        submit_dom.prop('disabled', false);
+    })
+
 
     //ajax上傳圖片(記得要preventDefault)
     $('.normal').submit(function (e) {
@@ -266,11 +270,11 @@ function getProduct(category_id) {
                     let src = "http://localhost/LOHO_Web/public/" + response.items[index].img_url;
                     item_text = '<ul>'+
                     '<li>欄位編號:<span class="id">'+response.items[index].id+'</span><input type="button" class="btn btn-danger btn-sm modify delete" value="刪除" data-toggle="modal" data-target="#exampleModal"></li>'+
-                    '<li>商品編號:<input type="text" name="item_id" id="" value="'+response.items[index].item_id+'"><input type="submit" value="更改" class="btn btn-primary btn-sm modify"></li>'+
-                    '<li>商品名稱:<input type="text" name="name" id="" value="'+response.items[index].name+'"><input type="submit" value="更改" class="btn btn-primary btn-sm modify"></li>'+
-                    '<li>商品價錢:<input type="text" name="price" id="" value="'+response.items[index].price+'"><input type="submit" value="更改" class="btn btn-primary btn-sm modify"></li>'+
-                    '<li>商品描述:<input type="text" name="description" id="" value="'+response.items[index].description+'"><input type="submit" value="更改" class="btn btn-primary btn-sm modify"></li>'+
-                    '<li>剩餘數量:<input type="text" name="remain_count" id="" value="'+response.items[index].remain_count+'"><input type="submit" value="更改" class="btn btn-primary btn-sm modify"></li>'+
+                    '<li>商品編號:<input type="text" name="item_id" id="" value="'+response.items[index].item_id+'"></li>'+
+                    '<li>商品名稱:<input type="text" name="name" id="" value="'+response.items[index].name+'"></li>'+
+                    '<li>商品價錢:<input type="text" name="price" id="" value="'+response.items[index].price+'"></li>'+
+                    '<li>商品描述:<input type="text" name="description" id="" value="'+response.items[index].description+'"></li>'+
+                    '<li>剩餘數量:<input type="text" name="remain_count" id="" value="'+response.items[index].remain_count+'"></li>'+
                     '<li><img src="'+src+'" height="300" width="300">' +
                         '<form enctype="multipart/form-data" class="normal">'+
                             '<input type="file" name="file" />'+
