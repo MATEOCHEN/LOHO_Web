@@ -1,0 +1,89 @@
+body{
+
+    justify-content: center;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.content{
+    width: 30%;
+    height: 700px;
+    border: 1px green solid;
+    background-image:url('/LOHO_Web/public/Image/遊戲畫面素材/背景.png');
+    background-repeat: no-repeat;
+}
+
+button{
+    width: 80px;
+    font-size: 15px;
+}
+
+.title{
+    border: 1px red solid;
+    max-width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    position: absolute;
+    top: 6%;
+    font-weight: bolder;
+}
+
+input{
+    font-size: 15px;
+}
+
+label{
+    font-size: 15px;
+}
+
+.table{
+    position: absolute;
+    top: 31%;
+}
+
+td{
+    position: relative;
+    left: 2%;
+    width: 112px;
+    height: 106px;
+    border: 1px solid orangered;
+}
+
+@media only screen and (max-width:768px){
+    .content{
+        width: 60%;
+    }
+
+    .table{
+        top: 225px;
+    }
+}
+
+@media only screen and (max-width:480px){
+    .content{
+        width: 100%;
+    }
+
+    .title{
+        top: 50px;
+    }
+
+    .table{
+        top: 230px;
+    }
+
+    td{
+        
+    }
+}
+
+@media only screen and (max-width:375px){
+    .table{
+        top: 246px;
+    }
+    td{
+        width: 110px;
+        height: 96px;
+    }
+}
