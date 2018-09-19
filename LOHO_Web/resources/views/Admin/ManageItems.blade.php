@@ -22,9 +22,6 @@
           <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#addModal">
               新增商品
           </button>
-          <button type="button" class="btn btn-primary update">
-            更新商品
-          </button>
         </div>
   <!-- Delete Modal -->
   <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">

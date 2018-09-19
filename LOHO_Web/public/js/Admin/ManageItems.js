@@ -94,7 +94,7 @@ $(document).ready(function () {
             success: function (response) {
                 let src = "http://localhost/LOHO_Web/public/" + response.img_url;
                 item_text = '<ul>'+
-                '<li>欄位編號:<span class="id">'+response.id+'</span><input type="button" class="btn btn-danger btn-sm modify delete" value="刪除" data-toggle="modal" data-target="#exampleModal"></li>'+
+                '<li>欄位編號:<span class="id">'+response.id+'</span><input type="button" class="btn btn-danger btn-sm modify delete" value="刪除" data-toggle="modal" data-target="#exampleModal"><button class="btn btn-primary update">更改</button></li>'+
                 '<li>商品編號:<input type="text" name="item_id" id="" value='+$('.item_id').val()+'></li>'+
                 '<li>商品名稱:<input type="text" name="name" id="" value='+$('.name').val()+'></li>'+
                 '<li>商品價錢:<input type="text" name="price" id="" value='+$('.price').val()+'></li>'+
@@ -114,12 +114,7 @@ $(document).ready(function () {
             }
         });
     });
-
-    //update按鈕按下 更新按鈕active
-    $('.update').click(function (e) { 
-        e.preventDefault();
-        
-    });
+  
 });
 
 function initialize() {
@@ -132,8 +127,10 @@ function initialize() {
         });
 
     //預設所有submit button都disabled
+    $(':input[type="text"]').prop('disabled', true);
+    $(':input[type="file"]').prop('disabled', true);
     $(':input[type="submit"]').prop('disabled', true);
-    
+
     //當input value change update該欄位值
     $(':input[type="text"]').on("change", function (event) {
         if ($(this).val() != '') {
@@ -247,8 +244,36 @@ function initialize() {
             }
         });
     });
+
+     //update按鈕按下 input[text]active 需再initialize update_finish()
+     $('.update').click(function (e) { 
+        e.preventDefault();
+        $(this).hide();
+        $(this).parent('li').append('<button class="btn btn-primary update_finish">更改完成</button>');
+        let ul_dom = $(this).parent('li').parent('ul');
+        ul_dom.find(':input[type="text"]').prop('disabled', false);
+        ul_dom.find(':input[type="file"]').prop('disabled', false);
+        
+        update_finish();
+    });
+    
 }
 
+//update_finish按鈕按下 input[text]disable
+function update_finish() {
+    $(document).ready(function () {
+     $('.update_finish').click(function (e) { 
+        e.preventDefault(); 
+        alert('更改完成');
+        let ul_dom = $(this).parent('li').parent('ul');
+        ul_dom.find(':input[type="text"]').prop('disabled', true);
+        ul_dom.find(':input[type="file"]').prop('disabled', true);
+        ul_dom.find(':input[type="submit"]').prop('disabled', true);
+        $(this).hide();
+        $('.update').show();
+    });        
+    });
+}
 function getProduct(category_id) {
     $(document).ready(function () {
         //ajax 初始化
@@ -269,7 +294,7 @@ function getProduct(category_id) {
                     const item = response.items[index];
                     let src = "http://localhost/LOHO_Web/public/" + response.items[index].img_url;
                     item_text = '<ul>'+
-                    '<li>欄位編號:<span class="id">'+response.items[index].id+'</span><input type="button" class="btn btn-danger btn-sm modify delete" value="刪除" data-toggle="modal" data-target="#exampleModal"></li>'+
+                    '<li>欄位編號:<span class="id">'+response.items[index].id+'</span><input type="button" class="btn btn-danger btn-sm modify delete" value="刪除" data-toggle="modal" data-target="#exampleModal"><button class="btn btn-primary update">更改</button></li>'+
                     '<li>商品編號:<input type="text" name="item_id" id="" value="'+response.items[index].item_id+'"></li>'+
                     '<li>商品名稱:<input type="text" name="name" id="" value="'+response.items[index].name+'"></li>'+
                     '<li>商品價錢:<input type="text" name="price" id="" value="'+response.items[index].price+'"></li>'+
