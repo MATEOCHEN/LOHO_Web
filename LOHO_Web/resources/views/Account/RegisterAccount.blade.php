@@ -22,10 +22,6 @@
                             <div class="input-name-text">*姓名：</div>
                             <input type="text" name = "name">
                         </div>
-                        <div class="input-area">
-                            <div class="input-name-text">*暱稱：</div>
-                            <input type="text" name = "nickname">
-                        </div>
                     </div>
                     <div class="right">
                         <button type="button" class="btn btn-primary btn-lg">用Facebook快速登入</button>
@@ -38,18 +34,14 @@
                     </div>
                 </div>
                 <div class="input-area">
-                    <div class="input-text">*連絡電話：</div>
-                    <input type="text">
+                    <div class="input-text">*市話：</div>
+                    <input type="text" name="telephone_number">
                     <div class="input-text">*行動電話：</div>
-                    <input type="text">
-                </div>
-                <div class="input-area">
-                    <div class="input-text">*郵遞區號：</div>
-                    <input type="text">
+                    <input type="text" name = "phone_number">
                 </div>
                 <div class="input-area">
                     <div class="input-text">*收件地址：</div>
-                    <input type="text" style="width: 70%;">
+                    <input type="text" style="width: 70%;" name="address">
                 </div>
                 <div class="input-area">
                     <div class="input-text">*電子信箱：</div>
@@ -70,7 +62,7 @@
                 </div>
                 <div class="input-area">
                     <div class="e-report">
-                        <input type="radio" name="e-report" "" value="yes"> 我要訂閱電子報
+                        <input type="radio"> 我要訂閱電子報
                     </div>
                 </div>
                 <div class="submit-area" action="AfterRegisterAccount" method="POST">
@@ -79,6 +71,11 @@
                         按下註冊按鈕的同時，表示您已經同意我們的資料使用政策與服務條款
                     </div>
                 </div>
+                <ul>
+                    @foreach ($errors->all() as $error)
+                        <li>{{ $error }}</li>
+                    @endforeach
+                </ul>
             </form>
         </div>
 

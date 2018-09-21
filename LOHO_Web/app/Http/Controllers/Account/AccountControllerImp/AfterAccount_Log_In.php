@@ -23,7 +23,7 @@ class AfterAccount_Log_In implements AccountControllerPostImp{
 
         if($validator->passes())
         {
-            if (Auth::attempt(['name' => $input['account'], 'password' => $input['password']])) 
+            if (Auth::attempt(['account' => $input['account'], 'password' => $input['password']])) 
             {   
                 return redirect('/');
             }
