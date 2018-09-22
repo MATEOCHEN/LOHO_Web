@@ -20,10 +20,16 @@ Route::group([], function () {
 });
 
 Route::group(['namespace' => 'Admin','prefix' => 'admin'], function () {
+
     Route::get(
         '/index',
         array('uses' => 'AdminIndexController@AdminIndex', 'as' => 'admin')
     );
+
+});
+
+
+Route::group(['namespace' => 'Admin\ManageItems','prefix' => 'admin'], function () {
 
     Route::get(
         '/ManageItems',

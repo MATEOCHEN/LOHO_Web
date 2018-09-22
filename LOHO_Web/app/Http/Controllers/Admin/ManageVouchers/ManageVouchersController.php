@@ -18,6 +18,7 @@ class ManageVouchersController extends BaseController
                  'id' => $voucher->id,
                  'coupon_code' => $voucher->coupon_code,
                  'discounted_price' => $voucher->discounted_price,
+                 'user_id' => $voucher->user_id,
                  'created_at' => $voucher->created_at,
                  'updated_at' => $voucher->updated_at
              ];
