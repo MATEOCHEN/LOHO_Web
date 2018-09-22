@@ -18,6 +18,10 @@
         <h1>會員管理</h1>
         <input type="button" class="btn btn-success btn-sm" value="使用者資料">
     </div>
+    <div class="voucher">
+        <h1>優惠卷管理</h1>
+        <input type="button" class="btn btn-success btn-sm" value="優惠卷管理">
+    </div>
 </div>
 
 @stop

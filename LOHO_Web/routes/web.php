@@ -71,6 +71,15 @@ Route::group(['namespace' => 'Admin\ManageAccounts','prefix' => 'admin/ManageAcc
 
 });
 
+Route::group(['namespace' => 'Admin\ManageVouchers','prefix' => 'admin/ManageVouchers'], function () {
+
+    Route::get(
+        '/ManageVouchers',
+        array('uses' => 'ManageVouchersController@ManageVouchers', 'as' => 'ManageVouchers')
+    );
+
+});
+
 Route::group(['middleware' => 'AdminLogin','namespace' => 'Account','prefix' => 'Account'], function () {
     Route::get(
         'AccountInformation',

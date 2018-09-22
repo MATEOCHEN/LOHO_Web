@@ -12,4 +12,10 @@ $(document).ready(function () {
         e.preventDefault();
         window.location = "ManageAccounts/ManageAccounts";
     });
+
+    //優惠卷管理
+    $('.voucher').find('input[type="button"]').click(function (e) { 
+        e.preventDefault();
+        window.location = "ManageVouchers/ManageVouchers";
+    });
 });
