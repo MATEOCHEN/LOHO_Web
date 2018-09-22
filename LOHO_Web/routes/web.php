@@ -62,6 +62,15 @@ Route::group(['namespace' => 'Admin','prefix' => 'admin'], function () {
 
 });
 
+Route::group(['namespace' => 'Admin\ManageAccounts','prefix' => 'admin/ManageAccounts'], function () {
+
+    Route::get(
+        '/ManageAccounts',
+        array('uses' => 'ManageAccountsController@ManageAccounts', 'as' => 'ManageAccounts')
+    );
+
+});
+
 Route::group(['middleware' => 'AdminLogin','namespace' => 'Account','prefix' => 'Account'], function () {
     Route::get(
         'AccountInformation',
