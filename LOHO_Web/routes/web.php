@@ -148,3 +148,23 @@ Route::group(['prefix' => 'Shopping'], function () {
 
 });
 
+<<<<<<< HEAD
+=======
+Route::group(['prefix' => 'Game','namespace' => 'Game'], function () {
+    Route::get(
+        'Index',
+        array('uses' => 'GameController@Index', 'as' => 'Index')
+    );
+
+    Route::get(
+        'Hamster',
+        array('uses' => 'GameController@Hamster', 'as' => 'Hamster')
+    );
+
+    Route::get(
+        'Card',
+        array('uses' => 'GameController@Card', 'as' => 'Card')
+    );
+
+});
+>>>>>>> 093b0029bacf6485da452802ce886d701667a313
