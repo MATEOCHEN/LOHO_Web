@@ -2,20 +2,14 @@
 @section('title','我的購物車') 
 @section('head')
 <link href="{{ URL::asset('css/FillOrderList.css') }}" rel="stylesheet" type="text/css" />
+<link href="{{ URL::asset('css/bootstrap.css') }}" rel="stylesheet" type="text/css" />
 
 @stop
 @section('content')
 <div class="content">
-    <form class="outer" action="" method="">
-        <div class="wrap">
+    <form class="outer form-group" action="" method="">
+        <div class="wrap form-check">
             <div class="input-area">訂購人資料</div>
-            <div class="input-area">
-                <div class="input-text">
-                    性別:
-                    <input type="radio" name="gender" value="male">男
-                    <input type="radio" name="gender" value="female">女
-                </div>
-            </div>
             <div class="input-area">
                 <div class="input-text">
                     姓名：
@@ -47,16 +41,10 @@
                 </div>
             </div>
 
-            <div class="input-area">
+            <div class="input-area form-check">
                     收件人資料
-                    <input type="radio" name="" value="">同收件人資料
-            </div>
-            <div class="input-area">
-                <div class="input-text">
-                    性別:
-                    <input type="radio" name="gender" value="male"> 男
-                    <input type="radio" name="gender" value="female"> 女
-                </div>
+                    <input type="radio" name="" id="radio" value="">
+                    <label class="form-check-label" for="radio">同收件人資料</label>
             </div>
             <div class="input-area">
                 <div class="input-text">
@@ -89,8 +77,8 @@
                 </div>
             </div>
             <div class="next">
-                <button class="button" onclick="">繼續購物</button>
-                <button class="button" onclick="">下一步</button>
+                <button class="button btn btn-secondary" onclick="">繼續購物</button>
+                <button class="button btn btn-secondary" onclick="">下一步</button>
             </div>
         </div>
     </form>
