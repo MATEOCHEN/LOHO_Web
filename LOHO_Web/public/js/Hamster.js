@@ -4,6 +4,15 @@ var score = 0;
 var countDown = 90;
 var interId = null;
 var	timeId = null;
+var dialog;
+
+window.onload=function(){
+	dialog=document.getElementById("dialog");
+}
+
+function showDialog(){
+	dialog.style.display="block";
+}
 
 function GameStart(){
 playing = true;
@@ -16,7 +25,7 @@ function timeShow(){
 	document.fomr1.time.value=countDown;
 	if(countDown == 0)
 		{
-			alert("恭喜獲得優惠券!!");
+			showDialog();
 			GameOver();
 			return;
 		}

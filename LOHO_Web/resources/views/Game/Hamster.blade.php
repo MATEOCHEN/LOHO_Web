@@ -22,6 +22,11 @@
                 <input type="text" name="score" size="8" value="0" disabled>
             </form>
         </div>
+        <div id="dialog" class="dialog">
+            恭喜獲得優惠券!!<br/>
+            <input type="text" name = "discount" size="10" value="87878787" disabled><br/>
+            <button class="button" onclick="">確定</button>
+        </div>
         <div class="table">
             <table>
                 <tr>
