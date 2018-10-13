@@ -9,6 +9,7 @@
 @endif
 @stop
 @section('content')
+
   <div class="content">
     <div class="container-fluid py-5">
       <div class="row">
