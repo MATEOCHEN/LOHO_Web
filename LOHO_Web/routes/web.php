@@ -20,10 +20,16 @@ Route::group([], function () {
 });
 
 Route::group(['namespace' => 'Admin','prefix' => 'admin'], function () {
+
     Route::get(
         '/index',
         array('uses' => 'AdminIndexController@AdminIndex', 'as' => 'admin')
     );
+
+});
+
+
+Route::group(['namespace' => 'Admin\ManageItems','prefix' => 'admin'], function () {
 
     Route::get(
         '/ManageItems',
@@ -51,8 +57,31 @@ Route::group(['namespace' => 'Admin','prefix' => 'admin'], function () {
     );
 
     Route::post(
+        '/uploadImg',
+        array('uses' => 'AddItemsController@uploadImg', 'as' => 'uploadImg')
+    );
+
+    Route::post(
         '/deleteItemsFromDatabase',
         array('uses' => 'DeleteItemsController@deleteItemsFromDatabase', 'as' => 'deleteItemsFromDatabase')
+    );
+
+});
+
+Route::group(['namespace' => 'Admin\ManageAccounts','prefix' => 'admin/ManageAccounts'], function () {
+
+    Route::get(
+        '/ManageAccounts',
+        array('uses' => 'ManageAccountsController@ManageAccounts', 'as' => 'ManageAccounts')
+    );
+
+});
+
+Route::group(['namespace' => 'Admin\ManageVouchers','prefix' => 'admin/ManageVouchers'], function () {
+
+    Route::get(
+        '/ManageVouchers',
+        array('uses' => 'ManageVouchersController@ManageVouchers', 'as' => 'ManageVouchers')
     );
 
 });

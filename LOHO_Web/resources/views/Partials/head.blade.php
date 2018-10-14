@@ -20,7 +20,7 @@
                         let scrollTop = $(window).scrollTop(); 
                         let mainTop = $('.content').offset().top;
                         let navbarHeight = $('#nav').height();
-                        console.log(scrollTop,mainTop);
+                        
                        
                        if(scrollTop > mainTop){
                            $('#nav').addClass("fixed-top");

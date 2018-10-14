@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Admin;
+namespace App\Http\Controllers\Admin\ManageItems;
 
 use Illuminate\Foundation\Bus\DispatchesJobs;
 use Illuminate\Routing\Controller as BaseController;
@@ -14,18 +14,17 @@ use Illuminate\Http\Response;
 
 use Validator;
 
-class AddItemsController extends BaseController
+class DeleteItemsController extends BaseController
 {
     use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
 
-    //新增空商品到DB
-    public function addItemsToDatabase(Request $request){
+    //刪除指定欄位id商品
+    public function deleteItemsFromDatabase(Request $request)
+    {
         
-        $item = new Item;
-        $item->category_id = $request->category_id;
-        $item->save();
-        $id = $item->id;
-        return response()->json(['id' => $id]);
-   }
+        $item =Item::find($request->id);
+        $item->delete();
+        return response()->json();
+    }
 
 }

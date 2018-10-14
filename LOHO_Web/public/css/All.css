@@ -4,6 +4,11 @@
     height: auto;
     margin: 0 2%;
     border: solid red 1px;
+    
+}
+
+body{
+    background: #969696;
 }
 
 
