@@ -148,8 +148,6 @@ Route::group(['prefix' => 'Shopping'], function () {
 
 });
 
-<<<<<<< HEAD
-=======
 Route::group(['prefix' => 'Game','namespace' => 'Game'], function () {
     Route::get(
         'Index',
@@ -167,4 +165,3 @@ Route::group(['prefix' => 'Game','namespace' => 'Game'], function () {
     );
 
 });
->>>>>>> 093b0029bacf6485da452802ce886d701667a313
