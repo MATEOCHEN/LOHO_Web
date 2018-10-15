@@ -12,7 +12,7 @@
                 <div class="list-group-block">
                     <h1 class="my-4">新品上市</h1>
                     <div class="list-group">
-                        <a href="#" class="list-group-item">Category 1</a>
+                        <a href="#" class="list-group-item">Category 5</a>
                         <a href="#" class="list-group-item">Category 2</a>
                         <a href="#" class="list-group-item">Category 3</a>
                     </div>
