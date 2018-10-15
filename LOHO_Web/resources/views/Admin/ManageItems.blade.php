@@ -70,7 +70,7 @@
                   <ul id="addingstatus">
                   </ul>
               </form></li>  
-  </ul>
+      </ul>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">取消</button>

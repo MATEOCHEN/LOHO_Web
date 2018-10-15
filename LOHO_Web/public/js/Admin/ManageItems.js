@@ -126,11 +126,15 @@ function initialize() {
             }
         });
 
-    //預設所有submit button都disabled
+    //預設所有input[text],input[file],input[submit]都disabled
     $(':input[type="text"]').prop('disabled', true);
     $(':input[type="file"]').prop('disabled', true);
     $(':input[type="submit"]').prop('disabled', true);
 
+    //預設新增視窗input[text],input[file]active
+    $('.modal-body').find(':input[type="text"]').prop('disabled', false);
+    $('.modal-body').find(':input[type="file"]').prop('disabled', false);
+    
     //當input value change update該欄位值
     $(':input[type="text"]').on("change", function (event) {
         if ($(this).val() != '') {

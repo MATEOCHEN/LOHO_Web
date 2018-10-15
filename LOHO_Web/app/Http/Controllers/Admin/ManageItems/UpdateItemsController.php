@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Admin;
+namespace App\Http\Controllers\Admin\ManageItems;
 
 use Illuminate\Foundation\Bus\DispatchesJobs;
 use Illuminate\Routing\Controller as BaseController;
@@ -14,29 +14,23 @@ use Illuminate\Http\Response;
 
 use Validator;
 
-class AddItemsController extends BaseController
+class UpdateItemsController extends BaseController
 {
     use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
 
-    //新增空商品到DB
-    public function addItemsToDatabase(Request $request){
-        
-        $item = new Item;
-        $item->category_id = $request->category_id;
-        $item->item_id = $request->item_id;
-        $item->name = $request->name;
-        $item->price = $request->price;
-        $item->description = $request->description;
-        $item->remain_count = $request->remain_count;
-        $item->img_url = $request->img_url;
-
+    //更改該欄位id下欄位值
+    public function modifyDB(Request $request)
+    {
+        $item = Item::find($request->id);
+        $field = $request->name;
+        $item->$field = $request->value;
         $item->save();
-        $id = $item->id;
-        return response()->json(['id' => $id,'img_url'=>$request->img_url]);
-   }
+        return response()->json(['name' => $field,'value' => $request->value]);
+    }
 
-   public function uploadImg(Request $request)
-   {
+        //更改該欄位id下圖片
+    public function upLoadFile(Request $request)
+    {   
         $input = $request->all();
         $rules = ['file' => 'required|image|between:0,64'];
 
@@ -53,14 +47,20 @@ class AddItemsController extends BaseController
                 $destinationPath = 'item_img/';
                 $originalFile = $file->getClientOriginalName();
                 $file->move($destinationPath, $originalFile); 
+        
+                $item = Item::find($request->id);
+                        
+                $item->img_url = $destinationPath.$originalFile;
+                
+                $item->save();
 
-                return response()->json(['url'=> $destinationPath.$originalFile]);
+                return response()->json(['url'=> $item->img_url]);
         }
         else{
             return response()->json(['errors'=>$validator->errors()->all()]);
             //return response()->json($validator->messages(), Response::HTTP_BAD_REQUEST);
             //return response()->json(['error' => 'Error msg'],404); 
-        }    
-   }
+        }
+    }
 
 }
