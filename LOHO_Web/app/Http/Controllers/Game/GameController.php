@@ -1,18 +1,25 @@
 <?php
 
 namespace App\Http\Controllers\Game;
-use Illuminate\Routing\Controller as BaseController;
+
+use App\Http\Controllers\Controller;
 
 
-class GameController extends BaseController
+
+class GameController extends Controller
 {
-    public function Hamster()
-    {
-        return view("Game\Hamster");
+    public function Index(){
+
+        return view('Game\Index');
     }
 
-    public function Card()
-    {
-        return view("Game\Card");
+    public function Hamster(){
+
+        return view('Game\Hamster');
+    }
+
+    public function Card(){
+
+        return view('Game\Card');
     }
 }
