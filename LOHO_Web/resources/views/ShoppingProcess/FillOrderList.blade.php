@@ -78,9 +78,15 @@
             </div>
             <div class="next">
                 <button class="button btn btn-secondary" onclick="">繼續購物</button>
-                <button class="button btn btn-secondary" onclick="">下一步</button>
+                <button class="button btn btn-secondary" id="next_step">下一步</button>
             </div>
         </div>
     </form>
 </div>
+<script>
+    $('#next_step').click(function (e) { 
+        e.preventDefault();
+        window.location = "ConfirmShoppingList";
+    });
+</script>
 @stop

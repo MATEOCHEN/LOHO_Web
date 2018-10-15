@@ -25,7 +25,7 @@
                 </ul>
                 <ul>
                     <li class="h4">優惠折抵</li>
-                    <li><button class=" btn btn-success" onclick="">查看優惠券</button></li>
+                    <li><button class=" btn btn-success" id="view_voucher">查看優惠券</button></li>
                 </ul>
                 <hr>
                 <ul class="ul">
@@ -41,4 +41,10 @@
         </div>
     </div>
 </div>
+<script>
+    $('#view_voucher').click(function (e) { 
+        e.preventDefault();
+        window.location = "http://localhost/LOHO_Web/public/Account/PersonalInformation";
+    });
+</script>
 @stop
