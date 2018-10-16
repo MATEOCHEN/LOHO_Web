@@ -4,6 +4,7 @@
 @section('head')
 <link href="{{ URL::asset('/css/Shopping.css') }}" rel="stylesheet" type="text/css" />
 
+
 <script> 
     function addCart(item_id) {
         let item_id_cart = item_id;
@@ -30,8 +31,8 @@
                     alert("加入 " + item.id + " "+item.name +" NT$"+item.price+" "+item.count+"雙" + item_img_url);
                 }
             });
-            
-    });
+           
+        });   
     }
 
 </script>
