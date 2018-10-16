@@ -12,7 +12,7 @@
         +"<p id='name"+txtID+"'>"+ item_name +"</p></div>"
         +"<p class='text-danger'>NT</p>"+"<p id='price"+txtID+"' class='text-danger mr-2'>"+item_price+"</p>"+"<p class='text-danger'>元</p>"
         +"<input type='image' src='/LOHO_Web/public/svg/rubbish-bin.svg' alt='圖片更新中' style='width:25px ; height:25px' onclick ='Item_removed("+txtID+")'></div>"
-        +"<img src='"+img_url+"' alt='圖片更新中' class='img-thumbnail'</div>",
+        +"<img src='"+img_url+"' alt='圖片更新中' style='width:150px ; height:150px'class='img-thumbnail'</div>",
         "<div class='col p-4 text-center solid-top-border id='div4" + txtID +"'>"
         +"<p id='size"+txtID+"'>無</p></div>",
         "<div class='col p-4 text-center solid-top-border id='div5" + txtID +"'>"
@@ -151,9 +151,14 @@
             txtID = 0;
             sum = 0;
         }
+
     });
         $("#ShoppingCart").click(function() {
             $("#Dialog").dialog("open");
             getCart();
         });
+
+        $("#CheckOut").click(function() {
+            window.location  = "ConfirmShoppingList";
+        })
     });

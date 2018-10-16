@@ -38,7 +38,7 @@
 <script>
 $('#next_step').click(function (e) { 
     e.preventDefault();
-    window.location = "FillOrderList";
+    window.location = ""; 
 });
 </script>
 @stop

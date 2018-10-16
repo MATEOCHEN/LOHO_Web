@@ -86,7 +86,7 @@
 <script>
     $('#next_step').click(function (e) { 
         e.preventDefault();
-        window.location = "ConfirmShoppingList";
+        window.location = "CheckoutList";
     });
 </script>
 @stop

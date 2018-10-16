@@ -36,7 +36,7 @@
 
             <div class="next">
                 <button class="button btn btn-secondary" onclick="">繼續購物</button>
-                <button class="button btn btn-secondary" onclick="">下一步</button>
+                <button class="button btn btn-secondary" id="nextStep" onclick="">下一步</button>
             </div>
         </div>
     </div>
@@ -46,5 +46,8 @@
         e.preventDefault();
         window.location = "http://localhost/LOHO_Web/public/Account/PersonalInformation";
     });
+    $("#nextStep").click(function() {
+            window.location  = "FillOrderList";
+        })
 </script>
 @stop
