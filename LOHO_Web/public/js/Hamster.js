@@ -1,7 +1,7 @@
 var td = new Array();
 var playing = false;
 var score = 0;
-var countDown = 90;
+var countDown = 1;
 var interId = null;
 var	timeId = null;
 var dialog;
@@ -82,5 +82,5 @@ function GameOver(){
 	clearMouse();
 	alert("游戏结束！\n你获得的分数为："+score);
 	score = 0;
-	countDown = 90;
+	countDown = 1;
 }

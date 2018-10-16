@@ -225,6 +225,11 @@ Route::group(['prefix' => 'Game','namespace' => 'Game'], function () {
     );
 
     Route::get(
+        'StoreVoucher',
+        array('uses' => 'GameController@StoreVoucher', 'as' => 'StoreVoucher')
+    );
+
+    Route::get(
         'Card',
         array('uses' => 'GameController@Card', 'as' => 'Card')
     );
