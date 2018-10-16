@@ -84,6 +84,10 @@ Route::group(['namespace' => 'Admin\ManageVouchers','prefix' => 'admin/ManageVou
         array('uses' => 'ManageVouchersController@ManageVouchers', 'as' => 'ManageVouchers')
     );
 
+    Route::post(
+        '/AddVouchers',
+        array('uses' => 'AddVouchersController@AddVouchers', 'as' => 'AddVouchers')
+    );
 });
 
 Route::group(['middleware' => 'AdminLogin','namespace' => 'Account','prefix' => 'Account'], function () {
@@ -97,6 +101,10 @@ Route::group(['middleware' => 'AdminLogin','namespace' => 'Account','prefix' => 
         array('uses' => 'AccountInfoController@PersonalInformation', 'as' => 'PersonalInformation')
     );
 
+    Route::get(
+        'ViewVoucher',
+        array('uses' => 'AccountInfoController@ViewVoucher', 'as' => 'ViewVoucher')
+    );
 
     Route::get(
         'ModifyPassword',
@@ -225,13 +233,17 @@ Route::group(['prefix' => 'Game','namespace' => 'Game'], function () {
     );
 
     Route::get(
-        'StoreVoucher',
-        array('uses' => 'GameController@StoreVoucher', 'as' => 'StoreVoucher')
-    );
-
-    Route::get(
         'Card',
         array('uses' => 'GameController@Card', 'as' => 'Card')
     );
 
+    Route::get(
+        'StoreVoucher',
+        array('uses' => 'StoreVoucherController@StoreVoucher', 'as' => 'StoreVoucher')
+    );
+
+    Route::post(
+        'AfterStoreVoucher',
+        array('uses' => 'StoreVoucherController@AfterStoreVoucher', 'as' => 'AfterStoreVoucher')
+    );
 });

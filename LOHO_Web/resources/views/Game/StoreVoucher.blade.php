@@ -13,7 +13,7 @@
             </div>
             <br>
             <h2>儲存優惠卷</h2>
-            <form id="store_form">
+            <form action="AfterStoreVoucher" method="POST">
                 {{ csrf_field() }}
                 <div class="form-group d-flex flex-column justify-content-start align-items-start" >
                     <label for="formGroupExampleInput">帳號</label>

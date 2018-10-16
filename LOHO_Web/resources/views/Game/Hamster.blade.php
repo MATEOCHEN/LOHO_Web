@@ -30,7 +30,7 @@
     </div>
     <div id="dialog" class="dialog">
         恭喜獲得優惠券!!<br />
-        <input type="text" name="discount" size="10" value="87878787" disabled><br />
+        <input type="text" name="discount" size="10" value="100元折抵卷" disabled><br />
         <button id="confirm_voucher">確定</button>
     </div>
     <div class="table">

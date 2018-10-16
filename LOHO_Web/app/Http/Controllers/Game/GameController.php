@@ -18,11 +18,6 @@ class GameController extends Controller
         return view('Game\Hamster');
     }
 
-    public function StoreVoucher(){
-
-        return view('Game\StoreVoucher');
-    }
-
     public function Card(){
 
         return view('Game\Card');
