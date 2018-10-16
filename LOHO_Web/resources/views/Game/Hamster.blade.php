@@ -2,7 +2,7 @@
 @section('title','Hamster') 
 @section('head')
 <link rel="stylesheet" type="text/css" media="screen" href="{{ URL::asset('css/Hamster.css') }}" />
-<script src="{{ URL::asset('js/Hamster.js') }}"></script>
+<script src="{{ URL::asset('js/Game/Hamster.js') }}"></script>
 <script>
     $(document).ready(function () {
         $('#confirm_voucher').click(function (e) {
