@@ -20,7 +20,8 @@
     </div>
     <div class="voucher">
         <h1>優惠卷管理</h1>
-        <input type="button" class="btn btn-success btn-sm" value="優惠卷管理">
+        <input type="button" class="btn btn-success btn-sm" value="優惠卷品項管理">
+        <input type="button" class="btn btn-success btn-sm" id="user_own_vouchers_button" value="會員優惠卷管理">
     </div>
 </div>
 
