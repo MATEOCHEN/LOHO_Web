@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\Crypt;
 use App\User;
 use App\Voucher;
+use App\Users_own_voucher;
 use Validator;
 use Illuminate\Support\Facades\Auth;
 
@@ -38,9 +39,13 @@ class StoreVoucherController extends Controller
                 $voucher = new Voucher;
                 $voucher->coupon_code =1000;
                 $voucher->discounted_price = 100;
-                $voucher->user_id = $user->id;
                 
                 $voucher->save();
+
+                $users_own_voucher = new Users_own_voucher;
+                $users_own_voucher->user_id =  $user->id;
+                $users_own_voucher->voucher_id =  $voucher->id;
+                $users_own_voucher->save();
 
                 return view('Game/StoreVoucherSuccess');
             }

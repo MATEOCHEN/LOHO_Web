@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
 use App\Voucher;
+use App\Users_own_voucher;
 class AccountInfoController extends Controller
 {
     
@@ -28,13 +29,22 @@ class AccountInfoController extends Controller
     {
         $vouchers_list = array();
         
-        foreach (Voucher::where('user_id', Auth::user()->id)->cursor() as $voucher) {
-            $voucher_tmp = [
-                'coupon_code' => $voucher->coupon_code,
-                'discounted_price' => $voucher->discounted_price,
-                'created_at' => $voucher->created_at,
-            ];
-            array_push($vouchers_list,$voucher_tmp);            
+        $users_own_vouchers = Users_own_voucher::where('user_id', Auth::user()->id)->get();
+
+        foreach($users_own_vouchers as $users_own_voucher)
+        {   
+            $vouchers = Voucher::all();
+            foreach ($vouchers as $voucher) {
+                if($voucher->id == $users_own_voucher->voucher_id)
+                {
+                    $voucher_tmp = [
+                        'coupon_code' => $voucher->id,
+                        'discounted_price' => $voucher->discounted_price,
+                        'created_at' => $voucher->created_at,
+                    ];
+                    array_push($vouchers_list,$voucher_tmp);  
+                }
+            }
         }
 
          $data = ['vouchers' => $vouchers_list];
