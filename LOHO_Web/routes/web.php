@@ -88,6 +88,11 @@ Route::group(['namespace' => 'Admin\ManageVouchers','prefix' => 'admin/ManageVou
         '/AddVouchers',
         array('uses' => 'AddVouchersController@AddVouchers', 'as' => 'AddVouchers')
     );
+
+    Route::get(
+        '/ManageUsersOwnVouchers',
+        array('uses' => 'ManageUsersOwnVouchersController@ManageUsersOwnVouchers', 'as' => 'ManageUsersOwnVouchers')
+    );
 });
 
 Route::group(['middleware' => 'AdminLogin','namespace' => 'Account','prefix' => 'Account'], function () {

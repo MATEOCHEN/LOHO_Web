@@ -13,9 +13,15 @@ $(document).ready(function () {
         window.location = "ManageAccounts/ManageAccounts";
     });
 
-    //優惠卷管理
+    //優惠卷品項管理
     $('.voucher').find('input[type="button"]').click(function (e) { 
         e.preventDefault();
         window.location = "ManageVouchers/ManageVouchers";
     });
+
+    //會員優惠卷管理
+    $('#user_own_vouchers_button').click(function (e) { 
+        e.preventDefault();
+        window.location = "ManageVouchers/ManageUsersOwnVouchers";        
+    });   
 });

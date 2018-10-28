@@ -26,7 +26,7 @@ class ManageVouchersController extends BaseController
          }
          $data = ['vouchers' => $vouchers_list];
 
-         return view('Admin/ManageVouchers',compact('data'));
+         return view('Admin/ManageVouchers/ManageVouchers',compact('data'));
     }
 
 }
