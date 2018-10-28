@@ -33,3 +33,6 @@ shopping route:
 http://localhost/LOHO_Web/public/Shopping/BrowseItems
 http://localhost/LOHO_Web/public/Shopping/ShoppingItem
 
+1003 meeting:
+會員欄位可加line id,身份證字號 會員可查詢優惠卷
+

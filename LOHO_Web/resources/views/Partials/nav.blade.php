@@ -1,33 +1,6 @@
-<script>
-        function getCart() {
-            $(document).ready(function () {
-                alert("您的商品");
-            $.ajaxSetup({
-                headers: {
-                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-                }
-                });
-
-            $.ajax({
-                type: "GET",
-                url: "/LOHO_Web/public/Shopping/getCart",
-                data: "",
-                dataType: "json",
-                success: function (response) {
-                    response.items.forEach(item => {
-                        if(item.name ==="null"){
-                            alert("商品已被刪除");
-                        }
-                        else{
-                            alert(item.name +" NT$"+ item.price+"元"+ item.count+ "雙");
-                        }
-                    });
-                }
-            });
-            });
-        }
-
-</script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+<script src="/LOHO_Web/public/js/ShoopingCart.js"></script>
 <div id = "nav">
     <nav class="navbar navbar-expand-lg navbar-light bg-light" >
         <a class="navbar-brand" href="{{ url("/") }}">
@@ -176,11 +149,41 @@
                         @else
                         <a class="nav-link text-secondary" href="{{ url("Account/Account_Log_In") }}">登入</a>
                     @endif    
-                    <a class="nav-link text-secondary"  href="{{ url("Shopping/ShoppingCart") }}" style="cursor: pointer;">購物車</a>	
+                    <a class="nav-link text-secondary"  href="#" id="ShoppingCart">購物車</a>	
                 </div>
             </div>
         </div>
     </nav>
 </div>
+<div id ="Dialog">
+    <!--購物車版面配置-->
+      <h1 class="text-center p-3 mt-1">LOHO 您的購物車</h1>
+      <div class="container-fluid  p-2 mt-4">
+            <div class="row">
+                <div class="col-6 ml-2 text-center">
+                    <h4 class="font-weight-bold">商品名稱</h4>
+                </div>
+                <div class="col text-center">
+                    <h4 class="font-weight-bold">尺寸</h4>
+                </div>
+                <div class="col text-center">
+                    <h4 class="font-weight-bold">數量</h4>
+                </div>
+                <div class="col text-center">
+                    <h4 class="font-weight-bold">小計</h4>
+                </div>
+            </div>
+          <div class ="row" id="showBlock"></div>
+      <div class="alert alert-secondary" role="alert">
+            <div class="row">
+                共<span id = count></span>項商品，金額總計
+                <p class="text-danger" id="total"></p>元
+                <span><button type="button" id="CheckOut" class="btn btn-outline-secondary btn-sm text-right">結帳</button></span>
+            </div>
+      </div>
+    </div>
+    </div>
+
+
 
 

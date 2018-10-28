@@ -20,10 +20,16 @@ Route::group([], function () {
 });
 
 Route::group(['namespace' => 'Admin','prefix' => 'admin'], function () {
+
     Route::get(
         '/index',
         array('uses' => 'AdminIndexController@AdminIndex', 'as' => 'admin')
     );
+
+});
+
+
+Route::group(['namespace' => 'Admin\ManageItems','prefix' => 'admin'], function () {
 
     Route::get(
         '/ManageItems',
@@ -51,10 +57,42 @@ Route::group(['namespace' => 'Admin','prefix' => 'admin'], function () {
     );
 
     Route::post(
+        '/uploadImg',
+        array('uses' => 'AddItemsController@uploadImg', 'as' => 'uploadImg')
+    );
+
+    Route::post(
         '/deleteItemsFromDatabase',
         array('uses' => 'DeleteItemsController@deleteItemsFromDatabase', 'as' => 'deleteItemsFromDatabase')
     );
 
+});
+
+Route::group(['namespace' => 'Admin\ManageAccounts','prefix' => 'admin/ManageAccounts'], function () {
+
+    Route::get(
+        '/ManageAccounts',
+        array('uses' => 'ManageAccountsController@ManageAccounts', 'as' => 'ManageAccounts')
+    );
+
+});
+
+Route::group(['namespace' => 'Admin\ManageVouchers','prefix' => 'admin/ManageVouchers'], function () {
+
+    Route::get(
+        '/ManageVouchers',
+        array('uses' => 'ManageVouchersController@ManageVouchers', 'as' => 'ManageVouchers')
+    );
+
+    Route::post(
+        '/AddVouchers',
+        array('uses' => 'AddVouchersController@AddVouchers', 'as' => 'AddVouchers')
+    );
+
+    Route::get(
+        '/ManageUsersOwnVouchers',
+        array('uses' => 'ManageUsersOwnVouchersController@ManageUsersOwnVouchers', 'as' => 'ManageUsersOwnVouchers')
+    );
 });
 
 Route::group(['middleware' => 'AdminLogin','namespace' => 'Account','prefix' => 'Account'], function () {
@@ -68,6 +106,10 @@ Route::group(['middleware' => 'AdminLogin','namespace' => 'Account','prefix' => 
         array('uses' => 'AccountInfoController@PersonalInformation', 'as' => 'PersonalInformation')
     );
 
+    Route::get(
+        'ViewVoucher',
+        array('uses' => 'AccountInfoController@ViewVoucher', 'as' => 'ViewVoucher')
+    );
 
     Route::get(
         'ModifyPassword',
@@ -181,5 +223,32 @@ Route::group(['prefix' => 'Shopping'], function () {
     Route::get(
         '/FillOrderList',
         array('uses' => 'Shopping\ShoppingController@FillOrderList', 'as' => 'FillOrderList')
+    );
+});
+
+Route::group(['prefix' => 'Game','namespace' => 'Game'], function () {
+    Route::get(
+        'Index',
+        array('uses' => 'GameController@Index', 'as' => 'Index')
+    );
+
+    Route::get(
+        'Hamster',
+        array('uses' => 'GameController@Hamster', 'as' => 'Hamster')
+    );
+
+    Route::get(
+        'Card',
+        array('uses' => 'GameController@Card', 'as' => 'Card')
+    );
+
+    Route::get(
+        'StoreVoucher',
+        array('uses' => 'StoreVoucherController@StoreVoucher', 'as' => 'StoreVoucher')
+    );
+
+    Route::post(
+        'AfterStoreVoucher',
+        array('uses' => 'StoreVoucherController@AfterStoreVoucher', 'as' => 'AfterStoreVoucher')
     );
 });
