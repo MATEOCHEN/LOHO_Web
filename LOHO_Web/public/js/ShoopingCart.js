@@ -160,5 +160,6 @@
 
         $("#CheckOut").click(function() {
             window.location  = "ConfirmShoppingList";
+            //how to add the item to next page?
         })
     });
