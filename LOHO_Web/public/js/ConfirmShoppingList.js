@@ -1,4 +1,4 @@
-     var txtID = 0;
+    var txtID = 0;
     var sum = 0;
     var pre_subtotal = 0
 
@@ -23,31 +23,46 @@
         $('#orderTotal').text(sum+70);
     }
 
-function getConfirmCart() {
-    $(document).ready(function () {
-        $.ajaxSetup({
-            headers: {
-                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-            }
-            });
 
-        $.ajax({
-            type: "GET",    
-            url: "/LOHO_Web/public/Shopping/getCart",
-            data: "",
-            dataType: "json",
-            success: function (response) {
-                for (let index = 0; index < response.items.length; index++) {
-                    const item =  response.items[index];
-                    if(item.name === null){
-                        continue;
-                    }
-                    else{
-                        //alert(item.name +" NT$"+ item.price+"元"+ item.count+ "雙" + item.img_url);
-                        Item_display(item.name,item.price,item.count,item.img_url);
+    function getConfirmCart() {
+        $(document).ready(function () {
+            $.ajaxSetup({
+                headers: {
+                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                }
+                });
+
+            $.ajax({
+                type: "GET",    
+                url: "/LOHO_Web/public/Shopping/getCart",
+                data: "",
+                dataType: "json",
+                success: function (response) {
+                    for (let index = 0; index < response.items.length; index++) {
+                        const item =  response.items[index];
+                        if(item.name === null){
+                            continue;
+                        }
+                        else{
+                            //alert(item.name +" NT$"+ item.price+"元"+ item.count+ "雙" + item.img_url);
+                            Item_display(item.name,item.price,item.count,item.img_url);
+                        }
                     }
                 }
-            }
+            });
+        });
+    }
+
+    $(document).ready(function(){
+        getConfirmCart();
+
+        $('#view_voucher').click(function (e) { 
+            e.preventDefault();
+            window.location = "http://localhost/LOHO_Web/public/Account/PersonalInformation";
+        });
+        $("#nextStep").click(function() {
+            window.location  = "FillOrderList";
         });
     });
-}     
+    
+

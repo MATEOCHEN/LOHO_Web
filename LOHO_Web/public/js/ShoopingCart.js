@@ -6,7 +6,7 @@
     var Item_added = function(item_name,item_price,item_count,img_url) {
         txtID++;
         sum = sum + item_price * item_count;
-        $("#showBlock").append("<div id='div1" + txtID +"' class='col-6 p-4 ml-2 text-left solid-top-border'>"
+        $("#showBlock").append("<form method='post' action='ConfirmShoppingList.php>'"+"<div id='div1" + txtID +"' class='col-6 p-4 ml-2 text-left solid-top-border'>"
         +"<div id='div2" + txtID +"' class='row'>"
         +"<div class='col text-left' id='div3" + txtID +"'>"
         +"<p id='name"+txtID+"'>"+ item_name +"</p></div>"
@@ -18,7 +18,7 @@
         "<div class='col p-4 text-center solid-top-border id='div5" + txtID +"'>"
         +"<input type='number' value="+item_count+" placeholder="+item_count+" id='quantity" +txtID+"' min='1' onfocusin='get_old_value("+txtID+")' onchange='item_changed("+txtID+")'></div>",
         "<div class='col p-4 text-center solid-top-border id='div6" + txtID +"'>"
-        +"<h5 class='text-danger' id='subtotal"+txtID+"'>"+item_price * item_count+"</h5></div>");
+        +"<h5 class='text-danger' id='subtotal"+txtID+"'>"+item_price * item_count+"</h5></div>"+"</form>");
         $('#count').text(txtID);
         $('#total').text(sum);
     }
@@ -158,8 +158,7 @@
             getCart();
         });
 
-        $("#CheckOut").click(function() {
-            window.location  = "ConfirmShoppingList";
-            //how to add the item to next page?
-        })
+        $("#checkOut").click(function() {
+            window.location = "/LOHO_Web/public/Shopping/ConfirmShoppingList";
+        });
     });
