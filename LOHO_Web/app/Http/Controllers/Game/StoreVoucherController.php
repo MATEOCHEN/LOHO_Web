@@ -37,7 +37,6 @@ class StoreVoucherController extends Controller
             {   
                 $user = User::where('account', $input['account'])->first();
                 $voucher = new Voucher;
-                $voucher->coupon_code =1000;
                 $voucher->discounted_price = 100;
                 
                 $voucher->save();

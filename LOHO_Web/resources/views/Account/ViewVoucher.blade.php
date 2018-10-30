@@ -20,11 +20,14 @@
               <tr>
                   <td>{{$voucher['coupon_code']}}</td>
                   <td>{{$voucher['discounted_price']}}</td>
-                  <td>{{$voucher['created_at']}}</td>
+                  <td>{{$voucher['created_at']}} <button class = "use">使用</button></td>
               </tr>             
               @endforeach     
           </tbody>
         </table>
 </div>   
+<script>
+
+</script>
 @stop
 
