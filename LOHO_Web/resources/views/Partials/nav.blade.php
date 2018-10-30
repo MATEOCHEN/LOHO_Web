@@ -1,6 +1,7 @@
 <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
 <script src="/LOHO_Web/public/js/ShoopingCart.js"></script>
+<script src="/LOHO_Web/public/js/ConfirmShoppingList.js"></script>
 <div id = "nav">
     <nav class="navbar navbar-expand-lg navbar-light bg-light" >
         <a class="navbar-brand" href="{{ url("/") }}">
