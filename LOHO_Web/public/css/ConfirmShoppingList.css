@@ -1,18 +1,17 @@
+.wrap{
+    width: 80%;
+    height: auto;
+    border: 1px green solid;   
+}
+
 .outer{
     justify-content: center;
     width: 100%;
     height: auto;
     display: flex;
     flex-direction: row;
-    flex-wrap: wrap;
+    flex-wrap: wrap;    
 }
-
-.wrap{
-    width: 80%;
-    height: auto;
-    border: 1px green solid;
-}
-
 .list{
     width: 100%;
     height: auto;

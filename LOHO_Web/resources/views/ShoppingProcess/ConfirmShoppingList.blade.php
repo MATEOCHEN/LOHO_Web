@@ -2,10 +2,10 @@
 @section('title','我的購物車') 
 @section('head')
 <link href="{{ URL::asset('css/ConfirmShoppingList.css') }}" rel="stylesheet" type="text/css"/>
-<script src="/LOHO_Web/public/js/ConfirmShoppingList.js"></script>
+<script src="/LOHO_Web/public/js/Shopping/ConfirmShoppingList.js"></script>
 @stop
 @section('content')
-<div class="container-fluid">
+<div class="container-fluid">   
     <div class="outer">
         <div class="wrap">
             <h1>訂單進度</h1>
