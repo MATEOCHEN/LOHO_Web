@@ -58,7 +58,7 @@
 
         $('#view_voucher').click(function (e) { 
             e.preventDefault();
-            window.location = "/LOHO_Web/public/Account/PersonalInformation";
+            window.location = "/LOHO_Web/public/ShoppingProcess/SelectVoucher";
         });
         $("#nextStep").click(function() {
             window.location  = "FillOrderList";

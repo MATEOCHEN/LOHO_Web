@@ -11,6 +11,7 @@ use Illuminate\Support\Facades\Session;
 use App\Item;
 use App\Http\Controllers\Shopping\Cart_Imp;
 
+
 class ShoppingController extends BaseController
 {
     use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
@@ -46,13 +47,18 @@ class ShoppingController extends BaseController
         return view('ShoppingProcess\CheckoutList');
     }
 
-    public function ConfirmShoppingList()
+    public function ConfirmShoppingList(Request $request)
     {
-        return view('ShoppingProcess\ConfirmShoppingList');
+        $coupon_price = $request->session()->get('coupon_price', 0);
+        
+        $data = ['coupon_price' => $coupon_price];
+        return view('ShoppingProcess\ConfirmShoppingList',compact('data'));
     }
 
     public function FillOrderList()
     {
         return view('ShoppingProcess\FillOrderList');
     }
+
+
 }

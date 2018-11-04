@@ -226,6 +226,18 @@ Route::group(['prefix' => 'Shopping'], function () {
     );
 });
 
+Route::group(['middleware' => 'AdminLogin','namespace' => 'ShoppingProcess','prefix' => 'ShoppingProcess'], function () {
+    Route::get(
+        'SelectVoucher',
+        array('uses' => 'SelectVoucherController@SelectVoucher', 'as' => 'SelectVoucher')
+    );
+
+    Route::post(
+        'UseVoucher',
+        array('uses' => 'SelectVoucherController@UseVoucher', 'as' => 'UseVoucher')
+    );    
+});
+
 Route::group(['prefix' => 'Game','namespace' => 'Game'], function () {
     Route::get(
         'Index',

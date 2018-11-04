@@ -45,7 +45,7 @@
                         <span><h5 class="text-danger">$70</h5></span><h5 class="text-danger" id="shippingFee"></h5>
                     </div>
                     <div class="row">
-                        <h5>優惠折抵：</h5>
+                        <h5>優惠折抵：<span>{{$data['coupon_price']}}</span></h5>
                         <button class="btn btn-success btn-sm" id="view_voucher">查看優惠券</button>
                     </div>
                     <div class="row">
