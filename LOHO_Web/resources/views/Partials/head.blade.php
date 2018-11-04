@@ -18,7 +18,7 @@
                 $(document).ready(function () {
                     $(window).scroll(function () {
                         let scrollTop = $(window).scrollTop(); 
-                        let mainTop = $('.content').offset().top;
+                        let mainTop = $('.content').offset();
                         let navbarHeight = $('#nav').height();
                         
                        
