@@ -38,26 +38,26 @@
         </div>
     </div>
       <!-- Error Modal -->
-  <div class="modal fade" id="ErrorModal" tabindex="-1" role="dialog" aria-labelledby="ErrorModalLabel" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title" id="ErrorModalLabel">提醒!!</h5>
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close" id="closeModal">
-                <span aria-hidden="true">&times;</span>
-              </button>
-            </div>
-            <div class="modal-body">
-              <ul id="errors_area">
+    <div class="modal fade" id="ErrorModal" tabindex="-1" role="dialog" aria-labelledby="ErrorModalLabel" aria-hidden="true">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="ErrorModalLabel">提醒!!</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close" id="closeModal">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                <ul id="errors_area">
 
-              </ul>
-            </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-secondary delete_cancel" data-dismiss="modal" id="confirmError">確認</button>
+                </ul>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary delete_cancel" data-dismiss="modal" id="confirmError">確認</button>
+              </div>
             </div>
           </div>
-        </div>
-      </div> 
+    </div> 
 </div>
 
 @stop
