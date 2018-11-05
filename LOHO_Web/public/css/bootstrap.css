@@ -26,7 +26,7 @@
   --info: #17a2b8;
   --warning: #ffc107;
   --danger: #dc3545;
-  --light: #f8f9fa;
+  --light: #141516;
   --dark: #343a40;
   --breakpoint-xs: 0;
   --breakpoint-sm: 576px;
@@ -5430,7 +5430,7 @@ button.bg-primary:focus {
 }
 
 .bg-secondary {
-  background-color: #6c757d !important;
+  background-color: #888888 !important;
 }
 
 a.bg-secondary:hover, a.bg-secondary:focus,

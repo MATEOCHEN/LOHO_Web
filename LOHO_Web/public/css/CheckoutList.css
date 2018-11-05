@@ -5,15 +5,14 @@
     flex-wrap: wrap;
     width: 100%;
     height: auto;
-    border: 1px red solid;
 }
 
 .wrap{
     font-size: 25px;
-    width: 60%;
+    width: 100%;
     height: auto;
-    border: 1px blue solid;
     margin-top: 10px;
+    border: 1px grey solid;
 }
 
 .option{

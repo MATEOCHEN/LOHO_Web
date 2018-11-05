@@ -1,6 +1,6 @@
 <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
-<script src="/LOHO_Web/public/js/ShoopingCart.js"></script>
+<script src="/LOHO_Web/public/js/Shopping/ShoopingCart.js"></script>
 <div id = "nav">
     <nav class="navbar navbar-expand-lg navbar-light bg-light" >
         <a class="navbar-brand" href="{{ url("/") }}">
@@ -174,15 +174,15 @@
                 </div>
             </div>
           <div class ="row" id="showBlock"></div>
-      <div class="alert alert-secondary" role="alert">
+        <div class="alert alert-secondary" role="alert">
             <div class="row">
                 共<span id = count></span>項商品，金額總計
                 <p class="text-danger" id="total"></p>元
-                <span><button type="button" id="CheckOut" class="btn btn-outline-secondary btn-sm text-right">結帳</button></span>
+                <span><button type="button" id="checkOut" class="btn btn-outline-secondary btn-sm text-right">結帳</button></span>
             </div>
-      </div>
+        </div>
     </div>
-    </div>
+</div>
 
 
 
