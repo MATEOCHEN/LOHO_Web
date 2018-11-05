@@ -25,10 +25,15 @@ $(document).ready(function () {
                 else{
                     $('#ErrorModal').modal('show');
                     response.errors.forEach(error => {
-                        $('#errors_area').append(error);
+                        $('#errors_area').append('<li>'+error+'</li>');
                     });
                 }
             },
     });
+    });
+
+    $('#confirmError').click(function (e) { 
+        e.preventDefault();
+        $('#errors_area').empty();
     });
 });

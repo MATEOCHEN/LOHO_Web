@@ -47,11 +47,13 @@
                 <span aria-hidden="true">&times;</span>
               </button>
             </div>
-            <div class="modal-body" id="errors_area">
-              
+            <div class="modal-body">
+              <ul id="errors_area">
+
+              </ul>
             </div>
             <div class="modal-footer">
-              <button type="button" class="btn btn-secondary delete_cancel" data-dismiss="modal">確認</button>
+              <button type="button" class="btn btn-secondary delete_cancel" data-dismiss="modal" id="confirmError">確認</button>
             </div>
           </div>
         </div>
