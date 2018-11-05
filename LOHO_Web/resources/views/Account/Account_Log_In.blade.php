@@ -3,9 +3,8 @@
 @section('title','登入帳號')
 @section('head')
 <link href="{{ URL::asset('/css/Account_Log_In.css') }}" rel="stylesheet" type="text/css" />
+<script src="{{ URL::asset('/js/Account/Account_Log_In.js') }}"></script>
 @stop
-
-
 @section('content')
 <div class = "content">
     <div class="container-block">
@@ -15,7 +14,7 @@
             </div>
             <br>
             <h2>LOHO帳號登入</h2>
-            <form action="AfterAccount_Log_In" method="POST">
+            <form action="" method="POST" id="login">
                 {{ csrf_field() }}
                 <div class="form-group d-flex flex-column justify-content-start align-items-start" >
                     <label for="formGroupExampleInput">帳號</label>
@@ -36,17 +35,27 @@
                     <button type="button" class="btn btn-primary">用Facebook登入</button>
                 </div>
             </form>
-    
-            <ul>
-                @foreach ($errors->all() as $error)
-                    <li>{{ $error }}</li>
-                @endforeach
-            </ul>
-            @if(session('msg'))
-                <p>帳號或密碼錯誤</p>
-            @endif
         </div>
     </div>
+      <!-- Error Modal -->
+  <div class="modal fade" id="ErrorModal" tabindex="-1" role="dialog" aria-labelledby="ErrorModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="ErrorModalLabel">提醒!!</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body" id="errors_area">
+              
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary delete_cancel" data-dismiss="modal">確認</button>
+            </div>
+          </div>
+        </div>
+      </div> 
 </div>
 
 @stop
