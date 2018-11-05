@@ -237,7 +237,7 @@ Route::group(['middleware' => 'AdminLogin','namespace' => 'ShoppingProccess','pr
         array('uses' => 'FillOrderListController@FillOrderList', 'as' => 'FillOrderList')
     );
 
-<<<<<<< HEAD
+
     Route::get(
         '/ClearOrder',
         array('uses' => 'Shopping\ShoppingController@ClearOrder', 'as' => 'ClearOrder')
@@ -247,8 +247,7 @@ Route::group(['middleware' => 'AdminLogin','namespace' => 'ShoppingProccess','pr
         '/FinishOrder',
         array('uses' => 'Shopping\ShoppingController@FinishOrder', 'as' => 'FinishOrder')
     );
-=======
->>>>>>> 6cb7fadc169c66ac40ffffe7586d961b7d225350
+
 });
 Route::group(['namespace' => 'ShoppingProccess','prefix' => 'ShoppingProccess'], function () {
 
