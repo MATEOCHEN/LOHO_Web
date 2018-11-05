@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\ShoppingProcess;
+namespace App\Http\Controllers\ShoppingProccess;
 
 use Illuminate\Routing\Controller as BaseController;
 use Illuminate\Http\Request;

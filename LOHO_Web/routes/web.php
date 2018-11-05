@@ -209,24 +209,9 @@ Route::group(['prefix' => 'Shopping'], function () {
         '/ShoppingCart',
         array('uses' => 'Shopping\CartController@ShoppingCart', 'as' => 'ShoppingCart')
     );
-
-    Route::get(
-        '/CheckoutList',
-        array('uses' => 'Shopping\ShoppingController@CheckoutList', 'as' => 'CheckoutList')
-    );
-
-    Route::get(
-        '/ConfirmShoppingList',
-        array('uses' => 'Shopping\ShoppingController@ConfirmShoppingList', 'as' => 'ConfirmShoppingList')
-    );
-
-    Route::get(
-        '/FillOrderList',
-        array('uses' => 'Shopping\ShoppingController@FillOrderList', 'as' => 'FillOrderList')
-    );
 });
 
-Route::group(['middleware' => 'AdminLogin','namespace' => 'ShoppingProcess','prefix' => 'ShoppingProcess'], function () {
+Route::group(['middleware' => 'AdminLogin','namespace' => 'ShoppingProccess','prefix' => 'ShoppingProccess'], function () {
     Route::get(
         'SelectVoucher',
         array('uses' => 'SelectVoucherController@SelectVoucher', 'as' => 'SelectVoucher')
@@ -235,9 +220,42 @@ Route::group(['middleware' => 'AdminLogin','namespace' => 'ShoppingProcess','pre
     Route::post(
         'UseVoucher',
         array('uses' => 'SelectVoucherController@UseVoucher', 'as' => 'UseVoucher')
-    );    
-});
+    ); 
+    
+    Route::get(
+        '/CheckoutList',
+        array('uses' => 'CheckoutListController@CheckoutList', 'as' => 'CheckoutList')
+    );
 
+    Route::get(
+        '/ConfirmShoppingList',
+        array('uses' => 'ConfirmShoppingListController@ConfirmShoppingList', 'as' => 'ConfirmShoppingList')
+    );
+
+    Route::get(
+        '/FillOrderList',
+        array('uses' => 'FillOrderListController@FillOrderList', 'as' => 'FillOrderList')
+    );
+
+});
+Route::group(['namespace' => 'ShoppingProccess','prefix' => 'ShoppingProccess'], function () {
+
+    Route::get(
+        '/CheckoutList',
+        array('uses' => 'CheckoutListController@CheckoutList', 'as' => 'CheckoutList')
+    );
+
+    Route::get(
+        '/ConfirmShoppingList',
+        array('uses' => 'ConfirmShoppingListController@ConfirmShoppingList', 'as' => 'ConfirmShoppingList')
+    );
+
+    Route::get(
+        '/FillOrderList',
+        array('uses' => 'FillOrderListController@FillOrderList', 'as' => 'FillOrderList')
+    );
+
+});
 Route::group(['prefix' => 'Game','namespace' => 'Game'], function () {
     Route::get(
         'Index',

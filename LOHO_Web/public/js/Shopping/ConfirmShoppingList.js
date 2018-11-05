@@ -20,7 +20,7 @@
         +"<h5 class='text-danger' id='subtotal"+txtID+"'>"+item_price * item_count+"</h5></div>");
         $('#count').text(txtID);
         $('#goodsTotal').text(sum);
-        $('#orderTotal').text(sum+70);
+        $('#orderTotal').text(sum+70 - $('#coupon_price').text());
     }
 
 
@@ -61,7 +61,28 @@
             window.location = "/LOHO_Web/public/ShoppingProcess/SelectVoucher";
         });
         $("#nextStep").click(function() {
-            window.location  = "FillOrderList";
+            if(sum > 0)
+            {
+                /*存入優惠折扣, 總金額進session
+                window.location  = "FillOrderList";
+                $.ajax({
+                    type: "method",
+                    url: "url",
+                    data: "data",
+                    dataType: "dataType",
+                    success: function (response) {
+                        
+                    }
+                });*/
+                window.location  = "FillOrderList";
+            }
+            else{
+                alert("請先選擇商品");
+            }
+        });
+
+        $("#continue_shopping").click(function() {
+            window.location  = "/LOHO_Web/public/";
         });
     });
     

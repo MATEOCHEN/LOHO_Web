@@ -41,24 +41,4 @@ class ShoppingController extends BaseController
     {
         return view('Shopping\ShoppingItem');
     }
-
-    public function CheckoutList()
-    {
-        return view('ShoppingProcess\CheckoutList');
-    }
-
-    public function ConfirmShoppingList(Request $request)
-    {
-        $coupon_price = $request->session()->get('coupon_price', 0);
-        
-        $data = ['coupon_price' => $coupon_price];
-        return view('ShoppingProcess\ConfirmShoppingList',compact('data'));
-    }
-
-    public function FillOrderList()
-    {
-        return view('ShoppingProcess\FillOrderList');
-    }
-
-
 }
