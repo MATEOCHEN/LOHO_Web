@@ -36,4 +36,9 @@ $(document).ready(function () {
         e.preventDefault();
         $('#errors_area').empty();
     });
+
+    $('#closeModal').click(function (e) { 
+        e.preventDefault();
+        $('#errors_area').empty();
+    });    
 });
