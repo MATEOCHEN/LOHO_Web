@@ -55,4 +55,14 @@ class ShoppingController extends BaseController
     {
         return view('ShoppingProcess\FillOrderList');
     }
+
+    public function ClearOrder() 
+    {
+        return view('ShoppingProcess\ClearOrder');
+    }
+
+    public function FinishOrder()
+    {
+        return view('ShoppingProcess\FinishOrder');
+    }
 }

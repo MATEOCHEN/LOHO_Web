@@ -1,7 +1,7 @@
 .wrap{
-    width: 80%;
+    width: 100%;
     height: auto;
-    border: 1px green solid;   
+    border: 1px gray solid;   
 }
 
 .outer{
@@ -15,7 +15,6 @@
 .list{
     width: 100%;
     height: auto;
-    border: 1px blue solid;
     margin-bottom: 20px;
 }
 
@@ -57,3 +56,7 @@ ul li{
     margin-left: 20px;
     margin-right: 20px;
 }
+/*
+.solid-top-border {
+    border-top: 5px solid  #969696 !important;
+}*/

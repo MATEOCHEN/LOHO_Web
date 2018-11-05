@@ -224,6 +224,16 @@ Route::group(['prefix' => 'Shopping'], function () {
         '/FillOrderList',
         array('uses' => 'Shopping\ShoppingController@FillOrderList', 'as' => 'FillOrderList')
     );
+
+    Route::get(
+        '/ClearOrder',
+        array('uses' => 'Shopping\ShoppingController@ClearOrder', 'as' => 'ClearOrder')
+    );
+
+    Route::get(
+        '/FinishOrder',
+        array('uses' => 'Shopping\ShoppingController@FinishOrder', 'as' => 'FinishOrder')
+    );
 });
 
 Route::group(['prefix' => 'Game','namespace' => 'Game'], function () {

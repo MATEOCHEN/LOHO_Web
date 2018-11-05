@@ -14,28 +14,31 @@
                 <div class="progress-bar bg-success" role="progressbar" style="width: 20%;" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100"><p class="font-weight-bold pt-2" style="font-size: 20px">Step.1 確認商品</p></div>
                 <div class="progress-bar bg-success" role="progressbar" style="width: 20%;" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100"><p class="font-weight-bold pt-2" style="font-size: 20px">Step.2 填寫資料</p></div>
                 <div class="progress-bar bg-success" role="progressbar" style="width: 20%;" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100"><p class="font-weight-bold pt-2" style="font-size: 20px">Step.3 付款方式</p></div>
-                <div class="progress-bar bg-secondary" role="progressbar" style="width: 20%;" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100"><p class="font-weight-bold pt-2" style="font-size: 20px">Step.4 確認訂單</p></div>
+                <div class="progress-bar bg-success" role="progressbar" style="width: 20%;" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100"><p class="font-weight-bold pt-2" style="font-size: 20px">Step.4 確認訂單</p></div>
                 <div class="progress-bar bg-secondary" role="progressbar" style="width: 20%;" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100"><p class="font-weight-bold pt-2" style="font-size: 20px">Step.5 完成訂單</p></div>
             </div>
-            <h3 class="ml-3">付款方式</h3>
-            <form class="form form-group ml-3">
-                <div class="option form-check">
-                    <input class="form-check-input" type="radio" name="pay" id="radio1" value="1">
-                    <label class="form-check-label" for="radio1">ATM轉帳</label>
-                </div>
-                <div class="option form-check">                   
-                    <input class="form-check-input" type="radio" name="pay" id="radio2" value="2">
-                    <label class="form-check-label" for="radio2">銀行匯款</label>
-                </div>
-                <div class="option form-check">
-                    <input class="form-check-input" type="radio" name="pay" id="radio3" value="3">
-                    <label class="form-check-label" for="radio3">貨到付款</label>
-                </div>
-                <div class="option form-check">
-                    <input class="form-check-input" type="radio" name="pay" id="radio4" value="4">
-                    <label class="form-check-label" for="radio4">信用卡線上付款</label>
-                </div>
-            </form>
+            <div class="col">
+                <h3 class="ml-3">訂購人資料</h3>
+                    <div class = "row">
+                        <p class="ml-5">姓名:陳孟軒</p>
+                        <p class="ml-5">Email: stezen129@gmail.com</p>
+                    </div>
+                    <div class = "row">
+                        <p class="ml-5">電話: 02-82654635</p>
+                        <p class="ml-5">手機: 0958803567</p>
+                    </div>
+                <p class="ml-4">地址: 雲林縣斗六市大學路一段123號</p>
+                <h3 class="ml-3">收件人資料</h3>
+                <div class = "row">
+                        <p class="ml-5">姓名:陳孟軒</p>
+                        <p class="ml-5">Email: stezen129@gmail.com</p>
+                    </div>
+                    <div class = "row">
+                        <p class="ml-5">電話: 02-82654635</p>
+                        <p class="ml-5">手機: 0958803567</p>
+                    </div>
+                <h3 class="ml-3">付款方式:信用卡</h3>
+            </div>
             <div class="next">
                 <button class="button btn btn-secondary" onclick="">繼續購物</button>
                 <button class="button btn btn-secondary" id="next_step">下一步</button>
@@ -46,7 +49,7 @@
 <script>
 $('#next_step').click(function (e) { 
     e.preventDefault();
-    window.location = "ClearOrder"; 
+    window.location = "FinishOrder"; 
 });
 </script>
 @stop
