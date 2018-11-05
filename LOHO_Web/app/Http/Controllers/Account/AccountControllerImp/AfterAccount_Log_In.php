@@ -25,16 +25,17 @@ class AfterAccount_Log_In implements AccountControllerPostImp{
         {
             if (Auth::attempt(['account' => $input['account'], 'password' => $input['password']])) 
             {   
-                return redirect('/');
+                return response()->json(['status' => 'success']);
             }
             else
-            {
-                return back()->withErrors('帳號或密碼錯誤');
+            {   
+                $errors = array(['帳號或密碼錯誤']);
+                return response()->json(['status' => 'fail','errors'=> $errors]);
             }
         }
         else
         {
-            return back()->withErrors($validator);
+            return response()->json(['status' => 'fail','errors'=>$validator->errors()->all()]);
         }
     
     }

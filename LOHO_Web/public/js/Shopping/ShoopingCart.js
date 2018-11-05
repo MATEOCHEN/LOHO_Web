@@ -6,7 +6,11 @@
     var Item_added = function(item_name,item_price,item_count,img_url) {
         txtID++;
         sum = sum + item_price * item_count;
+<<<<<<< HEAD
         $("#showBlock").append("<div id='div1" + txtID +"' class='col-6 p-4 ml-2 text-left solid-top-border'>"
+=======
+        $("#showBlock").append("<form method='post' action='ConfirmShoppingList>'"+"<div id='div1" + txtID +"' class='col-6 p-4 ml-2 text-left solid-top-border'>"
+>>>>>>> 6cb7fadc169c66ac40ffffe7586d961b7d225350
         +"<div id='div2" + txtID +"' class='row'>"
         +"<div class='col text-left' id='div3" + txtID +"'>"
         +"<p id='name"+txtID+"'>"+ item_name +"</p></div>"
@@ -159,6 +163,6 @@
         });
 
         $("#checkOut").click(function() {
-            window.location = "/LOHO_Web/public/Shopping/ConfirmShoppingList";
+            window.location = "/LOHO_Web/public/ShoppingProccess/ConfirmShoppingList";
         });
     });

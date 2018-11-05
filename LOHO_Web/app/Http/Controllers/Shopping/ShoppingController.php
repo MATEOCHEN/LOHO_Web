@@ -11,6 +11,7 @@ use Illuminate\Support\Facades\Session;
 use App\Item;
 use App\Http\Controllers\Shopping\Cart_Imp;
 
+
 class ShoppingController extends BaseController
 {
     use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
@@ -40,6 +41,7 @@ class ShoppingController extends BaseController
     {
         return view('Shopping\ShoppingItem');
     }
+<<<<<<< HEAD
 
     public function CheckoutList()
     {
@@ -65,4 +67,6 @@ class ShoppingController extends BaseController
     {
         return view('ShoppingProcess\FinishOrder');
     }
+=======
+>>>>>>> 6cb7fadc169c66ac40ffffe7586d961b7d225350
 }

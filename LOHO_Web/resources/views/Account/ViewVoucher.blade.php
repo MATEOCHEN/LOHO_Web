@@ -26,5 +26,8 @@
           </tbody>
         </table>
 </div>   
+<script>
+
+</script>
 @stop
 

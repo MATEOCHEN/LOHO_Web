@@ -45,8 +45,17 @@
                         <span><h5 class="text-danger">$70</h5></span><h5 class="text-danger" id="shippingFee"></h5>
                     </div>
                     <div class="row">
-                        <h5>優惠折抵：</h5>
-                        <button class="btn btn-success btn-sm" id="view_voucher">查看優惠券</button>
+                        <h5>優惠折抵：<span id="coupon_price">{{$data['coupon_price']}}</span></h5>
+                        @if (Auth::check())
+                            <button class="btn btn-success btn-sm" id="view_voucher">使用優惠券</button>
+                        @else
+                        <div>
+                            <button class="btn btn-success btn-sm" id="view_voucher" disabled = "disabled">使用優惠券</button>
+                        </div>
+                        <div>
+                            需登入才可使用優惠卷喔!
+                        </div>
+                        @endif
                     </div>
                     <div class="row">
                         <h5>總計：</h5>
@@ -55,8 +64,8 @@
                 </div>
             </div>
             <div class="next">
-                <button class="btn btn-secondary">繼續購物</button>
-                <button class="btn btn-secondary" id="nextStep" onclick="">下一步</button>
+                <button class="btn btn-secondary" id="continue_shopping">繼續購物</button>
+                <button class="btn btn-secondary" id="nextStep">下一步</button>
             </div>
         </div>
     </div>

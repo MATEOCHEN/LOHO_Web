@@ -103,7 +103,7 @@
                         </div>                     
                     </div>
                     <div class="d-flex justify-content-center pt-3">
-                        <button type="button" id="continue_shopping"class="btn btn-secondary mr-5">繼續購物</button>
+                        <button type="button" id="last_step"class="btn btn-secondary mr-5">上一步</button>
                         <button type="button" id="next_step" class="btn btn-secondary">下一步</button>
                     </div>
                 </div>
@@ -118,6 +118,12 @@
         e.preventDefault();
         window.location = "CheckoutList";
         });
+
+        $('#last_step').click(function (e) { 
+            e.preventDefault();
+            window.location = "ConfirmShoppingList"; 
+        });   
+
         $('#twzipcode').twzipcode({
             'css':['country','area','zipcode'],
             'countyName': 'OrdererCountry',
