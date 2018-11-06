@@ -17,17 +17,10 @@
                 <div class="progress-bar bg-secondary" role="progressbar" style="width: 20%;" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100"><p class="font-weight-bold pt-2" style="font-size: 20px">Step.4 確認訂單</p></div>
                 <div class="progress-bar bg-secondary" role="progressbar" style="width: 20%;" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100"><p class="font-weight-bold pt-2" style="font-size: 20px">Step.5 完成訂單</p></div>
             </div>
-<<<<<<< HEAD
-            <h3 class="ml-3">付款方式</h3>
-            <form class="form form-group ml-3">
-                <div class="option form-check">
-                    <input class="form-check-input" type="radio" name="pay" id="radio1" value="1">
-=======
             請先選擇付款方式再點選下一步
             <form class="form form-group">
                 <div class="option form-check" id="ATM_Transfer">
                     <input class="form-check-input" type="radio" name="pay" value="1">
->>>>>>> 6cb7fadc169c66ac40ffffe7586d961b7d225350
                     <label class="form-check-label" for="radio1">ATM轉帳</label>
                 </div>
                 <div class="option form-check" id="Bank_Transfer">                   
@@ -132,13 +125,10 @@
             </div>
     </div>                  
 </div>
-<<<<<<< HEAD
 <script>
 $('#next_step').click(function (e) { 
     e.preventDefault();
     window.location = "ClearOrder"; 
 });
 </script>
-=======
->>>>>>> 6cb7fadc169c66ac40ffffe7586d961b7d225350
 @stop
