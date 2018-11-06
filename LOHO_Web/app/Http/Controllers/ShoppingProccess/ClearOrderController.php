@@ -17,4 +17,9 @@ class ClearOrderController extends BaseController
         return view('ShoppingProcess\ClearOrder');
     }
 
+    public function queryOrderer(Request $request)
+    {   
+
+        return response()->json(['ordererName' => $request->session()->get('ordererName', 'default')]);
+    }
 }

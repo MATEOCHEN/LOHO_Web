@@ -20,7 +20,7 @@
             <div class="col">
                 <h3 class="ml-3">訂購人資料</h3>
                     <div class = "row">
-                        <p class="ml-5">姓名:陳孟軒</p>
+                        <p class="ml-5">姓名:<span id="ordererName"></span></p>
                         <p class="ml-5">Email: stezen129@gmail.com</p>
                     </div>
                     <div class = "row">

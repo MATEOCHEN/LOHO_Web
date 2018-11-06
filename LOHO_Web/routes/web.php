@@ -264,6 +264,12 @@ Route::group(['namespace' => 'ShoppingProccess','prefix' => 'ShoppingProccess'],
         '/queryAddress',
         array('uses' => 'CheckoutListController@queryAddress', 'as' => 'queryAddress')
     );
+
+    Route::get(
+        '/queryOrderer',
+        array('uses' => 'ClearOrderController@queryOrderer', 'as' => 'queryOrderer')
+    );
+
 });
 Route::group(['prefix' => 'Game','namespace' => 'Game'], function () {
     Route::get(
