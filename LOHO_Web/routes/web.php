@@ -237,6 +237,17 @@ Route::group(['middleware' => 'AdminLogin','namespace' => 'ShoppingProccess','pr
         array('uses' => 'FillOrderListController@FillOrderList', 'as' => 'FillOrderList')
     );
 
+
+    Route::get(
+        '/ClearOrder',
+        array('uses' => 'Shopping\ShoppingController@ClearOrder', 'as' => 'ClearOrder')
+    );
+
+    Route::get(
+        '/FinishOrder',
+        array('uses' => 'Shopping\ShoppingController@FinishOrder', 'as' => 'FinishOrder')
+    );
+
 });
 Route::group(['namespace' => 'ShoppingProccess','prefix' => 'ShoppingProccess'], function () {
 

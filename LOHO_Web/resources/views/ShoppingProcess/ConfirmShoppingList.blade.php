@@ -17,10 +17,10 @@
                 <div class="progress-bar bg-secondary" role="progressbar" style="width: 20%;" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100"><p class="font-weight-bold pt-2" style="font-size: 20px">Step.5 完成訂單</p></div>
             </div>
             <div class="list"> 
-                <div class="row align-self-end">
-                    <div class="col-6 ml-2 text-left">
+                <div class="row align-self-end mt-3">
+                    <div class="col-4 ml-3 text-left">
                         <h4 class="font-weight-bold">商品名稱</h4>
-                    </div>
+                    </div> 
                     <div class="col text-center">
                         <h4 class="font-weight-bold">尺寸</h4>
                     </div>
