@@ -15,7 +15,7 @@ $(document).ready(function () {
 
     $('#next_step').click(function (e) { 
         e.preventDefault();
-        window.location = "ConfirmOrder"; 
+        window.location = "ClearOrder"; 
     });
 
     $('#ATM_Transfer').click(function (e) { 

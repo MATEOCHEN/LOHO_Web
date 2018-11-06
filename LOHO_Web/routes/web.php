@@ -221,32 +221,6 @@ Route::group(['middleware' => 'AdminLogin','namespace' => 'ShoppingProccess','pr
         'UseVoucher',
         array('uses' => 'SelectVoucherController@UseVoucher', 'as' => 'UseVoucher')
     ); 
-    
-    Route::get(
-        '/CheckoutList',
-        array('uses' => 'CheckoutListController@CheckoutList', 'as' => 'CheckoutList')
-    );
-
-    Route::get(
-        '/ConfirmShoppingList',
-        array('uses' => 'ConfirmShoppingListController@ConfirmShoppingList', 'as' => 'ConfirmShoppingList')
-    );
-
-    Route::get(
-        '/FillOrderList',
-        array('uses' => 'FillOrderListController@FillOrderList', 'as' => 'FillOrderList')
-    );
-
-
-    Route::get(
-        '/ClearOrder',
-        array('uses' => 'Shopping\ShoppingController@ClearOrder', 'as' => 'ClearOrder')
-    );
-
-    Route::get(
-        '/FinishOrder',
-        array('uses' => 'Shopping\ShoppingController@FinishOrder', 'as' => 'FinishOrder')
-    );
 
 });
 Route::group(['namespace' => 'ShoppingProccess','prefix' => 'ShoppingProccess'], function () {
@@ -267,8 +241,8 @@ Route::group(['namespace' => 'ShoppingProccess','prefix' => 'ShoppingProccess'],
     );
 
     Route::get(
-        '/ConfirmOrder',
-        array('uses' => 'ConfirmOrderController@ConfirmOrder', 'as' => 'ConfirmOrder')
+        '/ClearOrder',
+        array('uses' => 'ClearOrderController@ClearOrder', 'as' => 'ClearOrder')
     );
 
     Route::get(
