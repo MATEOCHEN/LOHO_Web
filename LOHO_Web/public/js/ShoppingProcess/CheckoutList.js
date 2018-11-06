@@ -1,4 +1,11 @@
 $(document).ready(function () {
+
+    $.ajaxSetup({
+        headers: {
+            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+        }
+    });
+
     $('#next_step').prop('disabled', true);
 
     $('#last_step').click(function (e) { 
@@ -8,7 +15,7 @@ $(document).ready(function () {
 
     $('#next_step').click(function (e) { 
         e.preventDefault();
-        window.location = ""; 
+        window.location = "ConfirmOrder"; 
     });
 
     $('#ATM_Transfer').click(function (e) { 
@@ -23,6 +30,16 @@ $(document).ready(function () {
 
     $('#Cash_on_delivery').click(function (e) { 
         e.preventDefault();
+        $.ajax({
+            type: "get",
+            url: "queryAddress",
+            data: "",
+            dataType: "json",
+            success: function (response) {
+                $('#address').text(response.address);
+            }
+        });
+        
         $('#Cash_on_deliveryModal').modal('show');
     });
 

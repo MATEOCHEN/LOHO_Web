@@ -255,6 +255,30 @@ Route::group(['namespace' => 'ShoppingProccess','prefix' => 'ShoppingProccess'],
         array('uses' => 'FillOrderListController@FillOrderList', 'as' => 'FillOrderList')
     );
 
+    Route::get(
+        '/ConfirmOrder',
+        array('uses' => 'ConfirmOrderController@ConfirmOrder', 'as' => 'ConfirmOrder')
+    );
+
+    Route::get(
+        '/FinishOrder',
+        array('uses' => 'FinishOrderController@FinishOrder', 'as' => 'FinishOrder')
+    );
+
+    Route::post(
+        '/AfterConfirmShoppingList',
+        array('uses' => 'ConfirmShoppingListController@AfterConfirmShoppingList', 'as' => 'AfterConfirmShoppingList')
+    );
+    
+    Route::post(
+        '/AfterFillOrderList',
+        array('uses' => 'FillOrderListController@AfterFillOrderList', 'as' => 'AfterFillOrderList')
+    );
+
+    Route::get(
+        '/queryAddress',
+        array('uses' => 'CheckoutListController@queryAddress', 'as' => 'queryAddress')
+    );
 });
 Route::group(['prefix' => 'Game','namespace' => 'Game'], function () {
     Route::get(

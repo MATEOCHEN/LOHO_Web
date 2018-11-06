@@ -3,7 +3,7 @@
 @section('head')
 <link href="{{ URL::asset('css/CheckoutList.css') }}" rel="stylesheet" type="text/css" />
 <link href="{{ URL::asset('css/bootstrap.css') }}" rel="stylesheet" type="text/css" />
-<script src="{{ URL::asset('/js/Shopping/CheckoutList.js') }}"></script>
+<script src="{{ URL::asset('/js/ShoppingProcess/CheckoutList.js') }}"></script>
 @stop
 @section('content')
 <div class="content">
@@ -113,7 +113,8 @@
                         您選擇貨到付款，將於到貨後與您收款
                     </div>
                     <form action="">
-                        您地址為(如有誤請到前一頁修改):<input type="text">
+                        您地址為(如有誤請到前一頁修改):
+                        <span id="address"></span>
                     </form>
                 </div>
                 <div class="modal-footer">

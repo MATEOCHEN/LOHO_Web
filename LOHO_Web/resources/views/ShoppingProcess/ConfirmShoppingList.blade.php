@@ -2,7 +2,7 @@
 @section('title','我的購物車') 
 @section('head')
 <link href="{{ URL::asset('css/ConfirmShoppingList.css') }}" rel="stylesheet" type="text/css"/>
-<script src="/LOHO_Web/public/js/Shopping/ConfirmShoppingList.js"></script>
+<script src="/LOHO_Web/public/js/ShoppingProcess/ConfirmShoppingList.js"></script>
 @stop
 @section('content')
 <div class="container-fluid">   
@@ -42,7 +42,7 @@
                     </div>
                     <div class="row">
                         <h5>運費小計：<h5>
-                        <span><h5 class="text-danger">$70</h5></span><h5 class="text-danger" id="shippingFee"></h5>
+                        <span><h5 class="text-danger">$</h5></span><h5 class="text-danger" id="shippingFee">70</h5>
                     </div>
                     <div class="row">
                         <h5>優惠折抵：<span id="coupon_price">{{$data['coupon_price']}}</span></h5>

@@ -9,15 +9,11 @@ use Illuminate\Support\Facades\Auth;
 use App\Users_own_voucher;
 use App\Voucher;
 use Illuminate\Support\Facades\Session;
-class CheckoutListController extends BaseController
+class ConfirmOrderController extends BaseController
 {
-    public function CheckoutList()
+    public function ConfirmOrder()
     {
-        return view('ShoppingProcess\CheckoutList');
+        return view('ShoppingProcess\ConfirmOrder');
     }
 
-    public function queryAddress(Request $request)
-    {   
-        return response()->json(['address' => $request->session()->get('RecipientAddress', 'default')]);
-    }
 }
