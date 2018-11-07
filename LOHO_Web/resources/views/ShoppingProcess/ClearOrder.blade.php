@@ -48,10 +48,4 @@
         </div>
     </div>
 </div>
-<script>
-$('#next_step').click(function (e) { 
-    e.preventDefault();
-    window.location = "FinishOrder"; 
-});
-</script>
 @stop

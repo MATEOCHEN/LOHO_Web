@@ -35,4 +35,12 @@ class ClearOrderController extends BaseController
         'payment_info' => $request->session()->get('payment_info', 'default'),
         ]);
     }
+
+    public function AfterClearOrder(Request $request)
+    {   
+        $cart = Session::get('cart');
+        $items = $cart['item'];
+        
+         return response()->json([]);
+    }
 }

@@ -46,4 +46,20 @@ $(document).ready(function () {
             $('#payment_info').text(payment_info);
         }
     });
+
+    //存購物車資料進後台DB
+    $('#next_step').click(function (e) { 
+        e.preventDefault();
+
+        $.ajax({
+            type: "POST",
+            url: "AfterClearOrder",
+            data: "",
+            dataType: "json",
+            success: function (response) {
+                window.location = "FinishOrder"; 
+            }
+        });
+        
+    });
 });
