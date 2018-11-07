@@ -20,15 +20,15 @@
             請先選擇付款方式再點選下一步
             <form class="form form-group">
                 <div class="option form-check" id="ATM_Transfer">
-                    <input class="form-check-input" type="radio" name="pay" value="1">
+                    <input class="form-check-input" type="radio" name="pay" value="1" id="ATM_Transfer_Radio">
                     <label class="form-check-label" for="radio1">ATM轉帳</label>
                 </div>
                 <div class="option form-check" id="Bank_Transfer">                   
-                    <input class="form-check-input" type="radio" name="pay"  value="2">
+                    <input class="form-check-input" type="radio" name="pay"  value="2" id="Bank_Transfer_Radio">
                     <label class="form-check-label" for="radio2">銀行匯款</label>
                 </div>
                 <div class="option form-check" id="Cash_on_delivery">
-                    <input class="form-check-input" type="radio" name="pay"  value="3">
+                    <input class="form-check-input" type="radio" name="pay"  value="3" id="Cash_on_delivery_Radio">
                     <label class="form-check-label" for="radio3">貨到付款</label>
                 </div>
                 <div class="option form-check">
@@ -60,12 +60,12 @@
                     為了促進雙方交易正確性，請填寫帳號後五碼
                 </div>
                 <form action="">
-                    您金融帳號後五碼:<input type="text">
+                    您金融帳號後五碼:<input type="text" id="ATM_Transfer_financial_info">
                 </form>
             </div>
             <div class="modal-footer">
-              <button type="button" class="btn btn-secondary confirm" data-dismiss="modal" id="confirmATM_Transfer">確認</button>
-              <button type="button" class="btn btn-secondary cancel" data-dismiss="modal" id="confirmATM_Transfer">取消</button>
+              <button type="button" class="btn btn-secondary" data-dismiss="modal" id="confirm_ATM_Transfer">確認</button>
+              <button type="button" class="btn btn-secondary cancel" data-dismiss="modal">取消</button>
             </div>
           </div>
         </div>
@@ -88,12 +88,12 @@
                         為了促進雙方交易正確性，請填寫帳號後五碼
                     </div>
                     <form action="">
-                        您金融帳號後五碼:<input type="text">
+                        您金融帳號後五碼:<input type="text" id="Bank_Transfer_financial_info">
                     </form>
                 </div>
                 <div class="modal-footer">
-                  <button type="button" class="btn btn-secondary confirm" data-dismiss="modal" id="confirmATM_Transfer">確認</button>
-                  <button type="button" class="btn btn-secondary cancel" data-dismiss="modal" id="confirmATM_Transfer">取消</button>
+                  <button type="button" class="btn btn-secondary" data-dismiss="modal" id="confirm_Bank_Transfer">確認</button>
+                  <button type="button" class="btn btn-secondary cancel" data-dismiss="modal">取消</button>
                 </div>
               </div>
             </div>
@@ -103,7 +103,7 @@
             <div class="modal-dialog" role="document">
               <div class="modal-content">
                 <div class="modal-header">
-                  <h5 class="modal-title" id="Cash_on_deliveryModalLabel">銀行匯款</h5>
+                  <h5 class="modal-title" id="Cash_on_deliveryModalLabel">貨到付款</h5>
                   <button type="button" class="close" data-dismiss="modal" aria-label="Close" id="closeModal">
                     <span aria-hidden="true">&times;</span>
                   </button>
@@ -118,17 +118,11 @@
                     </form>
                 </div>
                 <div class="modal-footer">
-                  <button type="button" class="btn btn-secondary confirm" data-dismiss="modal" id="confirmATM_Transfer">確認</button>
-                  <button type="button" class="btn btn-secondary cancel" data-dismiss="modal" id="confirmATM_Transfer">取消</button>
+                  <button type="button" class="btn btn-secondary confirm_Cash_on_delivery" data-dismiss="modal">確認</button>
+                  <button type="button" class="btn btn-secondary cancel" data-dismiss="modal">取消</button>
                 </div>
               </div>
             </div>
     </div>                  
-</div>
-<script>
-$('#next_step').click(function (e) { 
-    e.preventDefault();
-    window.location = "ClearOrder"; 
-});
-</script>
+</div> 
 @stop

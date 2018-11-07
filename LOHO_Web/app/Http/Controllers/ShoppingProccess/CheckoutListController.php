@@ -20,4 +20,13 @@ class CheckoutListController extends BaseController
     {   
         return response()->json(['address' => $request->session()->get('RecipientAddress', 'default')]);
     }
+
+    public function AfterCheckoutList(Request $request)
+    {   
+        $request->session()->put('payment_type', $request->payment_type);
+        $request->session()->put('payment_info', $request->payment_info);
+
+        return response()->json([]);
+    }
+
 }
