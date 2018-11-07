@@ -57,6 +57,7 @@ $(document).ready(function () {
             data: "",
             dataType: "json",
             success: function (response) {
+                alert(response.tmp_order_id);
                 window.location = "FinishOrder"; 
             }
         });

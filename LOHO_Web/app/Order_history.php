@@ -7,4 +7,6 @@ use Illuminate\Database\Eloquent\Model;
 class Order_history extends Model
 {
     //
+    protected $table = 'order_histories';
+    protected $primaryKey = 'oid';
 }

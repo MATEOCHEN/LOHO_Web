@@ -8,6 +8,9 @@ use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
 use App\Users_own_voucher;
 use App\Voucher;
+use App\Order_history;
+use App\Order_detail;
+use App\Item;
 use Illuminate\Support\Facades\Session;
 
 class ClearOrderController extends BaseController
@@ -41,6 +44,20 @@ class ClearOrderController extends BaseController
         $cart = Session::get('cart');
         $items = $cart['item'];
         
-         return response()->json([]);
+        $order_history = new Order_history;
+        $tmp_order_id = $order_history->oid;
+        $order_history->save();
+        /*
+        foreach ($items as $item) {
+            $tmp = Item::where('name', $item['name'])->first();
+            $order_detail = new Order_detail;
+            $order_detail->item_id = $tmp->id;
+            $order_detail->oid = $tmp_order_id;
+            $order_detail->save();
+        }*/
+        
+        
+        
+         return response()->json(['tmp_order_id' =>$tmp_order_id]);
     }
 }
