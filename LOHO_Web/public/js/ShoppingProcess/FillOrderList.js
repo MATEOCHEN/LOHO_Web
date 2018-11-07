@@ -24,6 +24,7 @@ $(document).ready(function () {
                     RecipientTEL:$('#RecipientTEL').val(),
                     RecipientPhone:$('#RecipientPhone').val(),
                     RecipientAddress:$('#address1').val(),//需處理前面縣市地址
+                    // $("select[name='RecipientCountry']"), $("select[name='RecipientArea']"), $("input[name='RecipientZipcode']")
                 },
                 dataType: "json",
                 success: function (response) {

@@ -1,4 +1,6 @@
     //add the item dynamically
+    var shoppingcart_status = "empty";
+
     var txtID = 0;
     var sum = 0;
     var pre_subtotal = 0
@@ -129,8 +131,8 @@
                             continue;
                         }
                         else{
-                            //alert(item.name +" NT$"+ item.price+"元"+ item.count+ "雙" + item.img_url);
                             Item_added(item.name,item.price,item.count,item.img_url);
+                            shoppingcart_status = "noEmpty";
                         }
                     }
                 }
@@ -160,6 +162,11 @@
         });
 
         $("#checkOut").click(function() {
-            window.location = "/LOHO_Web/public/ShoppingProccess/ConfirmShoppingList";
+            alert(shoppingcart_status);
+           if(shoppingcart_status === "noEmpty") {
+                window.location = "/LOHO_Web/public/ShoppingProccess/ConfirmShoppingList";
+            } else {
+                alert("目前購物車沒有商品")
+            }
         });
     });

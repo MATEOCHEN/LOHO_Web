@@ -10,8 +10,8 @@
 @stop
 @section('content')
 
-  <div class="content">
-    <div class="container-fluid py-5">
+  <div class="content ">
+    <div class="container-fluid ">
       <div class="row">
         <div id="carouselExampleIndicators" class="carousel slide container-fluid" data-ride="carousel ">
           <ol class="carousel-indicators">
