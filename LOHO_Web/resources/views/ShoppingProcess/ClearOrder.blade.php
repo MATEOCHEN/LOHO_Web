@@ -3,7 +3,7 @@
 @section('head')
 <link href="{{ URL::asset('css/CheckoutList.css') }}" rel="stylesheet" type="text/css" />
 <link href="{{ URL::asset('css/bootstrap.css') }}" rel="stylesheet" type="text/css" />
-
+<script src="{{ URL::asset('/js/ShoppingProcess/ClearOrder.js') }}"></script>
 @stop
 @section('content')
 <div class="content">
@@ -21,23 +21,25 @@
                 <h3 class="ml-3">訂購人資料</h3>
                     <div class = "row">
                         <p class="ml-5">姓名:<span id="ordererName"></span></p>
-                        <p class="ml-5">Email: stezen129@gmail.com</p>
+                        <p class="ml-5">Email:<span id="ordererEmail"></span></p>
                     </div>
                     <div class = "row">
-                        <p class="ml-5">電話: 02-82654635</p>
-                        <p class="ml-5">手機: 0958803567</p>
+                        <p class="ml-5">電話: <span id="ordererTEL"></span></p>
+                        <p class="ml-5">手機: <span id="ordererPhone"></span></p>  
                     </div>
-                <p class="ml-4">地址: 雲林縣斗六市大學路一段123號</p>
+                <p class="ml-4">地址: <span id="ordererAddress"></span></p>
                 <h3 class="ml-3">收件人資料</h3>
                 <div class = "row">
-                        <p class="ml-5">姓名:陳孟軒</p>
-                        <p class="ml-5">Email: stezen129@gmail.com</p>
+                        <p class="ml-5">姓名:<span id="RecipientName"></span></p>
+                        <p class="ml-5">Email:<span id="RecipientEmail"></span></p>
                     </div>
                     <div class = "row">
-                        <p class="ml-5">電話: 02-82654635</p>
-                        <p class="ml-5">手機: 0958803567</p>
+                        <p class="ml-5">電話: <span id="RecipientTEL"></span></p>
+                        <p class="ml-5">手機: <span id="RecipientPhone"></span></p>
+                        <p class="ml-4">地址: <span id="RecipientAddress"></span></p>                       
                     </div>
-                <h3 class="ml-3">付款方式:信用卡</h3>
+                <h3 class="ml-3">付款方式:<span id="payment_type"></span></h3>
+                <h3 class="ml-3" id="payment_info"></h3>                
             </div>
             <div class="next">
                 <button class="button btn btn-secondary" onclick="">繼續購物</button>
@@ -46,10 +48,4 @@
         </div>
     </div>
 </div>
-<script>
-$('#next_step').click(function (e) { 
-    e.preventDefault();
-    window.location = "FinishOrder"; 
-});
-</script>
 @stop

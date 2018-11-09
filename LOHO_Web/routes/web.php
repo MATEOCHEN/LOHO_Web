@@ -265,11 +265,20 @@ Route::group(['namespace' => 'ShoppingProccess','prefix' => 'ShoppingProccess'],
         array('uses' => 'CheckoutListController@queryAddress', 'as' => 'queryAddress')
     );
 
-    Route::get(
-        '/queryOrderer',
-        array('uses' => 'ClearOrderController@queryOrderer', 'as' => 'queryOrderer')
+    Route::post(
+        '/queryCurrentOrderList',
+        array('uses' => 'ClearOrderController@queryCurrentOrderList', 'as' => 'queryCurrentOrderList')
     );
 
+    Route::post(
+        '/AfterCheckoutList',
+        array('uses' => 'CheckoutListController@AfterCheckoutList', 'as' => 'AfterCheckoutList')
+    );
+
+    Route::post(
+        '/AfterClearOrder',
+        array('uses' => 'ClearOrderController@AfterClearOrder', 'as' => 'AfterClearOrder')
+    );
 });
 Route::group(['prefix' => 'Game','namespace' => 'Game'], function () {
     Route::get(
