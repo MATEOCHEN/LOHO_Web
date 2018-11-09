@@ -11,7 +11,6 @@
 @section('content')
 
   <div class="content ">
-    <div class="container-fluid ">
       <div class="row">
         <div id="carouselExampleIndicators" class="carousel slide container-fluid" data-ride="carousel ">
           <ol class="carousel-indicators">
@@ -21,15 +20,15 @@
           </ol>
           <div class="carousel-inner">
             <div class="carousel-item active">
-              <img class="d-block w-100 img-fluid" src="https://images.unsplash.com/photo-1518023176010-e14eb57eecf9?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=fe2f72ca42e6478bc869b8325881fa46&auto=format&fit=crop&w=1050&q=80"
+              <img class="d-block w-100 img-fluid" src="{{ URL::asset('/Image/loho.webp') }}"
                 alt="First slide">
             </div>
             <div class="carousel-item">
-              <img class="d-block w-100 img-fluid" src="https://images.unsplash.com/photo-1518023176010-e14eb57eecf9?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=fe2f72ca42e6478bc869b8325881fa46&auto=format&fit=crop&w=1050&q=80"
+              <img class="d-block w-100 img-fluid" src="{{ URL::asset('/Image/Happy Halloween.jpg')}}"
                 alt="Second slide">
             </div>
             <div class="carousel-item">
-              <img class="d-block w-100 img-fluid" src="https://images.unsplash.com/photo-1518023176010-e14eb57eecf9?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=fe2f72ca42e6478bc869b8325881fa46&auto=format&fit=crop&w=1050&q=80"
+              <img class="d-block w-100 img-fluid" src="{{ URL::asset('/Image/team Photo.jpg')"
                 alt="Third slide">
             </div>
           </div>
@@ -42,7 +41,6 @@
             <span class="sr-only">Next</span>
           </a>
         </div>
-      </div>
     </div>
     <div>
       <h1 class="text-center">精選推薦</h1>
