@@ -10,7 +10,7 @@
 @stop
 @section('content')
 
-  <div class="content ">
+  <div class="content border">
       <div class="row">
         <div id="carouselExampleIndicators" class="carousel slide container-fluid" data-ride="carousel ">
           <ol class="carousel-indicators">
@@ -19,16 +19,16 @@
             <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
           </ol>
           <div class="carousel-inner">
-            <div class="carousel-item active">
-              <img class="d-block w-100 img-fluid" src="{{ URL::asset('/Image/loho.webp') }}"
+            <div class="carousel-item active carousel-h-650">
+              <img class="d-block w-100" src="{{ URL::asset('/Image/loho.webp') }}"
                 alt="First slide">
             </div>
-            <div class="carousel-item">
-              <img class="d-block w-100 img-fluid" src="{{ URL::asset('/Image/Happy Halloween.jpg')}}"
+            <div class="carousel-item carousel-h-650">
+              <img class="d-block w-100" src="{{ URL::asset('/Image/Happy Halloween.jpg')}}"
                 alt="Second slide">
             </div>
-            <div class="carousel-item">
-              <img class="d-block w-100 img-fluid" src="{{ URL::asset('/Image/team Photo.jpg')"
+            <div class="carousel-item carousel-h-650">
+              <img class="d-block w-100" src="{{ URL::asset('/Image/team Photo.jpg')}}"
                 alt="Third slide">
             </div>
           </div>
