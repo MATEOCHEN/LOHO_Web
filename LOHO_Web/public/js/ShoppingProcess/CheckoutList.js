@@ -71,6 +71,8 @@ $(document).ready(function () {
     $('#confirm_ATM_Transfer').click(function (e) { 
         e.preventDefault();
         payment_info = $('#ATM_Transfer_financial_info').val();
+        $('#payment_type').text('ATM轉帳');
+        $('#payment_info').text('帳號後五碼：' + payment_info);
         $('#next_step').prop('disabled', false);
     });
 
@@ -78,13 +80,16 @@ $(document).ready(function () {
     $('#confirm_Bank_Transfer').click(function (e) { 
         e.preventDefault();
         payment_info = $('#Bank_Transfer_financial_info').val();
+        $('#payment_type').text('銀行匯款');
+        $('#payment_info').text('帳號後五碼：' + payment_info);
         $('#next_step').prop('disabled', false);
     });
 
     //貨到付款確認,下一步enabled
     $('.confirm_Cash_on_delivery').click(function (e) { 
         e.preventDefault();
-        
+        $('#payment_type').text('貨到付款');
+        $('#payment_info').text('寄送地址：' + $('#address').text());
         $('#next_step').prop('disabled', false);
     });
 

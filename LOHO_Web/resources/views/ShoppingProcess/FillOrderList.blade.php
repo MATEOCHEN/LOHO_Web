@@ -45,28 +45,28 @@
                     <div class="row">
                         <div class="col-5">
                             <label for="ordererName" class="col-form-label">姓名：</label> 
-                            <input type="text" class="" id="ordererName">
+                            <input type="text" class="" id="ordererName" value="{{$data['ordererName']}}">
                         </div>
                         <div class="col-5">
                             <label for="ordererEmail" class="col-form-label">E-mail：</label> 
-                            <input type="text" class="" id="ordererEmail">
+                            <input type="text" class="" id="ordererEmail" value="{{$data['ordererEmail']}}">
                         </div>
                     </div>
                     <div class="row">
                         <div class="col-5">
                             <label for="ordererTEL" class="col-form-label">電話：</label> 
-                            <input type="text" class="" id="ordererTEL">
+                            <input type="text" class="" id="ordererTEL" value="{{$data['ordererTEL']}}">
                         </div>
                         <div class="col-5">
                             <label for="ordererPhone" class="col-form-label ">手機：</label> 
-                            <input type="text" class="" id="ordererPhone">
+                            <input type="text" class="" id="ordererPhone" value="{{$data['ordererPhone']}}">
                         </div>
                     </div>
                     <div class="row">
                         <div class="d-flex flex-row mt-3">
                             <label for="twzipcode" class="col-form-label ml-3">地址：</label>
                             <div id="twzipcode"></div>
-                            <input type="text" class="address" id="address" placeholder="地址">
+                            <input type="text" class="address" id="address" placeholder="地址" value="{{$data['ordererAddress']}}">
                         </div>
                     </div>
                     <div class="row">
@@ -79,28 +79,28 @@
                     <div class="row">
                         <div class="col-5">
                             <label for="RecipientName" class="col-form-label">姓名：</label> 
-                            <input type="text" class="" id="RecipientName">
+                            <input type="text" class="" id="RecipientName" value="{{$data['RecipientName']}}">
                         </div>
                         <div class="col-5">
                             <label for="RecipientEmail" class="col-form-label">E-mail：</label> 
-                            <input type="text" class="" id="RecipientEmail">
+                            <input type="text" class="" id="RecipientEmail" value="{{$data['RecipientEmail']}}">
                         </div>
                     </div>
                     <div class="row">
                         <div class="col-5">
                             <label for="RecipientTEL" class="col-form-label">電話：</label> 
-                            <input type="text" class="" id="RecipientTEL">
+                            <input type="text" class="" id="RecipientTEL" value="{{$data['RecipientTEL']}}">
                         </div>
                         <div class="col-5">
                             <label for="RecipientPhone" class="col-form-label ">手機：</label> 
-                            <input type="text" class="" id="RecipientPhone">
+                            <input type="text" class="" id="RecipientPhone" value="{{$data['RecipientPhone']}}">
                         </div>
                     </div>
                     <div class="row">
                         <div class="d-flex flex-row mt-3">
                             <label for="twzipcode1" class="col-form-label ml-3">地址：</label>
                             <div id="twzipcode1"></div>
-                            <input type="text" class="address" id="address1" placeholder="地址">
+                            <input type="text" class="address" id="address1" placeholder="地址" value="{{$data['RecipientAddress']}}">
                         </div>                     
                     </div>
                     <div class="d-flex justify-content-center pt-3">

@@ -12,8 +12,21 @@ use Illuminate\Support\Facades\Session;
 class FillOrderListController extends BaseController
 {
     public function FillOrderList()
-    {
-        return view('ShoppingProcess\FillOrderList');
+    {  
+            $data = [
+                'ordererName' => Session::get('ordererName', ''),
+                'ordererEmail' => Session::get('ordererEmail', ''),
+                'ordererTEL' => Session::get('ordererTEL', ''),
+                'ordererPhone' => Session::get('ordererPhone', ''),
+                'ordererAddress' => Session::get('ordererAddress', ''),
+                'RecipientName' => Session::get('RecipientName', ''),
+                'RecipientEmail' => Session::get('RecipientEmail', ''),
+                'RecipientTEL' => Session::get('RecipientTEL', ''),
+                'RecipientPhone' => Session::get('RecipientPhone', ''),
+                'RecipientAddress' => Session::get('RecipientAddress', ''),
+            ];
+        
+        return view('ShoppingProcess\FillOrderList',compact('data'));
     }
 
     //save shopping sum into session 

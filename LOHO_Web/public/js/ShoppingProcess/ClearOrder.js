@@ -60,6 +60,11 @@ $(document).ready(function () {
                 window.location = "FinishOrder"; 
             }
         });
-        
     });
+
+    $('#last_step').click(function (e) { 
+        e.preventDefault();
+        window.location = "CheckoutList"; 
+    });
+
 });

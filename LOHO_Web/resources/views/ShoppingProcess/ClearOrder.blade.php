@@ -42,7 +42,7 @@
                 <h3 class="ml-3" id="payment_info"></h3>                
             </div>
             <div class="next">
-                <button class="button btn btn-secondary" onclick="">繼續購物</button>
+                <button class="button btn btn-secondary" id="last_step">上一步</button>
                 <button class="button btn btn-secondary" id="next_step">下一步</button>
             </div>
         </div>

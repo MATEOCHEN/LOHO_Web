@@ -226,13 +226,21 @@ Route::group(['middleware' => 'AdminLogin','namespace' => 'ShoppingProccess','pr
 Route::group(['namespace' => 'ShoppingProccess','prefix' => 'ShoppingProccess'], function () {
 
     Route::get(
-        '/CheckoutList',
-        array('uses' => 'CheckoutListController@CheckoutList', 'as' => 'CheckoutList')
-    );
-
-    Route::get(
         '/ConfirmShoppingList',
         array('uses' => 'ConfirmShoppingListController@ConfirmShoppingList', 'as' => 'ConfirmShoppingList')
+    );
+
+    Route::post(
+        '/AfterConfirmShoppingList',
+        array('uses' => 'ConfirmShoppingListController@AfterConfirmShoppingList', 'as' => 'AfterConfirmShoppingList')
+    );
+});
+
+Route::group(['middleware' => 'ShoppingStateCheck','namespace' => 'ShoppingProccess','prefix' => 'ShoppingProccess'], function () {
+
+    Route::get(
+        '/CheckoutList',
+        array('uses' => 'CheckoutListController@CheckoutList', 'as' => 'CheckoutList')
     );
 
     Route::get(
@@ -248,11 +256,6 @@ Route::group(['namespace' => 'ShoppingProccess','prefix' => 'ShoppingProccess'],
     Route::get(
         '/FinishOrder',
         array('uses' => 'FinishOrderController@FinishOrder', 'as' => 'FinishOrder')
-    );
-
-    Route::post(
-        '/AfterConfirmShoppingList',
-        array('uses' => 'ConfirmShoppingListController@AfterConfirmShoppingList', 'as' => 'AfterConfirmShoppingList')
     );
     
     Route::post(
@@ -280,6 +283,7 @@ Route::group(['namespace' => 'ShoppingProccess','prefix' => 'ShoppingProccess'],
         array('uses' => 'ClearOrderController@AfterClearOrder', 'as' => 'AfterClearOrder')
     );
 });
+
 Route::group(['prefix' => 'Game','namespace' => 'Game'], function () {
     Route::get(
         'Index',

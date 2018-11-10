@@ -27,7 +27,7 @@ class ConfirmShoppingListController extends BaseController
         $request->session()->put('shippingFee', $request->shippingFee);
         $request->session()->put('coupon_price', $request->coupon_price);
         $request->session()->put('orderTotal', $request->orderTotal);
-
+        $request->session()->put('shopping_state', true);
         return response()->json(['msg' => '']);
     }
 
