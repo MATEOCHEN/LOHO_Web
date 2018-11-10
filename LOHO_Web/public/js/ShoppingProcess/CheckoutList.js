@@ -49,7 +49,7 @@ $(document).ready(function () {
     $('#Cash_on_delivery').click(function (e) { 
         e.preventDefault();
         payment_type  ='Cash_on_delivery';
-        payment_info = $("#address").text();
+        
         $("#Cash_on_delivery_Radio").prop("checked", true);
         $.ajax({
             type: "get",
@@ -58,10 +58,12 @@ $(document).ready(function () {
             dataType: "json",
             success: function (response) {
                 $('#address').text(response.address);
+                payment_info = "";
             }
         });
         
         $('#Cash_on_deliveryModal').modal('show');
+        
     });
 
 

@@ -36,7 +36,7 @@ $(document).ready(function () {
 
                 case 'Cash_on_delivery':
                     payment_type = "貨到付款";
-                    payment_info = "送貨地址:" + response.payment_info;
+                    payment_info = "";
                     break;
             
                 default:
@@ -57,7 +57,6 @@ $(document).ready(function () {
             data: "",
             dataType: "json",
             success: function (response) {
-                alert(response.tmp_order_id);
                 window.location = "FinishOrder"; 
             }
         });

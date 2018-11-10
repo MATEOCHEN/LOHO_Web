@@ -23,16 +23,15 @@
                 </div>
             </div>
             <div class="next">
-                <button class="button btn btn-secondary" onclick="">繼續購物</button>
-                <button class="button btn btn-secondary" id="next_step">下一步</button>
+                <button class="button btn btn-secondary" id="back_index">回官網</button>
             </div>
         </div>
     </div>
 </div>
 <script>
-$('#next_step').click(function (e) { 
+$('#back_index').click(function (e) { 
     e.preventDefault();
-    window.location = ""; 
+    window.location = "/LOHO_Web/public/"; 
 });
 </script>
 @stop

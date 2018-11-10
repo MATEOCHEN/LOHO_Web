@@ -11,6 +11,8 @@ use App\Voucher;
 use App\Order_history;
 use App\Order_detail;
 use App\Item;
+use App\Orderer_info;
+use App\Recipient_info;
 use Illuminate\Support\Facades\Session;
 
 class ClearOrderController extends BaseController
@@ -39,25 +41,57 @@ class ClearOrderController extends BaseController
         ]);
     }
 
+    //儲存訂單紀錄
     public function AfterClearOrder(Request $request)
     {   
-        $cart = Session::get('cart');
-        $items = $cart['item'];
+        $cartItems = Session::get('cart.item', []);
+        $current_cartItem;
         
         $order_history = new Order_history;
-        $tmp_order_id = $order_history->oid;
+        $order_history->payment_type = $request->session()->get('payment_type', 'default');
+        $order_history->payment_info = $request->session()->get('payment_info', 'default');
         $order_history->save();
-        /*
-        foreach ($items as $item) {
-            $tmp = Item::where('name', $item['name'])->first();
+        $tmp_order_id = $order_history->oid;
+        
+        $orderer_info = new Orderer_info;
+        $orderer_info->oid = $tmp_order_id;
+        $orderer_info->name = $request->session()->get('ordererName', 'default');
+        $orderer_info->email = $request->session()->get('ordererEmail', 'default');
+        $orderer_info->telephone_number = $request->session()->get('ordererTEL', 'default');
+        $orderer_info->phone_number = $request->session()->get('ordererPhone', 'default');
+        $orderer_info->address = $request->session()->get('ordererAddress', 'default');
+        $orderer_info->save();
+
+        $recipient_info = new Recipient_info;
+        $recipient_info->oid = $tmp_order_id;
+        $recipient_info->name = $request->session()->get('RecipientName', 'default');
+        $recipient_info->email = $request->session()->get('RecipientEmail', 'default');
+        $recipient_info->telephone_number = $request->session()->get('RecipientTEL', 'default');
+        $recipient_info->phone_number = $request->session()->get('RecipientPhone', 'default');
+        $recipient_info->address = $request->session()->get('RecipientAddress', 'default');
+        $recipient_info->save();
+
+        foreach ($cartItems as &$cartItem) {
+            $tmp = Item::where('name', $cartItem['name'])->first();
             $order_detail = new Order_detail;
             $order_detail->item_id = $tmp->id;
             $order_detail->oid = $tmp_order_id;
             $order_detail->save();
-        }*/
-        
-        
-        
-         return response()->json(['tmp_order_id' =>$tmp_order_id]);
+        }
+
+        $request->session()->forget('cart.item');
+        $request->session()->forget('ordererName');
+        $request->session()->forget('ordererEmail');
+        $request->session()->forget('ordererTEL');
+        $request->session()->forget('ordererPhone');
+        $request->session()->forget('ordererAddress');
+        $request->session()->forget('RecipientName');
+        $request->session()->forget('RecipientEmail');
+        $request->session()->forget('RecipientTEL');
+        $request->session()->forget('RecipientPhone');
+        $request->session()->forget('RecipientAddress');
+        $request->session()->forget('payment_type');
+        $request->session()->forget('payment_info');
+         return response()->json([]);
     }
 }
