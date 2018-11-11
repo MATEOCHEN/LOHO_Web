@@ -41,7 +41,7 @@ class ClearOrderController extends BaseController
         ]);
     }
 
-    //儲存訂單紀錄
+    //儲存訂單紀錄, 取消購物狀態
     public function AfterClearOrder(Request $request)
     {   
         $cartItems = Session::get('cart.item', []);
@@ -92,6 +92,7 @@ class ClearOrderController extends BaseController
         $request->session()->forget('RecipientAddress');
         $request->session()->forget('payment_type');
         $request->session()->forget('payment_info');
+        $request->session()->forget('shopping_state');
          return response()->json([]);
     }
 }

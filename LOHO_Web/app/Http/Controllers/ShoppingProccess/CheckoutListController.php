@@ -31,6 +31,8 @@ class CheckoutListController extends BaseController
                 break;
         
             default:
+                $payment_type = "";
+                $payment_info = "";
                 break;
         }
         $data = [
