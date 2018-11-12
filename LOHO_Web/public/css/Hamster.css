@@ -10,13 +10,15 @@ body{
     width: 30%;
     height: 700px;
     border: 1px green solid;
-    background-image:url('/LOHO_Web/public/Image/遊戲畫面素材/背景.png');
+    background-image:url('../遊戲畫面素材/背景.png');
     background-repeat: no-repeat;
 }
 
 button{
     width: 80px;
     font-size: 15px;
+    background-color: #FF44AA;
+    color: white;
 }
 
 .title{
@@ -30,15 +32,15 @@ button{
 }
 
 .dialog{
-    position: fixed;
+    position: absolute;
     top: 10%;
-    left: 37%;
-    width: 20%;
-    height: 15%;
-    border: 1px red solid;
-    background-color: #eeeeee;
-    box-shadow: 0px 0px 10px #000000;
-    padding-top: 5%;
+    left: 42%;
+    width: 10%;
+    background-color: #5599FF;
+    box-shadow: 0px 0px 20px #00FFFF;
+    color: white;
+    padding-top: 1%;
+    padding-bottom: 1%;
     text-align: center;
     display: none;    
 }
@@ -68,9 +70,11 @@ td{
     .content{
         width: 60%;
     }
+
     .table{
         top: 225px;
     }
+
     .dialog{
         left: 35%;
         width: 30%;
@@ -82,15 +86,19 @@ td{
     .content{
         width: 100%;
     }
+
     .title{
         top: 50px;
     }
+
     .table{
         top: 230px;
     }
+
     td{
         
     }
+
     .dialog{
         top: 12%;
         left: 26%;
