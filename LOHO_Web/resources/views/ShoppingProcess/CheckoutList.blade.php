@@ -36,6 +36,10 @@
                     <label class="form-check-label" for="radio4">信用卡線上付款(測試中)</label>
                 </div>
             </form>
+            <div>
+                <h3 class="ml-3">付款方式:<span id="payment_type">{{$data['payment_type']}}</span></h3>
+                <h3 class="ml-3"><span id="payment_info">{{$data['payment_info']}}</span></h3>
+            </div>
             <div class="next">
                 <button class="button btn btn-secondary" id="last_step">上一步</button>
                 <button class="button btn btn-secondary" id="next_step">下一步</button>
