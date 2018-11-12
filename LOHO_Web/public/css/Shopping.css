@@ -39,25 +39,27 @@
     align-content: center;
 }
 .shopping-item-img{
-    border: solid white 1px;
+    border: solid  white 1px;
 }
 
 .shopping-item-block>h3{
     font-family: fantasy;
-    
 }
 
-.text{
-
+.text {
+    background-color: lightcyan;
 }
-
-.name{
-
-}
-
-.description{
-    
-}
+.btn-outline-pink {
+    color: white;
+    background-color: lightpink;
+    background-image: none;
+    border-color: lightpink;
+  }
+  .btn-outline-pink:hover {
+    color: deeppink;
+    background-color: transparent;
+    border-color: deeppink;
+  }
 
 @media screen and (max-width: 768px) {
     /* CSS Reset */
