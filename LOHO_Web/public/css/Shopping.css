@@ -48,6 +48,10 @@
 
 .text {
     background-color: lightcyan;
+    font-family :Microsoft JhengHei;
+}
+.title-color {
+    color : #ecb62c;
 }
 .btn-outline-pink {
     color: white;

@@ -53,8 +53,8 @@
     <div class="content">
         <div class="container-block">
             <div class="left">
-                <div class="list-group-block">
-                    <h1 class="my-4">新品上市</h1>
+                <div class="list-group-block text-JhengHei">
+                    <h1 class="my-4 title-color">新品上市</h1>
                     <div class="list-group">
                         <a href="#sub_category1" class="list-group-item" id="main_category1" data-toggle="collapse" style="font-size:20px;">男款</a>
                         <div class="collapse list-group-submenu" id="sub_category1">

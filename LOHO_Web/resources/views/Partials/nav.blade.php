@@ -12,11 +12,11 @@
                   
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav mr-auto">
-              <li class="nav-item dropdown">
+              <li class="nav-item dropdown text-JhengHei">
                 <a class="nav-link dropdown h5" href="#"  id="DropdownMenuAboutLoho" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 關於LOHO 
                 </a>
-                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <div class="dropdown-menu text-JhengHei" aria-labelledby="navbarDropdown">
                     <div class="d-flex flex-row">
                         <div class="d-flex flex-column">
                             <a class="dropdown-header"><b>樂活足跡</b></a>
@@ -41,9 +41,9 @@
             </li>
     
     
-                <a class="nav-item nav-link h5" href="{{ url("Shopping/BrowseItems") }}">精選主題</a>
+                <a class="nav-item nav-link h5 text-JhengHei" href="{{ url("Shopping/BrowseItems") }}">精選主題</a>
     
-                <li class="nav-item dropdown">
+                <li class="nav-item dropdown text-JhengHei">
                     <a class="nav-link dropdown h5" href="#" id="DropdownMenuMen" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     男款
                     </a>
@@ -72,7 +72,7 @@
                         </div>
                     </div>
                 </li>
-                <li class="nav-item dropdown">
+                <li class="nav-item dropdown text-JhengHei">
                     <a class="nav-link dropdown h5" href="#" id="DropdownMenuWomen" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     女款
                     </a>
@@ -102,7 +102,7 @@
                         </div>
                     </div>
                 </li>
-                <li class="nav-item dropdown">
+                <li class="nav-item dropdown text-JhengHei">
                     <a class="nav-link dropdown h5" href="#" id="DropdownMenuKid" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     兒童
                     </a>
@@ -136,7 +136,7 @@
                 <a class="nav-item nav-link h5" href="#">禮物</a>
                 <a class="nav-item nav-link h5" href="#">DIY娃娃</a>	
               </ul>
-            <div class="d-flex flex-column">
+            <div class="d-flex flex-column text-JhengHei">
               <form class="form-inline navbar-right" >
                     <a class="nav-link text-secondary" href="#">線上詢問</a>
                     <a class="nav-link text-secondary" href="#">購物說明</a>
@@ -178,7 +178,7 @@
             <div class="row">
                 共<span id = count></span>項商品，金額總計
                 <p class="text-danger" id="total"></p>元
-                <span><button type="button" id="checkOut" class="btn btn-outline-secondary btn-sm text-right">結帳</button></span>
+                <span><button type="button" id="checkOut" class="btn btn-outline-custom btn-sm text-right">結帳</button></span>
             </div>
         </div>
     </div>
