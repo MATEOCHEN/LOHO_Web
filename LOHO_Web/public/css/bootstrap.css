@@ -3967,16 +3967,11 @@ input[type=button].btn-block {
   border-bottom-right-radius: 0.25rem;
   border-bottom-left-radius: 0.25rem;
 }
-.list-group-item:hover + .list-group-submenu{
-  color : deepskyblue;
+.list-group-item{
+  color : #4a4a4b;
   display: block;
 }
-.list-group-submenu {
-  display:none;
-}
-.list-group-submenu:hover {
-  display: block;
-}
+
 
 .card-body {
   flex: 1 1 auto;
