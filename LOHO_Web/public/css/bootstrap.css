@@ -2884,6 +2884,55 @@ input[type=button].btn-block {
   display: block;
 }
 
+.dropdown-menu{
+  position: absolute;
+  top: 80%;
+  left: 0%;
+  z-index: 1000;
+  display: none;
+  float: left;
+  min-width: 10rem;
+  padding: 0.5rem 0;
+  margin: 0.125rem 0 0;
+  font-size: 1rem;
+  color: #212529;
+  text-align: center;
+  list-style: none;
+  background-color: #fff;
+  background-clip: padding-box;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  border-radius: 0.25rem;
+  display: none;
+}
+.dropdown-menu:hover{
+  display: block;
+}
+
+.nav-link {
+  display: block;
+  padding: 0.5rem 1rem;
+}
+
+.nav-link:hover{
+  text-decoration: none;
+  font-weight: bold;
+}
+.nav-link:hover + #aboutmegamenu {
+  display: block;
+}
+
+.nav-link:hover + #menmegamenu {
+  display: block;
+}
+
+.nav-link:hover + #womenmegamenu {
+  display: block;
+}
+
+.nav-link:hover + #childmegamenu {
+  display: block;
+}
+
 .dropdown-header {
   display: block;
   width: 100%;
