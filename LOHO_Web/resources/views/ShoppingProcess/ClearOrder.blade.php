@@ -39,7 +39,8 @@
                         <p class="ml-4">地址: <span id="RecipientAddress"></span></p>                       
                     </div>
                 <h3 class="ml-3">付款方式:<span id="payment_type"></span></h3>
-                <h3 class="ml-3" id="payment_info"></h3>                
+                <h3 class="ml-3" id="payment_info"></h3>
+                <h3>以上資訊如有誤請到前頁做修改</h3>                
             </div>
             <div class="next">
                 <button class="button btn btn-secondary" id="last_step">上一步</button>

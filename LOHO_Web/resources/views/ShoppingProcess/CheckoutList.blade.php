@@ -37,8 +37,8 @@
                 </div>
             </form>
             <div>
-                <h3 class="ml-3">付款方式:<span id="payment_type">{{$data['payment_type']}}</span></h3>
-                <h3 class="ml-3"><span id="payment_info">{{$data['payment_info']}}</span></h3>
+                <h3 class="ml-3">付款方式:<span id="payment_type"></span></h3>
+                <h3 class="ml-3"><span id="payment_info"></span></h3>
             </div>
             <div class="next">
                 <button class="button btn btn-secondary" id="last_step">上一步</button>
@@ -117,7 +117,7 @@
                         您選擇貨到付款，將於到貨後與您收款
                     </div>
                     <form action="">
-                        您地址為(如有誤請到前一頁修改):
+                        您地址為(如有誤請按取消並到前一頁修改):
                         <span id="address"></span>
                     </form>
                 </div>
