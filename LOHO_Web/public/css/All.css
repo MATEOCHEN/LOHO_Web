@@ -9,4 +9,11 @@ body{
     background: #969696;
 }
 
+.position-center {
+    margin : 0px auto;
+}
+
+.text-JhengHei {
+    font-family: Microsoft JhengHei;
+  }
 

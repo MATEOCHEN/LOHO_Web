@@ -162,7 +162,6 @@
         });
 
         $("#checkOut").click(function() {
-            alert(shoppingcart_status);
            if(shoppingcart_status === "noEmpty") {
                 window.location = "/LOHO_Web/public/ShoppingProccess/ConfirmShoppingList";
             } else {

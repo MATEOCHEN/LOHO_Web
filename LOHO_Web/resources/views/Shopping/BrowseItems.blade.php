@@ -87,7 +87,7 @@
                     </div>
                 </div>
             </div>
-            <div class="right border ">
+            <div class="right border">
                 <ul class="wrap text-center" id="item_list">
                     <li class="shopping-item-block " id="s001">
                         <div class="shopping-item-img">

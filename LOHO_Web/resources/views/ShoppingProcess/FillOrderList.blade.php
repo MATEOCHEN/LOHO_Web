@@ -28,7 +28,7 @@
 @section('content')
 <div class="content">
     <div class="outer">
-        <div class="wrap">
+        <div class="wrap text-JhengHei">
             <h1>訂單進度</h1>
             <div class="progress" style="height: 30px">
                 <div class="progress-bar bg-success" role="progressbar" style="width: 20%;" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100"><p class="font-weight-bold pt-2" style="font-size: 20px">Step.1 確認商品</p></div>
@@ -37,7 +37,7 @@
                 <div class="progress-bar bg-secondary" role="progressbar" style="width: 20%;" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100"><p class="font-weight-bold pt-2" style="font-size: 20px">Step.4 確認訂單</p></div>
                 <div class="progress-bar bg-secondary" role="progressbar" style="width: 20%;" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100"><p class="font-weight-bold pt-2" style="font-size: 20px">Step.5 完成訂單</p></div>
             </div>
-            <div class="list">
+            <div class="list position-center">
                 <div class="col align-self-end">
                     <div class="row">
                         <h3 class="pt-3 ml-3">訂購人資料</h3>

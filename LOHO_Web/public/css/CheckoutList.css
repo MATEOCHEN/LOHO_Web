@@ -12,7 +12,14 @@
     width: 100%;
     height: auto;
     margin-top: 10px;
+    background :#f4f4f4;
     border: 1px grey solid;
+}
+
+.list{ 
+    width: 50%;
+    height: auto;
+    margin-bottom: 20px; 
 }
 
 .option{

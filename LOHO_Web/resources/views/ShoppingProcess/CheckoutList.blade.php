@@ -8,7 +8,7 @@
 @section('content')
 <div class="content">
     <div class="outer">
-        <div class="wrap">
+        <div class="wrap text-JhengHei">
             <h1>訂單進度</h1>
             <div class="progress" style="height: 30px">
                 <div class="progress-bar bg-success" role="progressbar" style="width: 20%;" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100"><p class="font-weight-bold pt-2" style="font-size: 20px">Step.1 確認商品</p></div>
@@ -17,32 +17,34 @@
                 <div class="progress-bar bg-secondary" role="progressbar" style="width: 20%;" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100"><p class="font-weight-bold pt-2" style="font-size: 20px">Step.4 確認訂單</p></div>
                 <div class="progress-bar bg-secondary" role="progressbar" style="width: 20%;" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100"><p class="font-weight-bold pt-2" style="font-size: 20px">Step.5 完成訂單</p></div>
             </div>
-            請先選擇付款方式再點選下一步
-            <form class="form form-group">
-                <div class="option form-check" id="ATM_Transfer">
-                    <input class="form-check-input" type="radio" name="pay" value="1" id="ATM_Transfer_Radio">
-                    <label class="form-check-label" for="radio1">ATM轉帳</label>
+            <div class="list ">
+                <b>請先選擇<a style="color : red;">付款方式</a>再點選下一步</b>
+                <form class="form form-group">
+                    <div class="option form-check" id="ATM_Transfer">
+                        <input class="form-check-input" type="radio" name="pay" value="1" id="ATM_Transfer_Radio">
+                        <label class="form-check-label" for="radio1">ATM轉帳</label>
+                    </div>
+                    <div class="option form-check" id="Bank_Transfer">                   
+                        <input class="form-check-input" type="radio" name="pay"  value="2" id="Bank_Transfer_Radio">
+                        <label class="form-check-label" for="radio2">銀行匯款</label>
+                    </div>
+                    <div class="option form-check" id="Cash_on_delivery">
+                        <input class="form-check-input" type="radio" name="pay"  value="3" id="Cash_on_delivery_Radio">
+                        <label class="form-check-label" for="radio3">貨到付款</label>
+                    </div>
+                    <div class="option form-check">
+                        <input class="form-check-input" type="radio" name="pay" id="radio4" value="4" disabled = "disabled">
+                        <label class="form-check-label" for="radio4">信用卡線上付款(測試中)</label>
+                    </div>
+                </form>
+                <div>
+                    <h3 class="ml-3">付款方式:<span id="payment_type"></span></h3>
+                    <h3 class="ml-3"><span id="payment_info"></span></h3>
                 </div>
-                <div class="option form-check" id="Bank_Transfer">                   
-                    <input class="form-check-input" type="radio" name="pay"  value="2" id="Bank_Transfer_Radio">
-                    <label class="form-check-label" for="radio2">銀行匯款</label>
+                <div class="next">
+                    <button class="button btn btn-secondary" id="last_step">上一步</button>
+                    <button class="button btn btn-secondary" id="next_step">下一步</button>
                 </div>
-                <div class="option form-check" id="Cash_on_delivery">
-                    <input class="form-check-input" type="radio" name="pay"  value="3" id="Cash_on_delivery_Radio">
-                    <label class="form-check-label" for="radio3">貨到付款</label>
-                </div>
-                <div class="option form-check">
-                    <input class="form-check-input" type="radio" name="pay" id="radio4" value="4" disabled = "disabled">
-                    <label class="form-check-label" for="radio4">信用卡線上付款(測試中)</label>
-                </div>
-            </form>
-            <div>
-                <h3 class="ml-3">付款方式:<span id="payment_type"></span></h3>
-                <h3 class="ml-3"><span id="payment_info"></span></h3>
-            </div>
-            <div class="next">
-                <button class="button btn btn-secondary" id="last_step">上一步</button>
-                <button class="button btn btn-secondary" id="next_step">下一步</button>
             </div>
         </div>
     </div>

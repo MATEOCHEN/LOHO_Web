@@ -6,6 +6,7 @@
 
 .outer{
     justify-content: center;
+    background: #f4f4f4;
     width: 100%;
     height: auto;
     display: flex;
@@ -13,11 +14,12 @@
     flex-wrap: wrap;    
 }
 
-.list{
-    width: 100%;
+.list{ 
+    width: 50%;
     height: auto;
-    margin-bottom: 20px;
+    margin-bottom: 20px; 
 }
+
 
 .input-area{
     font-size: 25px;
