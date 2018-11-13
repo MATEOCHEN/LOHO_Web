@@ -103,4 +103,8 @@ $(document).ready(function () {
         payment_type = "";
         payment_info = "";
     });
+
+    if ($('#payment_type').text() != '') {
+        $('#next_step').prop('disabled', false);
+    }
 });

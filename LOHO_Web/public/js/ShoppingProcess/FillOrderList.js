@@ -28,7 +28,15 @@ $(document).ready(function () {
                 },
                 dataType: "json",
                 success: function (response) {
-                    window.location  = "CheckoutList";
+                    if(response.status === 'success')
+                    {
+                        window.location  = "CheckoutList";
+                    }else{
+                        $('#ErrorModal').modal('show');
+                        response.errors.forEach(error => {
+                            $('#errors_area').append('<li>'+error+'</li>');
+                        });
+                    }
                 }
             }); 
     });
