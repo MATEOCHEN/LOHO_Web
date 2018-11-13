@@ -1,3 +1,4 @@
+//bug solution刷新畫面時先判斷是否有session資料, 再決定下一步button active 
 let payment_type;
 let payment_info;
 $(document).ready(function () {
@@ -8,7 +9,51 @@ $(document).ready(function () {
         }
     });
 
-    $('#next_step').prop('disabled', true);
+    $.ajax({
+        type: "GET",
+        url: "GetPaymentData",
+        data: "",
+        dataType: "json",
+        success: function (response) {
+            switch (response.payment_type) {
+                case 'ATM_Transfer':
+                    $('#payment_type').text('ATM轉帳');
+                    $('#payment_info').text("帳號末五碼:" +response.payment_info);
+                    $('#ATM_Transfer_financial_info').val(response.payment_info);
+                    $("#ATM_Transfer_Radio").prop("checked", true);
+                    $('#next_step').prop('disabled', false);
+                    payment_type = 'ATM_Transfer';
+                    payment_info = response.payment_info;
+                    break;
+                
+                case 'Bank_Transfer':
+                    $('#payment_type').text('銀行匯款');
+                    $('#payment_info').text("帳號末五碼:" +response.payment_info);
+                    $('#Bank_Transfer_financial_info').val(response.payment_info);
+                    $("#Bank_Transfer_Radio").prop("checked", true);
+                    $('#next_step').prop('disabled', false);
+                    payment_type = 'Bank_Transfer';
+                    payment_info = response.payment_info;
+                    break;
+    
+                case 'Cash_on_delivery':
+                    $('#payment_type').text('貨到付款');
+                    $('#payment_info').text("寄送地址:"+response.payment_info);
+                    $('#address').text(response.payment_info)
+                    $("#Cash_on_delivery_Radio").prop("checked", true);
+                    $('#next_step').prop('disabled', false);
+                    payment_type = 'Cash_on_delivery';
+                    payment_info = response.payment_info;
+                    break;
+            
+                default:
+                $('#payment_type').text('');
+                $('#payment_info').text('');
+                $('#next_step').prop('disabled', true);
+                break;
+            }
+        }
+    });
 
     $('#last_step').click(function (e) { 
         e.preventDefault();
@@ -34,21 +79,18 @@ $(document).ready(function () {
 
     $('#ATM_Transfer').click(function (e) { 
         e.preventDefault();
-        payment_type  ='ATM_Transfer';
         $("#ATM_Transfer_Radio").prop("checked", true);
         $('#ATM_TransferModal').modal('show');
     });
 
     $('#Bank_Transfer').click(function (e) { 
         e.preventDefault();
-        payment_type  ='Bank_Transfer';
         $("#Bank_Transfer_Radio").prop("checked", true);
         $('#Bank_TransferModal').modal('show');
     });    
 
     $('#Cash_on_delivery').click(function (e) { 
         e.preventDefault();
-        payment_type  ='Cash_on_delivery';
         
         $("#Cash_on_delivery_Radio").prop("checked", true);
         $.ajax({
@@ -58,7 +100,6 @@ $(document).ready(function () {
             dataType: "json",
             success: function (response) {
                 $('#address').text(response.address);
-                payment_info = "";
             }
         });
         
@@ -70,6 +111,7 @@ $(document).ready(function () {
     //二種轉帳確認,下一步enabled
     $('#confirm_ATM_Transfer').click(function (e) { 
         e.preventDefault();
+        payment_type  ='ATM_Transfer';
         payment_info = $('#ATM_Transfer_financial_info').val();
         $('#payment_type').text('ATM轉帳');
         $('#payment_info').text('帳號後五碼：' + payment_info);
@@ -79,6 +121,7 @@ $(document).ready(function () {
     //二種轉帳確認,下一步enabled
     $('#confirm_Bank_Transfer').click(function (e) { 
         e.preventDefault();
+        payment_type  ='Bank_Transfer';
         payment_info = $('#Bank_Transfer_financial_info').val();
         $('#payment_type').text('銀行匯款');
         $('#payment_info').text('帳號後五碼：' + payment_info);
@@ -88,6 +131,8 @@ $(document).ready(function () {
     //貨到付款確認,下一步enabled
     $('.confirm_Cash_on_delivery').click(function (e) { 
         e.preventDefault();
+        payment_type  ='Cash_on_delivery';
+        payment_info = $('#address').text();
         $('#payment_type').text('貨到付款');
         $('#payment_info').text('寄送地址：' + $('#address').text());
         $('#next_step').prop('disabled', false);
@@ -100,11 +145,10 @@ $(document).ready(function () {
         $("#ATM_Transfer_Radio").prop("checked", false);
         $("#Bank_Transfer_Radio").prop("checked", false);
         $("#Cash_on_delivery_Radio").prop("checked", false);
+        $('#payment_type').text('');
+        $('#payment_info').text('');
         payment_type = "";
         payment_info = "";
     });
 
-    if ($('#payment_type').text() != '') {
-        $('#next_step').prop('disabled', false);
-    }
 });

@@ -267,6 +267,11 @@ Route::group(['middleware' => 'ShoppingStateCheck','namespace' => 'ShoppingProcc
         '/queryAddress',
         array('uses' => 'CheckoutListController@queryAddress', 'as' => 'queryAddress')
     );
+    
+    Route::get(
+        '/GetPaymentData',
+        array('uses' => 'CheckoutListController@GetPaymentData', 'as' => 'GetPaymentData')
+    );
 
     Route::post(
         '/queryCurrentOrderList',
