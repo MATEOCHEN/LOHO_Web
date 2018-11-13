@@ -43,16 +43,16 @@
         </div>
     </div>
     <div>
-      <h1 class="text-center">精選推薦</h1>
+      <h1 class="text-center text-JhengHei">精選推薦</h1>
     </div>
-    <div class="wrap">
+    <div class="wrap border">
       <div class="item-block">
         <div class="d-flex flex-column align-items-center">
           <div class="item-img">
             <img src="{{ URL::asset('/Image/竹碳運動襪.jpg') }}" class="img-fluid">
           </div>
           <div>
-            <h3 class="img-font">竹碳運動襪</h3>
+            <h3 class="text-JhengHei">竹碳運動襪</h3>
           </div>
         </div>
       </div>
@@ -62,7 +62,7 @@
             <img src="{{ URL::asset('/Image/竹碳運動襪.jpg') }}" class="img-fluid">
           </div>
           <div>
-            <h3 class="img-font">竹碳運動襪</h3>
+            <h3 class="text-JhengHei">竹碳運動襪</h3>
           </div>
         </div>
       </div>
@@ -72,7 +72,7 @@
             <img src="{{ URL::asset('/Image/竹碳運動襪.jpg') }}" class="img-fluid">
           </div>
           <div>
-            <h3 class="img-font">竹碳運動襪</h3>
+            <h3 class="text-JhengHei">竹碳運動襪</h3>
           </div>
         </div>
       </div>
@@ -82,13 +82,13 @@
             <img src="{{ URL::asset('/Image/竹碳運動襪.jpg') }}" class="img-fluid">
           </div>
           <div>
-            <h3 class="img-font">竹碳運動襪</h3>
+            <h3 class="img-font text-JhengHei">竹碳運動襪</h3>
           </div>
         </div>
       </div>
     </div>
     <div>
-      <h1 class="text-center">新品上市</h1>
+      <h1 class="text-center text-JhengHei">新品上市</h1>
     </div>
     <div class="wrap">
       <div class="item-block">
@@ -97,7 +97,7 @@
             <img src="{{ URL::asset('/Image/竹碳運動襪.jpg') }}" alt="竹碳運動襪" class="img-fluid">
           </div>
           <div>
-            <h3 class="img-font">竹碳運動襪</h3>
+            <h3 class="img-font text-JhengHei">竹碳運動襪</h3>
           </div>
         </div>
       </div>
@@ -107,7 +107,7 @@
             <img src="{{ URL::asset('/Image/竹碳運動襪.jpg') }}" alt="竹碳運動襪" class="img-fluid">
           </div>
           <div>
-            <h3 class="img-font">竹碳運動襪</h3>
+            <h3 class="img-font text-JhengHei">竹碳運動襪</h3>
           </div>
         </div>
       </div>
@@ -117,7 +117,7 @@
             <img src="{{ URL::asset('/Image/竹碳運動襪.jpg') }}" alt="竹碳運動襪" class="img-fluid">
           </div>
           <div>
-            <h3 class="img-font">竹碳運動襪</h3>
+            <h3 class="img-font text-JhengHei">竹碳運動襪</h3>
           </div>
         </div>
       </div>
@@ -127,12 +127,12 @@
             <img src="{{ URL::asset('/Image/竹碳運動襪.jpg') }}" alt="竹碳運動襪" class="img-fluid">
           </div>
           <div>
-            <h3 class="img-font">竹碳運動襪</h3>
+            <h3 class="img-font text-JhengHei">竹碳運動襪</h3>
           </div>
         </div>
       </div>
     </div>
-    <div class="d-flex justify-content-center align-items-center">
+    <div class="d-flex justify-content-center  align-items-center border border-primary">
       <iframe src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Floho.socks.tourism.factory%2F%3Ffb_dtsg_ag%3DAdxuTU4m6K45LgcYj9BAFkdjIIOcZ97wHCW9Ta7Zm9KzSA%253AAdzmhSdXXD7oVtAOSjQT0vEdhJS6UAvOQL1ljJMTNXR3bQ&tabs=timeline&width=500&height=500&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId" width="600" height="600" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>
     </div>
   </div>

@@ -3,6 +3,7 @@
     flex-direction: row;
     justify-content: center;
     flex-wrap: wrap;
+    background: lightcyan;
     margin: 0 auto;
 }
 
@@ -24,10 +25,39 @@
     align-content: center;
 }
 .item-img{
-    border: solid white 1px;
+    border: none;
 }
 .carousel-h-650 {
-    max-height: 650px;
+    height: 650px;
+}
+
+.nav-link {
+    display: block;
+    padding: 0.5rem 1rem;
+}
+.nav-link:hover + #aboutmegamenu {
+    text-decoration: none;
+    display: block;
+}
+
+#aboutmegamenu :hover + #menmegamenu {
+    display: block;
+}
+
+  
+.nav-link:hover + #menmegamenu {
+    text-decoration: none;
+    display: block;
+}
+
+.nav-link:hover + #womenmegamenu {
+    text-decoration: none;
+    display: block;
+}
+
+.nav-link:hover + #childmegamenu {
+    text-decoration: none;
+    display: block;
 }
 @media screen and (max-width: 768px){
     html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
@@ -40,5 +70,9 @@
 
     .item-block{
         width: 35%;
+    }
+    
+    .carousel-h-650{
+        height: 170px;
     }
 }

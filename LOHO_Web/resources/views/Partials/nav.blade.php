@@ -5,18 +5,14 @@
     <nav class="navbar navbar-expand-lg navbar-light bg-light" >
         <a class="navbar-brand" href="{{ url("/") }}">
             <img alt="Brand" src="<?php echo asset('/Image/LOGO.svg');?>" width="150px" height="70spx">
-        </a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-                  
+        </a>                  
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav mr-auto">
               <li class="nav-item dropdown text-JhengHei">
-                <a class="nav-link dropdown h5" href="#"  id="DropdownMenuAboutLoho" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <a class="nav-link  h5"   href="#"  id="DropdownMenuAboutLoho" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 關於LOHO 
                 </a>
-                <div class="dropdown-menu text-JhengHei" aria-labelledby="navbarDropdown">
+                <div class="dropdown-menu text-JhengHei" id="aboutmegamenu" aria-labelledby="navbarDropdown">
                     <div class="d-flex flex-row">
                         <div class="d-flex flex-column">
                             <a class="dropdown-header"><b>樂活足跡</b></a>
@@ -47,7 +43,7 @@
                     <a class="nav-link dropdown h5" href="#" id="DropdownMenuMen" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     男款
                     </a>
-                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <div class="dropdown-menu" id="menmegamenu" aria-labelledby="navbarDropdown">
                         <div class="d-flex flex-row">
                             <a class="dropdown-header" ><b>新品上市</b></a>
                             <div class="d-flex flex-column">
@@ -76,7 +72,7 @@
                     <a class="nav-link dropdown h5" href="#" id="DropdownMenuWomen" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     女款
                     </a>
-                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <div class="dropdown-menu" id="womenmegamenu" aria-labelledby="navbarDropdown">
                         <div class="d-flex flex-row">
                             <a class="dropdown-header"><b>新品上市</b></a>
                             <div class="d-flex flex-column">
@@ -106,7 +102,7 @@
                     <a class="nav-link dropdown h5" href="#" id="DropdownMenuKid" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     兒童
                     </a>
-                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <div class="dropdown-menu" id="childmegamenu"aria-labelledby="navbarDropdown">
                         <div class="d-flex flex-row">
                             <a class="dropdown-header"><b>新品上市</b></a>
                             <div class="d-flex flex-column">
