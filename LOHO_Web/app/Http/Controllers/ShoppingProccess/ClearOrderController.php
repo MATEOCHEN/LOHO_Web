@@ -30,11 +30,13 @@ class ClearOrderController extends BaseController
         'ordererEmail' => $request->session()->get('ordererEmail', 'default'),
         'ordererTEL' => $request->session()->get('ordererTEL', 'default'),
         'ordererPhone' => $request->session()->get('ordererPhone', 'default'),
+        'ordererPostal_code' =>Session::get('ordererPostal_code', ''),    
         'ordererAddress' => $request->session()->get('ordererAddress', 'default'),
         'RecipientName' => $request->session()->get('RecipientName', 'default'),
         'RecipientEmail' => $request->session()->get('RecipientEmail', 'default'),
         'RecipientTEL' => $request->session()->get('RecipientTEL', 'default'),
         'RecipientPhone' => $request->session()->get('RecipientPhone', 'default'),
+        'RecipientPostal_code' =>Session::get('RecipientPostal_code', ''),
         'RecipientAddress' => $request->session()->get('RecipientAddress', 'default'),
         'payment_type' => $request->session()->get('payment_type', 'default'),
         'payment_info' => $request->session()->get('payment_info', 'default'),
@@ -59,6 +61,7 @@ class ClearOrderController extends BaseController
         $orderer_info->email = $request->session()->get('ordererEmail', 'default');
         $orderer_info->telephone_number = $request->session()->get('ordererTEL', 'default');
         $orderer_info->phone_number = $request->session()->get('ordererPhone', 'default');
+        //$orderer_info->postal_code = $request->session()->get('ordererPostal_code', 'default');
         $orderer_info->address = $request->session()->get('ordererAddress', 'default');
         $orderer_info->save();
 
@@ -68,6 +71,7 @@ class ClearOrderController extends BaseController
         $recipient_info->email = $request->session()->get('RecipientEmail', 'default');
         $recipient_info->telephone_number = $request->session()->get('RecipientTEL', 'default');
         $recipient_info->phone_number = $request->session()->get('RecipientPhone', 'default');
+        //$recipient_info->postal_code = Session::get('RecipientPostal_code', '');
         $recipient_info->address = $request->session()->get('RecipientAddress', 'default');
         $recipient_info->save();
 
@@ -84,11 +88,13 @@ class ClearOrderController extends BaseController
         $request->session()->forget('ordererEmail');
         $request->session()->forget('ordererTEL');
         $request->session()->forget('ordererPhone');
+        $request->session()->forget('ordererPostal_code');
         $request->session()->forget('ordererAddress');
         $request->session()->forget('RecipientName');
         $request->session()->forget('RecipientEmail');
         $request->session()->forget('RecipientTEL');
         $request->session()->forget('RecipientPhone');
+        $request->session()->forget('RecipientPostal_code');
         $request->session()->forget('RecipientAddress');
         $request->session()->forget('payment_type');
         $request->session()->forget('payment_info');

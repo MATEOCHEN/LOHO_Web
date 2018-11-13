@@ -29,9 +29,12 @@
     </div>
 </div>
 <script>
-$('#back_index').click(function (e) { 
+$(document).ready(function () {
+    $('#back_index').click(function (e) { 
     e.preventDefault();
     window.location = "/LOHO_Web/public/"; 
 });
+});
+
 </script>
 @stop

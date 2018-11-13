@@ -19,11 +19,13 @@ class FillOrderListController extends BaseController
                 'ordererEmail' => Session::get('ordererEmail', ''),
                 'ordererTEL' => Session::get('ordererTEL', ''),
                 'ordererPhone' => Session::get('ordererPhone', ''),
+                'ordererPostal_code' =>Session::get('ordererPostal_code', ''),
                 'ordererAddress' => Session::get('ordererAddress', ''),
                 'RecipientName' => Session::get('RecipientName', ''),
                 'RecipientEmail' => Session::get('RecipientEmail', ''),
                 'RecipientTEL' => Session::get('RecipientTEL', ''),
                 'RecipientPhone' => Session::get('RecipientPhone', ''),
+                'RecipientPostal_code' =>Session::get('RecipientPostal_code', ''),
                 'RecipientAddress' => Session::get('RecipientAddress', ''),
             ];
         
@@ -68,11 +70,13 @@ class FillOrderListController extends BaseController
             $request->session()->put('ordererEmail', $request->ordererEmail);
             $request->session()->put('ordererTEL', $request->ordererTEL);
             $request->session()->put('ordererPhone', $request->ordererPhone);
+            $request->session()->put('ordererPostal_code', $request->ordererPostal_code);//需處理前面縣市地址
             $request->session()->put('ordererAddress', $request->ordererAddress);//需處理前面縣市地址
             $request->session()->put('RecipientName', $request->RecipientName);
             $request->session()->put('RecipientEmail', $request->RecipientEmail);
             $request->session()->put('RecipientTEL', $request->RecipientTEL);
             $request->session()->put('RecipientPhone', $request->RecipientPhone);
+            $request->session()->put('RecipientPostal_code', $request->RecipientPostal_code);//需處理前面縣市地址
             $request->session()->put('RecipientAddress', $request->RecipientAddress);//需處理前面縣市地址
             return response()->json(['status' => 'success']);
         }else{

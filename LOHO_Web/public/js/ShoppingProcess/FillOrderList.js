@@ -9,7 +9,7 @@ $(document).ready(function () {
             //存入訂購人, 收款人資料進session
             //ordererName,ordererEmail,ordererTEL,ordererPhone,address
             //RecipientName,RecipientEmail,RecipientTEL,RecipientPhone,address1
-
+            
             $.ajax({
                 type: "POST",
                 url: "AfterFillOrderList",
@@ -18,18 +18,20 @@ $(document).ready(function () {
                     ordererEmail: $('#ordererEmail').val(),
                     ordererTEL: $('#ordererTEL').val(),
                     ordererPhone:$('#ordererPhone').val(),
+                    ordererPostal_code:$("input[name='OrdererZipcode']").val(),
                     ordererAddress:$('#address').val(),//需處理前面縣市地址
                     RecipientName:$('#RecipientName').val(),
                     RecipientEmail:$('#RecipientEmail').val(),
                     RecipientTEL:$('#RecipientTEL').val(),
                     RecipientPhone:$('#RecipientPhone').val(),
+                    RecipientPostal_code:$("input[name='RecipientZipcode']").val(),
                     RecipientAddress:$('#address1').val(),//需處理前面縣市地址
                     // $("select[name='RecipientCountry']"), $("select[name='RecipientArea']"), $("input[name='RecipientZipcode']")
                 },
                 dataType: "json",
                 success: function (response) {
                     if(response.status === 'success')
-                    {
+                    {   
                         window.location  = "CheckoutList";
                     }else{
                         $('#ErrorModal').modal('show');
