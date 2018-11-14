@@ -149,7 +149,7 @@
                     <a class="nav-link text-secondary" href="#">線上詢問</a>
                     <a class="nav-link text-secondary" href="#">購物說明</a>
                     <input class="form-control mr-sm-2" type="search" placeholder="請輸入關鍵字"aria-label="Search">
-                    <button class="btn btn-outline-custom" type="submit">搜尋</button>
+                    <button class="btn btn-outline-custom" id="searchbtn" type="submit">搜尋</button>
             </form>
                 <div class="d-flex flex-row justify-content-end">
                     @if (Auth::check())

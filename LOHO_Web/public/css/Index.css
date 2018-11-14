@@ -47,7 +47,11 @@
         width: 35%;
     }
     
-    .carousel-h-650{
+    .carousel-h-600{
         height: 170px;
+    }
+
+    #searchbtn{
+        margin-top: 10px;
     }
 }

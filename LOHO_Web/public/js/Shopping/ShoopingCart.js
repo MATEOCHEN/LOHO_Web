@@ -138,14 +138,16 @@
                 }
             });
         });
-    }     
-    //前端pop-up window
+    }
+    
+    //front side pop-up window
     $(document).ready(function(){
-        $("#Dialog").dialog({width:"1000",
+        $("#Dialog").dialog({width:"80%",
         height:"500",
         maxHeight:"600",
         draggable: false,
         modal: true,
+        fluid : true,
         autoOpen: false,
         show:"fade",
         resizable:"false",
@@ -154,8 +156,8 @@
             txtID = 0;
             sum = 0;
         }
-
     });
+    
         $("#ShoppingCart").click(function() {
             $("#Dialog").dialog("open");
             getCart();
