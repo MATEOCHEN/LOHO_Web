@@ -14,6 +14,7 @@
 }
 
 .right{
+    background-color: #f4f4f4;
     flex:5;
 }
 
@@ -32,32 +33,39 @@
     width: 230px;
     margin: 15px;
     padding: 5px;
-    border: solid #717b8c 1px;
-    background-color:white;
+    border: none;
+    background-color:none;
     display: flex;
     flex-direction: column;
     align-content: center;
 }
 .shopping-item-img{
-    border: solid white 1px;
+    border: solid  white 1px;
 }
 
 .shopping-item-block>h3{
     font-family: fantasy;
-    
 }
 
-.text{
-
+.text {
+    background-color: lightcyan;
+    font-family :Microsoft JhengHei;
+}
+.title-color {
+    color : #ecb62c;
+}
+.btn-outline-pink {
+    color: white;
+    background-color: lightpink;
+    background-image: none;
+    border-color: lightpink;
+}
+.btn-outline-pink:hover {
+    color: deeppink;
+    background-color: transparent;
+    border-color: deeppink;
 }
 
-.name{
-
-}
-
-.description{
-    
-}
 
 @media screen and (max-width: 768px) {
     /* CSS Reset */
@@ -72,6 +80,7 @@
 
     .container-block{
         display: flex;
+        background: #f4f4f4;
         flex-direction: row;
         flex-wrap: wrap;
         margin: 1% 1% 1% 1%;

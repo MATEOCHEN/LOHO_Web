@@ -53,8 +53,8 @@
     <div class="content">
         <div class="container-block">
             <div class="left">
-                <div class="list-group-block">
-                    <h1 class="my-4">新品上市</h1>
+                <div class="list-group-block text-JhengHei">
+                    <h1 class="my-4 title-color">新品上市</h1>
                     <div class="list-group">
                         <a href="#sub_category1" class="list-group-item" id="main_category1" data-toggle="collapse" style="font-size:20px;">男款</a>
                         <div class="collapse list-group-submenu" id="sub_category1">
@@ -87,7 +87,7 @@
                     </div>
                 </div>
             </div>
-            <div class="right">
+            <div class="right border">
                 <ul class="wrap text-center" id="item_list">
                     <li class="shopping-item-block " id="s001">
                         <div class="shopping-item-img">
@@ -98,11 +98,12 @@
                             <h5 class="price">NT$240</h5>
                             <p class="description">耐用好穿</p>
                             <select name="選單名稱" size="1">
-                                <option value="1" selected> 1
+                            <option value="quantity" selected> 數量
+                                <option value="1">1
                                     <option value="2">2
                                         <option value="3">3
                             </select>
-                            <button type="button" class="btn btn-outline-dark btn-sm" onclick="addCart('s001')">加入購物車</button>
+                            <button type="button" class="btn btn-outline-pink btn-sm" onclick="addCart('s001')">加入購物車</button>
                         </div>
                     </li>
                     <li class="shopping-item-block " id="s002">
@@ -114,11 +115,12 @@
                             <h5 class="price">NT$240</h5>
                             <p class="description">耐用好穿</p>
                             <select name="選單名稱" size="1">
-                                <option value="1" selected> 1
+                            <option value="quantity" selected> 數量
+                                <option value="1">1
                                     <option value="2">2
                                         <option value="3">3
                             </select>
-                            <button type="button" class="btn btn-outline-dark btn-sm" onclick="addCart('s002')">加入購物車</button>
+                            <button type="button" class="btn btn-outline-pink btn-sm" onclick="addCart('s002')">加入購物車</button>
                         </div>
                     </li>
                     <li class="shopping-item-block " id="s003">
@@ -130,11 +132,12 @@
                             <h5 class="price">NT$240</h5>
                             <p class="description">耐用好穿</p>
                             <select name="選單名稱" size="1">
-                                <option value="1" selected> 1
+                            <option value="quantity" selected> 數量
+                                <option value="1">1
                                     <option value="2">2
                                         <option value="3">3
                             </select>
-                            <button type="button" class="btn btn-outline-dark btn-sm" onclick="addCart('s003')">加入購物車</button>
+                            <button type="button" class="btn btn-outline-pink btn-sm" onclick="addCart('s003')">加入購物車</button>
                         </div>
                     </li>
                     @foreach ($data['items'] as $item)

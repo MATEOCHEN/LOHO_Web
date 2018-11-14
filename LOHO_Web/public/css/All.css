@@ -1,12 +1,19 @@
 
 .content{
-    max-width: 100%;
+    width: 100%;
     height: auto;
-    margin: 0 2%;
+    overflow-x: hidden;
 }
 
 body{
     background: #969696;
 }
 
+.position-center {
+    margin : 0px auto;
+}
+
+.text-JhengHei {
+    font-family: Microsoft JhengHei;
+  }
 

@@ -3,6 +3,7 @@
     flex-direction: row;
     justify-content: center;
     flex-wrap: wrap;
+    background: lightcyan;
     margin: 0 auto;
 }
 
@@ -24,9 +25,15 @@
     align-content: center;
 }
 .item-img{
-    border: solid white 1px;
+    border: none;
+}
+.carousel-h-600 {
+    max-height: 600px;
 }
 
+#facebook-block {
+    display: none;
+}
 @media screen and (max-width: 768px){
     html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
         margin: 0;
@@ -38,5 +45,9 @@
 
     .item-block{
         width: 35%;
+    }
+    
+    .carousel-h-650{
+        height: 170px;
     }
 }

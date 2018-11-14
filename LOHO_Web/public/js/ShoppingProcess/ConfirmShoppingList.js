@@ -1,3 +1,4 @@
+
     var txtID = 0;
     var sum = 0;
     var pre_subtotal = 0
@@ -57,6 +58,12 @@
     $(document).ready(function(){
         getConfirmCart();
 
+        $.ajaxSetup({
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            }
+        });
+
         $('#view_voucher').click(function (e) { 
             e.preventDefault();
             window.location = "/LOHO_Web/public/ShoppingProcess/SelectVoucher";
@@ -64,18 +71,22 @@
         $("#nextStep").click(function() {
             if(sum > 0)
             {
-                /*存入優惠折扣, 總金額進session
-                window.location  = "FillOrderList";
+                //存入優惠折扣, 總金額進session
+                //goodsTotal,shippingFee,coupon_price,orderTotal
                 $.ajax({
-                    type: "method",
-                    url: "url",
-                    data: "data",
-                    dataType: "dataType",
+                    type: "POST",
+                    url: "AfterConfirmShoppingList",
+                    data: {
+                        goodsTotal: $('#goodsTotal').text(),
+                        shippingFee: $('#shippingFee').text(),
+                        coupon_price: $('#coupon_price').text(),
+                        orderTotal:$('#orderTotal').text()
+                    },
+                    dataType: "json",
                     success: function (response) {
-                        
+                        window.location  = "FillOrderList";
                     }
-                });*/
-                window.location  = "FillOrderList";
+                }); 
             }
             else{
                 alert("請先選擇商品");

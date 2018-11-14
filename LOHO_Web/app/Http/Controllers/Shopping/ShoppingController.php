@@ -41,32 +41,4 @@ class ShoppingController extends BaseController
     {
         return view('Shopping\ShoppingItem');
     }
-<<<<<<< HEAD
-
-    public function CheckoutList()
-    {
-        return view('ShoppingProcess\CheckoutList');
-    }
-
-    public function ConfirmShoppingList()
-    {
-        return view('ShoppingProcess\ConfirmShoppingList');
-    }
-
-    public function FillOrderList()
-    {
-        return view('ShoppingProcess\FillOrderList');
-    }
-
-    public function ClearOrder() 
-    {
-        return view('ShoppingProcess\ClearOrder');
-    }
-
-    public function FinishOrder()
-    {
-        return view('ShoppingProcess\FinishOrder');
-    }
-=======
->>>>>>> 6cb7fadc169c66ac40ffffe7586d961b7d225350
 }

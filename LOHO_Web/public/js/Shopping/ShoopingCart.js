@@ -1,4 +1,6 @@
     //add the item dynamically
+    var shoppingcart_status = "empty";
+
     var txtID = 0;
     var sum = 0;
     var pre_subtotal = 0
@@ -6,11 +8,8 @@
     var Item_added = function(item_name,item_price,item_count,img_url) {
         txtID++;
         sum = sum + item_price * item_count;
-<<<<<<< HEAD
+
         $("#showBlock").append("<div id='div1" + txtID +"' class='col-6 p-4 ml-2 text-left solid-top-border'>"
-=======
-        $("#showBlock").append("<form method='post' action='ConfirmShoppingList>'"+"<div id='div1" + txtID +"' class='col-6 p-4 ml-2 text-left solid-top-border'>"
->>>>>>> 6cb7fadc169c66ac40ffffe7586d961b7d225350
         +"<div id='div2" + txtID +"' class='row'>"
         +"<div class='col text-left' id='div3" + txtID +"'>"
         +"<p id='name"+txtID+"'>"+ item_name +"</p></div>"
@@ -132,8 +131,8 @@
                             continue;
                         }
                         else{
-                            //alert(item.name +" NT$"+ item.price+"元"+ item.count+ "雙" + item.img_url);
                             Item_added(item.name,item.price,item.count,item.img_url);
+                            shoppingcart_status = "noEmpty";
                         }
                     }
                 }
@@ -163,6 +162,10 @@
         });
 
         $("#checkOut").click(function() {
-            window.location = "/LOHO_Web/public/ShoppingProccess/ConfirmShoppingList";
+           if(shoppingcart_status === "noEmpty") {
+                window.location = "/LOHO_Web/public/ShoppingProccess/ConfirmShoppingList";
+            } else {
+                alert("目前購物車沒有商品")
+            }
         });
     });

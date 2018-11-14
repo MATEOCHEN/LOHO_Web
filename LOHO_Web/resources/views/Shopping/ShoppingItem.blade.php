@@ -8,16 +8,7 @@
 @section('content')
     <div class="content">
         <div class="container-block">
-            <div class="left">
-                <div class="list-group-block">
-                    <h1 class="my-4">新品上市</h1>
-                    <div class="list-group">
-                        <a href="#" class="list-group-item">Category 5</a>
-                        <a href="#" class="list-group-item">Category 2</a>
-                        <a href="#" class="list-group-item">Category 3</a>
-                    </div>
-                </div>
-            </div>
+            
             <div class="right">
                 <div class="wrap">
                     <div class="item-img-block">
@@ -27,31 +18,22 @@
                     </div>
                     <div class="item-info-block">
                         <div class="item-title">
-                            短襪-竹炭休閒襪-黑
+                            短襪-竹炭休閒襪-黑     
+                            <p class="price">NT.110</p>
                         </div>
-                        <div class="price-color">
-                            <div class="item-color">
-                                <div class="black">
-
-                                </div>
-                                <div class="gray">
-
-                                </div>
-                                <div class="yellow">
-
-                                </div>
+                        <div class="item-desc border border-primary justify-content-between">
+                            <div class = "d-flex">
+                                <h5>這是個漂亮的襪子</h5>
                             </div>
-                            <div class="price">
-                                NT.110
-                            </div>
-                        </div>
-                        <div class="add-cart">
-                            <select name="購物數量" size="1">
-                                <option value="one" selected> 1
+                            <div class="d-flex  border border-primary align-items-end">
+                                <select name="購物數量" size="1">
+                                    <option value="one" selected> 1
                                     <option value="two">2
-                                        <option value="three">3
-                            </select>
-                            <button type="button" class="btn btn-dark">加入購物車</button>
+                                    <option value="three">3
+                                </select>
+                                
+                                <input type="button" class="btn btn-addCart" style="height:20%"value="加入購物車">
+                            </div>
                         </div>
                     </div>
                 </div>

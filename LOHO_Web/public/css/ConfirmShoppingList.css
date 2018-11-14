@@ -6,6 +6,7 @@
 
 .outer{
     justify-content: center;
+    background: #f4f4f4;
     width: 100%;
     height: auto;
     display: flex;
@@ -56,7 +57,9 @@ ul li{
     margin-left: 20px;
     margin-right: 20px;
 }
-/*
-.solid-top-border {
-    border-top: 5px solid  #969696 !important;
+
+
+
+/*.solid-top-border {
+    border-top: 3px solid  #f4f4f4 !important;
 }*/

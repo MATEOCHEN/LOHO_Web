@@ -6,8 +6,8 @@
 <script src="{{ URL::asset('/js/Account/Account_Log_In.js') }}"></script>
 @stop
 @section('content')
-<div class = "content">
-    <div class="container-block">
+<div class = "content border border-primary rounded">
+    <div class="container-block ">
         <div class="wrap text-center">
             <div class="logo-img">
                 <img src="{{ URL::asset('/Image/LOHO_Logo.png') }}" alt="" class="img-fluid">

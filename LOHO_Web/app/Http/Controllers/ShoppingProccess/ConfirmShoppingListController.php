@@ -20,5 +20,15 @@ class ConfirmShoppingListController extends BaseController
         return view('ShoppingProcess\ConfirmShoppingList',compact('data'));
     }
 
+    //save shopping sum into session 
+    public function AfterConfirmShoppingList(Request $request)
+    {
+        $request->session()->put('goodsTotal', $request->goodsTotal);
+        $request->session()->put('shippingFee', $request->shippingFee);
+        $request->session()->put('coupon_price', $request->coupon_price);
+        $request->session()->put('orderTotal', $request->orderTotal);
+        $request->session()->put('shopping_state', true);
+        return response()->json(['msg' => '']);
+    }
 
 }

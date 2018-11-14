@@ -221,44 +221,32 @@ Route::group(['middleware' => 'AdminLogin','namespace' => 'ShoppingProccess','pr
         'UseVoucher',
         array('uses' => 'SelectVoucherController@UseVoucher', 'as' => 'UseVoucher')
     ); 
-    
-    Route::get(
-        '/CheckoutList',
-        array('uses' => 'CheckoutListController@CheckoutList', 'as' => 'CheckoutList')
-    );
-
-    Route::get(
-        '/ConfirmShoppingList',
-        array('uses' => 'ConfirmShoppingListController@ConfirmShoppingList', 'as' => 'ConfirmShoppingList')
-    );
-
-    Route::get(
-        '/FillOrderList',
-        array('uses' => 'FillOrderListController@FillOrderList', 'as' => 'FillOrderList')
-    );
-
-
-    Route::get(
-        '/ClearOrder',
-        array('uses' => 'Shopping\ShoppingController@ClearOrder', 'as' => 'ClearOrder')
-    );
-
-    Route::get(
-        '/FinishOrder',
-        array('uses' => 'Shopping\ShoppingController@FinishOrder', 'as' => 'FinishOrder')
-    );
 
 });
 Route::group(['namespace' => 'ShoppingProccess','prefix' => 'ShoppingProccess'], function () {
 
     Route::get(
-        '/CheckoutList',
-        array('uses' => 'CheckoutListController@CheckoutList', 'as' => 'CheckoutList')
+        '/ConfirmShoppingList',
+        array('uses' => 'ConfirmShoppingListController@ConfirmShoppingList', 'as' => 'ConfirmShoppingList')
+    );
+
+    Route::post(
+        '/AfterConfirmShoppingList',
+        array('uses' => 'ConfirmShoppingListController@AfterConfirmShoppingList', 'as' => 'AfterConfirmShoppingList')
     );
 
     Route::get(
-        '/ConfirmShoppingList',
-        array('uses' => 'ConfirmShoppingListController@ConfirmShoppingList', 'as' => 'ConfirmShoppingList')
+        '/FinishOrder',
+        array('uses' => 'FinishOrderController@FinishOrder', 'as' => 'FinishOrder')
+    );
+    
+});
+
+Route::group(['middleware' => 'ShoppingStateCheck','namespace' => 'ShoppingProccess','prefix' => 'ShoppingProccess'], function () {
+
+    Route::get(
+        '/CheckoutList',
+        array('uses' => 'CheckoutListController@CheckoutList', 'as' => 'CheckoutList')
     );
 
     Route::get(
@@ -266,7 +254,42 @@ Route::group(['namespace' => 'ShoppingProccess','prefix' => 'ShoppingProccess'],
         array('uses' => 'FillOrderListController@FillOrderList', 'as' => 'FillOrderList')
     );
 
+    Route::get(
+        '/ClearOrder',
+        array('uses' => 'ClearOrderController@ClearOrder', 'as' => 'ClearOrder')
+    );
+    
+    Route::post(
+        '/AfterFillOrderList',
+        array('uses' => 'FillOrderListController@AfterFillOrderList', 'as' => 'AfterFillOrderList')
+    );
+
+    Route::get(
+        '/queryAddress',
+        array('uses' => 'CheckoutListController@queryAddress', 'as' => 'queryAddress')
+    );
+    
+    Route::get(
+        '/GetPaymentData',
+        array('uses' => 'CheckoutListController@GetPaymentData', 'as' => 'GetPaymentData')
+    );
+
+    Route::post(
+        '/queryCurrentOrderList',
+        array('uses' => 'ClearOrderController@queryCurrentOrderList', 'as' => 'queryCurrentOrderList')
+    );
+
+    Route::post(
+        '/AfterCheckoutList',
+        array('uses' => 'CheckoutListController@AfterCheckoutList', 'as' => 'AfterCheckoutList')
+    );
+
+    Route::post(
+        '/AfterClearOrder',
+        array('uses' => 'ClearOrderController@AfterClearOrder', 'as' => 'AfterClearOrder')
+    );
 });
+
 Route::group(['prefix' => 'Game','namespace' => 'Game'], function () {
     Route::get(
         'Index',
