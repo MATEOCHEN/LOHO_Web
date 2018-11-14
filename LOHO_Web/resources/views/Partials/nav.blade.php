@@ -5,7 +5,10 @@
     <nav class="navbar navbar-expand-lg navbar-light bg-light" >
         <a class="navbar-brand" href="{{ url("/") }}">
             <img alt="Brand" src="<?php echo asset('/Image/LOGO.svg');?>" width="150px" height="70spx">
-        </a>                  
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>                  
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav mr-auto">
               <li class="nav-item dropdown text-JhengHei">
@@ -36,9 +39,11 @@
                 </div>
             </li>
     
-    
-                <a class="nav-item nav-link h5 text-JhengHei" href="{{ url("Shopping/BrowseItems") }}">精選主題</a>
-    
+                <li class="nav-item text-JhengHei">
+                    <a class="nav-link h5" href="{{ url("Shopping/BrowseItems") }}">
+                        精選主題
+                    </a>
+                </li>
                 <li class="nav-item dropdown text-JhengHei">
                     <a class="nav-link dropdown h5" href="#" id="DropdownMenuMen" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     男款
@@ -128,9 +133,16 @@
                             </div>
                     </div>
                 </li>
-    
-                <a class="nav-item nav-link h5" href="#">禮物</a>
-                <a class="nav-item nav-link h5" href="#">DIY娃娃</a>	
+                <li class="nav-item text-JhengHei">
+                    <a class="nav-link h5" href="#">
+                        禮物
+                    </a>
+                </li>
+                <li class="nav-item text-JhengHei">
+                    <a class="nav-link h5" href="#">
+                        DIY娃娃
+                    </a>
+                </li>
               </ul>
             <div class="d-flex flex-column text-JhengHei">
               <form class="form-inline navbar-right" >

@@ -17,7 +17,7 @@
                 <div class="progress-bar bg-secondary" role="progressbar" style="width: 20%;" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100"><p class="font-weight-bold pt-2" style="font-size: 20px">Step.4 確認訂單</p></div>
                 <div class="progress-bar bg-secondary" role="progressbar" style="width: 20%;" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100"><p class="font-weight-bold pt-2" style="font-size: 20px">Step.5 完成訂單</p></div>
             </div>
-            <div class="list ">
+            <div class="list">
                 <b>請先選擇<a style="color : red;">付款方式</a>再點選下一步</b>
                 <form class="form form-group">
                     <div class="option form-check" id="ATM_Transfer">
