@@ -184,9 +184,12 @@
           <div class ="row" id="showBlock"></div>
         <div class="alert alert-secondary" role="alert">
             <div class="row">
-                共<span id = count></span>項商品，金額總計
-                <p class="text-danger" id="total"></p>元
-                <span><button type="button" id="checkOut" class="btn btn-outline-custom btn-sm text-right">結帳</button></span>
+                <div class="col text-left align-bottom mt-2">
+                共<span id = "count">0</span>項商品金額總計<p class="text-danger d-inline"id="total">0</p>元
+                </div>
+                <div class="col text-right">
+                    <input type="button" id="checkOut" class="btn btn-outline-custom btn-sm" value="結帳">
+                </div>
             </div>
         </div>
     </div>
