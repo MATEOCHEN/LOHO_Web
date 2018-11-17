@@ -27,12 +27,16 @@
 .item-img{
     border: none;
 }
-.carousel-h-600 {
-    max-height: 600px;
+.carousel-h{
+    height: 760px;
 }
 
-.d-inline {
-    display: inline;
+.shop-font-size{
+    font-size: 24px;
+}
+
+#facebook-block {
+    display: none;
 }
 @media screen and (max-width: 768px){
     html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
@@ -47,11 +51,15 @@
         width: 35%;
     }
     
-    .carousel-h-600{
-        height: 170px;
+    .carousel-h{
+        height: 200px;
     }
 
     #searchbtn{
         margin-top: 10px;
+    }
+
+    .shop-font-size{
+        font-size: 16px;
     }
 }

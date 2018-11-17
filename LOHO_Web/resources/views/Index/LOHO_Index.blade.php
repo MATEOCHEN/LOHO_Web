@@ -19,15 +19,15 @@
             <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
           </ol>
           <div class="carousel-inner">
-            <div class="carousel-item active carousel-h-600">
+            <div class="carousel-item active carousel-h">
               <img class="d-block w-100" src="{{ URL::asset('/Image/loho.webp') }}"
                 alt="First slide">
             </div>
-            <div class="carousel-item carousel-h-600">
+            <div class="carousel-item carousel-h">
               <img class="d-block w-100" src="{{ URL::asset('/Image/Happy Halloween.jpg')}}"
                 alt="Second slide">
             </div>
-            <div class="carousel-item carousel-h-600">
+            <div class="carousel-item carousel-h">
               <img class="d-block w-100" src="{{ URL::asset('/Image/team Photo.jpg')}}"
                 alt="Third slide">
             </div>
