@@ -46,7 +46,7 @@
                 </li>
                 <li class="nav-item dropdown text-JhengHei">
                     <a class="nav-link dropdown h5" href="#" id="DropdownMenuMen" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    成人
+                    襪子
                     </a>
                     <div class="dropdown-menu" id="menmegamenu" aria-labelledby="navbarDropdown">
                         <div class="d-flex flex-row">
