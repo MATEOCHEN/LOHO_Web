@@ -255,6 +255,11 @@ Route::group(['middleware' => 'ShoppingStateCheck','namespace' => 'ShoppingProcc
     );
 
     Route::get(
+        '/GetOrderList',
+        array('uses' => 'FillOrderListController@GetOrderList', 'as' => 'GetOrderList')
+    );
+
+    Route::get(
         '/ClearOrder',
         array('uses' => 'ClearOrderController@ClearOrder', 'as' => 'ClearOrder')
     );
