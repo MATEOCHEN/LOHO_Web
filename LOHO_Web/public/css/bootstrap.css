@@ -3785,7 +3785,7 @@ input[type=button].btn-block {
     flex-basis: auto;
   }
   .navbar-expand-md .navbar-toggler {
-    display: none;
+    display: block;
   }
 }
 @media (max-width: 991.98px) {

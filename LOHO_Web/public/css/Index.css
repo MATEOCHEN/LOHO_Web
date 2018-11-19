@@ -27,8 +27,12 @@
 .item-img{
     border: none;
 }
-.carousel-h-600 {
-    max-height: 600px;
+.carousel-h{
+    height: 760px;
+}
+
+.shop-font-size{
+    font-size: 24px;
 }
 
 #facebook-block {
@@ -47,7 +51,15 @@
         width: 35%;
     }
     
-    .carousel-h-650{
-        height: 170px;
+    .carousel-h{
+        height: 200px;
+    }
+
+    #searchbtn{
+        margin-top: 10px;
+    }
+
+    .shop-font-size{
+        font-size: 16px;
     }
 }

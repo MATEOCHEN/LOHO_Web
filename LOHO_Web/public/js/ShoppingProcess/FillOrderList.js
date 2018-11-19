@@ -5,11 +5,27 @@ $(document).ready(function () {
         }
     });
 
+    $.ajax({
+        type: "get",
+        url: "GetOrderList",
+        data: "",
+        dataType: "json",
+        success: function (response) {
+            
+            $("input[name='OrdererZipcode']").val(response.ordererPostal_code);
+            $("select[name='OrdererCountry']").val(response.ordererCountry);
+            $("select[name='OrdererArea']").val(response.ordererArea);
+            $("input[name='RecipientZipcode']").val(response.RecipientPostal_code);
+            $("select[name='RecipientCountry']").val(response.RecipientCountry);
+            $("select[name='RecipientArea']").val(response.RecipientArea);
+        }
+    });
+
     $("#next_step").click(function() {
             //存入訂購人, 收款人資料進session
             //ordererName,ordererEmail,ordererTEL,ordererPhone,address
             //RecipientName,RecipientEmail,RecipientTEL,RecipientPhone,address1
-            
+                              
             $.ajax({
                 type: "POST",
                 url: "AfterFillOrderList",
@@ -19,12 +35,16 @@ $(document).ready(function () {
                     ordererTEL: $('#ordererTEL').val(),
                     ordererPhone:$('#ordererPhone').val(),
                     ordererPostal_code:$("input[name='OrdererZipcode']").val(),
+                    ordererCountry:$("select[name='OrdererCountry']").val(),
+                    ordererArea:$("select[name='OrdererArea']").val(),
                     ordererAddress:$('#address').val(),//需處理前面縣市地址
                     RecipientName:$('#RecipientName').val(),
                     RecipientEmail:$('#RecipientEmail').val(),
                     RecipientTEL:$('#RecipientTEL').val(),
                     RecipientPhone:$('#RecipientPhone').val(),
                     RecipientPostal_code:$("input[name='RecipientZipcode']").val(),
+                    RecipientCountry:$("select[name='RecipientCountry']").val(),
+                    RecipientArea:$("select[name='RecipientArea']").val(),
                     RecipientAddress:$('#address1').val(),//需處理前面縣市地址
                     // $("select[name='RecipientCountry']"), $("select[name='RecipientArea']"), $("input[name='RecipientZipcode']")
                 },
@@ -32,6 +52,7 @@ $(document).ready(function () {
                 success: function (response) {
                     if(response.status === 'success')
                     {   
+                        
                         window.location  = "CheckoutList";
                     }else{
                         $('#ErrorModal').modal('show');

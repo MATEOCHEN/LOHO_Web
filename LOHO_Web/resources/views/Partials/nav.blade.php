@@ -4,8 +4,11 @@
 <div id = "nav">
     <nav class="navbar navbar-expand-lg navbar-light bg-light" >
         <a class="navbar-brand" href="{{ url("/") }}">
-            <img alt="Brand" src="<?php echo asset('/Image/LOGO.svg');?>" width="150px" height="70spx">
-        </a>                  
+            <img alt="Brand" src="<?php echo asset('/svg/New LOGO.svg');?>" width="150px" height="70spx">
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>                  
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav mr-auto">
               <li class="nav-item dropdown text-JhengHei">
@@ -36,18 +39,19 @@
                 </div>
             </li>
     
-    
-                <a class="nav-item nav-link h5 text-JhengHei" href="{{ url("Shopping/BrowseItems") }}">精選主題</a>
-    
+                <li class="nav-item text-JhengHei">
+                    <a class="nav-link h5" href="{{ url("Shopping/BrowseItems") }}">
+                        精選主題
+                    </a>
+                </li>
                 <li class="nav-item dropdown text-JhengHei">
                     <a class="nav-link dropdown h5" href="#" id="DropdownMenuMen" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    男款
+                    襪子
                     </a>
                     <div class="dropdown-menu" id="menmegamenu" aria-labelledby="navbarDropdown">
                         <div class="d-flex flex-row">
-                            <a class="dropdown-header" ><b>新品上市</b></a>
                             <div class="d-flex flex-column">
-                                <a class="dropdown-header"><b>襪子</b></a>
+                                <a class="dropdown-header"><b>成人</b></a>
                                 <a class="dropdown-item" href="#">抗臭機能襪</a>
                                 <a class="dropdown-item" href="#">抗菌機能襪</a>
                                 <a class="dropdown-item" href="#">五指運動襪</a>
@@ -56,27 +60,24 @@
                                 <a class="dropdown-item" href="#">壓力襪</a>
                             </div>
                             <div class="d-flex flex-column">
-                                <a class="dropdown-header"><b>內著</b></a>
-                                <a class="dropdown-item" href="#">內衣</a>
-                                <a class="dropdown-item" href="#">內褲</a>
+                                <a class="dropdown-header"><b>兒童</b></a>
+                                <a class="dropdown-item" href="#">兒童休閒襪</a>
                             </div>
                             <div class="d-flex flex-column">
-                                <a class="dropdown-header"><b>配件</b></a>
-                                <a class="dropdown-item" href="#">護具</a>
-                            </div>
-                            <a class="dropdown-header"><b>其他商品</b></a>								
+                                <a class="dropdown-header"><b>親子</b></a>
+                                <a class="dropdown-item" href="#">抗臭機能襪</a>
+                            </div>								
                         </div>
                     </div>
                 </li>
                 <li class="nav-item dropdown text-JhengHei">
                     <a class="nav-link dropdown h5" href="#" id="DropdownMenuWomen" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    女款
+                    衣著
                     </a>
                     <div class="dropdown-menu" id="womenmegamenu" aria-labelledby="navbarDropdown">
                         <div class="d-flex flex-row">
-                            <a class="dropdown-header"><b>新品上市</b></a>
                             <div class="d-flex flex-column">
-                                    <a class="dropdown-header"><b>襪子</b></a>
+                                    <a class="dropdown-header"><b>成人</b></a>
                                     <a class="dropdown-item" href="#">抗臭機能襪</a>
                                     <a class="dropdown-item" href="#">抗菌機能襪</a>
                                     <a class="dropdown-item" href="#">五指運動襪</a>
@@ -86,27 +87,25 @@
                                     <a class="dropdown-item" href="#">絲襪</a>
                                 </div>
                                 <div class="d-flex flex-column">
-                                    <a class="dropdown-header"><b>內著</b></a>
+                                    <a class="dropdown-header"><b>兒童</b></a>
                                     <a class="dropdown-item" href="#">內衣</a>
                                     <a class="dropdown-item" href="#">內褲</a>
                                 </div>
                                 <div class="d-flex flex-column">
-                                    <a class="dropdown-header"><b>配件</b></a>
+                                    <a class="dropdown-header"><b>親子</b></a>
                                     <a class="dropdown-item" href="#">護具</a>
-                                </div>
-                                <a class="dropdown-header"><b>其他商品</b></a>		
+                                </div>	
                         </div>
                     </div>
                 </li>
                 <li class="nav-item dropdown text-JhengHei">
                     <a class="nav-link dropdown h5" href="#" id="DropdownMenuKid" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    兒童
+                    護具
                     </a>
                     <div class="dropdown-menu" id="childmegamenu"aria-labelledby="navbarDropdown">
                         <div class="d-flex flex-row">
-                            <a class="dropdown-header"><b>新品上市</b></a>
                             <div class="d-flex flex-column">
-                                <a class="dropdown-header"><b>襪子</b></a>
+                                <a class="dropdown-header"><b>成人</b></a>
                                 <a class="dropdown-item" href="#">抗臭機能襪</a>
                                 <a class="dropdown-item" href="#">抗菌機能襪</a>
                                 <a class="dropdown-item" href="#">五指運動襪</a>
@@ -116,28 +115,34 @@
                                 <a class="dropdown-item" href="#">絲襪</a>	
                             </div>
                             <div class="d-flex flex-column">
-                                <a class="dropdown-header"><b>內著</b></a>
+                                <a class="dropdown-header"><b>兒童</b></a>
                                 <a class="dropdown-item" href="#">內衣</a>
                                 <a class="dropdown-item" href="#">內褲</a>
                             </div>
                             <div class="d-flex flex-column">											
-                                <a class="dropdown-header"><b>配件</b></a>
+                                <a class="dropdown-header"><b>親子</b></a>
                                 <a class="dropdown-item" href="#">護具</a>
                             </div>
-                                <a class="dropdown-header"><b>其他商品</b></a>
                             </div>
                     </div>
                 </li>
-    
-                <a class="nav-item nav-link h5" href="#">禮物</a>
-                <a class="nav-item nav-link h5" href="#">DIY娃娃</a>	
+                <li class="nav-item text-JhengHei">
+                    <a class="nav-link h5" href="#">
+                        禮物
+                    </a>
+                </li>
+                <li class="nav-item text-JhengHei">
+                    <a class="nav-link h5" href="#">
+                        DIY娃娃
+                    </a>
+                </li>
               </ul>
             <div class="d-flex flex-column text-JhengHei">
               <form class="form-inline navbar-right" >
                     <a class="nav-link text-secondary" href="#">線上詢問</a>
                     <a class="nav-link text-secondary" href="#">購物說明</a>
                     <input class="form-control mr-sm-2" type="search" placeholder="請輸入關鍵字"aria-label="Search">
-                    <button class="btn btn-outline-custom" type="submit">搜尋</button>
+                    <button class="btn btn-outline-custom" id="searchbtn" type="submit">搜尋</button>
             </form>
                 <div class="d-flex flex-row justify-content-end">
                     @if (Auth::check())
@@ -151,30 +156,33 @@
         </div>
     </nav>
 </div>
-<div id ="Dialog">
+<div  class="text-JhengHei"id ="Dialog">
     <!--購物車版面配置-->
       <h1 class="text-center p-3 mt-1">LOHO 您的購物車</h1>
       <div class="container-fluid  p-2 mt-4">
-            <div class="row">
-                <div class="col-6 ml-2 text-center">
-                    <h4 class="font-weight-bold">商品名稱</h4>
+            <div class="row shop-font-size">
+                <div class="col-sm-6 ml-2 text-center border border-danger" >
+                    <p class="font-weight-bold">商品名稱</p>
                 </div>
-                <div class="col text-center">
-                    <h4 class="font-weight-bold">尺寸</h4>
+                <div class="col-sm text-center border border-danger">
+                    <p class="font-weight-bold">尺寸</p>
                 </div>
-                <div class="col text-center">
-                    <h4 class="font-weight-bold">數量</h4>
+                <div class="col-sm text-center border border-danger">
+                    <p class="font-weight-bold">數量</p>
                 </div>
-                <div class="col text-center">
-                    <h4 class="font-weight-bold">小計</h4>
+                <div class="col-sm text-center border border-danger">
+                    <p class="font-weight-bold">小計</p>
                 </div>
             </div>
-          <div class ="row" id="showBlock"></div>
+          <div class ="row shop-font-size" id="showBlock"></div>
         <div class="alert alert-secondary" role="alert">
             <div class="row">
-                共<span id = count></span>項商品，金額總計
-                <p class="text-danger" id="total"></p>元
-                <span><button type="button" id="checkOut" class="btn btn-outline-custom btn-sm text-right">結帳</button></span>
+                <div class="col text-left align-bottom mt-2">
+                共<span id = "count">0</span>項商品金額總計<p class="text-danger d-inline"id="total">0</p>元
+                </div>
+                <div class="col text-right">
+                    <input type="button" id="checkOut" class="btn btn-outline-custom btn-sm" value="結帳">
+                </div>
             </div>
         </div>
     </div>
