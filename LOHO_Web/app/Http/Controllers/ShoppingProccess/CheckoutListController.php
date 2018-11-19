@@ -18,7 +18,7 @@ class CheckoutListController extends BaseController
 
     public function queryAddress(Request $request)
     {   
-        return response()->json(['address' => $request->session()->get('RecipientAddress', 'default')]);
+        return response()->json(['address' => $request->session()->get('RecipientAddress_total', '無輸入')]);
     }
 
     public function GetPaymentData()
