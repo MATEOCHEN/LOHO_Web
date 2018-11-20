@@ -9,18 +9,18 @@
         txtID++;
         sum = sum + item_price * item_count;
 
-        $("#showBlock").append("<div id='div1" + txtID +"' class='col-6 p-4 ml-2 text-left solid-top-border'>"
+        $("#showBlock").append("<div id='div1" + txtID +"' class='col-6 p-4 text-left solid-top-border border'>"
         +"<div id='div2" + txtID +"' class='row'>"
         +"<div class='col text-left' id='div3" + txtID +"'>"
         +"<p id='name"+txtID+"'>"+ item_name +"</p></div>"
         +"<p class='text-danger'>NT</p>"+"<p id='price"+txtID+"' class='text-danger mr-2'>"+item_price+"</p>"+"<p class='text-danger'>元</p>"
         +"<input type='image' src='/LOHO_Web/public/svg/rubbish-bin.svg' alt='圖片更新中' style='width:25px ; height:25px' onclick ='Item_removed("+txtID+")'></div>"
         +"<img src='"+img_url+"' alt='圖片更新中' style='width:150px ; height:150px'class='img-thumbnail'</div>",
-        "<div class='col p-4 text-center solid-top-border id='div4" + txtID +"'>"
+        "<div class='col-2 p-4 text-center solid-top-border border' id='div4" + txtID +"'>"
         +"<p id='size"+txtID+"'>無</p></div>",
-        "<div class='col p-4 text-center solid-top-border id='div5" + txtID +"'>"
-        +"<input type='number' value="+item_count+" placeholder="+item_count+" id='quantity" +txtID+"' min='1' onfocusin='get_old_value("+txtID+")' onchange='item_changed("+txtID+")'></div>",
-        "<div class='col p-4 text-center solid-top-border id='div6" + txtID +"'>"
+        "<div class='col-2 p-4 text-center solid-top-border border' id='div5" + txtID +"'>"
+        +"<input style='width:100%;' type='number' value="+item_count+" placeholder="+item_count+" id='quantity" +txtID+"' min='1' onfocusin='get_old_value("+txtID+")' onchange='item_changed("+txtID+")'></div>",
+        "<div class='col-2 p-4 text-center solid-top-border border' id='div6" + txtID +"'>"
         +"<h5 class='text-danger' id='subtotal"+txtID+"'>"+item_price * item_count+"</h5></div>");
         $('#count').text(txtID);
         $('#total').text(sum);

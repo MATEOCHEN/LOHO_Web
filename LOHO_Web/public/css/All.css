@@ -15,5 +15,15 @@ body{
 
 .text-JhengHei {
     font-family: Microsoft JhengHei;
-  }
+}
+
+.shop-font-size{
+    font-size: 24px;
+}
+
+@media screen and (max-width:768px){
+    .shop-font-size{
+        font-size: 16px;
+    }
+}
 
