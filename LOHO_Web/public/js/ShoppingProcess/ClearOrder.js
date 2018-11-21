@@ -36,7 +36,7 @@ $(document).ready(function () {
 
                 case 'Cash_on_delivery':
                     payment_type = "貨到付款";
-                    payment_info = "";
+                    payment_info = "寄送地址：" + response.payment_info;
                     break;
             
                 default:
@@ -44,6 +44,7 @@ $(document).ready(function () {
             }
             $('#payment_type').text(payment_type);
             $('#payment_info').text(payment_info);
+            alert(payment_info);
         }
     });
 

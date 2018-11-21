@@ -77,11 +77,14 @@ class ClearOrderController extends BaseController
 
         
         foreach ($cartItems as &$cartItem) {
-            $tmp = Item::where('name', $cartItem['name'])->first();
-            $order_detail = new Order_detail;
-            $order_detail->item_id = $tmp->id;
-            $order_detail->oid = $tmp_order_id;
-            $order_detail->save();
+            if($cartItem['name'] != null)
+            {
+                $tmp = Item::where('name', $cartItem['name'])->first();
+                $order_detail = new Order_detail;
+                $order_detail->item_id = $tmp->id;
+                $order_detail->oid = $tmp_order_id;
+                $order_detail->save();
+            }
         }
         
         $request->session()->forget('cart.item');
@@ -90,12 +93,16 @@ class ClearOrderController extends BaseController
         $request->session()->forget('ordererTEL');
         $request->session()->forget('ordererPhone');
         $request->session()->forget('ordererPostal_code');
+        $request->session()->forget('ordererCountry');
+        $request->session()->forget('ordererArea');
         $request->session()->forget('ordererAddress');
         $request->session()->forget('RecipientName');
         $request->session()->forget('RecipientEmail');
         $request->session()->forget('RecipientTEL');
         $request->session()->forget('RecipientPhone');
         $request->session()->forget('RecipientPostal_code');
+        $request->session()->forget('RecipientCountry');
+        $request->session()->forget('RecipientArea');
         $request->session()->forget('RecipientAddress');
         $request->session()->forget('payment_type');
         $request->session()->forget('payment_info');
