@@ -10,9 +10,9 @@
             <span class="navbar-toggler-icon"></span>
         </button>                  
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav mr-auto">
+          <ul class="navbar-nav  mr-auto">
               <li class="nav-item dropdown text-JhengHei">
-                <a class="nav-link  h5"   href="#"  id="DropdownMenuAboutLoho" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <a class="nav-link  h5"  href="#"  id="DropdownMenuAboutLoho"  aria-haspopup="true" aria-expanded="false">
                 關於LOHO 
                 </a>
                 <div class="dropdown-menu text-JhengHei" id="aboutmegamenu" aria-labelledby="navbarDropdown">
@@ -45,8 +45,8 @@
                     </a>
                 </li>
                 <li class="nav-item dropdown text-JhengHei">
-                    <a class="nav-link dropdown h5" href="#" id="DropdownMenuMen" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    成人
+                    <a class="nav-link dropdown h5" href="#" id="DropdownMenuMen" role="button"  aria-haspopup="true" aria-expanded="false">
+                    襪子
                     </a>
                     <div class="dropdown-menu" id="menmegamenu" aria-labelledby="navbarDropdown">
                         <div class="d-flex flex-row">
@@ -71,7 +71,7 @@
                     </div>
                 </li>
                 <li class="nav-item dropdown text-JhengHei">
-                    <a class="nav-link dropdown h5" href="#" id="DropdownMenuWomen" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <a class="nav-link dropdown h5" href="#" id="DropdownMenuWomen" role="button"  aria-haspopup="true" aria-expanded="false">
                     衣著
                     </a>
                     <div class="dropdown-menu" id="womenmegamenu" aria-labelledby="navbarDropdown">
@@ -99,7 +99,7 @@
                     </div>
                 </li>
                 <li class="nav-item dropdown text-JhengHei">
-                    <a class="nav-link dropdown h5" href="#" id="DropdownMenuKid" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <a class="nav-link dropdown h5" href="#" id="DropdownMenuKid" role="button"  aria-haspopup="true" aria-expanded="false">
                     護具
                     </a>
                     <div class="dropdown-menu" id="childmegamenu"aria-labelledby="navbarDropdown">
@@ -161,16 +161,16 @@
       <h1 class="text-center p-3 mt-1">LOHO 您的購物車</h1>
       <div class="container-fluid  p-2 mt-4">
             <div class="row shop-font-size">
-                <div class="col-sm-6 ml-2 text-center border border-danger" >
+                <div class="col-6 text-center border border-danger" >
                     <p class="font-weight-bold">商品名稱</p>
                 </div>
-                <div class="col-sm text-center border border-danger">
+                <div class="col-2 text-center border border-danger">
                     <p class="font-weight-bold">尺寸</p>
                 </div>
-                <div class="col-sm text-center border border-danger">
+                <div class="col-2 text-center border border-danger">
                     <p class="font-weight-bold">數量</p>
                 </div>
-                <div class="col-sm text-center border border-danger">
+                <div class="col-2 text-center border border-danger">
                     <p class="font-weight-bold">小計</p>
                 </div>
             </div>
