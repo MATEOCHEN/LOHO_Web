@@ -21,6 +21,11 @@ $(document).ready(function () {
             $('#RecipientTEL').text(response.RecipientTEL);
             $('#RecipientPhone').text(response.RecipientPhone);
             $('#RecipientAddress').text(response.RecipientAddress);
+            $('#goodsTotal').text(response.goodsTotal);
+            $('#shippingFee').text(response.shippingFee);
+            $('#coupon_price').text(response.coupon_price);
+            $('#orderTotal').text(response.orderTotal);
+
             let payment_type;
             let payment_info;
             switch (response.payment_type) {

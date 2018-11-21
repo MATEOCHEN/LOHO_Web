@@ -40,6 +40,10 @@ class ClearOrderController extends BaseController
         'RecipientAddress' => $request->session()->get('RecipientAddress_total', 'default'),
         'payment_type' => $request->session()->get('payment_type', 'default'),
         'payment_info' => $request->session()->get('payment_info', 'default'),
+        'goodsTotal' => $request->session()->get('goodsTotal', 'default'),
+        'shippingFee' => $request->session()->get('shippingFee', 'default'),
+        'coupon_price' => $request->session()->get('coupon_price', 'default'),
+        'orderTotal' => $request->session()->get('orderTotal', 'default'),  
         ]);
     }
 
@@ -52,6 +56,10 @@ class ClearOrderController extends BaseController
         $order_history = new Order_history;
         $order_history->payment_type = $request->session()->get('payment_type', 'default');
         $order_history->payment_info = $request->session()->get('payment_info', 'default');
+        $order_history->goodsTotal = $request->session()->get('goodsTotal', 'default');
+        $order_history->shippingFee = $request->session()->get('shippingFee', 'default');
+        $order_history->coupon_price = $request->session()->get('coupon_price', 'default');
+        $order_history->orderTotal = $request->session()->get('orderTotal', 'default');
         $order_history->save();
         $tmp_order_id = $order_history->oid;
         
@@ -83,6 +91,9 @@ class ClearOrderController extends BaseController
                 $order_detail = new Order_detail;
                 $order_detail->item_id = $tmp->id;
                 $order_detail->oid = $tmp_order_id;
+                $order_detail->count = $cartItem['count'];
+                $order_detail->goodsTotal = $cartItem['count'] * $cartItem['price'];
+
                 $order_detail->save();
             }
         }
@@ -106,6 +117,10 @@ class ClearOrderController extends BaseController
         $request->session()->forget('RecipientAddress');
         $request->session()->forget('payment_type');
         $request->session()->forget('payment_info');
+        $request->session()->forget('goodsTotal');
+        $request->session()->forget('shippingFee');
+        $request->session()->forget('coupon_price');
+        $request->session()->forget('orderTotal');
         $request->session()->forget('shopping_state');
          return response()->json([]);
     }

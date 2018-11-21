@@ -40,6 +40,19 @@
                     </div>
                 <h3 class="ml-3">付款方式:<span id="payment_type"></span></h3>
                 <h3 class="ml-3" id="payment_info"></h3>
+                <div class="ml-3">
+                    <h5>商品金額：</h5>
+                    <span><h4 class="text-danger">$</h5></span><h5 class="text-danger" id="goodsTotal"></h5>
+                </div>
+                <div class="ml-3">
+                    <h5>運費小計：<span><span class="text-danger">$</span></span><span class="text-danger" id="shippingFee">70</span><h5>                   
+                </div>
+                <div class="ml-3">
+                    <h5>優惠折抵：<span id="coupon_price"></span></h5>
+                </div>
+                <div class="ml-3">
+                    <h5>總計：<span class="text-danger">$</span><span class="text-danger" id="orderTotal"></span></h5>                   
+                </div>
                 <h3>以上資訊如有誤請到前頁做修改</h3>                
             </div>
             <div class="next">
