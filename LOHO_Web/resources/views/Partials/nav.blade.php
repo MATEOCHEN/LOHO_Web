@@ -156,7 +156,7 @@
         </div>
     </nav>
 </div>
-<div  class="text-JhengHei"id ="Dialog">
+<div class="text-JhengHei"id ="Dialog">
     <!--購物車版面配置-->
       <h1 class="text-center p-3 mt-1">LOHO 您的購物車</h1>
       <div class="container-fluid  p-2 mt-4">
@@ -176,12 +176,24 @@
             </div>
           <div class ="row shop-font-size" id="showBlock"></div>
         <div class="alert alert-secondary" role="alert">
-            <div class="row">
-                <div class="col text-left align-bottom mt-2">
-                共<span id = "count">0</span>項商品金額總計<p class="text-danger d-inline"id="total">0</p>元
+            <div class="d-pc">
+                <div class="row">
+                    <div class="col text-left align-bottom mt-2">
+                    共<span id = "count">0</span>項商品  金額總計<p class="text-danger d-inline"id="total">0</p>元
+                    </div>
+                    <div class="col text-right">
+                        <input type="button" id="checkOut" class="btn btn-outline-custom btn-sm" value="結帳">
+                    </div>
                 </div>
-                <div class="col text-right">
-                    <input type="button" id="checkOut" class="btn btn-outline-custom btn-sm" value="結帳">
+            </div>    
+            <div class="d-phone">
+                <div class="row">
+                    <div class="col text-left align-bottom mt-2">
+                    <span id = "count">0</span>項商品<br>總計<p class="text-danger d-inline"id="total">0</p>元
+                    </div>
+                    <div class="col text-right pt-3">
+                        <input type="button" id="checkOut" class="btn btn-outline-custom btn-sm" value="結帳">
+                    </div>
                 </div>
             </div>
         </div>

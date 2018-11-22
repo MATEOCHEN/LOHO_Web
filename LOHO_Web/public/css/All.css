@@ -21,9 +21,26 @@ body{
     font-size: 24px;
 }
 
+.d-phone{
+    display: none;
+}
+
+.d-pc{
+    display:block;
+}
+
 @media screen and (max-width:768px){
     .shop-font-size{
         font-size: 16px;
     }
+    
+    .d-pc {
+        display: none;
+    }
+
+    .d-phone {
+        display:block;
+    }
+    
 }
 

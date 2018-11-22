@@ -478,6 +478,10 @@ mark,
   height: auto;
 }
 
+.img-circle {
+  border-radius: 50%;
+}
+
 .img-thumbnail {
   padding: 0.25rem;
   background-color: #fff;
@@ -581,6 +585,7 @@ pre code {
   margin-right: -15px;
   margin-left: -15px;
 }
+
 
 .no-gutters {
   margin-right: 0;

@@ -11,12 +11,13 @@ $(document).ready(function () {
         data: "",
         dataType: "json",
         success: function (response) {
-            
             $("input[name='OrdererZipcode']").val(response.ordererPostal_code);
             $("select[name='OrdererCountry']").val(response.ordererCountry);
+            fire_event('OrdererCountry');
             $("select[name='OrdererArea']").val(response.ordererArea);
             $("input[name='RecipientZipcode']").val(response.RecipientPostal_code);
             $("select[name='RecipientCountry']").val(response.RecipientCountry);
+            fire_event('RecipientCountry');
             $("select[name='RecipientArea']").val(response.RecipientArea);
         }
     });
@@ -100,7 +101,7 @@ function checkBox_clicked() {
             $("#RecipientTEL").val(OrdererTEL);
             $("#RecipientPhone").val(OrdererPhone);
             $("select[name='RecipientCountry']").val(Country);
-            fire_event();
+            fire_event('RecipientCountry');
             $("select[name='RecipientArea']").val(Area);
             $("input[name='RecipientZipcode']").val(ZipCode);
             $("#address1").val(Address);
@@ -110,7 +111,7 @@ function checkBox_clicked() {
             $("#RecipientTEL").val("");
             $("#RecipientPhone").val("");
             $("select[name='RecipientCountry']").val("")
-            fire_event();
+            fire_event('RecipientCountry');
             $("select[name='RecipientArea']").val("");
             $("input[name='RecipientZipcode']").val("");
             $("#address1").val("")
@@ -118,11 +119,9 @@ function checkBox_clicked() {
     })
 }
 
-function fire_event() {
+function fire_event(variable) {
     var event = new Event('change');
-    var d = document.getElementsByName("RecipientCountry")[0];
-    d.addEventListener('event', function () {
-        alert("123");
-    });
+    var d = document.getElementsByName(variable)[0];
     d.dispatchEvent(event);
 }
+

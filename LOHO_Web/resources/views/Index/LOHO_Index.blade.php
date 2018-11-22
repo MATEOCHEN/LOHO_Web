@@ -42,6 +42,11 @@
           </a>
         </div>
     </div>
+    <div class="wrap border">
+      <img src="{{ URL::asset('/Image/sock.png') }}" class="img-fluid img-circle">
+      <img src="{{ URL::asset('/Image/sock.png') }}" class="img-fluid img-circle">
+      <img src="{{ URL::asset('/Image/sock.png') }}" class="img-fluid img-circle">
+    </div>
     <div>
       <h1 class="text-center text-JhengHei">精選推薦</h1>
     </div>
