@@ -83,6 +83,17 @@ $(document).ready(function () {
         'zipcodeName': 'RecipientZipcode'
     });
     checkBox_clicked();
+    //引入帳戶資料
+    $('#is_consistent_account_data').change(function (e) { 
+        e.preventDefault();
+        
+        if ($('#is_consistent_account_data').prop("checked")){
+            
+        } else {
+
+        }
+    });
+
 });
 
 function checkBox_clicked() {
