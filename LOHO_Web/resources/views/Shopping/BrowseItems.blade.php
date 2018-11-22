@@ -9,29 +9,32 @@
     function addCart(item_id) {
         let item_id_cart = item_id;
         var item_id = '#' + item_id;
+        let item_name = $(item_id).children("div.text").children("h5.name").text();
+        let item_price = $(item_id).children("div.text").children("h5.price").text();
+        let item_count = $(item_id).children("div.text").children("select").val();
+        let item_img_url = $(item_id).children("div.shopping-item-img").children("img").attr('src');
+        item_price = item_price.slice(3);
+        
         $(document).ready(function () {
-            $.ajaxSetup({
-            headers: {
-                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            if(item_count == 'quantity') {
+                alert("請選擇確切數量!!");
+            } else {
+                $.ajaxSetup({
+                    headers: {
+                        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                    }
+                    });
+                $.ajax({
+                    type: "POST",
+                    url: "addCart",
+                    data: {item_id : item_id_cart,item_name : item_name,item_price : item_price,item_count : item_count,item_img_url:item_img_url},
+                    dataType: "json",
+                    success: function (response) {
+                            let item = response.item;
+                            alert("加入 " + item.id + " "+item.name +" NT$"+item.price+" "+item.count+"雙" + item_img_url);
+                    }
+                });
             }
-            });
-            
-            let item_name = $(item_id).children("div.text").children("h5.name").text();
-            let item_price = $(item_id).children("div.text").children("h5.price").text();
-            let item_count = $(item_id).children("div.text").children("select").val();
-            let item_img_url = $(item_id).children("div.shopping-item-img").children("img").attr('src');
-            item_price = item_price.slice(3);
-            $.ajax({
-                type: "POST",
-                url: "addCart",
-                data: {item_id : item_id_cart,item_name : item_name,item_price : item_price,item_count : item_count,item_img_url:item_img_url},
-                dataType: "json",
-                success: function (response) {
-                    let item = response.item;
-                    alert("加入 " + item.id + " "+item.name +" NT$"+item.price+" "+item.count+"雙" + item_img_url);
-                }
-            });
-           
         });   
     }
 

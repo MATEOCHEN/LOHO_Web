@@ -45,21 +45,21 @@
     <div class="text-center border text-JhengHei">
       <h1>商品分類</h1>
     </div>
-    <div class="wrap border">
+    <div class="wrap border" id="category-block">
       <div class="w-30 mr-5 bg-category img-circle">
-        <img src="{{ URL::asset('/Image/sock.svg') }}" class="img-fluid">
+        <a href="#"><img src="{{ URL::asset('/Image/sock.svg') }}" class="img-fluid"></a>
       </div>
       <div class="w-30 mr-5 bg-category img-circle">
-        <img src="{{ URL::asset('/Image/shirt.svg') }}" class="img-fluid">
+        <a href="#"><img src="{{ URL::asset('/Image/shirt.svg') }}" class="img-fluid"></a>
       </div>
       <div class="w-30 bg-category img-circle">
-        <img src="{{ URL::asset('/Image/kneepad.svg') }}" class="img-fluid">
+        <a href="#"><img src="{{ URL::asset('/Image/kneepad.svg') }}" class="img-fluid"></a>
       </div>
     </div>
     <div>
       <h1 class="text-center text-JhengHei">精選推薦</h1>
     </div>
-    <div class="wrap border">
+    <div class="wrap border" id="goods-blcok">
       <div class="item-block">
         <div class="d-flex flex-column align-items-center">
           <div class="item-img">
