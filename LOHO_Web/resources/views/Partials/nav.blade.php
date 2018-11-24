@@ -19,7 +19,7 @@
                     <div class="d-flex flex-row">
                         <div class="d-flex flex-column">
                             <a class="dropdown-header"><b>樂活足跡</b></a>
-                            <a class="dropdown-item" href="#">樂活歷史</a>
+                            <a class="dropdown-item" href="{{url::asset('/About/loho_history')}}">樂活歷史</a>
                             <a class="dropdown-item" href="#">樂活據點</a>
                             <a class="dropdown-item" href="#">樂活榮耀</a>
                             <a class="dropdown-item" href="#">樂活導覽</a>

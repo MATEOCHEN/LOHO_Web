@@ -28,6 +28,13 @@ Route::group(['namespace' => 'Admin','prefix' => 'admin'], function () {
 
 });
 
+Route::group(['prefix'=>'About'], function() {
+    Route::get(
+        '/loho_history',
+        array('uses' => 'About\HistoryController@History', 'as' => 'loho_history')
+    );
+});
+
 
 Route::group(['namespace' => 'Admin\ManageItems','prefix' => 'admin'], function () {
 

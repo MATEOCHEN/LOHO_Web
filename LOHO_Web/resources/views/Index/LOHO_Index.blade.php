@@ -156,9 +156,9 @@
           <div class="row">
             <h5 class="ml-3">關於樂活</h5><p class="ml-2">ABOUT LOHO</p>
           </div>
-          <a href="#"><p>品牌價值</p></a>
-          <a href="#"><p>公司資訊</p></a>
-          <a href="#"><p>體驗門市</p></a>
+          <a href="#" class="footer-link"><p>品牌價值</p></a>
+          <a href="#" class="footer-link"><p>公司資訊</p></a>
+          <a href="#" class="footer-link"><p>體驗門市</p></a>
         </div>
       </div>
       <div class="w-20" id="about">
@@ -166,9 +166,9 @@
           <div class="row">
             <h5 class="ml-3">訊息公告</h5><p class="ml-2">INFO</p>
           </div>
-          <a href="#"><p>最新活動</p></a>
-          <a href="#"><p>常見問題</p></a>
-          <a href="#"><p>退換貨需知</p></a>
+          <a href="#" class="footer-link"><p>最新活動</p></a>
+          <a href="#" class="footer-link"><p>常見問題</p></a>
+          <a href="#" class="footer-link"><p>退換貨需知</p></a>
         </div>
       </div>
       <div class="w-20" id="about">
@@ -182,7 +182,7 @@
             <div class="row">
               <p class="ml-3">傳真：</p><p>04-8711045</p>
             </div>
-            <a href="#"><p><b>線上客服</b></p></a>
+            <a href="#" class="footer-link"><p>線上客服</p></a>
         </div>
       </div>
       <div class="w-20" id="about">
