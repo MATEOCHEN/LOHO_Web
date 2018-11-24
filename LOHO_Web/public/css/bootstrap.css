@@ -352,6 +352,7 @@ template {
   display: none;
 }
 
+
 [hidden] {
   display: none !important;
 }
@@ -480,6 +481,7 @@ mark,
 
 .img-circle {
   border-radius: 50%;
+  overflow: hidden;
 }
 
 .img-thumbnail {
@@ -6741,8 +6743,20 @@ button.bg-dark:focus {
   box-shadow: none !important;
 }
 
+.w-5 {
+  width : 10% !important;
+}
+
+.w-20 {
+  width : 20% !important;
+}
+
 .w-25 {
   width: 25% !important;
+}
+
+.w-30 {
+  width: 30% !important;
 }
 
 .w-50 {

@@ -7,11 +7,26 @@
     margin: 0 auto;
 }
 
+.white-background {
+    background: white;
+}
+
+.footer-block {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 0 auto;
+    padding: 0;
+    text-align: center;
+    background: #F8F9FA;
+}
+
 .img-background{
     background-image: url("https://images.unsplash.com/photo-1518023176010-e14eb57eecf9?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=fe2f72ca42e6478bc869b8325881fa46&auto=format&fit=crop&w=1050&q=80");
     min-height: 100vh;
     background-size: cover;
-    background-position: center center;
+    background-position: center;
 }
 
 .item-block{
@@ -31,8 +46,18 @@
     height: 760px;
 }
 
-#facebook-block {
-    display: none;
+.bg-category {
+    background: #F4F3F9;
+    overflow: hidden;
+}
+
+.bg-category img{
+    transform: scale(0.6,0.6);
+    transition: all 1s ease-out;
+}
+
+.bg-category img:hover {
+    transform: scale(0.8,0.8);
 }
 @media screen and (max-width: 768px){
     html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
