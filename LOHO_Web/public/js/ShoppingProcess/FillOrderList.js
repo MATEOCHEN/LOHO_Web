@@ -88,9 +88,31 @@ $(document).ready(function () {
         e.preventDefault();
         
         if ($('#is_consistent_account_data').prop("checked")){
-            
+            $.ajax({
+                type: "get",
+                url: "GetUserData",
+                data: "",
+                dataType: "json",
+                success: function (response) {
+                   $('#ordererName').val(response.name);
+                   $('#ordererEmail').val(response.email);
+                   $('#ordererTEL').val(response.telephone_number);
+                   $('#ordererPhone').val(response.phone_number);
+                   //bug
+                   //$("input[name='OrdererZipcode']").val(response.postal_code);
+                   //$("select[name='OrdererCountry']").val(response.country);
+                   //fire_event('OrdererCountry');
+                   //$("select[name='OrdererArea']").val(response.area);
+                   $('#address').val(response.address);                  
+                }
+            });
         } else {
-
+            $('#ordererName').val("");
+            $('#ordererEmail').val("");
+            $('#ordererTEL').val("");
+            $('#ordererPhone').val("");
+            //$("input[name='OrdererZipcode']").val("");
+            $('#address').val("");
         }
     });
 

@@ -66,7 +66,7 @@
 
         $('#view_voucher').click(function (e) { 
             e.preventDefault();
-            window.location = "/LOHO_Web/public/ShoppingProcess/SelectVoucher";
+            window.location = "/LOHO_Web/public/ShoppingProccess/SelectVoucher"; 
         });
         $("#nextStep").click(function() {
             if(sum > 0)
