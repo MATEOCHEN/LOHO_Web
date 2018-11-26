@@ -14,10 +14,26 @@ class ConfirmShoppingListController extends BaseController
 
     public function ConfirmShoppingList(Request $request)
     {
-        $coupon_price = $request->session()->get('coupon_price', 0);
-        
-        $data = ['coupon_price' => $coupon_price];
-        return view('ShoppingProcess\ConfirmShoppingList',compact('data'));
+        return view('ShoppingProcess\ConfirmShoppingList');
+    }
+
+    public function GetVoucherState(Request $request)
+    {
+        $coupon_code = $request->session()->get('coupon_code', 'default');
+        $coupon_price = $request->session()->get('coupon_price', 'default');
+
+            return response()->json([
+                'coupon_code' => $coupon_code,
+                'coupon_price' => $coupon_price]
+            );
+    }
+
+    public function CancelVoucherState(Request $request)
+    {
+        $request->session()->put('coupon_code', 'default');
+        $request->session()->put('coupon_price', 0);
+
+        return response()->json([]);
     }
 
     //save shopping sum into session 

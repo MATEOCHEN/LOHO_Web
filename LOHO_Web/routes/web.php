@@ -235,6 +235,16 @@ Route::group(['namespace' => 'ShoppingProccess','prefix' => 'ShoppingProccess'],
         array('uses' => 'ConfirmShoppingListController@AfterConfirmShoppingList', 'as' => 'AfterConfirmShoppingList')
     );
 
+    Route::post(
+        '/GetVoucherState',
+        array('uses' => 'ConfirmShoppingListController@GetVoucherState', 'as' => 'GetVoucherState')
+    );
+
+    Route::post(
+        '/CancelVoucherState',
+        array('uses' => 'ConfirmShoppingListController@CancelVoucherState', 'as' => 'CancelVoucherState')
+    );
+
     Route::get(
         '/FinishOrder',
         array('uses' => 'FinishOrderController@FinishOrder', 'as' => 'FinishOrder')

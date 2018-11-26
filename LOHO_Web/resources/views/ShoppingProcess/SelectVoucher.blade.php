@@ -46,7 +46,7 @@ $(document).ready(function () {
       dataType: "json",
       success: function (response) {
         alert('使用編號:'+response.coupon_code+'優惠卷' + '價格:'+response.coupon_price);
-        window.location = "/LOHO_Web/public/Shopping/ConfirmShoppingList";
+        window.location = "/LOHO_Web/public/ShoppingProccess/ConfirmShoppingList";
       }
     });
   });

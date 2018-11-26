@@ -96,6 +96,41 @@
         $("#continue_shopping").click(function() {
             window.location  = "/LOHO_Web/public/";
         });
+
+        //抓後端優惠卷資料
+        $.ajax({
+            type: "post",
+            url: "GetVoucherState",
+            data: "",
+            dataType: "json",
+            success: function (response) {
+                if(response.coupon_code === 'default')
+                {
+                    $('#coupon_code').text('尚未使用優惠卷');
+                    $('#coupon_price').text('0');
+                    $("#cancel_voucher").attr("disabled", true);
+                }
+                else{
+                    $('#coupon_code').text('優惠碼:' + response.coupon_code);
+                    $('#coupon_price').text(response.coupon_price);
+                    $("#cancel_voucher").attr("disabled", false);
+                }
+            }
+        });
+        //取消優惠卷
+        $('#cancel_voucher').click(function (e) { 
+            e.preventDefault();
+            
+            $.ajax({
+                type: "post",
+                url: "CancelVoucherState",
+                data: "",
+                dataType: "json",
+                success: function (response) {
+                    alert("取消優惠卷");
+                    location.reload();
+                }
+            });
+        });
     });
-    
 

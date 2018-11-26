@@ -49,6 +49,7 @@
                 </div>
                 <div class="ml-3">
                     <h5>優惠折抵：<span id="coupon_price"></span></h5>
+                    <h5>優惠代碼：<span id="coupon_code"></span></h5>
                 </div>
                 <div class="ml-3">
                     <h5>總計：<span class="text-danger">$</span><span class="text-danger" id="orderTotal"></span></h5>                   
