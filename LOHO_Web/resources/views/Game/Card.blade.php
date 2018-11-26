@@ -12,6 +12,20 @@
 </head>
 <body>
     <div class="content">
+        <div class="">
+            <button onclick="GameStart()">開始遊戲</button>
+            <button onclick="GameOver()">遊戲過關</button>
+        </div>
+        <div class="title">
+            <form name="fomr1">
+                <label>時間:</label>
+                <input type="text" name="time" size="8" value="90" disabled>
+            </form>
+        </div>
+        <div id="dialog" class="dialog">
+            恭喜獲得優惠券!!<br/>
+            <button class="button" onclick="">確定</button>
+        </div>
         <div id="cards">
             <div class="card">
                 <div class="face front"></div>

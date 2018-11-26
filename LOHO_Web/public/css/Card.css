@@ -10,8 +10,39 @@ body{
     border: 1px red solid;
     width: 30%;
     height: 700px;
-    background-image: url('/LOHO_Web/public/Image/遊戲畫面素材/背景1.png');
+    background-image: url('../遊戲畫面素材/背景1.png');
     background-repeat: no-repeat;
+}
+
+button{
+    width: 80px;
+    font-size: 15px;
+    background-color: #FF44AA;
+    color: white;
+}
+
+.title{
+    border: 1px red solid;
+    max-width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    position: absolute;
+    top: 6%;
+    font-weight: bolder;
+}
+
+.dialog{
+    position: absolute;
+    top: 10%;
+    left: 42%;
+    width: 10%;
+    background-color: #5599FF;
+    box-shadow: 0px 0px 20px #00FFFF;
+    color: white;
+    padding-top: 1%;
+    padding-bottom: 1%;
+    text-align: center;
+    display: none;    
 }
 
 #cards{
@@ -35,12 +66,12 @@ body{
 }
 
 .front{
-    background: url("/LOHO_Web/public/Image/遊戲畫面素材/deck.png")0 -480px;
+    background: url("../遊戲畫面素材/deck.png")0 120px;
     z-index: 10;
 }
 
 .back{
-    background: url("/LOHO_Web/public/Image/遊戲畫面素材/deck.png");
+    background: url("../遊戲畫面素材/deck.png");
     -webkit-transform: rotateY(-180deg);
     z-index: 8;
 }
@@ -77,7 +108,12 @@ body{
 
 @media only screen and (max-width:768px){
     .content{
-        width: 60%;
+        width: 80%;
+    }
+    .dialog{
+        left: 35%;
+        width: 30%;
+        height: 10%;
     }
 }
 
@@ -85,10 +121,25 @@ body{
     .content{
         width: 100%;
     }
+    .title{
+        top: 50px;
+    }
+    .dialog{
+        top: 12%;
+        left: 26%;
+        width: 45%;
+        height: 15%;
+    }
 }
 
 @media only screen and (max-width:375px){
     .content{
         width: 100%;
+    }
+    .dialog{
+        top: 14%;
+        left: 30%;
+        width: 45%;
+        height: 15%;
     }
 }
