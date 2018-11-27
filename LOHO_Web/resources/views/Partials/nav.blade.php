@@ -146,7 +146,10 @@
             </form>
                 <div class="d-flex flex-row justify-content-end">
                     @if (Auth::check())
-                    <a class="nav-link text-secondary" href="{{ url("Account/Logout") }}">登出</a>
+                    <a class="nav-link text-secondary">個人資訊</a>
+                    <div class='account-info-block'>
+                        <button type="button" class="" onclick='{{ url("Account/Logout") }}'id="logout_btn">登出</button>
+                    </div>
                         @else
                         <a class="nav-link text-secondary" href="{{ url("Account/Account_Log_In") }}">登入</a>
                     @endif    
@@ -199,7 +202,25 @@
         </div>
     </div>
 </div>
-
+<script>
+                $(document).ready(function () {
+                    $(window).scroll(function () {
+                        let scrollTop = $(window).scrollTop(); 
+                        let mainTop = $('.content').offset();
+                        let navbarHeight = $('#nav').height();
+                        
+                       
+                       if(scrollTop > mainTop){
+                           $('#nav').addClass("fixed-top");
+                           $('body').css('paddingTop',navbarHeight)
+                       }
+                       else{
+                           $('#nav').removeClass("fixed-top");
+                           $('body').css('paddingTop',0)
+                       }
+                    });
+                });
+ </script>	
 
 
 

@@ -21,6 +21,13 @@ body{
     font-size: 24px;
 }
 
+.account-info-block {
+    display: block;
+    width: 20%;
+    height: 10%;
+    background: white;
+}
+
 .d-phone{
     display: none;
 }

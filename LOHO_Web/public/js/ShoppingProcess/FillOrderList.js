@@ -11,14 +11,16 @@ $(document).ready(function () {
         data: "",
         dataType: "json",
         success: function (response) {
-            $("input[name='OrdererZipcode']").val(response.ordererPostal_code);
             $("select[name='OrdererCountry']").val(response.ordererCountry);
             fire_event('OrdererCountry');
             $("select[name='OrdererArea']").val(response.ordererArea);
-            $("input[name='RecipientZipcode']").val(response.RecipientPostal_code);
+            fire_event('OrdererArea');
+            $("input[name='OrdererZipcode']").val(response.ordererPostal_code);
             $("select[name='RecipientCountry']").val(response.RecipientCountry);
             fire_event('RecipientCountry');
             $("select[name='RecipientArea']").val(response.RecipientArea);
+            fire_event('RecipientArea');
+            $("input[name='RecipientZipcode']").val(response.RecipientPostal_code);
         }
     });
 
@@ -53,7 +55,6 @@ $(document).ready(function () {
                 success: function (response) {
                     if(response.status === 'success')
                     {   
-                        
                         window.location  = "CheckoutList";
                     }else{
                         $('#ErrorModal').modal('show');
