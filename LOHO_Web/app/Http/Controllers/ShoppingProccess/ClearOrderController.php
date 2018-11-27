@@ -43,7 +43,9 @@ class ClearOrderController extends BaseController
         'goodsTotal' => $request->session()->get('goodsTotal', 'default'),
         'shippingFee' => $request->session()->get('shippingFee', 'default'),
         'coupon_price' => $request->session()->get('coupon_price', 'default'),
-        'orderTotal' => $request->session()->get('orderTotal', 'default'),  
+        'orderTotal' => $request->session()->get('orderTotal', 'default'),
+        'coupon_code' => $request->session()->get('coupon_code', 'default'),
+        'coupon_price' => $request->session()->get('coupon_price', 0),
         ]);
     }
 
@@ -58,7 +60,8 @@ class ClearOrderController extends BaseController
         $order_history->payment_info = $request->session()->get('payment_info', 'default');
         $order_history->goodsTotal = $request->session()->get('goodsTotal', 'default');
         $order_history->shippingFee = $request->session()->get('shippingFee', 'default');
-        $order_history->coupon_price = $request->session()->get('coupon_price', 'default');
+        $order_history->coupon_code = $request->session()->get('coupon_code', 'default');
+        $order_history->coupon_price = $request->session()->get('coupon_price', 0);
         $order_history->orderTotal = $request->session()->get('orderTotal', 'default');
         $order_history->save();
         $tmp_order_id = $order_history->oid;
@@ -97,7 +100,17 @@ class ClearOrderController extends BaseController
                 $order_detail->save();
             }
         }
-        
+
+        $coupon_code = $request->session()->get('coupon_code', 'default');
+
+        if($coupon_code != 'default')
+        {
+            $users_own_voucher = Users_own_voucher::where('voucher_id', $coupon_code)->first();
+            $users_own_voucher->using_state ='disabled';
+            
+            $users_own_voucher->save();            
+        }
+
         $request->session()->forget('cart.item');
         $request->session()->forget('ordererName');
         $request->session()->forget('ordererEmail');
@@ -119,6 +132,7 @@ class ClearOrderController extends BaseController
         $request->session()->forget('payment_info');
         $request->session()->forget('goodsTotal');
         $request->session()->forget('shippingFee');
+        $request->session()->forget('coupon_code');
         $request->session()->forget('coupon_price');
         $request->session()->forget('orderTotal');
         $request->session()->forget('shopping_state');

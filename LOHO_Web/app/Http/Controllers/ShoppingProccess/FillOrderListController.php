@@ -8,6 +8,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
 use App\Users_own_voucher;
 use App\Voucher;
+use App\User;
 use Illuminate\Support\Facades\Session;
 use Validator;
 class FillOrderListController extends BaseController
@@ -113,5 +114,21 @@ class FillOrderListController extends BaseController
         }else{
             return response()->json(['status' => 'fail','errors'=>$validator->errors()->all()]);
         }
+    }
+    public function GetUserData()
+    {
+        $user = User::where('id', Auth::user()->id)->first();
+
+        return response()->json([
+            'name' => $user->name,
+            'email' => $user->email,
+            'telephone_number' => $user->telephone_number,
+            'phone_number' => $user->phone_number,
+            'postal_code' => $user->postal_code,
+            'country' => $user->country,
+            'area' => $user->area,
+            'address' => $user->address,
+        ]);
+        
     }
 }

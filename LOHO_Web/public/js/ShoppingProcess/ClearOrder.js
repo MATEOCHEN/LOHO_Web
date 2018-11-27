@@ -25,6 +25,9 @@ $(document).ready(function () {
             $('#shippingFee').text(response.shippingFee);
             $('#coupon_price').text(response.coupon_price);
             $('#orderTotal').text(response.orderTotal);
+            $('#coupon_price').text(response.coupon_price);
+            $('#coupon_code').text(response.coupon_code);
+
 
             let payment_type;
             let payment_info;
@@ -49,7 +52,7 @@ $(document).ready(function () {
             }
             $('#payment_type').text(payment_type);
             $('#payment_info').text(payment_info);
-            alert(payment_info);
+            
         }
     });
 

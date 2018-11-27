@@ -39,6 +39,13 @@
             </div>
             <div class="list position-center">
                 <div class="col align-self-end">
+                    @if (Auth::check())
+                        <form>  
+                            <div>
+                                資料與帳戶一樣<input type="checkbox" id="is_consistent_account_data">
+                            </div>
+                        </form>                       
+                    @endif
                     <div class="row">
                         <h3 class="pt-3 ml-3">訂購人資料</h3>
                     </div>

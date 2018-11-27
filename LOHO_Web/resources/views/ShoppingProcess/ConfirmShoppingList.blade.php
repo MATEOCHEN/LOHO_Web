@@ -45,9 +45,13 @@
                         <span><h5 class="text-danger">$</h5></span><h5 class="text-danger" id="shippingFee">70</h5>
                     </div>
                     <div class="row">
-                        <h5>優惠折抵：<span id="coupon_price">{{$data['coupon_price']}}</span></h5>
+                        <h5>優惠折抵：<span id="coupon_price"></span></h5>
                         @if (Auth::check())
+                        <div>
                             <button class="btn btn-success btn-sm" id="view_voucher">使用優惠券</button>
+                            <button class="btn btn-danger btn-sm" id="cancel_voucher">取消優惠券</button>
+                            <br><h5><span id="coupon_code"></span></h5>
+                        </div>
                         @else
                         <div>
                             <button class="btn btn-success btn-sm" id="view_voucher" disabled = "disabled">使用優惠券</button>
