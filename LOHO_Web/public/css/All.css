@@ -21,11 +21,32 @@ body{
     font-size: 24px;
 }
 
-.account-info-block {
+
+#personINFO:hover + #account-info-block{
     display: block;
-    width: 20%;
-    height: 10%;
-    background: white;
+}
+
+#account-info-block:hover {
+    display: block;
+}
+.account-info-block {
+    position: absolute;
+    top: 80%;
+    left: 85%;
+    z-index: 1000;
+    float: left;
+    min-width: 10rem;
+    padding: 0.5rem 0;
+    margin: 0.125rem 0 0;
+    font-size: 1rem;
+    color: #212529;
+    text-align: center;
+    list-style: none;
+    background-color: white;
+    background-clip: padding-box;
+    border: 1px solid rgba(0, 0, 0, 0.15);
+    border-radius: 0.25rem;
+    display: none;
 }
 
 .d-phone{

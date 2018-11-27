@@ -15,7 +15,7 @@
                 <a class="nav-link  h5"  href="#"  id="DropdownMenuAboutLoho"  aria-haspopup="true" aria-expanded="false">
                 關於LOHO 
                 </a>
-                <div class="dropdown-menu text-JhengHei" id="aboutmegamenu" aria-labelledby="navbarDropdown">
+                <div class="dropdown-menu text-JhengHei" id="aboutmegamenu" aria-labelledby="navbarDropdown" data-target="">
                     <div class="d-flex flex-row">
                         <div class="d-flex flex-column">
                             <a class="dropdown-header"><b>樂活足跡</b></a>
@@ -146,9 +146,10 @@
             </form>
                 <div class="d-flex flex-row justify-content-end">
                     @if (Auth::check())
-                    <a class="nav-link text-secondary">個人資訊</a>
-                    <div class='account-info-block'>
-                        <button type="button" class="" onclick='{{ url("Account/Logout") }}'id="logout_btn">登出</button>
+                    <a class="nav-link dropdown text-secondary" id= 'personINFO' href="{{ url("Account/Logout")}}">哈囉~ LOHO</a>
+                    <div class='account-info-block text-JhengHei' id='account-info-block'>
+                        <button type="button" class="" onclick="javascript:location.href='{{ url("Account/AccountInformation")}}'" id="personInfo">個人資訊</button>
+                        <button type="button" class="" onclick="javascript:location.href='{{ url("Account/Logout")}}'" id="logout_btn">登出</button>
                     </div>
                         @else
                         <a class="nav-link text-secondary" href="{{ url("Account/Account_Log_In") }}">登入</a>
@@ -208,7 +209,6 @@
                         let scrollTop = $(window).scrollTop(); 
                         let mainTop = $('.content').offset();
                         let navbarHeight = $('#nav').height();
-                        
                        
                        if(scrollTop > mainTop){
                            $('#nav').addClass("fixed-top");
