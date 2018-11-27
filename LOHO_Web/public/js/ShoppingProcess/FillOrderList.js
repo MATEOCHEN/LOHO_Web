@@ -99,11 +99,12 @@ $(document).ready(function () {
                    $('#ordererEmail').val(response.email);
                    $('#ordererTEL').val(response.telephone_number);
                    $('#ordererPhone').val(response.phone_number);
-                   //bug
-                   //$("input[name='OrdererZipcode']").val(response.postal_code);
-                   //$("select[name='OrdererCountry']").val(response.country);
-                   //fire_event('OrdererCountry');
-                   //$("select[name='OrdererArea']").val(response.area);
+                   
+                   $("input[name='OrdererZipcode']").val(response.postal_code);
+                   $("select[name='OrdererCountry']").val(response.country);
+                   fire_event('OrdererCountry');
+                   $("select[name='OrdererArea']").val(response.area);
+                   fire_event('OrdererArea');
                    $('#address').val(response.address);                  
                 }
             });
