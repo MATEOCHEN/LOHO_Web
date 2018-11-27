@@ -4,8 +4,6 @@
 @stop
 @section('content')
 <div class="content border border-danger">
-    <div class="row">
 
-    </div>
 </div>
 @stop

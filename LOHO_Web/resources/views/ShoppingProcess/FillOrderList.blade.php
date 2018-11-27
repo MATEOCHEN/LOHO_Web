@@ -45,28 +45,30 @@
                     <div class="row">
                         <div class="col-5">
                             <label for="ordererName" class="col-form-label">姓名：</label> 
-                            <input type="text" class="" id="ordererName" value="{{$data['ordererName']}}">
-                        </div>
-                        <div class="col-5">
-                            <label for="ordererEmail" class="col-form-label">E-mail：</label> 
-                            <input type="text" class="" id="ordererEmail" value="{{$data['ordererEmail']}}">
+                            <input type="text" id="ordererName" placeholder="亦可輸入公司名稱(限制十五字元)" size="28" maxlength="15" value="{{$data['ordererName']}}">
                         </div>
                     </div>
                     <div class="row">
                         <div class="col-5">
                             <label for="ordererTEL" class="col-form-label">電話：</label> 
-                            <input type="text" class="" id="ordererTEL" value="{{$data['ordererTEL']}}">
+                            <input type="text" class="" id="ordererTEL" placeholder="ex：048720552" size='15' maxlength="10" value="{{$data['ordererTEL']}}">
                         </div>
                         <div class="col-5">
                             <label for="ordererPhone" class="col-form-label ">手機：</label> 
-                            <input type="text" class="" id="ordererPhone" value="{{$data['ordererPhone']}}">
+                            <input type="text" class="" id="ordererPhone" placeholder="ex: 0958213456"size='15' maxlength='10'value="{{$data['ordererPhone']}}">
                         </div>
                     </div>
                     <div class="row">
-                        <div class="d-flex flex-row mt-3">
-                            <label for="twzipcode" class="col-form-label ml-3">地址：</label>
+                        <div class="d-flex flex-row mt-3 ml-3">
+                            <label for="twzipcode" class="col-form-label">地址：</label>
                             <div id="twzipcode"></div>
                             <input type="text" class="address" id="address" placeholder="地址" value="{{$data['ordererAddress']}}">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <label for="ordererEmail" class="col-form-label">E-mail：</label> 
+                            <input type="text" class="" id="ordererEmail" size="35" value="{{$data['ordererEmail']}}">
                         </div>
                     </div>
                     <div class="row">
@@ -79,21 +81,17 @@
                     <div class="row">
                         <div class="col-5">
                             <label for="RecipientName" class="col-form-label">姓名：</label> 
-                            <input type="text" class="" id="RecipientName" value="{{$data['RecipientName']}}">
-                        </div>
-                        <div class="col-5">
-                            <label for="RecipientEmail" class="col-form-label">E-mail：</label> 
-                            <input type="text" class="" id="RecipientEmail" value="{{$data['RecipientEmail']}}">
+                            <input type="text" class="" id="RecipientName" placeholder="亦可輸入公司名稱(限制十五字元)" size="28"maxlength="15" value="{{$data['RecipientName']}}">
                         </div>
                     </div>
                     <div class="row">
                         <div class="col-5">
                             <label for="RecipientTEL" class="col-form-label">電話：</label> 
-                            <input type="text" class="" id="RecipientTEL" value="{{$data['RecipientTEL']}}">
+                            <input type="text" class="" id="RecipientTEL" placeholder="ex：048720552" size='15' maxlength='10' value="{{$data['RecipientTEL']}}">
                         </div>
                         <div class="col-5">
                             <label for="RecipientPhone" class="col-form-label ">手機：</label> 
-                            <input type="text" class="" id="RecipientPhone" value="{{$data['RecipientPhone']}}">
+                            <input type="text" class="" id="RecipientPhone" placeholder="ex: 0958213456" size='15' maxlength='10' value="{{$data['RecipientPhone']}}">
                         </div>
                     </div>
                     <div class="row">
@@ -102,6 +100,12 @@
                             <div id="twzipcode1"></div>
                             <input type="text" class="address" id="address1" placeholder="地址" value="{{$data['RecipientAddress']}}">
                         </div>                     
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <label for="RecipientEmail" class="col-form-label">E-mail：</label> 
+                            <input type="text" class="" id="RecipientEmail" size="35" value="{{$data['RecipientEmail']}}">
+                        </div>
                     </div>
                     <div class="d-flex justify-content-center pt-3">
                         <button type="button" id="last_step"class="btn btn-secondary mr-5">上一步</button>
