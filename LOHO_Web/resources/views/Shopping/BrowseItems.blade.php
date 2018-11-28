@@ -85,7 +85,6 @@
                             <a href="#" class="list-group-item list-group-item-light" data-parent="#main_category3" style="padding-left: 40px;">兒童休閒襪</a>
                             <a href="#" class="list-group-item list-group-item-light" data-parent="#main_category3" style="padding-left: 40px;">兒童竹炭襪</a>
                             <a href="#" class="list-group-item list-group-item-light" data-parent="#main_category3" style="padding-left: 40px;">樂活親子襪</a>
-                            
                         </div>
                     </div>
                 </div>

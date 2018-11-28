@@ -57,6 +57,29 @@ body{
     display:block;
 }
 
+.footer-block {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 0 auto;
+    padding: 0;
+    text-align: center;
+    background: #F8F9FA;
+}
+
+
+.footer-link {
+    color: #717b8c;
+    display: block;
+}
+
+.footer-link:hover {
+    color: #717b8c;
+    text-decoration: none;
+    font-weight: bold;
+}
+
 @media screen and (max-width:768px){
     .shop-font-size{
         font-size: 16px;

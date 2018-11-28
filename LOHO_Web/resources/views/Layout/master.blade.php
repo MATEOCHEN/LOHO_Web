@@ -11,4 +11,9 @@
     @section('content')
     @show   
 </body>
+<footer>
+    @include('Partials.footer')
+    @section('footer')
+    @show
+</footer>
 </html>
