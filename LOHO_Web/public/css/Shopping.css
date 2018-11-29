@@ -1,16 +1,9 @@
-.container-block{
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    width: 95%;
-    margin-top: 5%;
-    margin-bottom: 5%;
-    margin-left: 5%;
-    margin-right: 1%;
-}
 
 .left{
-    flex:1;
+    position: relative;
+    top : 0%;
+    left: 3%;
+    width : 20%;
 }
 
 .right{
@@ -51,9 +44,6 @@
     background-color: lightcyan;
     font-family :Microsoft JhengHei;
 }
-.title-color {
-    color : #ecb62c;
-}
 .btn-outline-pink {
     color: white;
     background-color: lightpink;
@@ -78,15 +68,6 @@
         vertical-align: baseline;
     }
 
-    .container-block{
-        display: flex;
-        background: #f4f4f4;
-        flex-direction: row;
-        flex-wrap: wrap;
-        margin: 1% 1% 1% 1%;
-        max-width: 90%;
-        height: auto;
-    }
 
     .list-group-block{
         width: 90%;

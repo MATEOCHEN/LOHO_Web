@@ -26,23 +26,32 @@
                 <div class="list-group-block text-JhengHei">
                     <h1 class="my-4 title-color">樂活歷史</h1>
                     <div class="list-group">
-                        <a href="#sub_category1" class="list-group-item" id="main_category1" data-toggle="collapse" style="font-size:20px;">樂活足跡</a>
-                        <div class="collapse list-group-submenu" id="sub_category1">
-                            <a href="#" class="list-group-item list-group-item-light" data-parent="#main_category1" style="padding-left: 40px;">樂活歷史</a>
-                            <a href="#" class="list-group-item list-group-item-light" data-parent="#main_category1" style="padding-left: 40px;">樂活據點</a>
-                            <a href="#" class="list-group-item list-group-item-light" data-parent="#main_category1" style="padding-left: 40px;">樂活榮耀</a>
-                            <a href="#" class="list-group-item list-group-item-light" data-parent="#main_category1" style="padding-left: 40px;">樂活導覽</a>
+                        <div class="row">
+                            <a href="#sub_category1" class="list-group-item" id="main_category1" data-toggle="collapse" style="font-size:20px;">樂活足跡</a>
+                            <img src="{{ URL::asset('/open-iconic-master/svg/chevron-bottom.svg') }}" alt="">
                         </div>
-                        <a href="#sub_category2" class="list-group-item" id="main_category2" data-toggle="collapse" style="font-size:20px;" href="#sub_category2">眾人見證</a>
-                        <div class="collapse list-group-submenu" id="sub_category2">
-                            <a href="#" class="list-group-item list-group-item-light" data-parent="#main_category2" style="padding-left: 40px;">輝煌獎項</a>
-                            <a href="#" class="list-group-item list-group-item-light" data-parent="#main_category2" style="padding-left: 40px;">眾人見證</a>
+                        <div class="collapse" id="sub_category1">
+                            <a href="#" class="list-group-item" data-parent="#main_category1" style="padding-left: 40px;">樂活歷史</a>
+                            <a href="#" class="list-group-item" data-parent="#main_category1" style="padding-left: 40px;">樂活據點</a>
+                            <a href="#" class="list-group-item" data-parent="#main_category1" style="padding-left: 40px;">樂活榮耀</a>
+                            <a href="#" class="list-group-item" data-parent="#main_category1" style="padding-left: 40px;">樂活導覽</a>
                         </div>
-                        <a href="#sub_category3" class="list-group-item" id="main_category3" data-toggle="collapse" style="font-size:20px;" href="#sub_category3">媒體報導</a>
-                        <div class="collapse list-group-submenu" id="sub_category3">
-                            <a href="#" class="list-group-item list-group-item-light" data-parent="#main_category3" style="padding-left: 40px;">雜誌專刊</a>
-                            <a href="#" class="list-group-item list-group-item-light" data-parent="#main_category3" style="padding-left: 40px;">影音專訪</a>
-                            <a href="#" class="list-group-item list-group-item-light" data-parent="#main_category3" style="padding-left: 40px;">網路專題</a>
+                        <div class="row">
+                            <a href="#sub_category2" class="list-group-item" id="main_category2" data-toggle="collapse" style="font-size:20px;" href="#sub_category2">眾人見證</a>
+                            <img src="{{ URL::asset('/open-iconic-master/svg/chevron-bottom.svg') }}" alt="">
+                        </div>
+                        <div class="collapse" id="sub_category2">
+                            <a href="#" class="list-group-item" data-parent="#main_category2" style="padding-left: 40px;">輝煌獎項</a>
+                            <a href="#" class="list-group-item" data-parent="#main_category2" style="padding-left: 40px;">眾人見證</a>
+                        </div>
+                        <div class="row">
+                            <a href="#sub_category3" class="list-group-item" id="main_category2" data-toggle="collapse" style="font-size:20px;" href="#sub_category2">媒體報導</a>
+                            <img src="{{ URL::asset('/open-iconic-master/svg/chevron-bottom.svg') }}" alt="">
+                        </div>
+                        <div class="collapse" id="sub_category3">
+                            <a href="#" class="list-group-item" data-parent="#main_category3" style="padding-left: 40px;">雜誌專刊</a>
+                            <a href="#" class="list-group-item" data-parent="#main_category3" style="padding-left: 40px;">影音專訪</a>
+                            <a href="#" class="list-group-item" data-parent="#main_category3" style="padding-left: 40px;">網路專題</a>
                         </div>
                     </div>
                 </div>

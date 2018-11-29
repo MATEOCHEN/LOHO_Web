@@ -5,6 +5,16 @@
     overflow-x: hidden;
 }
 
+.container-block {
+    display: flex;
+    background: #f4f4f4;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin: 1% 1% 1% 1%;
+    max-width: 100%;
+    height: auto;
+}
+
 body{
     background: #969696;
 }
@@ -67,7 +77,9 @@ body{
     text-align: center;
     background: #F8F9FA;
 }
-
+.title-color {
+    color : #ecb62c;
+}
 
 .footer-link {
     color: #717b8c;

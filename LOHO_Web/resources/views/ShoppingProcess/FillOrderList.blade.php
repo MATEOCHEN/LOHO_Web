@@ -58,11 +58,12 @@
                     <div class="row">
                         <div class="col-5">
                             <label for="ordererTEL" class="col-form-label">電話：</label> 
-                            <input type="text" class="" id="ordererTEL" placeholder="ex：048720552" size='15' maxlength="10" value="{{$data['ordererTEL']}}">
+                            <input type="text" class="" id="ordererTEL" placeholder="ex：048720552" onkeyup='this.value=this.value.replace(/\D/gi,"")' size='15' maxlength="10" value="{{$data['ordererTEL']}}">
                         </div>
                         <div class="col-5">
                             <label for="ordererPhone" class="col-form-label ">手機：</label> 
-                            <input type="text" class="" id="ordererPhone" placeholder="ex: 0958213456"size='15' maxlength='10'value="{{$data['ordererPhone']}}">
+                            <input type="text" class="" id="ordererPhone" placeholder="ex: 0958213456" onkeyup='this.value=this.value.replace(/\D/gi,"")' 
+                            size='15' maxlength='10'value="{{$data['ordererPhone']}}">
                         </div>
                     </div>
                     <div class="row">
@@ -94,11 +95,11 @@
                     <div class="row">
                         <div class="col-5">
                             <label for="RecipientTEL" class="col-form-label">電話：</label> 
-                            <input type="text" class="" id="RecipientTEL" placeholder="ex：048720552" size='15' maxlength='10' value="{{$data['RecipientTEL']}}">
+                            <input type="text" class="" id="RecipientTEL" placeholder="ex：048720552" onkeyup='this.value=this.value.replace(/\D/gi,"")' size='15' maxlength='10' value="{{$data['RecipientTEL']}}">
                         </div>
                         <div class="col-5">
                             <label for="RecipientPhone" class="col-form-label ">手機：</label> 
-                            <input type="text" class="" id="RecipientPhone" placeholder="ex: 0958213456" size='15' maxlength='10' value="{{$data['RecipientPhone']}}">
+                            <input type="text" class="" id="RecipientPhone" placeholder="ex: 0958213456" onkeyup='this.value=this.value.replace(/\D/gi,"")' size='15' maxlength='10' value="{{$data['RecipientPhone']}}">
                         </div>
                     </div>
                     <div class="row">
