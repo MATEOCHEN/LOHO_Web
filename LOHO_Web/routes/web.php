@@ -28,6 +28,13 @@ Route::group(['namespace' => 'Admin','prefix' => 'admin'], function () {
 
 });
 
+Route::group(['prefix'=>'About'], function() {
+    Route::get(
+        '/loho_history',
+        array('uses' => 'About\HistoryController@History', 'as' => 'loho_history')
+    );
+});
+
 
 Route::group(['namespace' => 'Admin\ManageItems','prefix' => 'admin'], function () {
 
@@ -235,6 +242,16 @@ Route::group(['namespace' => 'ShoppingProccess','prefix' => 'ShoppingProccess'],
         array('uses' => 'ConfirmShoppingListController@AfterConfirmShoppingList', 'as' => 'AfterConfirmShoppingList')
     );
 
+    Route::post(
+        '/GetVoucherState',
+        array('uses' => 'ConfirmShoppingListController@GetVoucherState', 'as' => 'GetVoucherState')
+    );
+
+    Route::post(
+        '/CancelVoucherState',
+        array('uses' => 'ConfirmShoppingListController@CancelVoucherState', 'as' => 'CancelVoucherState')
+    );
+
     Route::get(
         '/FinishOrder',
         array('uses' => 'FinishOrderController@FinishOrder', 'as' => 'FinishOrder')
@@ -257,6 +274,11 @@ Route::group(['middleware' => 'ShoppingStateCheck','namespace' => 'ShoppingProcc
     Route::get(
         '/GetOrderList',
         array('uses' => 'FillOrderListController@GetOrderList', 'as' => 'GetOrderList')
+    );
+
+    Route::get(
+        '/GetUserData',
+        array('uses' => 'FillOrderListController@GetUserData', 'as' => 'GetUserData')
     );
 
     Route::get(
@@ -309,6 +331,16 @@ Route::group(['prefix' => 'Game','namespace' => 'Game'], function () {
     Route::get(
         'Card',
         array('uses' => 'GameController@Card', 'as' => 'Card')
+    );
+
+    Route::get(
+        'Puzzle',
+        array('uses' => 'GameController@Puzzle', 'as' => 'Puzzle')
+    );
+
+    Route::get(
+        'Cups_Game',
+        array('uses' => 'GameController@Cups_Game', 'as' => 'Cups_Game')
     );
 
     Route::get(

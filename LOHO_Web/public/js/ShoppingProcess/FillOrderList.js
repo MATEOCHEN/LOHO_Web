@@ -11,21 +11,56 @@ $(document).ready(function () {
         data: "",
         dataType: "json",
         success: function (response) {
-            
-            $("input[name='OrdererZipcode']").val(response.ordererPostal_code);
+            if(response.is_consistent_account_data === 'checked')
+            {
+                $('#is_consistent_account_data').prop("checked",true);
+            }
+            else
+            {
+                $('#is_consistent_account_data').prop("checked",false);
+            }
+            if(response.defaultCheck === 'checked')
+            {
+                $('#defaultCheck').prop("checked",true);
+            }
+            else
+            {
+                $('#defaultCheck').prop("checked",false);
+            }
             $("select[name='OrdererCountry']").val(response.ordererCountry);
+            fire_event('OrdererCountry');
             $("select[name='OrdererArea']").val(response.ordererArea);
-            $("input[name='RecipientZipcode']").val(response.RecipientPostal_code);
+            fire_event('OrdererArea');
+            $("input[name='OrdererZipcode']").val(response.ordererPostal_code);
             $("select[name='RecipientCountry']").val(response.RecipientCountry);
+            fire_event('RecipientCountry');
             $("select[name='RecipientArea']").val(response.RecipientArea);
+            fire_event('RecipientArea');
+            $("input[name='RecipientZipcode']").val(response.RecipientPostal_code);
         }
     });
 
     $("#next_step").click(function() {
-            //存入訂購人, 收款人資料進session
-            //ordererName,ordererEmail,ordererTEL,ordererPhone,address
-            //RecipientName,RecipientEmail,RecipientTEL,RecipientPhone,address1
-                              
+            let is_consistent_account_data;
+            let defaultCheck;
+
+            if($('#is_consistent_account_data').prop("checked",true))
+            {
+                is_consistent_account_data = 'checked';
+            }
+            else
+            {
+                is_consistent_account_data = 'unchecked';
+            }
+            if($('#defaultCheck').prop("checked",true))
+            {
+                defaultCheck = 'checked';
+            }
+            else
+            {
+                defaultCheck = 'unchecked';
+            }
+            
             $.ajax({
                 type: "POST",
                 url: "AfterFillOrderList",
@@ -46,13 +81,13 @@ $(document).ready(function () {
                     RecipientCountry:$("select[name='RecipientCountry']").val(),
                     RecipientArea:$("select[name='RecipientArea']").val(),
                     RecipientAddress:$('#address1').val(),//需處理前面縣市地址
-                    // $("select[name='RecipientCountry']"), $("select[name='RecipientArea']"), $("input[name='RecipientZipcode']")
+                    is_consistent_account_data:is_consistent_account_data,
+                    defaultCheck:defaultCheck,
                 },
                 dataType: "json",
                 success: function (response) {
                     if(response.status === 'success')
                     {   
-                        
                         window.location  = "CheckoutList";
                     }else{
                         $('#ErrorModal').modal('show');
@@ -82,6 +117,40 @@ $(document).ready(function () {
         'zipcodeName': 'RecipientZipcode'
     });
     checkBox_clicked();
+    //引入帳戶資料
+    $('#is_consistent_account_data').change(function (e) { 
+        e.preventDefault();
+        
+        if ($('#is_consistent_account_data').prop("checked")){
+            $.ajax({
+                type: "get",
+                url: "GetUserData",
+                data: "",
+                dataType: "json",
+                success: function (response) {
+                   $('#ordererName').val(response.name);
+                   $('#ordererEmail').val(response.email);
+                   $('#ordererTEL').val(response.telephone_number);
+                   $('#ordererPhone').val(response.phone_number);
+                   
+                   $("input[name='OrdererZipcode']").val(response.postal_code);
+                   $("select[name='OrdererCountry']").val(response.country);
+                   fire_event('OrdererCountry');
+                   $("select[name='OrdererArea']").val(response.area);
+                   fire_event('OrdererArea');
+                   $('#address').val(response.address);                  
+                }
+            });
+        } else {
+            $('#ordererName').val("");
+            $('#ordererEmail').val("");
+            $('#ordererTEL').val("");
+            $('#ordererPhone').val("");
+            //$("input[name='OrdererZipcode']").val("");
+            $('#address').val("");
+        }
+    });
+
 });
 
 function checkBox_clicked() {
@@ -100,7 +169,7 @@ function checkBox_clicked() {
             $("#RecipientTEL").val(OrdererTEL);
             $("#RecipientPhone").val(OrdererPhone);
             $("select[name='RecipientCountry']").val(Country);
-            fire_event();
+            fire_event('RecipientCountry');
             $("select[name='RecipientArea']").val(Area);
             $("input[name='RecipientZipcode']").val(ZipCode);
             $("#address1").val(Address);
@@ -110,7 +179,7 @@ function checkBox_clicked() {
             $("#RecipientTEL").val("");
             $("#RecipientPhone").val("");
             $("select[name='RecipientCountry']").val("")
-            fire_event();
+            fire_event('RecipientCountry');
             $("select[name='RecipientArea']").val("");
             $("input[name='RecipientZipcode']").val("");
             $("#address1").val("")
@@ -118,11 +187,9 @@ function checkBox_clicked() {
     })
 }
 
-function fire_event() {
+function fire_event(variable) {
     var event = new Event('change');
-    var d = document.getElementsByName("RecipientCountry")[0];
-    d.addEventListener('event', function () {
-        alert("123");
-    });
+    var d = document.getElementsByName(variable)[0];
     d.dispatchEvent(event);
 }
+

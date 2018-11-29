@@ -21,6 +21,14 @@ $(document).ready(function () {
             $('#RecipientTEL').text(response.RecipientTEL);
             $('#RecipientPhone').text(response.RecipientPhone);
             $('#RecipientAddress').text(response.RecipientAddress);
+            $('#goodsTotal').text(response.goodsTotal);
+            $('#shippingFee').text(response.shippingFee);
+            $('#coupon_price').text(response.coupon_price);
+            $('#orderTotal').text(response.orderTotal);
+            $('#coupon_price').text(response.coupon_price);
+            $('#coupon_code').text(response.coupon_code);
+
+
             let payment_type;
             let payment_info;
             switch (response.payment_type) {
@@ -36,7 +44,7 @@ $(document).ready(function () {
 
                 case 'Cash_on_delivery':
                     payment_type = "貨到付款";
-                    payment_info = "";
+                    payment_info = "寄送地址：" + response.payment_info;
                     break;
             
                 default:
@@ -44,6 +52,7 @@ $(document).ready(function () {
             }
             $('#payment_type').text(payment_type);
             $('#payment_info').text(payment_info);
+            
         }
     });
 

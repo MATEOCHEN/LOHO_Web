@@ -1,0 +1,31 @@
+.left-block {
+    position: relative;
+    top : 0%;
+    left: 3%;
+    width : 20%;
+}
+
+.right-block {
+    position: relative;
+    top :0%;
+    left: 5%;
+    width: 50%;
+}
+
+.text-block {
+    font-family: Microsoft JhengHei;
+    text-align: justify;
+    width : 80%;
+}
+
+
+@media screen and (max-width:768px) {
+    .left-block {
+        position: relative;
+        left:0%;
+        top:-15px;
+        margin-top: 2%;
+        margin-left: 2%;
+        width : 100%;
+    }
+} 

@@ -44,7 +44,6 @@ class SelectVoucherController extends BaseController
     //放入coupon_code coupon_price 進session
     public function UseVoucher(Request $request)
     {   
-        $coupon_code = Session::get('coupon_code','0');
         $request->session()->put('coupon_code',$request->coupon_code);
         $coupon_code = $request->session()->get('coupon_code', 'default');
         $coupon_price = $request->session()->get('coupon_price', 0);
@@ -61,6 +60,5 @@ class SelectVoucherController extends BaseController
 
         return response()->json(['coupon_code' => $coupon_code,'coupon_price' => $coupon_price]);
     }
-
 
 }

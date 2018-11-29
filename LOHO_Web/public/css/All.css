@@ -5,6 +5,16 @@
     overflow-x: hidden;
 }
 
+.container-block {
+    display: flex;
+    background: #f4f4f4;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin: 1% 1% 1% 1%;
+    max-width: 100%;
+    height: auto;
+}
+
 body{
     background: #969696;
 }
@@ -15,5 +25,85 @@ body{
 
 .text-JhengHei {
     font-family: Microsoft JhengHei;
-  }
+}
+
+.shop-font-size{
+    font-size: 24px;
+}
+
+
+#personINFO:hover + #account-info-block{
+    display: block;
+}
+
+#account-info-block:hover {
+    display: block;
+}
+.account-info-block {
+    position: absolute;
+    top: 80%;
+    left: 85%;
+    z-index: 1000;
+    float: left;
+    min-width: 10rem;
+    padding: 0.5rem 0;
+    margin: 0.125rem 0 0;
+    font-size: 1rem;
+    color: #212529;
+    text-align: center;
+    list-style: none;
+    background-color: white;
+    background-clip: padding-box;
+    border: 1px solid rgba(0, 0, 0, 0.15);
+    border-radius: 0.25rem;
+    display: none;
+}
+
+.d-phone{
+    display: none;
+}
+
+.d-pc{
+    display:block;
+}
+
+.footer-block {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 0 auto;
+    padding: 0;
+    text-align: center;
+    background: #F8F9FA;
+}
+.title-color {
+    color : #ecb62c;
+}
+
+.footer-link {
+    color: #717b8c;
+    display: block;
+}
+
+.footer-link:hover {
+    color: #717b8c;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+@media screen and (max-width:768px){
+    .shop-font-size{
+        font-size: 16px;
+    }
+    
+    .d-pc {
+        display: none;
+    }
+
+    .d-phone {
+        display:block;
+    }
+    
+}
 
