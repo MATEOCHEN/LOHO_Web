@@ -41,6 +41,8 @@ class FillOrderListController extends BaseController
         $RecipientPostal_code = Session::get('RecipientPostal_code', '');
         $RecipientCountry = Session::get('RecipientCountry', '');
         $RecipientArea = Session::get('RecipientArea', '');
+        $is_consistent_account_data = Session::get('is_consistent_account_data', 'unchecked');
+        $defaultCheck = Session::get('defaultCheck', 'unchecked');
         
         return response()->json(['ordererPostal_code' => $ordererPostal_code,
                                 'ordererCountry'=>$ordererCountry,
@@ -48,6 +50,8 @@ class FillOrderListController extends BaseController
                                 'RecipientPostal_code'=>$RecipientPostal_code,
                                 'RecipientCountry'=>$RecipientCountry,
                                 'RecipientArea'=>$RecipientArea,
+                                'is_consistent_account_data' => $is_consistent_account_data,
+                                'defaultCheck' => $defaultCheck
                                 ]);
     }
 
@@ -96,7 +100,7 @@ class FillOrderListController extends BaseController
             $request->session()->put('ordererEmail', $request->ordererEmail);
             $request->session()->put('ordererTEL', $request->ordererTEL);
             $request->session()->put('ordererPhone', $request->ordererPhone);
-            $request->session()->put('ordererPostal_code', $request->ordererPostal_code);//bug
+            $request->session()->put('ordererPostal_code', $request->ordererPostal_code);
             $request->session()->put('ordererCountry', $request->ordererCountry);
             $request->session()->put('ordererArea', $request->ordererArea);
             $request->session()->put('ordererAddress', $request->ordererAddress);//需處理前面縣市地址
@@ -105,11 +109,14 @@ class FillOrderListController extends BaseController
             $request->session()->put('RecipientEmail', $request->RecipientEmail);
             $request->session()->put('RecipientTEL', $request->RecipientTEL);
             $request->session()->put('RecipientPhone', $request->RecipientPhone);
-            $request->session()->put('RecipientPostal_code', $request->RecipientPostal_code);//bug
+            $request->session()->put('RecipientPostal_code', $request->RecipientPostal_code);
             $request->session()->put('RecipientCountry', $request->RecipientCountry);
             $request->session()->put('RecipientArea', $request->RecipientArea);
             $request->session()->put('RecipientAddress', $request->RecipientAddress);//需處理前面縣市地址
             $request->session()->put('RecipientAddress_total', $RecipientAddress_total);
+            Session::put('defaultCheck', $request->defaultCheck);
+            Session::put('is_consistent_account_data', $request->is_consistent_account_data);
+
             return response()->json(['status' => 'success']);
         }else{
             return response()->json(['status' => 'fail','errors'=>$validator->errors()->all()]);

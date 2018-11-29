@@ -11,6 +11,22 @@ $(document).ready(function () {
         data: "",
         dataType: "json",
         success: function (response) {
+            if(response.is_consistent_account_data === 'checked')
+            {
+                $('#is_consistent_account_data').prop("checked",true);
+            }
+            else
+            {
+                $('#is_consistent_account_data').prop("checked",false);
+            }
+            if(response.defaultCheck === 'checked')
+            {
+                $('#defaultCheck').prop("checked",true);
+            }
+            else
+            {
+                $('#defaultCheck').prop("checked",false);
+            }
             $("select[name='OrdererCountry']").val(response.ordererCountry);
             fire_event('OrdererCountry');
             $("select[name='OrdererArea']").val(response.ordererArea);
@@ -25,10 +41,26 @@ $(document).ready(function () {
     });
 
     $("#next_step").click(function() {
-            //存入訂購人, 收款人資料進session
-            //ordererName,ordererEmail,ordererTEL,ordererPhone,address
-            //RecipientName,RecipientEmail,RecipientTEL,RecipientPhone,address1
-                              
+            let is_consistent_account_data;
+            let defaultCheck;
+
+            if($('#is_consistent_account_data').prop("checked",true))
+            {
+                is_consistent_account_data = 'checked';
+            }
+            else
+            {
+                is_consistent_account_data = 'unchecked';
+            }
+            if($('#defaultCheck').prop("checked",true))
+            {
+                defaultCheck = 'checked';
+            }
+            else
+            {
+                defaultCheck = 'unchecked';
+            }
+            
             $.ajax({
                 type: "POST",
                 url: "AfterFillOrderList",
@@ -49,7 +81,8 @@ $(document).ready(function () {
                     RecipientCountry:$("select[name='RecipientCountry']").val(),
                     RecipientArea:$("select[name='RecipientArea']").val(),
                     RecipientAddress:$('#address1').val(),//需處理前面縣市地址
-                    // $("select[name='RecipientCountry']"), $("select[name='RecipientArea']"), $("input[name='RecipientZipcode']")
+                    is_consistent_account_data:is_consistent_account_data,
+                    defaultCheck:defaultCheck,
                 },
                 dataType: "json",
                 success: function (response) {
