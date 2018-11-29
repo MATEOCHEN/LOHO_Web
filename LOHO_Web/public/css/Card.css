@@ -10,7 +10,7 @@ body{
     border: 1px red solid;
     width: 30%;
     height: 700px;
-    background-image: url('../遊戲畫面素材/背景1.png');
+    background-image: url('/LOHO_Web/public/Image/遊戲畫面素材/背景1.png');
     background-repeat: no-repeat;
 }
 
@@ -66,12 +66,12 @@ button{
 }
 
 .front{
-    background: url("../遊戲畫面素材/deck.png")0 120px;
+    background: url("/LOHO_Web/public/Image/遊戲畫面素材/deck.png")0 120px;
     z-index: 10;
 }
 
 .back{
-    background: url("../遊戲畫面素材/deck.png");
+    background: url("/LOHO_Web/public/Image/遊戲畫面素材/deck.png");
     -webkit-transform: rotateY(-180deg);
     z-index: 8;
 }
