@@ -59,7 +59,10 @@
                 <div class="list-group-block text-JhengHei">
                     <h1 class="my-4 title-color">新品上市</h1>
                     <div class="list-group">
-                        <a href="#sub_category1" class="list-group-item" id="main_category1" data-toggle="collapse" style="font-size:20px;">成人</a>
+                        <div class="row">
+                            <a href="#sub_category1" class="list-group-item" id="main_category1" data-toggle="collapse" style="font-size:20px;">成人</a>
+                            <img src="{{ URL::asset('/open-iconic-master/svg/chevron-bottom.svg') }}" alt="">
+                        </div>
                         <div class="collapse list-group-submenu" id="sub_category1">
                             <a href="#" class="list-group-item list-group-item-light" data-parent="#main_category1" style="padding-left: 40px;">抗臭機能襪</a>
                             <a href="#" class="list-group-item list-group-item-light" data-parent="#main_category1" style="padding-left: 40px;">抗菌機能襪</a>
@@ -69,7 +72,10 @@
                             <a href="#" class="list-group-item list-group-item-light" data-parent="#main_category1" style="padding-left: 40px;">甲殼素襪</a>
                             <a href="#" class="list-group-item list-group-item-light" data-parent="#main_category1" style="padding-left: 40px;">銀纖維襪</a>
                         </div>
-                        <a href="#sub_category2" class="list-group-item" id="main_category2" data-toggle="collapse" style="font-size:20px;" href="#sub_category2">兒童</a>
+                        <div class="row">
+                            <a href="#sub_category2" class="list-group-item" id="main_category2" data-toggle="collapse" style="font-size:20px;" href="#sub_category2">兒童</a>
+                            <img src="{{ URL::asset('/open-iconic-master/svg/chevron-bottom.svg') }}" alt="">
+                        </div>
                         <div class="collapse list-group-submenu" id="sub_category2">
                             <a href="#" class="list-group-item list-group-item-light" data-parent="#main_category2" style="padding-left: 40px;">抗臭機能襪</a>
                             <a href="#" class="list-group-item list-group-item-light" data-parent="#main_category2" style="padding-left: 40px;">抗菌機能襪</a>
@@ -80,7 +86,10 @@
                             <a href="#" class="list-group-item list-group-item-light" data-parent="#main_category2" style="padding-left: 40px;">美膚褲襪</a>
                             <a href="#" class="list-group-item list-group-item-light" data-parent="#main_category2" style="padding-left: 40px;">隱形襪</a>
                         </div>
-                        <a href="#sub_category3" class="list-group-item" id="main_category3" data-toggle="collapse" style="font-size:20px;" href="#sub_category3">親子</a>
+                        <div class="row">
+                            <a href="#sub_category3" class="list-group-item" id="main_category2" data-toggle="collapse" style="font-size:20px;" href="#sub_category3">親子</a>
+                            <img src="{{ URL::asset('/open-iconic-master/svg/chevron-bottom.svg') }}" alt="">
+                        </div>
                         <div class="collapse list-group-submenu" id="sub_category3">
                             <a href="#" class="list-group-item list-group-item-light" data-parent="#main_category3" style="padding-left: 40px;">兒童休閒襪</a>
                             <a href="#" class="list-group-item list-group-item-light" data-parent="#main_category3" style="padding-left: 40px;">兒童竹炭襪</a>
@@ -89,7 +98,7 @@
                     </div>
                 </div>
             </div>
-            <div class="right border">
+            <div class="right">
                 <ul class="wrap text-center" id="item_list">
                     <li class="shopping-item-block " id="s001">
                         <div class="shopping-item-img">

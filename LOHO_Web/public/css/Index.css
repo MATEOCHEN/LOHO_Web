@@ -37,6 +37,7 @@
 }
 
 .bg-category {
+    width : 30%;
     background: #F4F3F9;
     overflow: hidden;
 }
@@ -58,6 +59,9 @@
         font-size: 100%;
     }
 
+    .bg-category {
+        width : 22%;
+    }
     .item-block{
         width: 35%;
     }

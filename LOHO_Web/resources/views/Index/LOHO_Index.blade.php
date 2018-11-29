@@ -46,13 +46,13 @@
       <h1>商品分類</h1>
     </div>
     <div class="wrap" id="category-block">
-      <div class="w-30 mr-5 bg-category img-circle">
+      <div class="mr-5 bg-category img-circle">
         <a href="#"><img src="{{ URL::asset('/Image/sock.svg') }}" class="img-fluid"></a>
       </div>
-      <div class="w-30 mr-5 bg-category img-circle">
+      <div class="mr-5 bg-category img-circle">
         <a href="#"><img src="{{ URL::asset('/Image/shirt.svg') }}" class="img-fluid"></a>
       </div>
-      <div class="w-30 bg-category img-circle">
+      <div class="bg-category img-circle">
         <a href="#"><img src="{{ URL::asset('/Image/kneepad.svg') }}" class="img-fluid"></a>
       </div>
     </div>

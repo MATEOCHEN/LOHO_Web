@@ -18,21 +18,14 @@
     width : 80%;
 }
 
-.container-block {
-        display: flex;
-        background: #f4f4f4;
-        flex-direction: row;
-        flex-wrap: wrap;
-        margin: 1% 1% 1% 1%;
-        max-width: 100%;
-        height: auto;
-}
 
 @media screen and (max-width:768px) {
     .left-block {
         position: relative;
         left:0%;
         top:-15px;
+        margin-top: 2%;
+        margin-left: 2%;
         width : 100%;
     }
 } 
