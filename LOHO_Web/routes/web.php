@@ -334,6 +334,16 @@ Route::group(['prefix' => 'Game','namespace' => 'Game'], function () {
     );
 
     Route::get(
+        'Puzzle',
+        array('uses' => 'GameController@Puzzle', 'as' => 'Puzzle')
+    );
+
+    Route::get(
+        'Cups_Game',
+        array('uses' => 'GameController@Cups_Game', 'as' => 'Cups_Game')
+    );
+
+    Route::get(
         'StoreVoucher',
         array('uses' => 'StoreVoucherController@StoreVoucher', 'as' => 'StoreVoucher')
     );

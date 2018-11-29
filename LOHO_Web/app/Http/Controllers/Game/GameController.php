@@ -22,4 +22,14 @@ class GameController extends Controller
 
         return view('Game\Card');
     }
+
+    public function Puzzle(){
+
+        return view('Game\Puzzle');
+    }
+
+    public function Cups_Game(){
+
+        return view('Game\Cups_Game');
+    }
 }
