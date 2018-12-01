@@ -38,6 +38,7 @@ class StoreVoucherController extends Controller
                 $voucher = new Voucher;
                 $voucher->discounted_price = 100;
                 $voucher->user_id =  $user->id;
+                $voucher->using_state = 'active';
                 $voucher->save();
 
                 return view('Game/StoreVoucherSuccess');

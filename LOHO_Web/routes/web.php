@@ -17,6 +17,11 @@ Route::group([], function () {
         array('uses' => 'HomeController@Index', 'as' => 'Index')
     );
 
+    Route::get(
+        '/GetUserData',
+        array('uses' => 'HomeController@GetUserData', 'as' => 'GetUserData')
+    );
+
 });
 
 Route::group(['namespace' => 'Admin','prefix' => 'admin'], function () {

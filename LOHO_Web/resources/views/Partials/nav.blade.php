@@ -146,7 +146,7 @@
             </form>
                 <div class="d-flex flex-row justify-content-end">
                     @if (Auth::check())
-                    <a class="nav-link dropdown text-secondary" id= 'personINFO' href="{{ url("Account/Logout")}}">哈囉~ LOHO</a>
+                    <a class="nav-link dropdown text-secondary" id= 'personINFO' href="{{ url("Account/Logout")}}">哈囉~ <span id="user_name"></span></a>
                     <div class='account-info-block text-JhengHei' id='account-info-block'>
                         <div class="col">
                             <button type="button" class="" onclick="javascript:location.href='{{ url("Account/PersonalInformation")}}'" id="PersonInfo">個人資訊</button>
@@ -208,6 +208,17 @@
     </div>
 </div>
 <script>
+    $(document).ready(function () {
+        $.ajax({
+            type: "get",
+            url: "GetUserData",
+            data: "",
+            dataType: "json",
+            success: function (response) {
+                $('#user_name').text(response.name);
+            }
+        });
+    });         /*
                 $(document).ready(function () {
                     $(window).scroll(function () {
                         let scrollTop = $(window).scrollTop(); 
@@ -223,7 +234,7 @@
                            $('body').css('paddingTop',0)
                        }
                     });
-                });
+                });*/
  </script>	
 
 

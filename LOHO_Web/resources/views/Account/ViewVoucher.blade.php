@@ -13,6 +13,7 @@
               <th scope="col">優惠代碼</th>
               <th scope="col">優惠金額</th>
               <th scope="col">新增時間</th>
+              <th scope="col">到期時間</th>
             </tr>
           </thead>
           <tbody>
@@ -21,6 +22,7 @@
                   <td>{{$voucher['coupon_code']}}</td>
                   <td>{{$voucher['discounted_price']}}</td>
                   <td>{{$voucher['created_at']}}</td>
+                  <td>{{$voucher['expired_date']}}</td>
               </tr>             
               @endforeach     
           </tbody>

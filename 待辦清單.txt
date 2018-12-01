@@ -18,6 +18,7 @@
 1.與帳號相同,同訂購人session**
 
 12/1
-1.voucher 與own voucher需使用join
-2.購物資料第一次頁面刷新總價未扣除折扣
-3.優惠卷無法讀取
+1.voucher 與own voucher需使用join**
+2.購物資料第一次頁面刷新總價未扣除折扣**
+3.優惠卷無法讀取**
+4.Laravel orm無法用複合主鍵
