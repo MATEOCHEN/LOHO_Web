@@ -84,3 +84,4 @@ function GameOver(){
 	score = 0;
 	countDown = 90;
 }
+

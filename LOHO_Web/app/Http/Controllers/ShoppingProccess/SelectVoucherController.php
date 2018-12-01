@@ -6,7 +6,6 @@ use Illuminate\Routing\Controller as BaseController;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
-use App\Users_own_voucher;
 use App\Voucher;
 use Illuminate\Support\Facades\Session;
 class SelectVoucherController extends BaseController
@@ -17,22 +16,17 @@ class SelectVoucherController extends BaseController
         {
             $vouchers_list = array();
             
-            $users_own_vouchers = Users_own_voucher::where(['using_state' => 1, 'user_id' => Auth::user()->id])->get();
+            $vouchers = Voucher::where(['using_state' => 'active', 'user_id' => Auth::user()->id])->get();
     
-            foreach($users_own_vouchers as $users_own_voucher)
+            foreach($vouchers as $voucher)
             {   
-                $vouchers = Voucher::all();
-                foreach ($vouchers as $voucher) {
-                    if($voucher->id == $users_own_voucher->voucher_id)
-                    {
-                        $voucher_tmp = [
-                            'coupon_code' => $voucher->id,
-                            'discounted_price' => $voucher->discounted_price,
-                            'created_at' => $voucher->created_at,
-                        ];
-                        array_push($vouchers_list,$voucher_tmp);  
-                    }
-                }
+                $voucher_tmp = [
+                    'coupon_code' => $voucher->id,
+                    'discounted_price' => $voucher->discounted_price,                   
+                    'created_at' => $voucher->created_at,
+                    'expired_date' => $voucher->expired_date,
+                ];
+                array_push($vouchers_list,$voucher_tmp);  
             }
     
              $data = ['vouchers' => $vouchers_list];

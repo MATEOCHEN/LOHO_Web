@@ -6,7 +6,6 @@ use Illuminate\Routing\Controller as BaseController;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
-use App\Users_own_voucher;
 use App\Voucher;
 use App\Order_history;
 use App\Order_detail;
@@ -105,10 +104,11 @@ class ClearOrderController extends BaseController
 
         if($coupon_code != 'default')
         {
-            $users_own_voucher = Users_own_voucher::where(['voucher_id' =>$coupon_code, 'user_id' => Auth::user()->id])->first();
-            $users_own_voucher->using_state =0;
+            $voucher = Voucher::where('id',$coupon_code)->first();
+
+            $voucher->using_state = 'disabled';
             
-            $users_own_voucher->save();            
+            $voucher->save();            
         }
 
         $request->session()->forget('cart.item');
