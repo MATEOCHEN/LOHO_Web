@@ -100,13 +100,13 @@ class ClearOrderController extends BaseController
                 $order_detail->save();
             }
         }
-
+        
         $coupon_code = $request->session()->get('coupon_code', 'default');
 
         if($coupon_code != 'default')
         {
-            $users_own_voucher = Users_own_voucher::where('voucher_id', $coupon_code)->first();
-            $users_own_voucher->using_state ='disabled';
+            $users_own_voucher = Users_own_voucher::where(['voucher_id' =>$coupon_code, 'user_id' => Auth::user()->id])->first();
+            $users_own_voucher->using_state =0;
             
             $users_own_voucher->save();            
         }
@@ -135,7 +135,11 @@ class ClearOrderController extends BaseController
         $request->session()->forget('coupon_code');
         $request->session()->forget('coupon_price');
         $request->session()->forget('orderTotal');
+
         $request->session()->forget('shopping_state');
+        $request->session()->forget('defaultCheck');
+        $request->session()->forget('is_consistent_account_data');
+
          return response()->json([]);
     }
 }

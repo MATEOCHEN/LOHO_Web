@@ -17,7 +17,7 @@ class SelectVoucherController extends BaseController
         {
             $vouchers_list = array();
             
-            $users_own_vouchers = Users_own_voucher::where('user_id', Auth::user()->id)->get();
+            $users_own_vouchers = Users_own_voucher::where(['using_state' => 1, 'user_id' => Auth::user()->id])->get();
     
             foreach($users_own_vouchers as $users_own_voucher)
             {   

@@ -26,7 +26,14 @@ $(document).ready(function () {
             $('#coupon_price').text(response.coupon_price);
             $('#orderTotal').text(response.orderTotal);
             $('#coupon_price').text(response.coupon_price);
-            $('#coupon_code').text(response.coupon_code);
+            if(response.coupon_code === 'default')
+            {
+                $('#coupon_code').text('未使用優惠卷');
+            }
+            else{
+                $('#coupon_code').text(response.coupon_code);
+            }
+            
 
 
             let payment_type;
