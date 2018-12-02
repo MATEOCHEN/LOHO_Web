@@ -2,10 +2,13 @@
 @section('title','修改密碼') 
 @section('head')
 <link href="{{ URL::asset('/css/ForgetPasswordToModify.css') }}" rel="stylesheet" type="text/css" /> @stop @section('content')
+
+
+
 <div class="container-block">
     <div class="wrap text-center">
         <div class="logo-img">
-            <img src="{{ URL::asset('/Image/LOHO_Logo.png') }}" alt="" class="img-fluid">
+            <img src="<?php echo asset('/svg/New LOGO.svg');?>" width="300px" alt="" class="img-fluid">
         </div>
         <div class="page-title">修改密碼</div>
         <br>
@@ -48,10 +51,18 @@
             </div>
             <div class="submit-area">
                 <button type="submit" class="btn btn-dark">確認更改</button>
-                <button type="submit" class="btn btn-dark">取消</button>
+                <button type="button" class="btn btn-dark" id="cancel">取消</button>
             </div>
         </form>
 
     </div>
 </div>
+<script>
+    $(document).ready(function () {
+        $('#cancel').click(function (e) { 
+            e.preventDefault();
+            window.location = 'AccountInformation';
+        });
+    });
+</script>
 @stop

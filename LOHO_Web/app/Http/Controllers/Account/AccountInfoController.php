@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
 use App\Voucher;
+use App\User;
 class AccountInfoController extends Controller
 {
     
@@ -17,11 +18,6 @@ class AccountInfoController extends Controller
         else{
             return redirect("Account\Account_Log_In");
         }
-    }
-
-    public function PersonalInformation()
-    {
-        return view('Account\PersonalInformation');
     }
 
     public function ViewVoucher()

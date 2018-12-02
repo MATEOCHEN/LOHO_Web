@@ -114,13 +114,18 @@ Route::group(['middleware' => 'AdminLogin','namespace' => 'Account','prefix' => 
     );
 
     Route::get(
-        'PersonalInformation',
-        array('uses' => 'AccountInfoController@PersonalInformation', 'as' => 'PersonalInformation')
+        'ViewVoucher',
+        array('uses' => 'AccountInfoController@ViewVoucher', 'as' => 'ViewVoucher')
     );
 
     Route::get(
-        'ViewVoucher',
-        array('uses' => 'AccountInfoController@ViewVoucher', 'as' => 'ViewVoucher')
+        'PersonalInformation',
+        array('uses' => 'PersonalInfoController@PersonalInformation', 'as' => 'PersonalInformation')
+    );
+
+    Route::post(
+        'ModifyPersonalInformation',
+        array('uses' => 'PersonalInfoController@ModifyPersonalInformation', 'as' => 'ModifyPersonalInformation')
     );
 
     Route::get(

@@ -211,7 +211,7 @@
     $(document).ready(function () {
         $.ajax({
             type: "get",
-            url: "GetUserData",
+            url: "/LOHO_Web/public/GetUserData",
             data: "",
             dataType: "json",
             success: function (response) {
