@@ -15,8 +15,8 @@ class AfterRegisterAccount implements AccountControllerPostImp
         'telephone_number' => 'required',
         'phone_number' => 'required',
         'email' => 'required',
-        'account' => 'required| between:4,20',
-        'password' => 'required| between:4,20|confirmed',
+        'account' => 'required| between:4,10',
+        'password' => 'required| between:4,10|confirmed',
         ];
 
         $messages = [
@@ -26,9 +26,9 @@ class AfterRegisterAccount implements AccountControllerPostImp
         'email.required'=>'請填寫email欄位',
         'email.email'=>'填寫email請符合格式',        
         'account.required'=>'請填寫帳號欄位',
-        'account.between'=>'帳號必須4-20位數字',
+        'account.between'=>'帳號限半形英文或數字，10碼內不限大小寫',
         'password.required'=>'請填寫密碼欄位',
-        'password.between'=>'密碼必須4-20位數字',
+        'password.between'=>'密碼限半形英文或數字，10碼內不限大小寫',
         'password.confirmed'=>'欲修改密碼與確認密碼需一致',
    
         ];

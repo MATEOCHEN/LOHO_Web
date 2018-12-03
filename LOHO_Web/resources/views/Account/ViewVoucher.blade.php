@@ -6,6 +6,9 @@
 @stop
 @section('content')
 <div class = "content d-flex flex-column align-items-center">
+    <div>
+        <img src="<?php echo asset('/svg/New LOGO.svg');?>" width="300px" alt="" class="img-fluid">
+    </div>
     <p class="h1">我的優惠卷</p>
       <table class="table">
           <thead class="thead-dark">

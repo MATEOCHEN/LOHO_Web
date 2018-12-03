@@ -42,18 +42,30 @@
                     <div class="input-text">*電子信箱：</div>
                     <input type="text" name="email" id="email">
                 </div>
+                <div class="remind-text">
+                    (格式xxx@gmail.com)
+                </div>
                 <div class="subTitle">帳戶設定</div>
                 <div class="input-area">
                     <div class="input-text">*帳號：</div>
                     <input type="text" name="account" id="account">
                 </div>
-                <div class="input-area">
-                    <div class="input-text">*密碼：</div>
-                    <input type="password" , name="password" id="password">
+                <div class="remind-text">
+                    (限半形英文或數字，10碼內不限大小寫)
                 </div>
                 <div class="input-area">
-                    <div class="input-text">*確認密碼：</div>
+                    <div class="input-text">*密碼：</div> 
+                    <input type="password" , name="password" id="password">
+                </div>
+                <div class="remind-text">
+                    (限半形英文或數字，10碼內不限大小寫)
+                </div>
+                <div class="input-area">
+                    <div class="input-text">*確認密碼：</div> 
                     <input type="password" , name="password_confirmation" id="password_confirmation">
+                </div>
+                <div class="remind-text">
+                    (限半形英文或數字，10碼內不限大小寫)
                 </div>
                 <div class="submit-area" action="AfterRegisterAccount" method="POST">
                     <button class="btn btn-secondary active" type="submit">註冊</button>
