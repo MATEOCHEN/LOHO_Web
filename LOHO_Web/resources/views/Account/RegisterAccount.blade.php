@@ -3,6 +3,7 @@
 @section('title','註冊帳號')
 @section('head')
 <link href="{{ URL::asset('/css/RegisterAccount.css') }}" rel="stylesheet" type="text/css" />
+<script src="{{ URL::asset('js/Account/RegisterAccount.js') }}"></script>
 @stop
 @section('content')
 
@@ -10,17 +11,17 @@
     <div class="container-block">
         <div class="wrap text-center">
             <div class="logo-img">
-                <img src="{{ URL::asset('/Image/LOHO_Logo.png') }}" alt="" class="img-fluid">
+                <img src="<?php echo asset('/svg/New LOGO.svg');?>" width="300px" alt="" class="img-fluid">
             </div>
             <div class="page-title">註冊個人帳號</div>
-            <form class="outer" action="AfterRegisterAccount" method="POST">
+            <form class="outer" id="register_form">
                     {{ csrf_field() }}
                 <div class="subTitle">會員資訊</div>
                 <div class="input-area">
                     <div class="left">
                         <div class="input-area">
                             <div class="input-name-text">*姓名：</div>
-                            <input type="text" name = "name">
+                            <input type="text" name = "name" id="name">
                         </div>
                     </div>
                     <div class="right">
@@ -28,16 +29,10 @@
                     </div>
                 </div>
                 <div class="input-area">
-                    <div class="gender-radio">
-                        <input type="radio" name="gender" value="boy"> 男
-                        <input type="radio" name="gender" value="girl"> 女
-                    </div>
-                </div>
-                <div class="input-area">
                     <div class="input-text">*市話：</div>
-                    <input type="text" name="telephone_number">
+                    <input type="text" name="telephone_number" id="telephone_number">
                     <div class="input-text">*行動電話：</div>
-                    <input type="text" name = "phone_number">
+                    <input type="text" name = "phone_number" id="phone_number">
                 </div>
                 <div class="input-area">
                     <div class="input-text">*收件地址：</div>
@@ -45,39 +40,49 @@
                 </div>
                 <div class="input-area">
                     <div class="input-text">*電子信箱：</div>
-                    <input type="text" name="email">
+                    <input type="text" name="email" id="email">
                 </div>
                 <div class="subTitle">帳戶設定</div>
                 <div class="input-area">
                     <div class="input-text">*帳號：</div>
-                    <input type="text" name="account">
+                    <input type="text" name="account" id="account">
                 </div>
                 <div class="input-area">
                     <div class="input-text">*密碼：</div>
-                    <input type="password" , name="password">
+                    <input type="password" , name="password" id="password">
                 </div>
                 <div class="input-area">
                     <div class="input-text">*確認密碼：</div>
-                    <input type="password" , name="confirm_password">
-                </div>
-                <div class="input-area">
-                    <div class="e-report">
-                        <input type="radio"> 我要訂閱電子報
-                    </div>
+                    <input type="password" , name="password_confirmation" id="password_confirmation">
                 </div>
                 <div class="submit-area" action="AfterRegisterAccount" method="POST">
-                    <button type="submit" class="btn btn-secondary active" type="submit">註冊</button>
+                    <button class="btn btn-secondary active" type="submit">註冊</button>
                     <div class="submit-text">
                         按下註冊按鈕的同時，表示您已經同意我們的資料使用政策與服務條款
                     </div>
                 </div>
-                <ul>
-                    @foreach ($errors->all() as $error)
-                        <li>{{ $error }}</li>
-                    @endforeach
-                </ul>
             </form>
         </div>
+        <!-- Error Modal -->
+    <div class="modal fade" id="ErrorModal" tabindex="-1" role="dialog" aria-labelledby="ErrorModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="ErrorModalLabel">提醒!!請填寫以下資料</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close" id="closeModal">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <ul id="errors_area">
 
+              </ul>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary delete_cancel" data-dismiss="modal" id="confirmError">確認</button>
+            </div>
+          </div>
+    </div>
+  </div>
     </div>
     @stop

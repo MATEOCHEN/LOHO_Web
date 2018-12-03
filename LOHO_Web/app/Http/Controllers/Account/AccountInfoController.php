@@ -13,7 +13,14 @@ class AccountInfoController extends Controller
     public function AccountInformation()
     {   
         if(Auth::check()){
-            return view('Account\AccountInformation');
+            $user_list = array();
+            $user = User::where('id', Auth::user()->id)->first();
+  
+            $user_list = [
+                'account' => $user->account,
+            ];
+    
+            return view('Account\AccountInformation',compact('user_list'));
         }
         else{
             return redirect("Account\Account_Log_In");

@@ -46,11 +46,6 @@
                 <div class="input-text">*電子信箱：</div>
                 <input type="text" value="{{$data['email'] }}" id = 'email'>
             </div>
-            <div class="input-area">
-                <div class="e-report">
-                    <input type="radio" name="e-report" "" value="yes"> 訂閱電子報
-                </div>
-            </div>
             <div class="submit-area" id = 'submit-area'>
                 <button type="button" class="btn btn-dark" id="cancel_modify">取消</button>
                 <button type="button" class="btn btn-dark" id="confirm_modify">確認更改</button>

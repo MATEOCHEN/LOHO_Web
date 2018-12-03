@@ -10,7 +10,7 @@
             <div class="logo-img">
                 <img src="<?php echo asset('/svg/New LOGO.svg');?>" width="300px" alt="" class="img-fluid">
             </div>
-            <div class="page-title">會員資訊</div>
+            <div class="page-title">帳號資訊</div>
             <br>
             <div class="outer">
                 <div class="subTitle">
@@ -18,9 +18,8 @@
                 </div>
                 <div class="input-area">
                     <div class="input-text">
-                        帳號：
+                        帳號：<span id="user_account">{{$user_list['account'] }}</span>
                     </div>
-                    <input type="text">
                 </div>
                 <div class="subTitle">
                     更改帳戶
