@@ -2923,6 +2923,7 @@ input[type=button].btn-block {
 .nav-link:hover{
   text-decoration: none;
   font-weight: bold;
+  border-radius: 50%;
 }
 .nav-link:hover + #aboutmegamenu {
   display: block;
@@ -5512,7 +5513,7 @@ button.bg-danger:focus {
 }
 
 .bg-light {
-  background-color: #f8f9fa !important;
+  background-color: white !important;
 }
 
 a.bg-light:hover, a.bg-light:focus,

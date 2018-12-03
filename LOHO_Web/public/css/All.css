@@ -31,6 +31,9 @@ body{
     font-size: 24px;
 }
 
+.white-background {
+    background: white;
+}
 
 #personINFO:hover + #account-info-block{
     display: block;
@@ -59,6 +62,8 @@ body{
     display: none;
 }
 
+
+
 .d-phone{
     display: none;
 }
@@ -75,14 +80,23 @@ body{
     margin: 0 auto;
     padding: 0;
     text-align: center;
-    background: #F8F9FA;
+    background: #03AF41;
 }
 .title-color {
     color : #ecb62c;
 }
 
+.footer-title {
+    color : black;
+    font-weight: bold;
+}
+
+.footer-font-color {
+    color : black;
+}
+
 .footer-link {
-    color: #717b8c;
+    color: black;
     display: block;
 }
 
@@ -91,6 +105,7 @@ body{
     text-decoration: none;
     font-weight: bold;
 }
+
 
 @media screen and (max-width:768px){
     .shop-font-size{

@@ -31,7 +31,22 @@ Route::group(['namespace' => 'Admin','prefix' => 'admin'], function () {
 Route::group(['prefix'=>'About'], function() {
     Route::get(
         '/loho_history',
-        array('uses' => 'About\HistoryController@History', 'as' => 'loho_history')
+        array('uses' => 'About\AboutController@History', 'as' => 'loho_history')
+    );
+
+    Route::get(
+        '/loho_location',
+        array('uses' => 'About\AboutController@Location', 'as' => 'loho_location')
+    );
+
+    Route::get(
+        '/loho_tour',
+        array('uses' => 'About\AboutController@Tour', 'as' => 'loho_tour')
+    );
+
+    Route::get(
+        '/loho_glory',
+        array('uses' => 'About\AboutController@Glory', 'as' => 'loho_glory')
     );
 });
 

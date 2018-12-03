@@ -1,17 +1,18 @@
+
 <div class="footer-block text-JhengHei">
-      <div class="w-20" id="about">
-        <div class="col text-left">
-          <div class="row">
-            <h5 class="ml-3">關於樂活</h5><p class="ml-2">ABOUT LOHO</p>
-          </div>
-          <a href="#" class="footer-link"><p>品牌價值</p></a>
-          <a href="#" class="footer-link"><p>公司資訊</p></a>
-          <a href="#" class="footer-link"><p>體驗門市</p></a>
-        </div>
+      <div class="w-20" id="ABOUT">
+            <div class="col text-left">
+              <div class="row footer-title">
+                <h5 class="ml-3">關於樂活</h5><p class="ml-2">ABOUT LOHO</p>
+              </div>
+              <a href="#" class="footer-link"><p>品牌價值</p></a>
+              <a href="#" class="footer-link"><p>公司資訊</p></a>
+              <a href="#" class="footer-link"><p>體驗門市</p></a>
+            </div>
       </div>
-      <div class="w-20" id="about">
+      <div class="w-20" id="INFO">
         <div class="col text-left">
-          <div class="row">
+          <div class="row footer-title">
             <h5 class="ml-3">訊息公告</h5><p class="ml-2">INFO</p>
           </div>
           <a href="#" class="footer-link"><p>最新活動</p></a>
@@ -19,23 +20,23 @@
           <a href="#" class="footer-link"><p>退換貨需知</p></a>
         </div>
       </div>
-      <div class="w-20" id="about">
+      <div class="w-20" id="CONTACT">
         <div class="col text-left">
-          <div class="row">
+          <div class="row footer-title">
             <h5 class="ml-3">聯絡方式</h5><p class="ml-2">CONTACT</p>
           </div>
-            <div class="row">
-              <p class="ml-3">電話：</p><p>04-8720522</p>
+            <div class="row footer-font-color">
+              <p class="ml-3 ">電話：</p><p>04-8720522</p>
             </div>
-            <div class="row">
+            <div class="row footer-font-color">
               <p class="ml-3">傳真：</p><p>04-8711045</p>
             </div>
             <a href="#" class="footer-link"><p>線上客服</p></a>
         </div>
       </div>
-      <div class="w-20" id="about">
+      <div class="w-20" id="FOLLOW">
         <div class="col text-left">
-          <div class="row">
+          <div class="row footer-title">
             <h5 class="ml-3">追蹤我們</h5><p class="ml-2">FOLLOW US</p>
           </div>
           <div class="row ml-1">
@@ -59,5 +60,9 @@
             </div>
           </div>
         </div>
+
       </div>
-  </div>
+      <div class="d-flex flex-column w-100" id="COPYRIGHT">
+        <p>LOHO © 2018 樂活襪之鄉企業有限公司 LOHO Hosiery Hometown Enterprise Ltd.</p>
+      </div>
+</div>

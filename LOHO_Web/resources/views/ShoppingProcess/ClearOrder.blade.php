@@ -17,44 +17,81 @@
                 <div class="progress-bar bg-success" role="progressbar" style="width: 20%;" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100"><p class="font-weight-bold pt-2" style="font-size: 20px">Step.4 確認訂單</p></div>
                 <div class="progress-bar bg-secondary" role="progressbar" style="width: 20%;" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100"><p class="font-weight-bold pt-2" style="font-size: 20px">Step.5 完成訂單</p></div>
             </div>
-            <div class="list position-center border">
-                <h3 class="ml-3">訂購人資料</h3>
-                    <div class = "row">
+            <div class="list position-center border pt-3">
+                <div class="col" style='background:white; border-radius:10px;'>
+                    <div class="row">
+                        <h3 class="pt-3 ml-3">訂購人資料</h3>
+                    </div>
+                    <div class="row">
+                        <div class="col-5">
                         <p class="ml-5">姓名:<span id="ordererName"></span></p>
-                        <p class="ml-5">Email:<span id="ordererEmail"></span></p>
+                        </div>
                     </div>
-                    <div class = "row">
-                        <p class="ml-5">電話: <span id="ordererTEL"></span></p>
-                        <p class="ml-5">手機: <span id="ordererPhone"></span></p>  
+                    <div class="row">
+                        <div class="col-5">          
+                            <p class="ml-5">電話: <span id="ordererTEL"></span></p>  
+                        </div>
+                        <div class="col-5">
+                            <p class="ml-5">手機: <span id="ordererPhone"></span></p>
+                        </div>
                     </div>
-                <p class="ml-4">地址: <span id="ordererAddress"></span></p>
-                <h3 class="ml-3">收件人資料</h3>
-                <div class = "row">
+                    <div class="row">
+                        <div class="col">
+                            <p class="ml-5">地址: <span id="ordererAddress"></span></p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-5">
+                            <p class="ml-5">Email:<span id="ordererEmail"></span></p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <h3 class="pt-3 ml-3">收件人資料</h3>
+                    </div>
+                    <div class="row">
+                        <div class="col-5">
                         <p class="ml-5">姓名:<span id="RecipientName"></span></p>
-                        <p class="ml-5">Email:<span id="RecipientEmail"></span></p>
+                        </div>
                     </div>
-                    <div class = "row">
-                        <p class="ml-5">電話: <span id="RecipientTEL"></span></p>
-                        <p class="ml-5">手機: <span id="RecipientPhone"></span></p>
-                        <p class="ml-4">地址: <span id="RecipientAddress"></span></p>                       
+                    <div class="row">
+                        <div class="col-5">          
+                            <p class="ml-5">電話: <span id="RecipientTEL"></span></p>  
+                        </div>
+                        <div class="col-5">
+                            <p class="ml-5">手機: <span id="RecipientPhone"></span></p>
+                        </div>
                     </div>
-                <h3 class="ml-3">付款方式:<span id="payment_type"></span></h3>
-                <h3 class="ml-3" id="payment_info"></h3>
-                <div class="ml-3">
-                    <h5>商品金額：</h5>
-                    <span><h4 class="text-danger">$</h5></span><h5 class="text-danger" id="goodsTotal"></h5>
+                    <div class="row">
+                        <div class="col">
+                            <p class="ml-5">地址: <span id="RecipientAddress"></span></p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-5">
+                            <p class="ml-5">Email:<span id="RecipientEmail"></span></p>
+                        </div>
+                    </div>
                 </div>
-                <div class="ml-3">
-                    <h5>運費小計：<span><span class="text-danger">$</span></span><span class="text-danger" id="shippingFee">70</span><h5>                   
+                <div class='pt-3'style='background:#80D7F7; border-radius:10px;'>
+                    <h5 class="ml-3">付款方式:<span id="payment_type"></span></h5>
+                    <h5 class="ml-3" id="payment_info"></h5>
+                    <div class="ml-3">
+                        <h5 class='d-inline'>商品金額：</h5>
+                        <h5 class="text-danger d-inline">$</h5>
+                        <h5 class="text-danger d-inline" id="goodsTotal"></h5>
+                    </div>
+                    <div class="ml-3">
+                        <h5>運費小計：<span><span class="text-danger">$</span></span><span class="text-danger" id="shippingFee">70</span><h5>                   
+                    </div>
+                    <div class="ml-3">
+                        <h5>優惠折抵：<span id="coupon_price"></span></h5>
+                        <h5>優惠代碼：<span id="coupon_code"></span></h5>
+                    </div>
+                    <div class="ml-3">
+                        <h5>總計：<span class="text-danger">$</span><span class="text-danger" id="orderTotal"></span></h5>                   
+                    </div>
+                    <h3 class='text-danger font-weight-bold text-center'>以上資訊如有誤請到前頁做修改</h3>                
                 </div>
-                <div class="ml-3">
-                    <h5>優惠折抵：<span id="coupon_price"></span></h5>
-                    <h5>優惠代碼：<span id="coupon_code"></span></h5>
-                </div>
-                <div class="ml-3">
-                    <h5>總計：<span class="text-danger">$</span><span class="text-danger" id="orderTotal"></span></h5>                   
-                </div>
-                <h3>以上資訊如有誤請到前頁做修改</h3>                
             </div>
             <div class="next">
                 <button class="button btn btn-secondary" id="last_step">上一步</button>
