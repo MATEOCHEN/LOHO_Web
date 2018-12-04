@@ -146,10 +146,7 @@
             </form>
                 <div class="d-flex flex-row justify-content-end">
                     @if (Auth::check())
-<<<<<<< HEAD
-=======
                     <a class="nav-link dropdown text-secondary" id= 'personINFO' href="">哈囉~ <span id="user_name"></span></a>
->>>>>>> f6d83b3a217bf03a58b3bac3b3bb80717776497d
                     <div class='account-info-block text-JhengHei' id='account-info-block'>
                         <div class="col pt-1"><button class="btn" type="button" class="" onclick="javascript:location.href='{{ url("Account/PersonalInformation")}}'" id="PersonInfo">個人資訊</button></div>
                         <div class="col pt-1"><button class="btn" type="button" class="" onclick="javascript:location.href='{{ url("Account/AccountInformation")}}'" id="AccountInfo">帳戶資訊</button></div>
