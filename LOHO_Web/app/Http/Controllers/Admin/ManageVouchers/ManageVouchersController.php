@@ -16,11 +16,12 @@ class ManageVouchersController extends BaseController
          foreach ($vouchers as $voucher) {
              $voucher_tmp = [
                  'id' => $voucher->id,
-                 'coupon_code' => $voucher->coupon_code,
                  'discounted_price' => $voucher->discounted_price,
                  'user_id' => $voucher->user_id,
                  'created_at' => $voucher->created_at,
-                 'updated_at' => $voucher->updated_at
+                 'updated_at' => $voucher->updated_at,
+                 'expired_date' => $voucher->expired_date,
+                 'using_state' => $voucher->using_state,
              ];
              array_push($vouchers_list,$voucher_tmp);
          }

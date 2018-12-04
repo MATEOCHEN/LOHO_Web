@@ -19,9 +19,4 @@ $(document).ready(function () {
         window.location = "ManageVouchers/ManageVouchers";
     });
 
-    //會員優惠卷管理
-    $('#user_own_vouchers_button').click(function (e) { 
-        e.preventDefault();
-        window.location = "ManageVouchers/ManageUsersOwnVouchers";        
-    });   
 });

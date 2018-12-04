@@ -6,7 +6,6 @@ use Illuminate\Routing\Controller as BaseController;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
-use App\Users_own_voucher;
 use App\Voucher;
 use App\Order_history;
 use App\Order_detail;
@@ -100,15 +99,16 @@ class ClearOrderController extends BaseController
                 $order_detail->save();
             }
         }
-
+        
         $coupon_code = $request->session()->get('coupon_code', 'default');
 
         if($coupon_code != 'default')
         {
-            $users_own_voucher = Users_own_voucher::where('voucher_id', $coupon_code)->first();
-            $users_own_voucher->using_state ='disabled';
+            $voucher = Voucher::where('id',$coupon_code)->first();
+
+            $voucher->using_state = 'disabled';
             
-            $users_own_voucher->save();            
+            $voucher->save();            
         }
 
         $request->session()->forget('cart.item');
@@ -135,7 +135,11 @@ class ClearOrderController extends BaseController
         $request->session()->forget('coupon_code');
         $request->session()->forget('coupon_price');
         $request->session()->forget('orderTotal');
+
         $request->session()->forget('shopping_state');
+        $request->session()->forget('defaultCheck');
+        $request->session()->forget('is_consistent_account_data');
+
          return response()->json([]);
     }
 }

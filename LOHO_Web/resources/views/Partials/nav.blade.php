@@ -146,7 +146,10 @@
             </form>
                 <div class="d-flex flex-row justify-content-end">
                     @if (Auth::check())
-                    <a class="nav-link dropdown text-secondary" id= 'personINFO' href="#">哈囉~ LOHO</a>
+<<<<<<< HEAD
+=======
+                    <a class="nav-link dropdown text-secondary" id= 'personINFO' href="">哈囉~ <span id="user_name"></span></a>
+>>>>>>> f6d83b3a217bf03a58b3bac3b3bb80717776497d
                     <div class='account-info-block text-JhengHei' id='account-info-block'>
                         <div class="col pt-1"><button class="btn" type="button" class="" onclick="javascript:location.href='{{ url("Account/PersonalInformation")}}'" id="PersonInfo">個人資訊</button></div>
                         <div class="col pt-1"><button class="btn" type="button" class="" onclick="javascript:location.href='{{ url("Account/AccountInformation")}}'" id="AccountInfo">帳戶資訊</button></div>
@@ -206,6 +209,17 @@
     </div>
 </div>
 <script>
+    $(document).ready(function () {
+        $.ajax({
+            type: "get",
+            url: "/LOHO_Web/public/GetUserData",
+            data: "",
+            dataType: "json",
+            success: function (response) {
+                $('#user_name').text(response.name);
+            }
+        });
+    });         /*
                 $(document).ready(function () {
                     $(window).scroll(function () {
                         let scrollTop = $(window).scrollTop(); 
@@ -221,7 +235,7 @@
                            $('body').css('paddingTop',0)
                        }
                     });
-                });
+                });*/
  </script>	
 
 

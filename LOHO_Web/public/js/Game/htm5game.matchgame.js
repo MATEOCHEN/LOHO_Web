@@ -3,6 +3,11 @@
  */
 
 var neusoft={};
+var playing = false;
+var countDown = 90;
+var interId = null;
+var	timeId = null;
+var dialog;
 neusoft.matchingGame={};
 neusoft.matchingGame.cardWidth=80;//牌宽
 neusoft.matchingGame.cardHeight=120;
@@ -65,4 +70,47 @@ function checkPattern(cards)
                 $(this).remove();
     });
     }
+}
+//時間倒數功能
+function GameStart(){
+playing = true;
+interId = setInterval("show()",1000);
+timeShow();
+}
+    
+function timeShow(){
+    document.fomr1.time.value=countDown;
+    if(countDown == 0)
+        {
+            
+            GameOver();
+            return;
+        }
+    else
+        {
+            countDown = countDown-1;
+            timeId = setTimeout("timeShow()",1000);
+        }
+}
+function timeStop(){
+    clearInterval(interId);//clearInterval()方法返回setInterval()方法的id
+    clearTimeout(timeId);//clearTime()方法返回setTimeout()的id
+}
+function GameOver(){
+    timeStop();
+    playing = false;
+    if(countDown<75 && playing == false){
+        showDialog();
+    }
+    else{
+        
+    }
+    clearMouse();
+}
+
+window.onload=function(){
+	dialog=document.getElementById("dialog");
+}
+function showDialog(){
+	dialog.style.display="block";
 }

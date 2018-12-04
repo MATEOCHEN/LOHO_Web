@@ -11,19 +11,26 @@ class AfterRegisterAccount implements AccountControllerPostImp
     {   
         $input = $request->all();
         $rules = [
-        'account' => 'required| between:4,20',
-        'password' => 'required| between:4,20|confirmed',
-        'email' => 'required| email',
+        'name' => 'required',
+        'telephone_number' => 'required',
+        'phone_number' => 'required',
+        'email' => 'required',
+        'account' => 'required| between:4,10',
+        'password' => 'required| between:4,10|confirmed',
         ];
 
         $messages = [
-        'account.required'=>'帳號必填欄位',
-        'account.between'=>'帳號必須4-20位數字',
-        'password.required'=>'密碼必填欄位',
-        'password.between'=>'密碼必須4-20位數字',
+        'name.required'=>'請填寫姓名欄位',
+        'telephone_number.required'=>'請填寫市話欄位',
+        'phone_number.required'=>'請填寫行動電話欄位', 
+        'email.required'=>'請填寫email欄位',
+        'email.email'=>'填寫email請符合格式',        
+        'account.required'=>'請填寫帳號欄位',
+        'account.between'=>'帳號限半形英文或數字，10碼內不限大小寫',
+        'password.required'=>'請填寫密碼欄位',
+        'password.between'=>'密碼限半形英文或數字，10碼內不限大小寫',
         'password.confirmed'=>'欲修改密碼與確認密碼需一致',
-        'email.required'=>'email必填欄位',
-        'email.email'=>'email格式',
+   
         ];
         $validator = Validator::make($input,$rules,$messages);
 
@@ -36,16 +43,17 @@ class AfterRegisterAccount implements AccountControllerPostImp
             $user->name = $request->name;
             $user->telephone_number = $request->telephone_number;
             $user->phone_number = $request->phone_number;
-            $user->address = $request->address;
+            //$user->address = $request->address; 需修改成fillorder型式
             $user->email = $request->email;
             //$user->is_subscribe = $request->is_subscribe;
             $user->save();
             Auth::login($user);
-            return redirect('/');
+
+            return response()->json(['status' => 'success']);
         }
         else
         {
-            return back()->withErrors($validator);
+            return response()->json(['status' => 'fail','errors'=>$validator->errors()->all()]);
         }
 
     }

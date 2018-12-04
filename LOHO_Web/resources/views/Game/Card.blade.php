@@ -5,15 +5,28 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>翻牌遊戲</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" media="screen" href="{{ URL::asset('/css/Card.css') }}" />
-    
-    <script src="{{ URL::asset('/js/htm5game.matchgame.js') }}"></script>
-    <script src="{{ URL::asset('/js/jquery-1.11.1.min.js') }}"></script>  
+    <link rel="stylesheet" type="text/css" media="screen" href="{{ URL::asset('css/Card.css') }}" />
+    <script src="{{ URL::asset('js/Game/htm5game.matchgame.js') }}"></script>
+    <script src="{{ URL::asset('js/Game/jquery-1.11.1.min.js') }}"></script>
 </head>
 <body>
     <div class="content">
+        <div class="">
+            <button onclick="GameStart()">開始遊戲</button>
+            <button onclick="GameOver()">遊戲過關</button>
+        </div>
+        <div class="title">
+            <form name="fomr1">
+                <label>時間:</label>
+                <input type="text" name="time" size="8" value="90" disabled>
+            </form>
+        </div>
+        <div id="dialog" class="dialog">
+            恭喜獲得優惠券!!<br/>
+            <button class="button" onclick="">確定</button>
+        </div>
         <div id="cards">
-            <div class="card">
+            <div id="content" class="card" style="display:block;">
                 <div class="face front"></div>
                 <div class="face back"></div>
             </div>

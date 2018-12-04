@@ -17,6 +17,11 @@ Route::group([], function () {
         array('uses' => 'HomeController@Index', 'as' => 'Index')
     );
 
+    Route::get(
+        '/GetUserData',
+        array('uses' => 'HomeController@GetUserData', 'as' => 'GetUserData')
+    );
+
 });
 
 Route::group(['namespace' => 'Admin','prefix' => 'admin'], function () {
@@ -124,13 +129,18 @@ Route::group(['middleware' => 'AdminLogin','namespace' => 'Account','prefix' => 
     );
 
     Route::get(
-        'PersonalInformation',
-        array('uses' => 'AccountInfoController@PersonalInformation', 'as' => 'PersonalInformation')
+        'ViewVoucher',
+        array('uses' => 'AccountInfoController@ViewVoucher', 'as' => 'ViewVoucher')
     );
 
     Route::get(
-        'ViewVoucher',
-        array('uses' => 'AccountInfoController@ViewVoucher', 'as' => 'ViewVoucher')
+        'PersonalInformation',
+        array('uses' => 'PersonalInfoController@PersonalInformation', 'as' => 'PersonalInformation')
+    );
+
+    Route::post(
+        'ModifyPersonalInformation',
+        array('uses' => 'PersonalInfoController@ModifyPersonalInformation', 'as' => 'ModifyPersonalInformation')
     );
 
     Route::get(
@@ -346,6 +356,16 @@ Route::group(['prefix' => 'Game','namespace' => 'Game'], function () {
     Route::get(
         'Card',
         array('uses' => 'GameController@Card', 'as' => 'Card')
+    );
+
+    Route::get(
+        'Puzzle',
+        array('uses' => 'GameController@Puzzle', 'as' => 'Puzzle')
+    );
+
+    Route::get(
+        'Cups_Game',
+        array('uses' => 'GameController@Cups_Game', 'as' => 'Cups_Game')
     );
 
     Route::get(

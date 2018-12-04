@@ -7,13 +7,12 @@
     @show    
 </head>
 <body>
-    @include('partials.nav')
+    @include('Partials.nav')
     @section('content')
     @show   
 </body>
 <footer>
     @include('Partials.footer')
-    @section('footer')
-    @show
+    @show    
 </footer>
 </html>
