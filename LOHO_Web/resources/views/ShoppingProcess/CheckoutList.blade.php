@@ -49,7 +49,7 @@
         </div>
     </div>
       <!-- ATM_Transfer Modal -->
-      <div class="modal fade" id="ATM_TransferModal" tabindex="-1" role="dialog" aria-labelledby="ATM_TransferModalLabel" aria-hidden="true">
+      <div class="modal fade text-JhengHei" id="ATM_TransferModal" tabindex="-1" role="dialog" aria-labelledby="ATM_TransferModalLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
           <div class="modal-content">
             <div class="modal-header">
@@ -60,7 +60,7 @@
             </div>
             <div class="modal-body">
                 <div>
-                        請使用ATM轉入台灣銀行代碼：004 帳號：049-001000682
+                    請使用ATM轉入台灣銀行代碼：004 帳號：049-001000682
                 </div>
                 <div>
                     為了促進雙方交易正確性，請填寫帳號後五碼
@@ -77,7 +77,7 @@
         </div>
     </div>
       <!-- Bank_Transfer Modal -->
-      <div class="modal fade" id="Bank_TransferModal" tabindex="-1" role="dialog" aria-labelledby="Bank_TransferModalLabel" aria-hidden="true">
+      <div class="modal fade  text-JhengHei" id="Bank_TransferModal" tabindex="-1" role="dialog" aria-labelledby="Bank_TransferModalLabel" aria-hidden="true">
             <div class="modal-dialog" role="document">
               <div class="modal-content">
                 <div class="modal-header">
@@ -88,7 +88,11 @@
                 </div>
                 <div class="modal-body">
                     <div>
-                        請匯入：台灣銀行-員林分行 帳號：049-001000682 戶名：泉樺針織有限公司
+                        請匯入：台灣銀行-員林分行
+                    </div>
+                    <div class='border'>
+                        <p>帳號：049-001000682</p>
+                        <p>戶名：泉樺針織有限公司</p>
                     </div>
                     <div>
                         為了促進雙方交易正確性，請填寫帳號後五碼
@@ -105,7 +109,7 @@
             </div>
     </div> 
       <!-- Cash_on_delivery Modal -->
-      <div class="modal fade" id="Cash_on_deliveryModal" tabindex="-1" role="dialog" aria-labelledby="Cash_on_deliveryModalLabel" aria-hidden="true">
+      <div class="modal fade text-JhengHei" id="Cash_on_deliveryModal" tabindex="-1" role="dialog" aria-labelledby="Cash_on_deliveryModalLabel" aria-hidden="true">
             <div class="modal-dialog" role="document">
               <div class="modal-content">
                 <div class="modal-header">

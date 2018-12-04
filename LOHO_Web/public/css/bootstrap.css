@@ -4897,6 +4897,7 @@ button.close {
 }
 
 .modal-header {
+  background: #A2C7E4;
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
@@ -4911,6 +4912,7 @@ button.close {
 }
 
 .modal-title {
+  font-weight: bold;
   margin-bottom: 0;
   line-height: 1.5;
 }
