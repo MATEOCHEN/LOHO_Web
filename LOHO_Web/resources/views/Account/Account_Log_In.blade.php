@@ -13,7 +13,6 @@
               <img src="<?php echo asset('/svg/New LOGO.svg');?>" width="300px" alt="" class="img-fluid">
             </div>
             <br>
-            <h2>LOHO帳號登入</h2>
             <form action="" method="POST" id="login">
                 {{ csrf_field() }}
                 <div class="form-group d-flex flex-column justify-content-start align-items-start" >

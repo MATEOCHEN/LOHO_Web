@@ -35,4 +35,10 @@ $(document).ready(function () {
         });
     });
 
+    $('#twzipcode').twzipcode({
+        'css': ['country', 'area', 'zipcode'],
+        'countyName': 'AccountCountry',
+        'districtName': 'AccountArea',
+        'zipcodeName': 'AccountZipcode'
+    });
 });

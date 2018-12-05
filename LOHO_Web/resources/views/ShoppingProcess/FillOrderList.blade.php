@@ -4,26 +4,6 @@
 <link href="{{ URL::asset('css/FillOrderList.css') }}" rel="stylesheet" type="text/css" />
 <script src="{{ URL::asset('js/Shopping/jquery.twzipcode.min.js')}}"></script>
 <script src="/LOHO_Web/public/js/ShoppingProcess/FillOrderList.js"></script>
-<style>
-.zipcode {
-    margin-left :5px;
-    width :75px;
-}
-.country {
-    height : 30px;
-    font-size : 16px;
-}
-.area{
-    height : 30px;
-}
-
-.address {
-    margin-left : 5px;
-    height : 30px;
-    width : 280px;
-}
-
-</style>
 @stop
 @section('content')
 <div class="content">

@@ -4,12 +4,13 @@
 @section('head')
 <link href="{{ URL::asset('/css/RegisterAccount.css') }}" rel="stylesheet" type="text/css" />
 <script src="{{ URL::asset('js/Account/RegisterAccount.js') }}"></script>
+<script src="{{ URL::asset('js/Shopping/jquery.twzipcode.min.js')}}"></script>
 @stop
 @section('content')
 
 
     <div class="container-block">
-        <div class="wrap text-center">
+        <div class="wrap text-center text-JhengHei">
             <div class="logo-img">
                 <img src="<?php echo asset('/svg/New LOGO.svg');?>" width="300px" alt="" class="img-fluid">
             </div>
@@ -20,8 +21,8 @@
                 <div class="input-area">
                     <div class="left">
                         <div class="input-area">
-                            <div class="input-name-text">*姓名：</div>
-                            <input type="text" name = "name" id="name">
+                            <div class="input-name-text"><span style="color:red;">*</span>姓名：</div>
+                            <input type="text" size="28" maxlength="15" id="name">
                         </div>
                     </div>
                     <div class="right">
@@ -29,39 +30,42 @@
                     </div>
                 </div>
                 <div class="input-area">
-                    <div class="input-text">*市話：</div>
-                    <input type="text" name="telephone_number" id="telephone_number">
-                    <div class="input-text">*行動電話：</div>
-                    <input type="text" name = "phone_number" id="phone_number">
+                    <div class="input-text"><span style="color:red;">*</span>市話：</div>
+                    <input type="text" style='width:20%' name="telephone_number" id="telephone_number" placeholder="ex：048720552" onkeyup='this.value=this.value.replace(/\D/gi,"")' size='15' maxlength="10">
+                    <div class="input-text"><span style="color:red;">*</span>行動電話：</div>
+                    <input type="text" style='width:20%'name = "phone_number" id="phone_number" placeholder="ex: 0958213456" onkeyup='this.value=this.value.replace(/\D/gi,"")' size='15' maxlength='10'>
                 </div>
                 <div class="input-area">
-                    <div class="input-text">*收件地址：</div>
-                    <input type="text" style="width: 70%;" name="address">
+                    
+                        <label for="twzipcode" class="input-text"><span style="color:red;">*</span>地址：</label>
+                        <div id="twzipcode"></div>
+                        <input type="text" class="address" id="address"placeholder="地址">
+                
                 </div>
                 <div class="input-area">
-                    <div class="input-text">*電子信箱：</div>
-                    <input type="text" name="email" id="email">
+                    <div class="input-text"><span style="color:red;">*</span>電子信箱：</div>
+                    <input type="text" name="email" id="email" size="35">
                 </div>
                 <div class="remind-text">
                     (格式xxx@gmail.com)
                 </div>
                 <div class="subTitle">帳戶設定</div>
                 <div class="input-area">
-                    <div class="input-text">*帳號：</div>
+                    <div class="input-text"><span style="color:red;">*</span>帳號：</div>
                     <input type="text" name="account" id="account">
                 </div>
                 <div class="remind-text">
                     (限半形英文或數字，10碼內不限大小寫)
                 </div>
                 <div class="input-area">
-                    <div class="input-text">*密碼：</div> 
+                    <div class="input-text"><span style="color:red;">*</span>密碼：</div> 
                     <input type="password" , name="password" id="password">
                 </div>
                 <div class="remind-text">
                     (限半形英文或數字，10碼內不限大小寫)
                 </div>
                 <div class="input-area">
-                    <div class="input-text">*確認密碼：</div> 
+                    <div class="input-text"><span style="color:red;">*</span>確認密碼：</div> 
                     <input type="password" , name="password_confirmation" id="password_confirmation">
                 </div>
                 <div class="remind-text">

@@ -139,7 +139,7 @@
               </ul>
             <div class="d-flex flex-column text-JhengHei">
               <form class="form-inline navbar-right" >
-                    <a class="nav-link text-secondary" href="#">線上詢問</a>
+                    <a class="nav-link text-secondary" href="{{url("Account/RegisterAccount")}}">註冊帳號</a>
                     <a class="nav-link text-secondary" href="#">購物說明</a>
                     <input class="form-control mr-sm-2" type="search" placeholder="請輸入關鍵字"aria-label="Search">
                     <button class="btn btn-outline-custom" id="searchbtn" type="submit">搜尋</button>
