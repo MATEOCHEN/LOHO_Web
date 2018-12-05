@@ -104,8 +104,8 @@
             data: "",
             dataType: "json",
             success: function (response) {
-                if(response.coupon_code === 'default')
-                {
+                if(response.coupon_code === null)
+                {   
                     $('#coupon_code').text('尚未使用優惠卷');
                     $('#coupon_price').text('0');
                     $("#cancel_voucher").attr("disabled", true);

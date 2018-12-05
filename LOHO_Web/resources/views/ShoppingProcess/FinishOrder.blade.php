@@ -23,7 +23,7 @@
                 </div>
             </div>
             <div class="next">
-                <button class="button btn btn-secondary" id="back_index">回官網</button>
+                <button class="button btn btn-secondary" id="back_index">回首頁</button>
             </div>
         </div>
     </div>

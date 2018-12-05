@@ -19,8 +19,8 @@ class ConfirmShoppingListController extends BaseController
 
     public function GetVoucherState(Request $request)
     {
-        $coupon_code = $request->session()->get('coupon_code', 'default');
-        $coupon_price = $request->session()->get('coupon_price', 'default');
+        $coupon_code = $request->session()->get('coupon_code', null);
+        $coupon_price = $request->session()->get('coupon_price', 0);
 
             return response()->json([
                 'coupon_code' => $coupon_code,
@@ -30,7 +30,7 @@ class ConfirmShoppingListController extends BaseController
 
     public function CancelVoucherState(Request $request)
     {
-        $request->session()->put('coupon_code', 'default');
+        $request->session()->put('coupon_code', null);
         $request->session()->put('coupon_price', 0);
 
         return response()->json([]);
