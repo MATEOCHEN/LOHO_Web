@@ -150,6 +150,7 @@
                     <div class='account-info-block text-JhengHei' id='account-info-block'>
                         <div class="col pt-1"><button class="btn" type="button" class="" onclick="javascript:location.href='{{ url("Account/PersonalInformation")}}'" id="PersonInfo">個人資訊</button></div>
                         <div class="col pt-1"><button class="btn" type="button" class="" onclick="javascript:location.href='{{ url("Account/AccountInformation")}}'" id="AccountInfo">帳戶資訊</button></div>
+                        <div class="col pt-1"><button class="btn" type="button" class="" onclick="javascript:location.href='{{ url("Account/ViewAllOrderHistory")}}'" id="">訂單紀錄</button></div>
                         <div class="col pt-1"><button class="btn" type="button" class="" onclick="javascript:location.href='{{ url("Account/ViewVoucher")}}'" id="voucherInfo">優惠券資訊</button></div>
                         <div class="col pt-1"><button class="btn" type="button" class="" onclick="javascript:location.href='{{ url("Account/Logout")}}'" id="logout_btn">登出</button></div>
                     </div>

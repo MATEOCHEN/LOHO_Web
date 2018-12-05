@@ -31,7 +31,7 @@
                     dataType: "json",
                     success: function (response) {
                             let item = response.item;
-                            alert("加入 " + item.id + " "+item.name +" NT$"+item.price+" "+item.count+"雙" + item_img_url);
+                            alert("加入 "+item_count+"雙"+item.name);
                     }
                 });
             }

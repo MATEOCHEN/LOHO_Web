@@ -61,6 +61,11 @@ class ClearOrderController extends BaseController
         $order_history->shippingFee = $request->session()->get('shippingFee', 'default');
         $order_history->coupon_code = $request->session()->get('coupon_code',null);
         $order_history->orderTotal = $request->session()->get('orderTotal', 'default');
+
+        if(Auth::check()){
+            $order_history->Account = Auth::user()->id;
+        }
+        
         $order_history->save();
         $tmp_order_id = $order_history->oid;
         
