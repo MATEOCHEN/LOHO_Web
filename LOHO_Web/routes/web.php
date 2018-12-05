@@ -134,6 +134,16 @@ Route::group(['middleware' => 'AdminLogin','namespace' => 'Account','prefix' => 
     );
 
     Route::get(
+        'ViewAllOrderHistory',
+        array('uses' => 'AccountInfoController@ViewAllOrderHistory', 'as' => 'ViewAllOrderHistory')
+    );
+
+    Route::get(
+        'ParticularOrderHistory',
+        array('uses' => 'AccountInfoController@ParticularOrderHistory', 'as' => 'ParticularOrderHistory')
+    );
+
+    Route::get(
         'PersonalInformation',
         array('uses' => 'PersonalInfoController@PersonalInformation', 'as' => 'PersonalInformation')
     );

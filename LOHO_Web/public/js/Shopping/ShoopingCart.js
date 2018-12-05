@@ -55,7 +55,7 @@
                 dataType: "json",
                 success: function (response) {
                     let item = response.item;
-                    alert("更改數量" + item.name +" "+item.count+"雙");
+                    alert("更改為" + item.count+"雙" + item.name);
                 }
             });
         });
@@ -93,10 +93,10 @@
             dataType: "json",
             success: function (response) {
                 let item = response.item;
-                alert("刪除" + item.name);
+                alert("刪除" + initial_name);
             }
         });
-        alert(initial_name);
+        
         $('#count').text(txtID);
         $('#total').text(sum); 
         element_removed(id);
