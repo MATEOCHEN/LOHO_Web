@@ -29,8 +29,8 @@ class AboutController extends Controller{
         return view('About\loho_apperance');
     }
 
-    public function Megazine() {
-        return view('About\loho_megazine');
+    public function Magazine() {
+        return view('About\loho_magazine');
     }
 
     public function Video() {

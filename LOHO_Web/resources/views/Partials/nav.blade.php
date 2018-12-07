@@ -31,7 +31,7 @@
                         </div>
                         <div class="d-flex flex-column">
                             <a class="dropdown-header"><b>媒體報導</b></a>	
-                            <a class="dropdown-item" href="{{url::asset('/About/loho_megazine')}}">雜誌專刊</a>
+                            <a class="dropdown-item" href="{{url::asset('/About/loho_magazine')}}">雜誌專刊</a>
                             <a class="dropdown-item" href="{{url::asset('/About/loho_video')}}">影音專訪</a>
                             <a class="dropdown-item" href="{{url::asset('/About/loho_netreport')}}">網路專題</a>		
                         </div>
