@@ -20,5 +20,25 @@ class AboutController extends Controller{
     public function Glory() {
         return view('About\loho_glory');
     }
+
+    public function Award() {
+        return view('About\loho_award');
+    }
+
+    public function Apperance() {
+        return view('About\loho_apperance');
+    }
+
+    public function Megazine() {
+        return view('About\loho_megazine');
+    }
+
+    public function Video() {
+        return view('About\loho_video');
+    }
+
+    public function NetReport() {
+        return view('About\loho_netreport');
+    }
 }
 ?>

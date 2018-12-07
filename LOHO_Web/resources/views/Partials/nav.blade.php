@@ -26,14 +26,14 @@
                         </div>
                         <div class="d-flex flex-column">
                             <a class="dropdown-header"><b>眾人見證</b></a>
-                            <a class="dropdown-item" href="#">輝煌獎項</a>
-                            <a class="dropdown-item" href="#">眾人見證</a>
+                            <a class="dropdown-item" href="{{url::asset('/About/loho_award')}}">輝煌獎項</a>
+                            <a class="dropdown-item" href="{{url::asset('/About/loho_apperance')}}">眾人見證</a>
                         </div>
                         <div class="d-flex flex-column">
                             <a class="dropdown-header"><b>媒體報導</b></a>	
-                            <a class="dropdown-item" href="#">雜誌專刊</a>
-                            <a class="dropdown-item" href="#">影音專訪</a>
-                            <a class="dropdown-item" href="#">網路專題</a>		
+                            <a class="dropdown-item" href="{{url::asset('/About/loho_megazine')}}">雜誌專刊</a>
+                            <a class="dropdown-item" href="{{url::asset('/About/loho_video')}}">影音專訪</a>
+                            <a class="dropdown-item" href="{{url::asset('/About/loho_netreport')}}">網路專題</a>		
                         </div>
                     </div>
                 </div>

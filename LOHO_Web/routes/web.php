@@ -53,11 +53,36 @@ Route::group(['prefix'=>'About'], function() {
         '/loho_glory',
         array('uses' => 'About\AboutController@Glory', 'as' => 'loho_glory')
     );
+
+    Route::get(
+        '/loho_award',
+        array('uses' => 'About\AboutController@Award', 'as' => 'loho_award')
+    );
+
+    Route::get(
+        '/loho_apperance',
+        array('uses' => 'About\AboutController@Apperance', 'as' => 'loho_apperance')
+    );
+
+    Route::get(
+        '/loho_megazine',
+        array('uses' => 'About\AboutController@Megazine', 'as' => 'loho_megazine')
+    );
+
+    Route::get(
+        '/loho_video',
+        array('uses' => 'About\AboutController@Video', 'as' => 'loho_video')
+    );
+
+    Route::get(
+        '/loho_netreport',
+        array('uses' => 'About\AboutController@NetReport', 'as' => 'loho_netreport')
+    );
 });
 
 Route::group(['prefix'=>'Query'], function() {
     Route::get(
-        '/OrderQuery',
+        '/netreport',
         array('uses' => 'Query\OrderQueryController@searchOrder', 'as' => 'OrderQuery')
     );
 });

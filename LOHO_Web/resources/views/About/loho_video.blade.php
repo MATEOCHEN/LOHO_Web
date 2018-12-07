@@ -16,7 +16,7 @@
         <li class="breadcrumb-item">
             樂活足跡
         </li>
-        <li class="breadcrumb-item active" aria-current="page">樂活據點</li>
+        <li class="breadcrumb-item active" aria-current="page">影音專訪</li>
     </ol>
 </nav>
 <div class="content">
@@ -24,7 +24,7 @@
         <div class="row">
             <div class="left-block">
                 <div class="list-group-block text-JhengHei">
-                    <h1 class="my-4 title-color">樂活據點</h1>
+                    <h1 class="my-4 title-color">影音專訪</h1>
                     <div class="list-group">
                         <div class="row">
                             <a href="#sub_category1" class="list-group-item" id="main_category1" data-toggle="collapse" style="font-size:20px;">樂活足跡</a>
