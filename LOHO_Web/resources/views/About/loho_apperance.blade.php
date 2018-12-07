@@ -31,27 +31,27 @@
                             <img src="{{ URL::asset('/open-iconic-master/svg/chevron-bottom.svg') }}" alt="">
                         </div>
                         <div class="collapse" id="sub_category1">
-                            <a href="#" class="list-group-item" data-parent="#main_category1" style="padding-left: 40px;">樂活歷史</a>
-                            <a href="#" class="list-group-item" data-parent="#main_category1" style="padding-left: 40px;">樂活據點</a>
-                            <a href="#" class="list-group-item" data-parent="#main_category1" style="padding-left: 40px;">樂活榮耀</a>
-                            <a href="#" class="list-group-item" data-parent="#main_category1" style="padding-left: 40px;">樂活導覽</a>
+                            <a href="{{url::asset('/About/loho_history')}}" class="list-group-item" data-parent="#main_category1" style="padding-left: 40px;">樂活歷史</a>
+                            <a href="{{url::asset('/About/loho_location')}}" class="list-group-item" data-parent="#main_category1" style="padding-left: 40px;">樂活據點</a>
+                            <a href="{{url::asset('/About/loho_glory')}}" class="list-group-item" data-parent="#main_category1" style="padding-left: 40px;">樂活榮耀</a>
+                            <a href="{{url::asset('/About/tour')}}" class="list-group-item" data-parent="#main_category1" style="padding-left: 40px;">樂活導覽</a>
                         </div>
                         <div class="row">
                             <a href="#sub_category2" class="list-group-item" id="main_category2" data-toggle="collapse" style="font-size:20px;" href="#sub_category2">眾人見證</a>
                             <img src="{{ URL::asset('/open-iconic-master/svg/chevron-bottom.svg') }}" alt="">
                         </div>
                         <div class="collapse" id="sub_category2">
-                            <a href="#" class="list-group-item" data-parent="#main_category2" style="padding-left: 40px;">輝煌獎項</a>
-                            <a href="#" class="list-group-item" data-parent="#main_category2" style="padding-left: 40px;">眾人見證</a>
+                            <a href="{{url::asset('/About/loho_award')}}" class="list-group-item" data-parent="#main_category2" style="padding-left: 40px;">輝煌獎項</a>
+                            <a href="{{url::asset('/About/loho_apperance')}}" class="list-group-item" data-parent="#main_category2" style="padding-left: 40px;">眾人見證</a>
                         </div>
                         <div class="row">
                             <a href="#sub_category3" class="list-group-item" id="main_category2" data-toggle="collapse" style="font-size:20px;" href="#sub_category2">媒體報導</a>
                             <img src="{{ URL::asset('/open-iconic-master/svg/chevron-bottom.svg') }}" alt="">
                         </div>
                         <div class="collapse" id="sub_category3">
-                            <a href="#" class="list-group-item" data-parent="#main_category3" style="padding-left: 40px;">雜誌專刊</a>
-                            <a href="#" class="list-group-item" data-parent="#main_category3" style="padding-left: 40px;">影音專訪</a>
-                            <a href="#" class="list-group-item" data-parent="#main_category3" style="padding-left: 40px;">網路專題</a>
+                            <a href="{{url::asset('/About/loho_magazine')}}" class="list-group-item" data-parent="#main_category3" style="padding-left: 40px;">雜誌專刊</a>
+                            <a href="{{url::asset('/About/loho_video')}}" class="list-group-item" data-parent="#main_category3" style="padding-left: 40px;">影音專訪</a>
+                            <a href="{{url::asset('/About/loho_netreport')}}" class="list-group-item" data-parent="#main_category3" style="padding-left: 40px;">網路專題</a>
                         </div>
                     </div>
                 </div>

@@ -65,8 +65,8 @@ Route::group(['prefix'=>'About'], function() {
     );
 
     Route::get(
-        '/loho_megazine',
-        array('uses' => 'About\AboutController@Megazine', 'as' => 'loho_megazine')
+        '/loho_magazine',
+        array('uses' => 'About\AboutController@Magazine', 'as' => 'loho_magazine2')
     );
 
     Route::get(
