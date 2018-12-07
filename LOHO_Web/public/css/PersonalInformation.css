@@ -156,3 +156,10 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
     text-align: center;
     font-size: 20px;
 }
+
+.address {
+    margin-top : 5px;
+    margin-left : 5px;
+    height : 30px;
+    width : 280px;
+}

@@ -44,7 +44,7 @@ $(document).ready(function () {
     });
 
     function initialize()
-    {
+    {   //$(":select[]").prop('disabled',true);
         //預設所有input[text], 更改button都disabled
         $(':input[type="text"]').prop('disabled', true);
         $('#submit-area').hide();

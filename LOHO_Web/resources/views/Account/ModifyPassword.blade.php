@@ -6,15 +6,12 @@
 
 
 <div class="container-block">
-    <div class="wrap text-center">
-        <div class="logo-img">
-            <img src="<?php echo asset('/svg/New LOGO.svg');?>" width="300px" alt="" class="img-fluid">
-        </div>
-        <div class="page-title">修改密碼</div>
+    <div class="wrap text-center text-JhengHei">
+        <div class="subTitle">修改密碼</div>
         <br>
         <form class="outer" action="SendModifyPassword" method="POST">
             {{ csrf_field() }}
-            <div class="subTitle">
+            <div class="page-title">
                 帳戶資訊
             </div>
             @if (count($errors)>0) 
@@ -26,16 +23,16 @@
                 <div class="input-text">
                     請輸入原密碼：
                 </div>
-                <input type="password" name = "origin_password">
+                <input type="password"  style='width:20%' name = "origin_password" maxlength='10'>
             </div>
-            <div class="subTitle">
+            <div class="page-title">
                 更改帳戶
             </div>
             <div class="input-area">
                 <div class="input-text">
                     *欲重設密碼：
                 </div>
-                <input type="password" name="password">
+                <input type="password" style='width:20%' name="password" maxlength='10'>
             </div>
             <div class="remind-text">
                 (限半形英文或數字，10碼內不限大小寫)
@@ -44,7 +41,7 @@
                 <div class="input-text">
                     *確認密碼：
                 </div>
-                <input type="password" name="password_confirmation">
+                <input type="password" style='width:20%'name="password_confirmation" maxlength='10'>
             </div>
             <div class="remind-text">
                 (限半形英文或數字，10碼內不限大小寫)

@@ -6,23 +6,20 @@
 @stop
 @section('content')
     <div class="container-block">
-        <div class="wrap text-center">
-            <div class="logo-img">
-                <img src="<?php echo asset('/svg/New LOGO.svg');?>" width="300px" alt="" class="img-fluid">
-            </div>
-            <div class="page-title">帳號資訊</div>
+        <div class="wrap text-center text-JhengHei"> 
+            <div class="subTitle">帳號資訊</div>
             <br>
             <div class="outer">
-                <div class="subTitle">
-                    帳戶資訊
+                <div class="page-title">
+                    帳戶資訊：
                 </div>
                 <div class="input-area">
                     <div class="input-text">
                         帳號：<span id="user_account">{{$user_list['account'] }}</span>
                     </div>
                 </div>
-                <div class="subTitle">
-                    更改帳戶
+                <div class="page-title">
+                    更改密碼：
                     <button type="button" class="btn btn-dark" id = "changePassword">修改密碼</button>
                 </div>
             </div>

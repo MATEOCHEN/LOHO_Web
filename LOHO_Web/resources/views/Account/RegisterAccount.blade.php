@@ -36,11 +36,9 @@
                     <input type="text" style='width:20%'name = "phone_number" id="phone_number" placeholder="ex: 0958213456" onkeyup='this.value=this.value.replace(/\D/gi,"")' size='15' maxlength='10'>
                 </div>
                 <div class="input-area">
-                    
                         <label for="twzipcode" class="input-text"><span style="color:red;">*</span>地址：</label>
                         <div id="twzipcode"></div>
-                        <input type="text" class="address" id="address"placeholder="地址">
-                
+                        <input type="text" class="address" id="address"placeholder="地址">    
                 </div>
                 <div class="input-area">
                     <div class="input-text"><span style="color:red;">*</span>電子信箱：</div>
