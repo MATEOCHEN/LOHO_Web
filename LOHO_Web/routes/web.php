@@ -55,7 +55,12 @@ Route::group(['prefix'=>'About'], function() {
     );
 });
 
-
+Route::group(['prefix'=>'Query'], function() {
+    Route::get(
+        '/OrderQuery',
+        array('uses' => 'Query\OrderQueryController@searchOrder', 'as' => 'OrderQuery')
+    );
+});
 Route::group(['namespace' => 'Admin\ManageItems','prefix' => 'admin'], function () {
 
     Route::get(
