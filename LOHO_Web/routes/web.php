@@ -82,7 +82,7 @@ Route::group(['prefix'=>'About'], function() {
 
 Route::group(['prefix'=>'Query'], function() {
     Route::get(
-        '/netreport',
+        '/OrderQuery',
         array('uses' => 'Query\OrderQueryController@searchOrder', 'as' => 'OrderQuery')
     );
 });
