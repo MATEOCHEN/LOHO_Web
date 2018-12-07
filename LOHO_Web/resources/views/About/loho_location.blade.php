@@ -1,5 +1,5 @@
 @extends('Layout.master')
-@section('title','樂活歷史')
+@section('title','樂活據點')
 @section('head')
 
 <link rel="stylesheet" href="{{ URL::asset('/css/About/loho_history.css') }}">
@@ -57,39 +57,26 @@
                 </div>
             </div>
             <div class="col right-block">
-                <img src="{{ URL::asset('/Image/About/loho_history(1).jpg') }}" alt="">
                 <div class="text-block">
                     <p>
-                    樂活襪之鄉企業有限公司執行科技研發產品以及文創商品開發時，
-                    掌握樂活品牌價值，
-                    從創意研發團隊的設計、工廠生產製造、推廣行銷、門市服務及售後服務、品牌價值的傳達等所有價值鏈的串聯是密不可分的，
-                    要完整的執行每一個細節，才能為消費者締造優質的消費型態。
+                    樂活觀光襪廠─中山店。彰化縣社頭鄉中山路一段465號。+8864-8720522
+                    </p>
+                    <p>
+                    樂活時間： 全年無休 9:00AM～6:00PM
                     </p>
                 </div>
-                <img src="{{ URL::asset('/Image/About/loho_history(2).jpg') }}" alt="">
-                <div class="text-block">
-                    <ul>
-                        <li>設計 設計團隊擁有專業設計背景外，經常做市場調查分析現今產品流行趨勢。</li>
-                        <li>製造 堅持使用在地材料生產，嚴格的把關商品品質、近乎苛求的製造標準。</li>
-                        <li>檢測 機能性產品送檢SGS、TTRI等試驗單位檢測消臭率、滅菌率、耐水牢度等數據。</li>
-                        <li>行銷 揮別傳統行銷，讓消費者看見原料、了解製程，創新體驗行銷模式滿足消費者。</li>
-                        <li>服務 親切的客服在第一線推銷在地好品質織品，謹慎的服務每一位顧客。</li>
-                        <li>價值 傳遞優質、自然、健康的核心價值，投入功能性環保原料生產，使產品更具高附加價值，並藉由設計注入地方人文特色，<br>傳遞文化價值。</li>
-                    </ul>
-                </div>
-                <img src="{{ URL::asset('/Image/About/loho_history(3).jpg') }}" alt="">
+                <img src="{{ URL::asset('/Image/location/9b.jpg') }}" alt="">
                 <div class="text-block">
                     <p>
-                    LOHO Hosiery Hometown Enterprise Ltd When implementing technology research and development products and cultural and creative product development, we will grasp the value of the Lohas brand. From the design of the creative R&D team, factory manufacturing, marketing, store service and after-sales service, brand value communication, etc. Inseparable, to complete the implementation of every detail, in order to create a quality consumer style for consumers.
-                    Design The design team has a professional design background and often conducts market research to analyze current product trends.
-                    Manufacturing Insist on the use of local materials, strict quality control, and almost demanding manufacturing standards.
-                    Testing functional products are sent to SGS, TTRI and other test units to detect data such as deodorization rate, sterilization rate and water fastness.
-                    Marketing Say goodbye to traditional marketing, let consumers see raw materials, understand processes, and innovate experience marketing models to satisfy consumers.
-                    Service Kind customer service sells good quality fabrics in the first line, serving every customer with care.
-                    Value Delivers the core values of quality, natural and healthy, and invests in the production of functional environmentally friendly raw materials, which makes the products more value-added, and injects local cultural characteristics through design to convey cultural values.
+                    樂活襪之鄉博物館。彰化線社頭鄉社石路559號。+886-48720522
+                    </p>
+                    <p>
+                    樂活時間： 全年無休 9:00AM～6:00PM
                     </p>
                 </div>
-                <img src="{{ URL::asset('/Image/About/loho_history(4).jpg') }}" alt="">
+                <img src="{{ URL::asset('/Image/location/041015_MAP1.jpg') }}" alt="">
+                <img src="{{ URL::asset('/Image/location/041015_MAP2.jpg') }}" alt="">
+                <iframe width="880" height="400" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3647.8473531654545!2d120.58105331530487!3d23.895030989151884!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x346934503063fe21%3A0x46e0eb8bda642556!2zNTEx5b2w5YyW57ij56S-6aCt6YSJ5Lit5bGx6Lev5LiA5q61NDY16Jmf!5e0!3m2!1szh-TW!2stw!4v1462937093228" frameborder="0" allowfullscreen="" style="border: 0px currentColor; border-image: none;"></iframe>
             </div>
         </div>
     </div>
