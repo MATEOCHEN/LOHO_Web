@@ -152,6 +152,9 @@
     <div>
         <img class='w-100 h-auto'src="{{ URL::asset('/Image/LOHO_Index/反詐騙.jpg') }}" alt="">
     </div>
+    <div>
+      <img class='w-100 h-auto'src="{{ URL::asset('/Image/LOHO_Index/Index_footer(1).jpg') }}" alt="">
+    </div>
   </div>
 @stop
 
