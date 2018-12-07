@@ -15,10 +15,12 @@ class AdminLogin
      */
     public function handle($request, Closure $next)
     {
-        if(Auth::check()){
+        if(Auth::check())
+        {
             return $next($request);
         }
-        else{
+        else
+        {
             return redirect("Account/Account_Log_In");
         }
         

@@ -20,7 +20,8 @@ class Cart_Imp
                 'id' => $request->item_id,
                 'name' => $request->item_name,
                 'price' => $request->item_price,
-                'count' => $request->item_count
+                'count' => $request->item_count,
+                'img_url' => $request->item_img_url
             ];
             $current_cartItem = $item;
             $request->session()->push('cart.item', $item);
@@ -38,7 +39,8 @@ class Cart_Imp
                 'id' => $request->item_id,
                 'name' => $request->item_name,
                 'price' => $request->item_price,
-                'count' => $request->item_count
+                'count' => $request->item_count,
+                'img_url' => $request->item_img_url
             ];
             $current_cartItem = $item;
             $request->session()->push('cart.item', $item);

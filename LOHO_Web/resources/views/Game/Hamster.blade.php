@@ -5,8 +5,17 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Hamster</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="stylesheet" type="text/css" media="screen" href="{{ URL::asset('css/Hamster.css') }}" />
-	<script src="{{ URL::asset('js/Hamster.js') }}"></script>
+    <link rel="stylesheet" type="text/css" media="screen" href="{{ URL::asset('css/Hamster.css') }}" />
+    <script src="{{ URL::asset('js/jquery-3.3.1.min.js') }}"></script>
+    <script src="{{ URL::asset('js/Game/Hamster.js') }}"></script>
+    <script>
+    $(document).ready(function () {
+	$('#confirm').click(function (e) { 
+		e.preventDefault();
+		window.location = "StoreVoucher";
+	});
+});
+    </script>
 </head>
 <body>
     <div class="content">
@@ -24,7 +33,7 @@
         </div>
         <div id="dialog" class="dialog">
             恭喜獲得優惠券!!<br/>
-            <button class="button" onclick="">確定</button>
+            <button class="button" onclick="" id="confirm">確定</button>
         </div>
         <div class="table">
             <table>

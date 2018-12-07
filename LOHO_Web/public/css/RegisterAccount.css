@@ -10,7 +10,7 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
     width: 95%;
     height: auto;
     margin: 2%;
-    border: solid red 1px;
+
 }
 
 .wrap{
@@ -21,11 +21,10 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
     flex-direction: column;
     justify-content: flex-start;
     flex-wrap: nowrap;
-    border: solid red 1px;
+
 }
 
 .logo-img{
-    border: solid white 1px;
     margin: 10px;
 }
 
@@ -35,7 +34,7 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
     flex-wrap: wrap;
     width: 100%;
     margin: 0 auto;
-    border: 1px solid red;
+
 }
 
 .page-title{
@@ -115,13 +114,12 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
     justify-content: flex-start;
     width: 50%;
     flex-grow: 1;
-    border: 1px solid red;
+
 }
 
 .right{
     width: 50%;
     flex-grow: 1;
-    border: 1px solid red;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -137,4 +135,24 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
     width: 100%;
     text-align: center;
     font-size: 16px;
+}
+
+.zipcode {
+    margin-top:5px;
+    margin-left :5px;
+    width :75px;
+}
+.country {
+    height : 30px;
+    font-size : 16px;
+}
+.area{
+    height : 30px;
+}
+
+.address {
+    margin-top : 5px;
+    margin-left : 5px;
+    height : 30px;
+    width : 280px;
 }

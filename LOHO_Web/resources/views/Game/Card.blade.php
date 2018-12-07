@@ -5,10 +5,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>翻牌遊戲</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" media="screen" href="{{ URL::asset('/css/Card.css') }}" />
-    
-    <script src="{{ URL::asset('/js/htm5game.matchgame.js') }}"></script>
-    <script src="{{ URL::asset('/js/jquery-1.11.1.min.js') }}"></script>  
+    <link rel="stylesheet" type="text/css" media="screen" href="{{ URL::asset('css/Card.css') }}" />
+    <script src="{{ URL::asset('js/Game/htm5game.matchgame.js') }}"></script>
+    <script src="{{ URL::asset('js/Game/jquery-1.11.1.min.js') }}"></script>
 </head>
 <body>
     <div class="content">
@@ -27,7 +26,7 @@
             <button class="button" onclick="">確定</button>
         </div>
         <div id="cards">
-            <div class="card">
+            <div id="content" class="card" style="display:block;">
                 <div class="face front"></div>
                 <div class="face back"></div>
             </div>

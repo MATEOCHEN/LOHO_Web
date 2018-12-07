@@ -1,22 +1,21 @@
+.wrap{
+    width: 100%;
+    height: auto;
+    border: 1px gray solid;   
+}
+
 .outer{
     justify-content: center;
+    background: #f4f4f4;
     width: 100%;
     height: auto;
     display: flex;
     flex-direction: row;
-    flex-wrap: wrap;
+    flex-wrap: wrap;    
 }
-
-.wrap{
-    width: 80%;
-    height: auto;
-    border: 1px green solid;
-}
-
 .list{
     width: 100%;
     height: auto;
-    border: 1px blue solid;
     margin-bottom: 20px;
 }
 
@@ -34,7 +33,6 @@ img{
     width: 100%;
     height: auto;
     text-align: center;
-    border: 1px blue solid;
 }
 .button{
     margin-top: 30px;
@@ -59,3 +57,9 @@ ul li{
     margin-left: 20px;
     margin-right: 20px;
 }
+
+
+
+/*.solid-top-border {
+    border-top: 3px solid  #f4f4f4 !important;
+}*/
