@@ -1,5 +1,5 @@
 @extends('Layout.master')
-@section('title','樂活歷史')
+@section('title','網路專題')
 @section('head')
 
 <link rel="stylesheet" href="{{ URL::asset('/css/About/loho_history.css') }}">

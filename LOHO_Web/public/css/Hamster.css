@@ -10,7 +10,7 @@ body{
     width: 30%;
     height: 700px;
     border: 1px green solid;
-    background-image:url('/LOHO_Web/public/Image/遊戲畫面素材/背景.png');
+    background-image:url("/LOHO_Web/public/Image/遊戲畫面素材/背景.png");
     background-repeat: no-repeat;
 }
 

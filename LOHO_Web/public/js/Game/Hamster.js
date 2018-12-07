@@ -1,7 +1,7 @@
 var td = new Array();
 var playing = false;
 var score = 0;
-var countDown = 3;
+var countDown = 30;
 var interId = null;
 var	timeId = null;
 var dialog;
