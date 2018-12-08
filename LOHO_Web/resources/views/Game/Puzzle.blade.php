@@ -10,7 +10,7 @@
 <body>
 	<div id="info">
 		<p class='tips'>樂活拼拼樂</p>
-		 <div class='tips'>步數：<span id="step">0</span></div>
+		<div class='tips'>步數：<span id="step">0</span></div>
 	</div>
 	<div id="main">
         <div id="block_0" class="block"><span class="order">1</span></div>
@@ -24,9 +24,9 @@
 		<div id="block_8" class="block"><span class="order">9</span></div>
     </div>
 	<div id="control">
+		<h1 class='tips2'>限制步數為150步</h1>
 		<h1>
         <button id="reset" class="btn">位置重換</button>
-        <button id="showNum" class="btn">顯示序號</button>
 		</h1>
 	</div>
 	<div id="success">
@@ -36,9 +36,8 @@
 		</div>
 		<div id="fail">
 			<h2>失敗!</h2>
-				<button type="button">回到主頁</button>
-				
-			</div>
-   
+			<button type="button">回到主頁</button>
+		</div>
+
 </body>
 </html>
