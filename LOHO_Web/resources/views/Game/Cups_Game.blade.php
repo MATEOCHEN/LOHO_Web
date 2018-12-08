@@ -26,7 +26,7 @@
 
   <div id="content">
     <div id="kick_jump">
-        <img src="../jquery-3-cups-game/img/lohobear.png" alt="">
+        <img src="/LOHO_Web/public/Image/遊戲畫面素材/Cups_Game/lohobear.png" alt="">
     </div>
     <div id="heading">
         <DIV style="text-align:center;line-height:100px;">
