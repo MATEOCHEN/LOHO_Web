@@ -88,7 +88,7 @@
                     //console.log(_this.distanceCount);
                     if(_this.distanceCount==0){
                         _this.successShow();
-                    } else if(_this.step>=10) {
+                    } else if(_this.step>=150) {
                         _this.failShow();
                     }
                 }
@@ -220,7 +220,6 @@
         this.sucessCover.style.display = "block";
         this.succStep.innerHTML = this.step;
     }
-    //fail
     puzzle.prototype.failShow=function(){
         this.block[8].style.display = "block";
         this.failCover.style.display = "block";

@@ -1,6 +1,6 @@
 @extends('Layout.master')
 
-@section('title','我的訂單紀錄')
+@section('title','我的所有訂單紀錄')
 @section('head')
 <link href="{{ URL::asset('/css/ForgetPasswordToModify.css') }}" rel="stylesheet" type="text/css" />
 @stop

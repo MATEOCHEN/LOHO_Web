@@ -8,6 +8,14 @@
     <link rel="stylesheet" type="text/css" media="screen" href="{{ URL::asset('css/Card.css') }}" />
     <script src="{{ URL::asset('js/Game/htm5game.matchgame.js') }}"></script>
     <script src="{{ URL::asset('js/Game/jquery-1.11.1.min.js') }}"></script>
+    <script>
+        $(document).ready(function () {
+        $('#confirm').click(function (e) { 
+            e.preventDefault();
+            window.location = "StoreVoucher";
+        });
+    });
+        </script>
 </head>
 <body>
     <div class="content">
@@ -23,7 +31,7 @@
         </div>
         <div id="dialog" class="dialog">
             恭喜獲得優惠券!!<br/>
-            <button class="button" onclick="">確定</button>
+            <button class="button" id = "confirm">確定</button>
         </div>
         <div id="cards">
             <div id="content" class="card" style="display:block;">

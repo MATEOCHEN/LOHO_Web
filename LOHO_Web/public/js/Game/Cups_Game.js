@@ -180,7 +180,7 @@ $(document).ready(function(){
 
 
                 function slide_out() {
-                  setMessage("恭喜你贏了 <a href=\"https://www.google.com.tw/\" >領取優惠卷</a>", "color_2");
+                  setMessage("恭喜你贏了 <a href=\"StoreVoucher\" >領取優惠卷</a>", "color_2");
                   kick.show();
                   kick.animate({
                     top: "1000px"
@@ -215,4 +215,4 @@ $(document).ready(function(){
 
 
 
-})();
+});

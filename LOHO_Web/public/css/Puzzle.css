@@ -22,6 +22,13 @@ body{
   line-height:40px;
   color: #ffffff;
 }
+.tips2 {
+  text-align: center;
+  font-weight: bold;
+  font-size: 2em;
+  line-height:15px;
+  color: #ffffff;
+}
 #main{
     width: 300px;
     height: 300px;
@@ -118,6 +125,7 @@ button:active{
   font-size: 24px;
   line-height: 200px;
 }
+
 #fail {
   position: absolute;
   display:none;
