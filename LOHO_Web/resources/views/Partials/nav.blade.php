@@ -2,9 +2,9 @@
 <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
 <script src="/LOHO_Web/public/js/Shopping/ShoopingCart.js"></script>
 <div id = "nav">
-    <nav class="navbar navbar-expand-lg navbar-light bg-light" >
+    <nav class="navbar navbar-expand-lg bg-light" >
         <a class="navbar-brand" href="{{ url("/") }}">
-            <img alt="Brand" src="<?php echo asset('/svg/New LOGO.svg');?>" width="150px" height="70spx">
+            <img alt="Brand" src="<?php echo asset('/svg/New LOGO.svg');?>" width="150px" height="70px">
         </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>

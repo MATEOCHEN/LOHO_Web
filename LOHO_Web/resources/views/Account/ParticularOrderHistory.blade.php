@@ -4,12 +4,30 @@
 <link href="{{ URL::asset('css/CheckoutList.css') }}" rel="stylesheet" type="text/css" />
 <link href="{{ URL::asset('css/bootstrap.css') }}" rel="stylesheet" type="text/css" />
 <script src="{{ URL::asset('/js/ShoppingProcess/ClearOrder.js') }}"></script>
+<script src="{{ URL::asset('/js/ShoppingProcess/ConfirmShoppingList.js') }}"></script>
 @stop
 @section('content')
 <div class="content">
     <div class="outer">
         <div class="wrap text-JhengHei">
-            <div class="list position-center border pt-3">
+            <div class="list position-center pt-3">
+                <div class="col" style='background:lightgray; border-radius:10px;'>
+                    <div class="row shop-font-size">
+                        <div class="col-6 text-center " >
+                            <p class="font-weight-bold">商品名稱</p>
+                        </div>
+                        <div class="col-2 text-center ">
+                            <p class="font-weight-bold">尺寸</p>
+                        </div>
+                        <div class="col-2 text-center ">
+                            <p class="font-weight-bold">數量</p>
+                        </div>
+                        <div class="col-2 text-center ">
+                            <p class="font-weight-bold">小計</p>
+                        </div>
+                    </div>
+                    <div class='row shop-font-size' id='showBlock1'></div>
+                </div>
                 <div class="col" style='background:white; border-radius:10px;'>
                     <div class="row">
                         <h3 class="pt-3 ml-3">訂購人資料</h3>
@@ -86,8 +104,7 @@
                 </div>
             </div>
             <div class="next">
-                <button class="button btn btn-secondary" id="last_step">上一步</button>
-                <button class="button btn btn-secondary" id="next_step">下一步</button>
+                <button class="button btn btn-secondary" id="last_step">確定</button>  
             </div>
         </div>
     </div>

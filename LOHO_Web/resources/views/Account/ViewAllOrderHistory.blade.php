@@ -22,12 +22,13 @@
           <tbody class='table-collapse'>
               @foreach ($order_historys_list as $order_history)
               <tr>
-                  <td class="order_id">{{$order_history['id']}}</td>
+                  <td><a href="{{url::asset('Account/ParticularOrderHistory?order_id')}}" id='order_id'>{{$order_history['id']}}</a></td>
+                  <td>2018/12/10</td>
+                  <td>已完成</td>
                   <td>{{$order_history['goodsTotal']}}</td>
                   <td>{{$order_history['shippingFee']}}</td>
                   <td>{{$order_history['coupon_price']}}</td>
-                  <td>{{$order_history['coupon_code']}}</td>
-                  <td>{{$order_history['orderTotal']}}<button class = "detail_order_info">詳細資訊</button></td>
+                  <td>{{$order_history['orderTotal']}}</td>
               </tr>          
               @endforeach   
             <!--<tr>
@@ -50,14 +51,5 @@
             </div>
         @endif
 </div>   
-<script>
-$('.detail_order_info').click(function (e) { 
-    e.preventDefault();
-    let order_id = $(this).parent('td').parent('tr').children('td,order_id').html();
-    alert(order_id);
-    window.location = 'ParticularOrderHistory?order_id';
-
-});
-</script>
 @stop
 
