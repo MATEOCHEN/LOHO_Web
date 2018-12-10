@@ -5,6 +5,14 @@
 	<title>樂活拼拼樂</title>
 	<link rel="stylesheet" type="text/css" media="screen" href="{{ URL::asset('css/Puzzle.css') }}" />
 	<script src="{{ URL::asset('js/Game/Puzzle.js') }}"></script>
+	<script>
+        $(document).ready(function () {
+        $('#confirm').click(function (e) { 
+            e.preventDefault();
+            window.location = "StoreVoucher";
+        });
+    });
+    </script>
 </head>
 
 <body>
@@ -32,7 +40,7 @@
 	<div id="success">
         <h2>成功通關!</h2>
 			<p>步數：<span id="suc_step">0</span></p>
-			<button type="button">領取優惠券</button>
+			<button type="button" id = "confirm">領取優惠券</button>
 		</div>
 		<div id="fail">
 			<h2>失敗!</h2>

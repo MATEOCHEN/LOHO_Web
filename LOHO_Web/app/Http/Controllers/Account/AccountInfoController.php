@@ -89,10 +89,55 @@ class AccountInfoController extends Controller
     
     public function ParticularOrderHistory(Request $request)
     {   
-        $order_historys =Order_history::where('oid',$request->order_id)->first();
-        
+        $order__list = array();
 
-        return view('Account\ParticularOrderHistory');
+        $order_history =Order_history::where('oid',$request->order_id)->first();
+  
+            if($order_history->coupon_code == null){
+                $coupon_code = '未使用優惠卷';
+                $coupon_price = '0';
+            }
+            else{
+                $voucher = Voucher::where(['id' => $order_history->coupon_code])->first();
+                $coupon_code = $voucher->id;
+                $coupon_price = $voucher->discounted_price;
+            }
+            $order_historys_list = [
+                'id' => $order_history->oid,
+                'goodsTotal' => $order_history->goodsTotal,
+                'shippingFee' => $order_history->shippingFee,                   
+                'coupon_price' => $coupon_price,
+                'coupon_code' => $coupon_code,
+                'orderTotal' => $order_history->orderTotal,
+            ];
+
+            array_push($order__list,$order_historys_list); 
+
+            $orderer_info =  Orderer_info::where('oid',$request->order_id)->first();
+
+            $orderer_info_list = [
+                'name' => $orderer_info->name,
+                'email' => $orderer_info->email,
+                'telephone_number' => $orderer_info->telephone_number,                   
+                'phone_number' => $orderer_info->phone_number,
+                'address' => $orderer_info->address,
+            ];
+
+            array_push($order__list,$orderer_info_list); 
+
+            $recipient_info =  Recipient_info::where('oid',$request->order_id)->first();
+
+            $recipient_info_list = [
+                'name' => $recipient_info->name,
+                'email' => $recipient_info->email,
+                'telephone_number' => $recipient_info->telephone_number,                   
+                'phone_number' => $recipient_info->phone_number,
+                'address' => $orderer_info->address,
+            ];
+
+            array_push($order__list,$orderer_info_list); 
+
+        return view('Account\ParticularOrderHistory',compact('order__list'));
     }
 
 }
