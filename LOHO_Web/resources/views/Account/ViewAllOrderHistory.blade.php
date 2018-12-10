@@ -3,6 +3,19 @@
 @section('title','我的所有訂單紀錄')
 @section('head')
 <link href="{{ URL::asset('/css/ForgetPasswordToModify.css') }}" rel="stylesheet" type="text/css" />
+<script>
+    $(document).ready(function () {
+        $('.detail_order_info').click(function (e) { 
+        e.preventDefault();
+        
+        let order_id = $(this).html();
+
+        window.location = 'ParticularOrderHistory?order_id=' + order_id;
+    
+    });
+    });
+
+</script>
 @stop
 @section('content')
 <div class = "container-block d-flex flex-column align-items-center text-JhengHei ">
@@ -22,7 +35,7 @@
           <tbody class='table-collapse'>
               @foreach ($order_historys_list as $order_history)
               <tr>
-                  <td><a href="{{url::asset('Account/ParticularOrderHistory?order_id')}}" id='order_id'>{{$order_history['id']}}</a></td>
+                  <td><a href = "" class='detail_order_info'>{{$order_history['id']}}</a></td>
                   <td>2018/12/10</td>
                   <td>已完成</td>
                   <td>{{$order_history['goodsTotal']}}</td>

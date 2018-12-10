@@ -140,4 +140,26 @@ class AccountInfoController extends Controller
         return view('Account\ParticularOrderHistory',compact('order__list'));
     }
 
+    public function GetShoppingList(Request $request)
+    {
+        $order_details =Order_detail::where('oid',$request->order_id)->get();
+
+        $details_list = array();
+
+        foreach($order_details as $order_detail)
+        {   
+            $item = Item::find($order_detail->item_id);
+
+            $detail_tmp = [
+                'count' => $order_detail->count,
+                'goodsTotal'=> $order_detail->goodsTotal,
+                'item_name' => $item->name,
+                'item_price' =>$item->price,
+                'item_size' => $item->size,
+            ];
+            array_push($details_list,$detail_tmp);  
+        }
+
+        return response()->json(['details_list' => $details_list]);
+    }
 }

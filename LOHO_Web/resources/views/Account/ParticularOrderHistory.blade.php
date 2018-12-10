@@ -1,10 +1,11 @@
 @extends('Layout.master') 
 @section('title','我的訂單') 
 @section('head')
+
 <link href="{{ URL::asset('css/CheckoutList.css') }}" rel="stylesheet" type="text/css" />
 <link href="{{ URL::asset('css/bootstrap.css') }}" rel="stylesheet" type="text/css" />
-<script src="{{ URL::asset('/js/ShoppingProcess/ClearOrder.js') }}"></script>
-<script src="{{ URL::asset('/js/ShoppingProcess/ConfirmShoppingList.js') }}"></script>
+<script src="{{ URL::asset('js/Account/ParticularOrderHistory.js') }}"></script>
+
 @stop
 @section('content')
 <div class="content">

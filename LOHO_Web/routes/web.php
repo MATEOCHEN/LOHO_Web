@@ -174,6 +174,11 @@ Route::group(['middleware' => 'AdminLogin','namespace' => 'Account','prefix' => 
     );
 
     Route::get(
+        'GetShoppingList',
+        array('uses' => 'AccountInfoController@GetShoppingList', 'as' => 'GetShoppingList')
+    );
+
+    Route::get(
         'PersonalInformation',
         array('uses' => 'PersonalInfoController@PersonalInformation', 'as' => 'PersonalInformation')
     );
