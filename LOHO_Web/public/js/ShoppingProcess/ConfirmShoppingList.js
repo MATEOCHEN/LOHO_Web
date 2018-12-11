@@ -1,7 +1,7 @@
 
     var txtID = 0;
     var sum = 0;
-    var pre_subtotal = 0
+    
 
     var Item_display = function(item_name,item_price,item_count,img_url) {
         txtID++;
