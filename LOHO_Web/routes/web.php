@@ -81,10 +81,17 @@ Route::group(['prefix'=>'About'], function() {
 });
 
 Route::group(['prefix'=>'Query'], function() {
+    
     Route::get(
         '/OrderQuery',
         array('uses' => 'Query\OrderQueryController@searchOrder', 'as' => 'OrderQuery')
     );
+
+    Route::get(
+        '/SearchItem',
+        array('uses' => 'Query\SearchItemController@SearchItem', 'as' => 'SearchItem')
+    );
+
 });
 Route::group(['namespace' => 'Admin\ManageItems','prefix' => 'admin'], function () {
 

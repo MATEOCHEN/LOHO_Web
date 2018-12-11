@@ -142,7 +142,7 @@
                     <a class="nav-link text-secondary" href="{{url("Account/RegisterAccount")}}">註冊帳號</a>
                     <a class="nav-link text-secondary" href="{{url("Query/OrderQuery")}}">訂單查詢</a>
                     <a class="nav-link text-secondary" href="#">購物說明</a>
-                    <input class="form-control mr-sm-2" type="search" placeholder="請輸入關鍵字"aria-label="Search">
+                    <input class="form-control mr-sm-2" type="search" placeholder="請輸入關鍵字"aria-label="Search" id="search_text">
                     <button class="btn btn-outline-custom" id="searchbtn" type="submit">搜尋</button>
             </form>
                 <div class="d-flex flex-row justify-content-end">
@@ -209,6 +209,7 @@
 </div>
 <script>
     $(document).ready(function () {
+
         $.ajax({
             type: "get",
             url: "/LOHO_Web/public/GetUserData",
@@ -217,6 +218,15 @@
             success: function (response) {
                 $('#user_name').text(response.name);
             }
+        });
+
+
+        $('#searchbtn').click(function (e) { 
+            e.preventDefault();
+            let search_text = $('#search_text').val();
+
+            window.location = '/LOHO_Web/public/Query/SearchItem?search_text=' + search_text;
+
         });
     });         /*
                 $(document).ready(function () {
