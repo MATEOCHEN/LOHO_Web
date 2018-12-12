@@ -14,11 +14,11 @@
             <div class='position-center pt-3'>
                 <div>
                     <h5 class='d-inline'>姓名：</h5>
-                    <input type="text">
+                    <input type="text" id="input_name">
                 </div>
                 <div class="pt-3">
                     <h5 class='d-inline'>電子郵件：</h5>
-                    <input type="text">
+                    <input type="text" id="input_email">
                 </div>
             </div>
         </div>
@@ -27,4 +27,14 @@
         <button type='button' class='btn btn-outline-custom'id='searchOrderBtn'>訂單查詢</button>
     </div>
 </div>
+<script>
+    $(document).ready(function () {
+        
+        $('#searchOrderBtn').click(function (e) { 
+            e.preventDefault();
+           
+            window.location = 'OrderResult?name=' +$('#input_name').val()+ '&email=' +$('#input_email').val();
+        });
+    });
+</script>
 @stop

@@ -1,7 +1,7 @@
 var txtID = 0;
     
 
-var Item_display = function(item_name,item_price,item_count,item_size,item_total) {
+var Item_display = function(item_name,item_price,item_count,item_size,item_total,item_url) {
     txtID++;
     $("#showBlock1").append("<div id='div1" + txtID +"' class='col-6 text-left solid-top-border'>"
     +"<div id='div2" + txtID +"'class='row'>"
@@ -10,7 +10,7 @@ var Item_display = function(item_name,item_price,item_count,item_size,item_total
     +"<h5 class='text-danger'>NT</h5>"
     +"<h5 id='price"+txtID+"' class='text-danger mr-2'>"+item_price+"</h5>"
     +"<h5 class='text-danger'>元</h5></div>"
-    +"<img src='"+img_url+"' alt='圖片更新中' style='width:150px ; height:150px'class='img-thumbnail'</div>",
+    +"<img src='"+item_url+"' alt='圖片更新中' style='width:150px ; height:150px'class='img-thumbnail'</div>",
     "<div class='col-2  text-center solid-top-border id='div4" + txtID +"'>"
     +"<p id='size"+txtID+"'>"+ item_size +"</p></div>",
     "<div class='col-2 text-center solid-top-border id='div5" + txtID +"'>"
@@ -61,12 +61,20 @@ var getHistoryItem = function() {
                     var goods_name = element.item_name;
                     var goods_price = element.item_price;
                     var goods_count = element.count;
-                    var goods_size = element.item_size;   
+                    var goods_size;
+                    if (element.item_size === null) {
+                        goods_size = "單一尺寸";
+                    }
+                     
                     var goods_total = element.goodsTotal;
-                    Item_display(goods_name,goods_price,goods_count,goods_size,goods_total);
+
+                    //商品路徑更改成絕對路徑
+                    var goods_img_url = '/LOHO_Web/public/' + element.img_url;
+                    
+                    Item_display(goods_name,goods_price,goods_count,goods_size,goods_total,goods_img_url);
                 }
             )
-            alert(response.details_list.length);
+            
             }
         });
         }  

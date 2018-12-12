@@ -156,6 +156,7 @@ class AccountInfoController extends Controller
                 'item_name' => $item->name,
                 'item_price' =>$item->price,
                 'item_size' => $item->size,
+                'img_url'=> $item->img_url,
             ];
             array_push($details_list,$detail_tmp);  
         }

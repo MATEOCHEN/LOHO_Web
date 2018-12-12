@@ -92,6 +92,11 @@ Route::group(['prefix'=>'Query'], function() {
         array('uses' => 'Query\SearchItemController@SearchItem', 'as' => 'SearchItem')
     );
 
+    Route::get(
+        '/OrderResult',
+        array('uses' => 'Query\OrderResultController@OrderResult', 'as' => 'OrderResult')
+    );
+
 });
 Route::group(['namespace' => 'Admin\ManageItems','prefix' => 'admin'], function () {
 
