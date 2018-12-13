@@ -23,7 +23,7 @@
     <div class="container-block">
         <div class="row">
             <div class="left-block">
-                <div class="list-group-block text-JhengHei">
+                <!--<div class="list-group-block text-JhengHei">
                     <h1 class="my-4 title-color">眾人見證</h1>
                     <div class="list-group">
                         <div class="row">
@@ -54,10 +54,10 @@
                             <a href="{{url::asset('/About/loho_netreport')}}" class="list-group-item" data-parent="#main_category3" style="padding-left: 40px;">網路專題</a>
                         </div>
                     </div>
-                </div>
+                </div>-->
             </div>
             <div class="right-block">
-                <div class="d-flex flex-row">
+                <!--<div class="d-flex flex-row">
                     <img src="{{ URL::asset('/Image/apperance/16.png') }}" alt="">
                     <img src="{{ URL::asset('/Image/apperance/16-3.png') }}" alt="">
                 </div>
@@ -74,7 +74,7 @@
                     <p>
                     一條龍MIT作業
                     </p>
-                </div>
+                </div>-->
             </div>
         </div>
     </div>
