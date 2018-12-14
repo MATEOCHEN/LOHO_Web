@@ -45,60 +45,56 @@
                     </a>
                 </li>
                 <li class="nav-item dropdown text-JhengHei">
-                    <a class="nav-link dropdown h5" href="#" id="DropdownMenuMen" role="button"  aria-haspopup="true" aria-expanded="false">
+                    <a class="nav-link dropdown h5" href="#" id="A001" role="button"  aria-haspopup="true" aria-expanded="false">
                     襪子
                     </a>
                     <div class="dropdown-menu" id="menmegamenu" aria-labelledby="navbarDropdown">
                         <div class="d-flex flex-row">
                             <div class="d-flex flex-column">
                                 <a class="dropdown-header"><b>成人</b></a>
-                                <a class="dropdown-item" href="#">抗臭機能襪</a>
-                                <a class="dropdown-item" href="#">抗菌機能襪</a>
-                                <a class="dropdown-item" href="#">五指運動襪</a>
-                                <a class="dropdown-item" href="#">銀纖維襪</a>
-                                <a class="dropdown-item" href="#">天然棉襪</a>
-                                <a class="dropdown-item" href="#">壓力襪</a>
+                                <a class="dropdown-item" href="#" id="T001">抗臭機能襪</a>
+                                <a class="dropdown-item" href="#" id="T002">抗菌機能襪</a>
+                                <a class="dropdown-item" href="#" id="T003">五指運動襪</a>
+                                <a class="dropdown-item" href="#" id="T004">銀纖維襪</a>
+                                <a class="dropdown-item" href="#" id="T005">天然棉襪</a>
+                                <a class="dropdown-item" href="#" id="T006">壓力襪</a>
                             </div>
                             <div class="d-flex flex-column">
                                 <a class="dropdown-header"><b>兒童</b></a>
-                                <a class="dropdown-item" href="#">兒童休閒襪</a>
+                                <a class="dropdown-item" href="#" id="T007">兒童休閒襪</a>
                             </div>
                             <div class="d-flex flex-column">
                                 <a class="dropdown-header"><b>親子</b></a>
-                                <a class="dropdown-item" href="#">抗臭機能襪</a>
+                                <a class="dropdown-item" href="#" id="T008">抗臭機能襪</a>
                             </div>								
                         </div>
                     </div>
                 </li>
                 <li class="nav-item dropdown text-JhengHei">
-                    <a class="nav-link dropdown h5" href="#" id="DropdownMenuWomen" role="button"  aria-haspopup="true" aria-expanded="false">
+                    <a class="nav-link dropdown h5" href="#" id="A002" role="button"  aria-haspopup="true" aria-expanded="false">
                     衣著
                     </a>
                     <div class="dropdown-menu" id="womenmegamenu" aria-labelledby="navbarDropdown">
                         <div class="d-flex flex-row">
                             <div class="d-flex flex-column">
                                     <a class="dropdown-header"><b>成人</b></a>
-                                    <a class="dropdown-item" href="#">抗臭機能襪</a>
-                                    <a class="dropdown-item" href="#">抗菌機能襪</a>
-                                    <a class="dropdown-item" href="#">五指運動襪</a>
-                                    <a class="dropdown-item" href="#">銀纖維襪</a>
-                                    <a class="dropdown-item" href="#">天然棉襪</a>
-                                    <a class="dropdown-item" href="#">壓力襪</a>
-                                    <a class="dropdown-item" href="#">絲襪</a>
+                                    <a class="dropdown-item" href="#" id="T009">男女機能內褲</a>
+                                    <a class="dropdown-item" href="#" id="T010">女性百和內褲</a>
+                                    <a class="dropdown-item" href="#" id="T011">竹碳運動內衣</a>
+                                    <a class="dropdown-item" href="#" id="T012">涼感運動內衣</a>
                                 </div>
                                 <div class="d-flex flex-column">
                                     <a class="dropdown-header"><b>兒童</b></a>
-                                    <a class="dropdown-item" href="#">內衣</a>
-                                    <a class="dropdown-item" href="#">內褲</a>
+                                    <a class="dropdown-item" href="#" id="T013">內衣</a>
+                                    <a class="dropdown-item" href="#" id="T014">內褲</a>
                                 </div>
                                 <div class="d-flex flex-column">
                                     <a class="dropdown-header"><b>親子</b></a>
-                                    <a class="dropdown-item" href="#">護具</a>
                                 </div>	
                         </div>
                     </div>
                 </li>
-                <li class="nav-item dropdown text-JhengHei">
+                <!--<li class="nav-item dropdown text-JhengHei">
                     <a class="nav-link dropdown h5" href="#" id="DropdownMenuKid" role="button"  aria-haspopup="true" aria-expanded="false">
                     護具
                     </a>
@@ -125,9 +121,14 @@
                             </div>
                             </div>
                     </div>
+                </li>-->
+                <li class="nav-item text-JhengHei">
+                    <a class="nav-link h5" href="#" id="A003">
+                        護具
+                    </a>
                 </li>
                 <li class="nav-item text-JhengHei">
-                    <a class="nav-link h5" href="#">
+                    <a class="nav-link h5" href="#" id="A004">
                         禮物
                     </a>
                 </li>
