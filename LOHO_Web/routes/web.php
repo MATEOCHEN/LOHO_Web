@@ -195,6 +195,11 @@ Route::group(['middleware' => 'AdminLogin','namespace' => 'Account','prefix' => 
         array('uses' => 'PersonalInfoController@PersonalInformation', 'as' => 'PersonalInformation')
     );
 
+    Route::get(
+        'GetAddressData',
+        array('uses' => 'PersonalInfoController@GetAddressData', 'as' => 'GetAddressData')
+    );    
+
     Route::post(
         'ModifyPersonalInformation',
         array('uses' => 'PersonalInfoController@ModifyPersonalInformation', 'as' => 'ModifyPersonalInformation')

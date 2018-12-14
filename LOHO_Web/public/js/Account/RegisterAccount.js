@@ -19,6 +19,10 @@ $(document).ready(function () {
                 telephone_number:$("#telephone_number").val(),
                 phone_number:$("#phone_number").val(),
                 email:$("#email").val(),
+                postal_code:$("input[name='AccountZipcode']").val(),
+                country:$("select[name='AccountCountry']").val(),
+                area:$("select[name='AccountArea']").val(),
+                address:$('#address').val(),
             },
             dataType: "json",
             success: function (response) {

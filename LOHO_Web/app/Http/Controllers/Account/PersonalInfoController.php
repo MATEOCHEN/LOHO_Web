@@ -27,6 +27,19 @@ class PersonalInfoController extends Controller
         return view('Account\PersonalInformation',compact('data'));
     }
 
+    public function GetAddressData()
+    {
+        $user = User::where('id', Auth::user()->id)->first();
+
+        return response()->json([
+            'postal_code' => $user->postal_code,
+            'country' => $user->country,
+            'area' => $user->area,
+            'address' => $user->address,
+        ]);
+        
+    }
+
     public function ModifyPersonalInformation(Request $request)
     {   
         $user = User::where('id', Auth::user()->id)->first();
@@ -35,12 +48,14 @@ class PersonalInfoController extends Controller
         $user->telephone_number = $request->telephone_number;
         $user->phone_number = $request->phone_number;
         $user->postal_code = $request->postal_code;
+        $user->country = $request->country;
+        $user->area = $request->area;
+        $user->address = $request->address;
+        
         $user->save();
         
         return response()->json([]);
-        //$user->country = $request->country;
-        //$user->area = $request->area;
-        //$user->address = $request->address;
+
     }
 
 }

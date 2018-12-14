@@ -43,8 +43,12 @@ class AfterRegisterAccount implements AccountControllerPostImp
             $user->name = $request->name;
             $user->telephone_number = $request->telephone_number;
             $user->phone_number = $request->phone_number;
-            //$user->address = $request->address; 需修改成fillorder型式
             $user->email = $request->email;
+            $user->postal_code = $request->postal_code;
+            $user->country = $request->country;
+            $user->area = $request->area;
+            $user->address = $request->address;
+            
             //$user->is_subscribe = $request->is_subscribe;
             $user->save();
             Auth::login($user);
