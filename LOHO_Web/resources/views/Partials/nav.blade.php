@@ -52,7 +52,7 @@
                         <div class="d-flex flex-row">
                             <div class="d-flex flex-column">
                                 <a class="dropdown-header"><b>成人</b></a>
-                                <a class="dropdown-item" href="#" id="T001">抗臭機能襪</a>
+                                <a class="dropdown-item" href="#" id="c001">抗臭機能襪</a>
                                 <a class="dropdown-item" href="#" id="T002">抗菌機能襪</a>
                                 <a class="dropdown-item" href="#" id="T003">五指運動襪</a>
                                 <a class="dropdown-item" href="#" id="T004">銀纖維襪</a>
@@ -229,6 +229,16 @@
             window.location = '/LOHO_Web/public/Query/SearchItem?search_text=' + search_text;
 
         });
+
+        $('.dropdown-item').click(function (e) { 
+            e.preventDefault();
+
+            window.location = '/LOHO_Web/public/Shopping/BrowseItems?category_id=' + $(this).attr('id');
+
+        });
+
+
+
     });         /*
                 $(document).ready(function () {
                     $(window).scroll(function () {
