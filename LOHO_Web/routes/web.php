@@ -31,6 +31,11 @@ Route::group(['namespace' => 'Admin','prefix' => 'admin'], function () {
         array('uses' => 'AdminIndexController@AdminIndex', 'as' => 'admin')
     );
 
+    Route::get(
+        '/GetCategory',
+        array('uses' => 'AdminIndexController@GetCategory', 'as' => 'GetCategory')
+    );
+
 });
 
 Route::group(['prefix'=>'About'], function() {

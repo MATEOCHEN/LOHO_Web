@@ -11,8 +11,8 @@
 <div class="content" style="text-align:center">
     <div class="category">
         <h1>商品管理</h1>
-        <input type="button" class="btn btn-success btn-sm category" value="c001">
-        <input type="button" class="btn btn-success btn-sm category" value="c002">
+        <input type="button" class="btn btn-success btn-sm category_btn" value="c001">
+        <input type="button" class="btn btn-success btn-sm category_btn" value="c002">
     </div>
     <div class="account">
         <h1>會員管理</h1>

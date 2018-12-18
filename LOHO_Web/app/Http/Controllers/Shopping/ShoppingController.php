@@ -16,9 +16,9 @@ class ShoppingController extends BaseController
 {
     use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
 
-    public function BrowseItems()
+    public function BrowseItems(Request $request)
     {
-        $items_all = Item::all();
+        $items_all = Item::where('category_id',$request->category_id)->get();
         $items_list = array();
 
         foreach ($items_all as $item) {

@@ -11,6 +11,7 @@ use App\Item;
 use Illuminate\Support\Facades\Input;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
+use App\Tail_category;
 
 use Validator;
 
@@ -23,4 +24,22 @@ class AdminIndexController extends BaseController
          return view('Admin\AdminIndex');
     }
 
+    public function GetCategory()
+    {   
+        $tail_categories = Tail_category::all();
+
+        $tail_categories__list = array();
+        
+        foreach ($tail_categories as $tail_category) {
+            $tmp_category = [
+                'id' => $tail_category->id,
+                'name' => $tail_category->Name,
+            ];
+
+            array_push($tail_categories__list,$tmp_category); 
+        }
+
+
+        return response()->json(['categories' => $tail_categories__list]);
+    }
 }
